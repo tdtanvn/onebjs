@@ -1,6 +1,6 @@
 {
   "name": "oneb-sdk",
-  "private": false,
+  "private": true,
   "repository": {
     "type": "git",
     "url": "https://github.com/tdtanvn/onebjs.git"
