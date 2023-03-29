@@ -4,12 +4,12 @@
 var $protobuf = require("protobufjs/minimal");
 
 // Common aliases
-var $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
+const $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.util;
 
 // Exported root namespace
-var $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
+const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-$root.ProtoMessage = (function() {
+export const ProtoMessage = $root.ProtoMessage = (() => {
 
     /**
      * Properties of a ProtoMessage.
@@ -32,7 +32,7 @@ $root.ProtoMessage = (function() {
     function ProtoMessage(properties) {
         this.data = [];
         if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
@@ -99,7 +99,7 @@ $root.ProtoMessage = (function() {
             writer.uint32(/* id 2, wireType 2 =*/18).string(message.functionName);
         if (message.data != null && message.data.length) {
             writer.uint32(/* id 3, wireType 2 =*/26).fork();
-            for (var i = 0; i < message.data.length; ++i)
+            for (let i = 0; i < message.data.length; ++i)
                 writer.uint32(message.data[i]);
             writer.ldelim();
         }
@@ -135,9 +135,9 @@ $root.ProtoMessage = (function() {
     ProtoMessage.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoMessage();
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoMessage();
         while (reader.pos < end) {
-            var tag = reader.uint32();
+            let tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
                     message.service = reader.int32();
@@ -155,7 +155,7 @@ $root.ProtoMessage = (function() {
                     if (!(message.data && message.data.length))
                         message.data = [];
                     if ((tag & 7) === 2) {
-                        var end2 = reader.uint32() + reader.pos;
+                        let end2 = reader.uint32() + reader.pos;
                         while (reader.pos < end2)
                             message.data.push(reader.uint32());
                     } else
@@ -216,7 +216,7 @@ $root.ProtoMessage = (function() {
         if (message.data != null && message.hasOwnProperty("data")) {
             if (!Array.isArray(message.data))
                 return "data: array expected";
-            for (var i = 0; i < message.data.length; ++i)
+            for (let i = 0; i < message.data.length; ++i)
                 if (!$util.isInteger(message.data[i]))
                     return "data: integer[] expected";
         }
@@ -234,7 +234,7 @@ $root.ProtoMessage = (function() {
     ProtoMessage.fromObject = function fromObject(object) {
         if (object instanceof $root.ProtoMessage)
             return object;
-        var message = new $root.ProtoMessage();
+        let message = new $root.ProtoMessage();
         switch (object.service) {
         default:
             if (typeof object.service === "number") {
@@ -267,7 +267,7 @@ $root.ProtoMessage = (function() {
             if (!Array.isArray(object.data))
                 throw TypeError(".ProtoMessage.data: array expected");
             message.data = [];
-            for (var i = 0; i < object.data.length; ++i)
+            for (let i = 0; i < object.data.length; ++i)
                 message.data[i] = object.data[i] >>> 0;
         }
         return message;
@@ -285,7 +285,7 @@ $root.ProtoMessage = (function() {
     ProtoMessage.toObject = function toObject(message, options) {
         if (!options)
             options = {};
-        var object = {};
+        let object = {};
         if (options.arrays || options.defaults)
             object.data = [];
         if (options.defaults) {
@@ -299,7 +299,7 @@ $root.ProtoMessage = (function() {
             object.functionName = message.functionName;
         if (message.data && message.data.length) {
             object.data = [];
-            for (var j = 0; j < message.data.length; ++j)
+            for (let j = 0; j < message.data.length; ++j)
                 object.data[j] = message.data[j];
         }
         if (message.namespace != null && message.hasOwnProperty("namespace"))
@@ -336,7 +336,7 @@ $root.ProtoMessage = (function() {
     return ProtoMessage;
 })();
 
-$root.AuthLogin = (function() {
+export const AuthLogin = $root.AuthLogin = (() => {
 
     /**
      * Properties of an AuthLogin.
@@ -361,7 +361,7 @@ $root.AuthLogin = (function() {
      */
     function AuthLogin(properties) {
         if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
@@ -490,9 +490,9 @@ $root.AuthLogin = (function() {
     AuthLogin.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AuthLogin();
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.AuthLogin();
         while (reader.pos < end) {
-            var tag = reader.uint32();
+            let tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
                     message.playerId = reader.string();
@@ -592,7 +592,7 @@ $root.AuthLogin = (function() {
     AuthLogin.fromObject = function fromObject(object) {
         if (object instanceof $root.AuthLogin)
             return object;
-        var message = new $root.AuthLogin();
+        let message = new $root.AuthLogin();
         if (object.playerId != null)
             message.playerId = String(object.playerId);
         if (object.secretKey != null)
@@ -622,7 +622,7 @@ $root.AuthLogin = (function() {
     AuthLogin.toObject = function toObject(message, options) {
         if (!options)
             options = {};
-        var object = {};
+        let object = {};
         if (options.defaults) {
             object.playerId = "";
             object.secretKey = "";
@@ -678,7 +678,7 @@ $root.AuthLogin = (function() {
     return AuthLogin;
 })();
 
-$root.AuthResponse = (function() {
+export const AuthResponse = $root.AuthResponse = (() => {
 
     /**
      * Properties of an AuthResponse.
@@ -697,7 +697,7 @@ $root.AuthResponse = (function() {
      */
     function AuthResponse(properties) {
         if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
                     this[keys[i]] = properties[keys[i]];
     }
@@ -766,9 +766,9 @@ $root.AuthResponse = (function() {
     AuthResponse.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.AuthResponse();
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.AuthResponse();
         while (reader.pos < end) {
-            var tag = reader.uint32();
+            let tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
                     message.accessToken = reader.string();
@@ -826,7 +826,7 @@ $root.AuthResponse = (function() {
     AuthResponse.fromObject = function fromObject(object) {
         if (object instanceof $root.AuthResponse)
             return object;
-        var message = new $root.AuthResponse();
+        let message = new $root.AuthResponse();
         if (object.accessToken != null)
             message.accessToken = String(object.accessToken);
         return message;
@@ -844,7 +844,7 @@ $root.AuthResponse = (function() {
     AuthResponse.toObject = function toObject(message, options) {
         if (!options)
             options = {};
-        var object = {};
+        let object = {};
         if (options.defaults)
             object.accessToken = "";
         if (message.accessToken != null && message.hasOwnProperty("accessToken"))
@@ -889,8 +889,8 @@ $root.AuthResponse = (function() {
  * @property {number} GET=1 GET value
  * @property {number} POST=2 POST value
  */
-$root.Method = (function() {
-    var valuesById = {}, values = Object.create(valuesById);
+export const Method = $root.Method = (() => {
+    const valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "NOT_USE_THIS"] = 0;
     values[valuesById[1] = "GET"] = 1;
     values[valuesById[2] = "POST"] = 2;
@@ -906,8 +906,8 @@ $root.Method = (function() {
  * @property {number} PLAYER=2 PLAYER value
  * @property {number} GAMESCRIPT=3 GAMESCRIPT value
  */
-$root.Service = (function() {
-    var valuesById = {}, values = Object.create(valuesById);
+export const Service = $root.Service = (() => {
+    const valuesById = {}, values = Object.create(valuesById);
     values[valuesById[0] = "NOT_USE_THIS"] = 0;
     values[valuesById[1] = "BLUEPRINT"] = 1;
     values[valuesById[2] = "PLAYER"] = 2;

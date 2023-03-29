@@ -9,14 +9,15 @@
     "dist-*"
   ],
   "scripts": {
-    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types'",
+    "build": "concurrently 'yarn:build:cjs' 'yarn:build:es' 'yarn:build:types' 'yarn:copy-dts'",
     "build:cjs": "tsc -p tsconfig.cjs.json",
     "build:es": "tsc -p tsconfig.es.json",
     "build:types": "tsc -p tsconfig.types.json",
     "lint": "eslint ./*.ts ./lib/**/*.ts",
     "build:proto": "yarn build:protojs && yarn build:protod",
-    "build:protojs": "pbjs -t static-module -w commonjs --keep-case -o ./src/proto/proto.js  ./proto/ProtoMessage.proto",
-    "build:protod": "pbts -o ./src/proto/proto.d.ts ./src/proto/proto.js"
+    "build:protojs": "pbjs -t static-module -w commonjs --keep-case --es6 -o ./src/proto/proto.js  ./proto/ProtoMessage.proto",
+    "build:protod": "pbts -o ./src/proto/proto.d.ts --no-comments ./src/proto/proto.js",
+    "copy-dts": "copyfiles -u 1 \"src/**/*.d.ts\" dist-types"
   },
   "engines": {
     "node": ">=14"
@@ -31,6 +32,7 @@
   "devDependencies": {
     "@types/node-fetch": "^2.6.2",
     "concurrently": "^7.6.0",
+    "copyfiles": "^2.4.1",
     "eslint": "^8.34.0",
     "protobufjs-cli": "^1.1.1",
     "ts-node": "^10.9.1",

@@ -8,5 +8,5 @@
     "rootDir": "src"
   },
   "extends": "../../tsconfig.types.json",
-  "include": ["./src/proto/proto.d.ts", "src/"]
+  "include": ["src/"]
 }
