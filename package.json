@@ -1,0 +1,18 @@
+{
+  "name": "oneb-sdk",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "build:proto":"lerna run build:proto",
+    "build": "lerna run build",
+    "clean": "yarn clear-build-info && yarn clear-build-cache  && lerna clean",
+    "clear-build-cache": "rimraf ./packages/*/dist-*",
+    "clear-build-info": "rimraf ./packages/*/*.tsbuildinfo"
+  },
+  "devDependencies": {
+    "lerna": "^6.6.1",
+    "rimraf": "3.0.2"
+  }
+}

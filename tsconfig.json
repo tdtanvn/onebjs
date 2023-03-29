@@ -1,0 +1,25 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "downlevelIteration": true,
+    "esModuleInterop": true,
+    "incremental": true,
+    "lib": ["es2015", "dom"],
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "noFallthroughCasesInSwitch": true,
+    "paths": {
+      "@oneb-sdk/*": ["packages/*/src"],
+    },
+    "preserveConstEnums": true,
+    "removeComments": true,
+    "resolveJsonModule": true,
+    "target": "es5",
+    "useUnknownInCatchVariables": false,
+    "experimentalDecorators": true,
+    "allowJs": true,
+    "checkJs": false
+  },
+  "include": ["packages/"],
+  "exclude": ["node_modules/", "**/*.spec.ts"]
+}

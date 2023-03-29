@@ -1,0 +1,34 @@
+syntax = "proto3";
+
+message ProtoMessage {
+   Service service            = 1;
+   string functionName        = 2;
+   string namespace           = 4;
+   repeated uint32 data       = 3;
+};
+
+message AuthLogin {
+   string playerId            = 1;
+   string secretKey           = 2;
+   string gameId              = 3;
+   string gameVersion         = 4;
+   string playerName          = 5;
+   string country             = 6;
+   string platform            = 7;
+};
+message AuthResponse {
+   string accessToken         = 1;
+};
+
+enum Method {
+   NOT_USE_THIS               = 0;
+   GET                        = 1;
+   POST                       = 2;
+};
+
+enum Service {
+   NOT_USE_THIS               = 0;
+   BLUEPRINT                  = 1;
+   PLAYER                     = 2;
+   GAMESCRIPT                 = 3;
+};

@@ -1,0 +1,11 @@
+.idea/
+.nyc_output/
+.vscode/
+coverage/
+dist/
+dist-*/
+node_modules/
+.DS_Store
+documentation/
+.js
+*.tsbuildinfo

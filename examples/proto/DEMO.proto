@@ -1,0 +1,268 @@
+syntax = "proto3";
+//
+// The content is generated automatically from blueprint schema
+// modified date: 2023-3-29 10:33:3
+//
+
+service Blueprint{
+  rpc characters (Empty) returns (CHARACTERS) {}
+  rpc daily_quest (Empty) returns (DAILY_QUEST) {}
+  rpc daily_rewards (Empty) returns (DAILY_REWARDS) {}
+  rpc equipments (Empty) returns (EQUIPMENTS) {}
+  rpc item_table (Empty) returns (ITEM_TABLE) {}
+  rpc lucky_wheel (Empty) returns (LUCKY_WHEEL) {}
+  rpc progress_quest (Empty) returns (PROGRESS_QUEST) {}
+  rpc test (Empty) returns (TEST) {}
+}
+message CHARACTERS {
+  message Items {
+    int32 basePointsSpecialAttack = 1;
+    int32 basePointsCriticalHit = 2;
+    int32 basePointsDefense = 3;
+    int32 basePointsAttack = 4;
+    int32 basePointsLife = 5;
+    string characterName = 6;
+    string id = 7;
+    string bioTitle = 8;
+    int32 basePointsAttackSpeed = 9;
+  }
+  
+  string name = 1;
+  repeated Items items = 2;
+}
+
+message DAILY_QUEST {
+  message Items {
+    int32 conditionReach = 1;
+    int32 rewardQuantity = 2;
+    string condition = 3;
+    string rewardId = 4;
+    string id = 5;
+    string questName = 6;
+  }
+  
+  repeated Items items = 1;
+}
+
+message DAILY_REWARDS {
+  message Steps {
+    string itemId = 1;
+    int32 step = 2;
+    int32 amount = 3;
+  }
+  
+  message DefaultRewardIfAlreadyOwned {
+    string itemId = 1;
+    int32 amount = 2;
+  }
+  
+  int32 hoursToReceive = 1;
+  bool resetIfFail = 2;
+  repeated Steps steps = 3;
+  bool enabled = 4;
+  DefaultRewardIfAlreadyOwned defaultRewardIfAlreadyOwned = 5;
+}
+
+message EQUIPMENTS {
+  message Items {
+    string image = 1;
+    string equipmentName = 2;
+    string id = 3;
+    string equipmentType = 4;
+    string rarity = 5;
+    int32 points = 6;
+  }
+  
+  repeated Items items = 1;
+}
+
+message ITEM_TABLE {
+  message Items {
+    string name = 1;
+    string type = 2;
+    string itemId = 3;
+  }
+  
+  repeated Items items = 1;
+}
+
+message LUCKY_WHEEL {
+  message Items {
+    string itemId = 1;
+    int32 weight = 2;
+    int32 quantity = 3;
+  }
+  
+  int32 minFullSpins = 1;
+  int32 maxFullSpins = 2;
+  repeated Items items = 3;
+  int32 dailyLimit = 4;
+}
+
+message PROGRESS_QUEST {
+  message Items {
+    int32 conditionReach = 1;
+    string condition = 2;
+    string rewardId = 3;
+    string questName = 4;
+    int32 rewardQuantity = 5;
+    string id = 6;
+    int32 levelUnlock = 7;
+  }
+  
+  repeated Items items = 1;
+}
+
+message TEST {
+  string name = 1;
+  string image = 2;
+}
+
+message Empty {}
+
+
+service GameScripts {
+  service Test{
+    rpc helloWorld(Empty) returns (TestHelloWorldRes){}
+  }
+  service Lucky_Wheel {
+    rpc claimItem(Empty) returns(LuckyWheelClaimItemOutput){}
+    rpc canClaimItem(Empty) returns(LuckyWheelCanClaimOutput){}
+    rpc getList(Empty) returns(LuckyWheel){}
+  }
+  service Daily_Rewards {
+    rpc canClaimRewards(Empty) returns(DailyRewardsCanClaimRewardOutput){}
+    rpc claimRewards(Empty) returns(DailyRewardsClaimRewardsOutput){}
+  }
+  service Daily_Quest {
+    rpc getList(Empty) returns(DailyQuestOutput){}
+    rpc updateQuest(DailyQuestUpdateQuestInput) returns(DailyQuestUpdateQuestOutput){}
+    rpc claimQuest(DailyQuestClaimQuestInput) returns(DailyQuestClaimQuestOutput){}
+  }
+  
+}
+message TestHelloWorldRes {
+    uint32 counter = 1;
+    string name= 2;
+}
+message DailyQuestOutput {
+ message Dailyquest {
+      uint32 conditionReach = 1;
+      uint32 rewardQuantity = 2;
+      string condition = 3;
+      string rewardId = 4;
+      string id = 5;
+      string questName = 6;
+      uint32 progress = 7;
+      bool canClaim = 8;
+  }
+
+  repeated Dailyquest dailyQuest = 1;
+}
+
+message DailyQuestUpdateQuestInput {
+  message Items {
+      string id = 1;
+      uint32 amount = 2;
+  }
+  repeated Items items = 1;
+}
+message DailyQuestUpdateQuestOutput {
+  repeated string questsCanClaim = 2;
+}
+message DailyQuestClaimQuestInput {
+  repeated string items = 1;
+}
+message DailyQuestClaimQuestOutput {
+ message Rewards {
+      string itemId = 1;
+      uint32 amount = 2;
+  }
+  repeated Rewards rewards = 1;
+}
+message DailyRewardsCanClaimRewardOutput {
+  message Rewards {
+      string itemId = 1;
+      uint32 step = 2;
+      uint32 amount = 3;
+  }
+
+  uint32 curStep = 1;
+  repeated Rewards rewards = 2;
+}
+
+message DailyRewardsClaimRewardsOutput {
+  message Rewards {
+        string itemId = 1;
+        uint32 amount = 2;
+    }
+
+  repeated Rewards rewards = 1;
+}
+message LuckyWheel {
+  message Items {
+        string itemId = 1;
+        uint32 weight = 2;
+        uint32 quantity = 3;
+    }
+
+    uint32 maxFullSpins = 1;
+    uint32 minFullSpins = 2;
+    uint32 dailyLimit = 3;
+    repeated Items items = 4;
+}
+message LuckyWheelCanClaimOutput {
+  bool canClaim = 1;
+}
+message LuckyWheelClaimItemOutput {
+  message Itemreward {
+        string itemId = 1;
+        uint32 weight = 2;
+        uint32 quantity = 3;
+    }
+
+    message Inventory {
+        string itemId = 1;
+        uint32 amount = 2;
+    }
+
+    message _luckywheel {
+        string lastClaim = 1;
+        uint32 dailySpins = 2;
+    }
+
+    Itemreward itemReward = 1;
+    repeated Inventory inventory = 2;
+    _luckywheel _luckyWheel = 3;
+}
+
+
+service Player {
+  rpc GetProfile(Empty) returns (PlayerProfileRes){}
+  rpc UpdateProfile(PlayerProfileReq) returns (PlayerProfileRes){}
+  rpc GetData(Empty) returns (PlayerDataRes){}
+
+}
+
+message PlayerProfileRes {
+    string playerName = 1;
+    uint64 created = 2;
+    string playerId = 3;
+    string gameId = 4;
+    string country = 5;
+    uint64 lastLogin = 6;
+    bool ban = 7;
+}
+message PlayerProfileReq {
+    string playerName = 1;
+    string country = 2;
+}
+message PlayerDataRes {
+    message Inventory {
+        string itemId = 1;
+        uint32 amount = 2;
+    }
+    string customField = 1;
+    repeated Inventory inventory = 2;
+    uint32 level = 3;
+}

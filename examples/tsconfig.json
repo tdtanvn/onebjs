@@ -1,0 +1,22 @@
+{
+   "compilerOptions": {
+      "target": "es2017",
+      "lib": ["es2015", "dom"],
+      "module": "commonjs",
+      "moduleResolution": "node",
+      "outDir": "dist",
+      "resolveJsonModule": true,
+      "emitDecoratorMetadata": true,
+      "esModuleInterop": true,
+      "experimentalDecorators": true,
+      "sourceMap": true,
+   },
+   "ts-node": {
+      "transpileOnly": true,
+      "compilerOptions": {
+        "module": "commonjs"
+   }
+    },
+   "include": ["*.ts"],
+   "exclude": ["node_modules", "**/*.spec.ts"]
+}

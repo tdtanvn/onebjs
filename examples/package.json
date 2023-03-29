@@ -1,0 +1,25 @@
+{
+  "name": "examples",
+  "version": "1.0.0",
+  "author": "oneb.tech",
+  "description": "example",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "build": "tsc",
+    "start": "ts-node index.ts",
+    "build:proto": "yarn build:protojs && yarn build:protod",
+    "build:protojs":"pbjs -t static-module -w commonjs --keep-case -o bundle.js  ./proto/DEMO.proto",
+    "build:protod":"pbts -o bundle.d.ts bundle.js"
+  },
+  "dependencies": {
+    "@oneb-sdk/client": "../packages/client",
+    "protobufjs": "^7.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^18.15.10",
+    "protobufjs-cli": "^1.1.1",
+    "ts-node": "^10.9.1",
+    "typescript": "^5.0.2"
+  }
+}
