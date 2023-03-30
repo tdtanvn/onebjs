@@ -236,6 +236,53 @@ message LuckyWheelClaimItemOutput {
     _luckywheel _luckyWheel = 3;
 }
 
+service Inbox{
+  rpc me (Empty) returns (InboxList) {}
+  rpc claim (InboxClaimInput) returns (InboxClaimOutput) {}
+  rpc markdelete (InboxDeleteInput) returns (InboxDeleteOutput) {}
+}
+message InboxList {
+    message Conditions {
+        string value = 1;
+        string operator = 2;
+        string fieldName = 3;
+    }
+
+    message Gifts {
+        string itemId = 1;
+        uint32 amount = 2;
+    }
+
+    message Items {
+        string content = 1;
+        repeated Conditions conditions = 2;
+        repeated Gifts gifts = 3;
+        uint32 expiryDate = 4;
+        string id = 5;
+        string title = 6;
+        bool canClaim = 7;
+    }
+
+    repeated Items items = 1;
+}
+message InboxClaimInput {
+   repeated string inboxList = 1;
+}
+message InboxClaimOutput {
+   message Inventory {
+        string itemId = 1;
+        uint32 amount = 2;
+    }
+   repeated Inventory inventory = 1;
+   repeated string inboxList    = 2;
+}
+message InboxDeleteInput {
+   repeated string inboxList = 1;
+}
+message InboxDeleteOutput {
+   repeated string inboxList = 1;
+}
+
 
 service Player {
   rpc GetProfile(Empty) returns (PlayerProfileRes){}

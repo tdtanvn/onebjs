@@ -20,6 +20,8 @@ export abstract class BaseCommand<T> implements ICommand {
     [ServiceName.PLAYER, Service.PLAYER],
     [ServiceName.BLUEPRINT, Service.BLUEPRINT],
     [ServiceName.GAMESCRIPT, Service.GAMESCRIPT],
+    [ServiceName.INBOX, Service.INBOX],
+    [ServiceName.LEADERBOARD, Service.LEADERBOARD]
   ]);
   protected namespace?: string;
   protected name!: string;

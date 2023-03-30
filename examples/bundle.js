@@ -10128,6 +10128,2375 @@ $root.LuckyWheelClaimItemOutput = (function() {
     return LuckyWheelClaimItemOutput;
 })();
 
+$root.Inbox = (function() {
+
+    /**
+     * Constructs a new Inbox service.
+     * @exports Inbox
+     * @classdesc Represents an Inbox
+     * @extends $protobuf.rpc.Service
+     * @constructor
+     * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+     * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+     * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+     */
+    function Inbox(rpcImpl, requestDelimited, responseDelimited) {
+        $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+    }
+
+    (Inbox.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Inbox;
+
+    /**
+     * Creates new Inbox service using the specified rpc implementation.
+     * @function create
+     * @memberof Inbox
+     * @static
+     * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+     * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+     * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+     * @returns {Inbox} RPC service. Useful where requests and/or responses are streamed.
+     */
+    Inbox.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+        return new this(rpcImpl, requestDelimited, responseDelimited);
+    };
+
+    /**
+     * Callback as used by {@link Inbox#me}.
+     * @memberof Inbox
+     * @typedef meCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {InboxList} [response] InboxList
+     */
+
+    /**
+     * Calls me.
+     * @function me
+     * @memberof Inbox
+     * @instance
+     * @param {IEmpty} request Empty message or plain object
+     * @param {Inbox.meCallback} callback Node-style callback called with the error, if any, and InboxList
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(Inbox.prototype.me = function me(request, callback) {
+        return this.rpcCall(me, $root.Empty, $root.InboxList, request, callback);
+    }, "name", { value: "me" });
+
+    /**
+     * Calls me.
+     * @function me
+     * @memberof Inbox
+     * @instance
+     * @param {IEmpty} request Empty message or plain object
+     * @returns {Promise<InboxList>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link Inbox#claim}.
+     * @memberof Inbox
+     * @typedef claimCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {InboxClaimOutput} [response] InboxClaimOutput
+     */
+
+    /**
+     * Calls claim.
+     * @function claim
+     * @memberof Inbox
+     * @instance
+     * @param {IInboxClaimInput} request InboxClaimInput message or plain object
+     * @param {Inbox.claimCallback} callback Node-style callback called with the error, if any, and InboxClaimOutput
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(Inbox.prototype.claim = function claim(request, callback) {
+        return this.rpcCall(claim, $root.InboxClaimInput, $root.InboxClaimOutput, request, callback);
+    }, "name", { value: "claim" });
+
+    /**
+     * Calls claim.
+     * @function claim
+     * @memberof Inbox
+     * @instance
+     * @param {IInboxClaimInput} request InboxClaimInput message or plain object
+     * @returns {Promise<InboxClaimOutput>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link Inbox#markdelete}.
+     * @memberof Inbox
+     * @typedef markdeleteCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {InboxDeleteOutput} [response] InboxDeleteOutput
+     */
+
+    /**
+     * Calls markdelete.
+     * @function markdelete
+     * @memberof Inbox
+     * @instance
+     * @param {IInboxDeleteInput} request InboxDeleteInput message or plain object
+     * @param {Inbox.markdeleteCallback} callback Node-style callback called with the error, if any, and InboxDeleteOutput
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(Inbox.prototype.markdelete = function markdelete(request, callback) {
+        return this.rpcCall(markdelete, $root.InboxDeleteInput, $root.InboxDeleteOutput, request, callback);
+    }, "name", { value: "markdelete" });
+
+    /**
+     * Calls markdelete.
+     * @function markdelete
+     * @memberof Inbox
+     * @instance
+     * @param {IInboxDeleteInput} request InboxDeleteInput message or plain object
+     * @returns {Promise<InboxDeleteOutput>} Promise
+     * @variation 2
+     */
+
+    return Inbox;
+})();
+
+$root.InboxList = (function() {
+
+    /**
+     * Properties of an InboxList.
+     * @exports IInboxList
+     * @interface IInboxList
+     * @property {Array.<InboxList.IItems>|null} [items] InboxList items
+     */
+
+    /**
+     * Constructs a new InboxList.
+     * @exports InboxList
+     * @classdesc Represents an InboxList.
+     * @implements IInboxList
+     * @constructor
+     * @param {IInboxList=} [properties] Properties to set
+     */
+    function InboxList(properties) {
+        this.items = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * InboxList items.
+     * @member {Array.<InboxList.IItems>} items
+     * @memberof InboxList
+     * @instance
+     */
+    InboxList.prototype.items = $util.emptyArray;
+
+    /**
+     * Creates a new InboxList instance using the specified properties.
+     * @function create
+     * @memberof InboxList
+     * @static
+     * @param {IInboxList=} [properties] Properties to set
+     * @returns {InboxList} InboxList instance
+     */
+    InboxList.create = function create(properties) {
+        return new InboxList(properties);
+    };
+
+    /**
+     * Encodes the specified InboxList message. Does not implicitly {@link InboxList.verify|verify} messages.
+     * @function encode
+     * @memberof InboxList
+     * @static
+     * @param {IInboxList} message InboxList message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxList.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.items != null && message.items.length)
+            for (var i = 0; i < message.items.length; ++i)
+                $root.InboxList.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified InboxList message, length delimited. Does not implicitly {@link InboxList.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof InboxList
+     * @static
+     * @param {IInboxList} message InboxList message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxList.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an InboxList message from the specified reader or buffer.
+     * @function decode
+     * @memberof InboxList
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {InboxList} InboxList
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxList.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxList();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.items && message.items.length))
+                        message.items = [];
+                    message.items.push($root.InboxList.Items.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an InboxList message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof InboxList
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {InboxList} InboxList
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxList.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an InboxList message.
+     * @function verify
+     * @memberof InboxList
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    InboxList.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.items != null && message.hasOwnProperty("items")) {
+            if (!Array.isArray(message.items))
+                return "items: array expected";
+            for (var i = 0; i < message.items.length; ++i) {
+                var error = $root.InboxList.Items.verify(message.items[i]);
+                if (error)
+                    return "items." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates an InboxList message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof InboxList
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {InboxList} InboxList
+     */
+    InboxList.fromObject = function fromObject(object) {
+        if (object instanceof $root.InboxList)
+            return object;
+        var message = new $root.InboxList();
+        if (object.items) {
+            if (!Array.isArray(object.items))
+                throw TypeError(".InboxList.items: array expected");
+            message.items = [];
+            for (var i = 0; i < object.items.length; ++i) {
+                if (typeof object.items[i] !== "object")
+                    throw TypeError(".InboxList.items: object expected");
+                message.items[i] = $root.InboxList.Items.fromObject(object.items[i]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an InboxList message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof InboxList
+     * @static
+     * @param {InboxList} message InboxList
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    InboxList.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.items = [];
+        if (message.items && message.items.length) {
+            object.items = [];
+            for (var j = 0; j < message.items.length; ++j)
+                object.items[j] = $root.InboxList.Items.toObject(message.items[j], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this InboxList to JSON.
+     * @function toJSON
+     * @memberof InboxList
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    InboxList.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for InboxList
+     * @function getTypeUrl
+     * @memberof InboxList
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    InboxList.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/InboxList";
+    };
+
+    InboxList.Conditions = (function() {
+
+        /**
+         * Properties of a Conditions.
+         * @memberof InboxList
+         * @interface IConditions
+         * @property {string|null} [value] Conditions value
+         * @property {string|null} [operator] Conditions operator
+         * @property {string|null} [fieldName] Conditions fieldName
+         */
+
+        /**
+         * Constructs a new Conditions.
+         * @memberof InboxList
+         * @classdesc Represents a Conditions.
+         * @implements IConditions
+         * @constructor
+         * @param {InboxList.IConditions=} [properties] Properties to set
+         */
+        function Conditions(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Conditions value.
+         * @member {string} value
+         * @memberof InboxList.Conditions
+         * @instance
+         */
+        Conditions.prototype.value = "";
+
+        /**
+         * Conditions operator.
+         * @member {string} operator
+         * @memberof InboxList.Conditions
+         * @instance
+         */
+        Conditions.prototype.operator = "";
+
+        /**
+         * Conditions fieldName.
+         * @member {string} fieldName
+         * @memberof InboxList.Conditions
+         * @instance
+         */
+        Conditions.prototype.fieldName = "";
+
+        /**
+         * Creates a new Conditions instance using the specified properties.
+         * @function create
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {InboxList.IConditions=} [properties] Properties to set
+         * @returns {InboxList.Conditions} Conditions instance
+         */
+        Conditions.create = function create(properties) {
+            return new Conditions(properties);
+        };
+
+        /**
+         * Encodes the specified Conditions message. Does not implicitly {@link InboxList.Conditions.verify|verify} messages.
+         * @function encode
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {InboxList.IConditions} message Conditions message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Conditions.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.value != null && Object.hasOwnProperty.call(message, "value"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.value);
+            if (message.operator != null && Object.hasOwnProperty.call(message, "operator"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.operator);
+            if (message.fieldName != null && Object.hasOwnProperty.call(message, "fieldName"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.fieldName);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Conditions message, length delimited. Does not implicitly {@link InboxList.Conditions.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {InboxList.IConditions} message Conditions message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Conditions.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a Conditions message from the specified reader or buffer.
+         * @function decode
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {InboxList.Conditions} Conditions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Conditions.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxList.Conditions();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.value = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.operator = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.fieldName = reader.string();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a Conditions message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {InboxList.Conditions} Conditions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Conditions.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a Conditions message.
+         * @function verify
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Conditions.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.value != null && message.hasOwnProperty("value"))
+                if (!$util.isString(message.value))
+                    return "value: string expected";
+            if (message.operator != null && message.hasOwnProperty("operator"))
+                if (!$util.isString(message.operator))
+                    return "operator: string expected";
+            if (message.fieldName != null && message.hasOwnProperty("fieldName"))
+                if (!$util.isString(message.fieldName))
+                    return "fieldName: string expected";
+            return null;
+        };
+
+        /**
+         * Creates a Conditions message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {InboxList.Conditions} Conditions
+         */
+        Conditions.fromObject = function fromObject(object) {
+            if (object instanceof $root.InboxList.Conditions)
+                return object;
+            var message = new $root.InboxList.Conditions();
+            if (object.value != null)
+                message.value = String(object.value);
+            if (object.operator != null)
+                message.operator = String(object.operator);
+            if (object.fieldName != null)
+                message.fieldName = String(object.fieldName);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a Conditions message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {InboxList.Conditions} message Conditions
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Conditions.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.value = "";
+                object.operator = "";
+                object.fieldName = "";
+            }
+            if (message.value != null && message.hasOwnProperty("value"))
+                object.value = message.value;
+            if (message.operator != null && message.hasOwnProperty("operator"))
+                object.operator = message.operator;
+            if (message.fieldName != null && message.hasOwnProperty("fieldName"))
+                object.fieldName = message.fieldName;
+            return object;
+        };
+
+        /**
+         * Converts this Conditions to JSON.
+         * @function toJSON
+         * @memberof InboxList.Conditions
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Conditions.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Conditions
+         * @function getTypeUrl
+         * @memberof InboxList.Conditions
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Conditions.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/InboxList.Conditions";
+        };
+
+        return Conditions;
+    })();
+
+    InboxList.Gifts = (function() {
+
+        /**
+         * Properties of a Gifts.
+         * @memberof InboxList
+         * @interface IGifts
+         * @property {string|null} [itemId] Gifts itemId
+         * @property {number|null} [amount] Gifts amount
+         */
+
+        /**
+         * Constructs a new Gifts.
+         * @memberof InboxList
+         * @classdesc Represents a Gifts.
+         * @implements IGifts
+         * @constructor
+         * @param {InboxList.IGifts=} [properties] Properties to set
+         */
+        function Gifts(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Gifts itemId.
+         * @member {string} itemId
+         * @memberof InboxList.Gifts
+         * @instance
+         */
+        Gifts.prototype.itemId = "";
+
+        /**
+         * Gifts amount.
+         * @member {number} amount
+         * @memberof InboxList.Gifts
+         * @instance
+         */
+        Gifts.prototype.amount = 0;
+
+        /**
+         * Creates a new Gifts instance using the specified properties.
+         * @function create
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {InboxList.IGifts=} [properties] Properties to set
+         * @returns {InboxList.Gifts} Gifts instance
+         */
+        Gifts.create = function create(properties) {
+            return new Gifts(properties);
+        };
+
+        /**
+         * Encodes the specified Gifts message. Does not implicitly {@link InboxList.Gifts.verify|verify} messages.
+         * @function encode
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {InboxList.IGifts} message Gifts message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Gifts.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.itemId != null && Object.hasOwnProperty.call(message, "itemId"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.itemId);
+            if (message.amount != null && Object.hasOwnProperty.call(message, "amount"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.amount);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Gifts message, length delimited. Does not implicitly {@link InboxList.Gifts.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {InboxList.IGifts} message Gifts message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Gifts.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a Gifts message from the specified reader or buffer.
+         * @function decode
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {InboxList.Gifts} Gifts
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Gifts.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxList.Gifts();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.itemId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.amount = reader.uint32();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a Gifts message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {InboxList.Gifts} Gifts
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Gifts.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a Gifts message.
+         * @function verify
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Gifts.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.itemId != null && message.hasOwnProperty("itemId"))
+                if (!$util.isString(message.itemId))
+                    return "itemId: string expected";
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                if (!$util.isInteger(message.amount))
+                    return "amount: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a Gifts message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {InboxList.Gifts} Gifts
+         */
+        Gifts.fromObject = function fromObject(object) {
+            if (object instanceof $root.InboxList.Gifts)
+                return object;
+            var message = new $root.InboxList.Gifts();
+            if (object.itemId != null)
+                message.itemId = String(object.itemId);
+            if (object.amount != null)
+                message.amount = object.amount >>> 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a Gifts message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {InboxList.Gifts} message Gifts
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Gifts.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.itemId = "";
+                object.amount = 0;
+            }
+            if (message.itemId != null && message.hasOwnProperty("itemId"))
+                object.itemId = message.itemId;
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                object.amount = message.amount;
+            return object;
+        };
+
+        /**
+         * Converts this Gifts to JSON.
+         * @function toJSON
+         * @memberof InboxList.Gifts
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Gifts.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Gifts
+         * @function getTypeUrl
+         * @memberof InboxList.Gifts
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Gifts.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/InboxList.Gifts";
+        };
+
+        return Gifts;
+    })();
+
+    InboxList.Items = (function() {
+
+        /**
+         * Properties of an Items.
+         * @memberof InboxList
+         * @interface IItems
+         * @property {string|null} [content] Items content
+         * @property {Array.<InboxList.IConditions>|null} [conditions] Items conditions
+         * @property {Array.<InboxList.IGifts>|null} [gifts] Items gifts
+         * @property {number|null} [expiryDate] Items expiryDate
+         * @property {string|null} [id] Items id
+         * @property {string|null} [title] Items title
+         * @property {boolean|null} [canClaim] Items canClaim
+         */
+
+        /**
+         * Constructs a new Items.
+         * @memberof InboxList
+         * @classdesc Represents an Items.
+         * @implements IItems
+         * @constructor
+         * @param {InboxList.IItems=} [properties] Properties to set
+         */
+        function Items(properties) {
+            this.conditions = [];
+            this.gifts = [];
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Items content.
+         * @member {string} content
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.content = "";
+
+        /**
+         * Items conditions.
+         * @member {Array.<InboxList.IConditions>} conditions
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.conditions = $util.emptyArray;
+
+        /**
+         * Items gifts.
+         * @member {Array.<InboxList.IGifts>} gifts
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.gifts = $util.emptyArray;
+
+        /**
+         * Items expiryDate.
+         * @member {number} expiryDate
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.expiryDate = 0;
+
+        /**
+         * Items id.
+         * @member {string} id
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.id = "";
+
+        /**
+         * Items title.
+         * @member {string} title
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.title = "";
+
+        /**
+         * Items canClaim.
+         * @member {boolean} canClaim
+         * @memberof InboxList.Items
+         * @instance
+         */
+        Items.prototype.canClaim = false;
+
+        /**
+         * Creates a new Items instance using the specified properties.
+         * @function create
+         * @memberof InboxList.Items
+         * @static
+         * @param {InboxList.IItems=} [properties] Properties to set
+         * @returns {InboxList.Items} Items instance
+         */
+        Items.create = function create(properties) {
+            return new Items(properties);
+        };
+
+        /**
+         * Encodes the specified Items message. Does not implicitly {@link InboxList.Items.verify|verify} messages.
+         * @function encode
+         * @memberof InboxList.Items
+         * @static
+         * @param {InboxList.IItems} message Items message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Items.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.content != null && Object.hasOwnProperty.call(message, "content"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.content);
+            if (message.conditions != null && message.conditions.length)
+                for (var i = 0; i < message.conditions.length; ++i)
+                    $root.InboxList.Conditions.encode(message.conditions[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.gifts != null && message.gifts.length)
+                for (var i = 0; i < message.gifts.length; ++i)
+                    $root.InboxList.Gifts.encode(message.gifts[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+            if (message.expiryDate != null && Object.hasOwnProperty.call(message, "expiryDate"))
+                writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.expiryDate);
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.id);
+            if (message.title != null && Object.hasOwnProperty.call(message, "title"))
+                writer.uint32(/* id 6, wireType 2 =*/50).string(message.title);
+            if (message.canClaim != null && Object.hasOwnProperty.call(message, "canClaim"))
+                writer.uint32(/* id 7, wireType 0 =*/56).bool(message.canClaim);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link InboxList.Items.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof InboxList.Items
+         * @static
+         * @param {InboxList.IItems} message Items message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Items.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an Items message from the specified reader or buffer.
+         * @function decode
+         * @memberof InboxList.Items
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {InboxList.Items} Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Items.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxList.Items();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.content = reader.string();
+                        break;
+                    }
+                case 2: {
+                        if (!(message.conditions && message.conditions.length))
+                            message.conditions = [];
+                        message.conditions.push($root.InboxList.Conditions.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 3: {
+                        if (!(message.gifts && message.gifts.length))
+                            message.gifts = [];
+                        message.gifts.push($root.InboxList.Gifts.decode(reader, reader.uint32()));
+                        break;
+                    }
+                case 4: {
+                        message.expiryDate = reader.uint32();
+                        break;
+                    }
+                case 5: {
+                        message.id = reader.string();
+                        break;
+                    }
+                case 6: {
+                        message.title = reader.string();
+                        break;
+                    }
+                case 7: {
+                        message.canClaim = reader.bool();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof InboxList.Items
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {InboxList.Items} Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Items.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an Items message.
+         * @function verify
+         * @memberof InboxList.Items
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Items.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.content != null && message.hasOwnProperty("content"))
+                if (!$util.isString(message.content))
+                    return "content: string expected";
+            if (message.conditions != null && message.hasOwnProperty("conditions")) {
+                if (!Array.isArray(message.conditions))
+                    return "conditions: array expected";
+                for (var i = 0; i < message.conditions.length; ++i) {
+                    var error = $root.InboxList.Conditions.verify(message.conditions[i]);
+                    if (error)
+                        return "conditions." + error;
+                }
+            }
+            if (message.gifts != null && message.hasOwnProperty("gifts")) {
+                if (!Array.isArray(message.gifts))
+                    return "gifts: array expected";
+                for (var i = 0; i < message.gifts.length; ++i) {
+                    var error = $root.InboxList.Gifts.verify(message.gifts[i]);
+                    if (error)
+                        return "gifts." + error;
+                }
+            }
+            if (message.expiryDate != null && message.hasOwnProperty("expiryDate"))
+                if (!$util.isInteger(message.expiryDate))
+                    return "expiryDate: integer expected";
+            if (message.id != null && message.hasOwnProperty("id"))
+                if (!$util.isString(message.id))
+                    return "id: string expected";
+            if (message.title != null && message.hasOwnProperty("title"))
+                if (!$util.isString(message.title))
+                    return "title: string expected";
+            if (message.canClaim != null && message.hasOwnProperty("canClaim"))
+                if (typeof message.canClaim !== "boolean")
+                    return "canClaim: boolean expected";
+            return null;
+        };
+
+        /**
+         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof InboxList.Items
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {InboxList.Items} Items
+         */
+        Items.fromObject = function fromObject(object) {
+            if (object instanceof $root.InboxList.Items)
+                return object;
+            var message = new $root.InboxList.Items();
+            if (object.content != null)
+                message.content = String(object.content);
+            if (object.conditions) {
+                if (!Array.isArray(object.conditions))
+                    throw TypeError(".InboxList.Items.conditions: array expected");
+                message.conditions = [];
+                for (var i = 0; i < object.conditions.length; ++i) {
+                    if (typeof object.conditions[i] !== "object")
+                        throw TypeError(".InboxList.Items.conditions: object expected");
+                    message.conditions[i] = $root.InboxList.Conditions.fromObject(object.conditions[i]);
+                }
+            }
+            if (object.gifts) {
+                if (!Array.isArray(object.gifts))
+                    throw TypeError(".InboxList.Items.gifts: array expected");
+                message.gifts = [];
+                for (var i = 0; i < object.gifts.length; ++i) {
+                    if (typeof object.gifts[i] !== "object")
+                        throw TypeError(".InboxList.Items.gifts: object expected");
+                    message.gifts[i] = $root.InboxList.Gifts.fromObject(object.gifts[i]);
+                }
+            }
+            if (object.expiryDate != null)
+                message.expiryDate = object.expiryDate >>> 0;
+            if (object.id != null)
+                message.id = String(object.id);
+            if (object.title != null)
+                message.title = String(object.title);
+            if (object.canClaim != null)
+                message.canClaim = Boolean(object.canClaim);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof InboxList.Items
+         * @static
+         * @param {InboxList.Items} message Items
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Items.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.arrays || options.defaults) {
+                object.conditions = [];
+                object.gifts = [];
+            }
+            if (options.defaults) {
+                object.content = "";
+                object.expiryDate = 0;
+                object.id = "";
+                object.title = "";
+                object.canClaim = false;
+            }
+            if (message.content != null && message.hasOwnProperty("content"))
+                object.content = message.content;
+            if (message.conditions && message.conditions.length) {
+                object.conditions = [];
+                for (var j = 0; j < message.conditions.length; ++j)
+                    object.conditions[j] = $root.InboxList.Conditions.toObject(message.conditions[j], options);
+            }
+            if (message.gifts && message.gifts.length) {
+                object.gifts = [];
+                for (var j = 0; j < message.gifts.length; ++j)
+                    object.gifts[j] = $root.InboxList.Gifts.toObject(message.gifts[j], options);
+            }
+            if (message.expiryDate != null && message.hasOwnProperty("expiryDate"))
+                object.expiryDate = message.expiryDate;
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.title != null && message.hasOwnProperty("title"))
+                object.title = message.title;
+            if (message.canClaim != null && message.hasOwnProperty("canClaim"))
+                object.canClaim = message.canClaim;
+            return object;
+        };
+
+        /**
+         * Converts this Items to JSON.
+         * @function toJSON
+         * @memberof InboxList.Items
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Items.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Items
+         * @function getTypeUrl
+         * @memberof InboxList.Items
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/InboxList.Items";
+        };
+
+        return Items;
+    })();
+
+    return InboxList;
+})();
+
+$root.InboxClaimInput = (function() {
+
+    /**
+     * Properties of an InboxClaimInput.
+     * @exports IInboxClaimInput
+     * @interface IInboxClaimInput
+     * @property {Array.<string>|null} [inboxList] InboxClaimInput inboxList
+     */
+
+    /**
+     * Constructs a new InboxClaimInput.
+     * @exports InboxClaimInput
+     * @classdesc Represents an InboxClaimInput.
+     * @implements IInboxClaimInput
+     * @constructor
+     * @param {IInboxClaimInput=} [properties] Properties to set
+     */
+    function InboxClaimInput(properties) {
+        this.inboxList = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * InboxClaimInput inboxList.
+     * @member {Array.<string>} inboxList
+     * @memberof InboxClaimInput
+     * @instance
+     */
+    InboxClaimInput.prototype.inboxList = $util.emptyArray;
+
+    /**
+     * Creates a new InboxClaimInput instance using the specified properties.
+     * @function create
+     * @memberof InboxClaimInput
+     * @static
+     * @param {IInboxClaimInput=} [properties] Properties to set
+     * @returns {InboxClaimInput} InboxClaimInput instance
+     */
+    InboxClaimInput.create = function create(properties) {
+        return new InboxClaimInput(properties);
+    };
+
+    /**
+     * Encodes the specified InboxClaimInput message. Does not implicitly {@link InboxClaimInput.verify|verify} messages.
+     * @function encode
+     * @memberof InboxClaimInput
+     * @static
+     * @param {IInboxClaimInput} message InboxClaimInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxClaimInput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.inboxList != null && message.inboxList.length)
+            for (var i = 0; i < message.inboxList.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.inboxList[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified InboxClaimInput message, length delimited. Does not implicitly {@link InboxClaimInput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof InboxClaimInput
+     * @static
+     * @param {IInboxClaimInput} message InboxClaimInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxClaimInput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an InboxClaimInput message from the specified reader or buffer.
+     * @function decode
+     * @memberof InboxClaimInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {InboxClaimInput} InboxClaimInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxClaimInput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxClaimInput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.inboxList && message.inboxList.length))
+                        message.inboxList = [];
+                    message.inboxList.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an InboxClaimInput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof InboxClaimInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {InboxClaimInput} InboxClaimInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxClaimInput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an InboxClaimInput message.
+     * @function verify
+     * @memberof InboxClaimInput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    InboxClaimInput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.inboxList != null && message.hasOwnProperty("inboxList")) {
+            if (!Array.isArray(message.inboxList))
+                return "inboxList: array expected";
+            for (var i = 0; i < message.inboxList.length; ++i)
+                if (!$util.isString(message.inboxList[i]))
+                    return "inboxList: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates an InboxClaimInput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof InboxClaimInput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {InboxClaimInput} InboxClaimInput
+     */
+    InboxClaimInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.InboxClaimInput)
+            return object;
+        var message = new $root.InboxClaimInput();
+        if (object.inboxList) {
+            if (!Array.isArray(object.inboxList))
+                throw TypeError(".InboxClaimInput.inboxList: array expected");
+            message.inboxList = [];
+            for (var i = 0; i < object.inboxList.length; ++i)
+                message.inboxList[i] = String(object.inboxList[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an InboxClaimInput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof InboxClaimInput
+     * @static
+     * @param {InboxClaimInput} message InboxClaimInput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    InboxClaimInput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.inboxList = [];
+        if (message.inboxList && message.inboxList.length) {
+            object.inboxList = [];
+            for (var j = 0; j < message.inboxList.length; ++j)
+                object.inboxList[j] = message.inboxList[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this InboxClaimInput to JSON.
+     * @function toJSON
+     * @memberof InboxClaimInput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    InboxClaimInput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for InboxClaimInput
+     * @function getTypeUrl
+     * @memberof InboxClaimInput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    InboxClaimInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/InboxClaimInput";
+    };
+
+    return InboxClaimInput;
+})();
+
+$root.InboxClaimOutput = (function() {
+
+    /**
+     * Properties of an InboxClaimOutput.
+     * @exports IInboxClaimOutput
+     * @interface IInboxClaimOutput
+     * @property {Array.<InboxClaimOutput.IInventory>|null} [inventory] InboxClaimOutput inventory
+     * @property {Array.<string>|null} [inboxList] InboxClaimOutput inboxList
+     */
+
+    /**
+     * Constructs a new InboxClaimOutput.
+     * @exports InboxClaimOutput
+     * @classdesc Represents an InboxClaimOutput.
+     * @implements IInboxClaimOutput
+     * @constructor
+     * @param {IInboxClaimOutput=} [properties] Properties to set
+     */
+    function InboxClaimOutput(properties) {
+        this.inventory = [];
+        this.inboxList = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * InboxClaimOutput inventory.
+     * @member {Array.<InboxClaimOutput.IInventory>} inventory
+     * @memberof InboxClaimOutput
+     * @instance
+     */
+    InboxClaimOutput.prototype.inventory = $util.emptyArray;
+
+    /**
+     * InboxClaimOutput inboxList.
+     * @member {Array.<string>} inboxList
+     * @memberof InboxClaimOutput
+     * @instance
+     */
+    InboxClaimOutput.prototype.inboxList = $util.emptyArray;
+
+    /**
+     * Creates a new InboxClaimOutput instance using the specified properties.
+     * @function create
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {IInboxClaimOutput=} [properties] Properties to set
+     * @returns {InboxClaimOutput} InboxClaimOutput instance
+     */
+    InboxClaimOutput.create = function create(properties) {
+        return new InboxClaimOutput(properties);
+    };
+
+    /**
+     * Encodes the specified InboxClaimOutput message. Does not implicitly {@link InboxClaimOutput.verify|verify} messages.
+     * @function encode
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {IInboxClaimOutput} message InboxClaimOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxClaimOutput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.inventory != null && message.inventory.length)
+            for (var i = 0; i < message.inventory.length; ++i)
+                $root.InboxClaimOutput.Inventory.encode(message.inventory[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.inboxList != null && message.inboxList.length)
+            for (var i = 0; i < message.inboxList.length; ++i)
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.inboxList[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified InboxClaimOutput message, length delimited. Does not implicitly {@link InboxClaimOutput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {IInboxClaimOutput} message InboxClaimOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxClaimOutput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an InboxClaimOutput message from the specified reader or buffer.
+     * @function decode
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {InboxClaimOutput} InboxClaimOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxClaimOutput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxClaimOutput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.inventory && message.inventory.length))
+                        message.inventory = [];
+                    message.inventory.push($root.InboxClaimOutput.Inventory.decode(reader, reader.uint32()));
+                    break;
+                }
+            case 2: {
+                    if (!(message.inboxList && message.inboxList.length))
+                        message.inboxList = [];
+                    message.inboxList.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an InboxClaimOutput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {InboxClaimOutput} InboxClaimOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxClaimOutput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an InboxClaimOutput message.
+     * @function verify
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    InboxClaimOutput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.inventory != null && message.hasOwnProperty("inventory")) {
+            if (!Array.isArray(message.inventory))
+                return "inventory: array expected";
+            for (var i = 0; i < message.inventory.length; ++i) {
+                var error = $root.InboxClaimOutput.Inventory.verify(message.inventory[i]);
+                if (error)
+                    return "inventory." + error;
+            }
+        }
+        if (message.inboxList != null && message.hasOwnProperty("inboxList")) {
+            if (!Array.isArray(message.inboxList))
+                return "inboxList: array expected";
+            for (var i = 0; i < message.inboxList.length; ++i)
+                if (!$util.isString(message.inboxList[i]))
+                    return "inboxList: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates an InboxClaimOutput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {InboxClaimOutput} InboxClaimOutput
+     */
+    InboxClaimOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.InboxClaimOutput)
+            return object;
+        var message = new $root.InboxClaimOutput();
+        if (object.inventory) {
+            if (!Array.isArray(object.inventory))
+                throw TypeError(".InboxClaimOutput.inventory: array expected");
+            message.inventory = [];
+            for (var i = 0; i < object.inventory.length; ++i) {
+                if (typeof object.inventory[i] !== "object")
+                    throw TypeError(".InboxClaimOutput.inventory: object expected");
+                message.inventory[i] = $root.InboxClaimOutput.Inventory.fromObject(object.inventory[i]);
+            }
+        }
+        if (object.inboxList) {
+            if (!Array.isArray(object.inboxList))
+                throw TypeError(".InboxClaimOutput.inboxList: array expected");
+            message.inboxList = [];
+            for (var i = 0; i < object.inboxList.length; ++i)
+                message.inboxList[i] = String(object.inboxList[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an InboxClaimOutput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {InboxClaimOutput} message InboxClaimOutput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    InboxClaimOutput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults) {
+            object.inventory = [];
+            object.inboxList = [];
+        }
+        if (message.inventory && message.inventory.length) {
+            object.inventory = [];
+            for (var j = 0; j < message.inventory.length; ++j)
+                object.inventory[j] = $root.InboxClaimOutput.Inventory.toObject(message.inventory[j], options);
+        }
+        if (message.inboxList && message.inboxList.length) {
+            object.inboxList = [];
+            for (var j = 0; j < message.inboxList.length; ++j)
+                object.inboxList[j] = message.inboxList[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this InboxClaimOutput to JSON.
+     * @function toJSON
+     * @memberof InboxClaimOutput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    InboxClaimOutput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for InboxClaimOutput
+     * @function getTypeUrl
+     * @memberof InboxClaimOutput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    InboxClaimOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/InboxClaimOutput";
+    };
+
+    InboxClaimOutput.Inventory = (function() {
+
+        /**
+         * Properties of an Inventory.
+         * @memberof InboxClaimOutput
+         * @interface IInventory
+         * @property {string|null} [itemId] Inventory itemId
+         * @property {number|null} [amount] Inventory amount
+         */
+
+        /**
+         * Constructs a new Inventory.
+         * @memberof InboxClaimOutput
+         * @classdesc Represents an Inventory.
+         * @implements IInventory
+         * @constructor
+         * @param {InboxClaimOutput.IInventory=} [properties] Properties to set
+         */
+        function Inventory(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Inventory itemId.
+         * @member {string} itemId
+         * @memberof InboxClaimOutput.Inventory
+         * @instance
+         */
+        Inventory.prototype.itemId = "";
+
+        /**
+         * Inventory amount.
+         * @member {number} amount
+         * @memberof InboxClaimOutput.Inventory
+         * @instance
+         */
+        Inventory.prototype.amount = 0;
+
+        /**
+         * Creates a new Inventory instance using the specified properties.
+         * @function create
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {InboxClaimOutput.IInventory=} [properties] Properties to set
+         * @returns {InboxClaimOutput.Inventory} Inventory instance
+         */
+        Inventory.create = function create(properties) {
+            return new Inventory(properties);
+        };
+
+        /**
+         * Encodes the specified Inventory message. Does not implicitly {@link InboxClaimOutput.Inventory.verify|verify} messages.
+         * @function encode
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {InboxClaimOutput.IInventory} message Inventory message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Inventory.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.itemId != null && Object.hasOwnProperty.call(message, "itemId"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.itemId);
+            if (message.amount != null && Object.hasOwnProperty.call(message, "amount"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.amount);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Inventory message, length delimited. Does not implicitly {@link InboxClaimOutput.Inventory.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {InboxClaimOutput.IInventory} message Inventory message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Inventory.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an Inventory message from the specified reader or buffer.
+         * @function decode
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {InboxClaimOutput.Inventory} Inventory
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Inventory.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxClaimOutput.Inventory();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.itemId = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.amount = reader.uint32();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an Inventory message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {InboxClaimOutput.Inventory} Inventory
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Inventory.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an Inventory message.
+         * @function verify
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Inventory.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.itemId != null && message.hasOwnProperty("itemId"))
+                if (!$util.isString(message.itemId))
+                    return "itemId: string expected";
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                if (!$util.isInteger(message.amount))
+                    return "amount: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates an Inventory message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {InboxClaimOutput.Inventory} Inventory
+         */
+        Inventory.fromObject = function fromObject(object) {
+            if (object instanceof $root.InboxClaimOutput.Inventory)
+                return object;
+            var message = new $root.InboxClaimOutput.Inventory();
+            if (object.itemId != null)
+                message.itemId = String(object.itemId);
+            if (object.amount != null)
+                message.amount = object.amount >>> 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an Inventory message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {InboxClaimOutput.Inventory} message Inventory
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Inventory.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.itemId = "";
+                object.amount = 0;
+            }
+            if (message.itemId != null && message.hasOwnProperty("itemId"))
+                object.itemId = message.itemId;
+            if (message.amount != null && message.hasOwnProperty("amount"))
+                object.amount = message.amount;
+            return object;
+        };
+
+        /**
+         * Converts this Inventory to JSON.
+         * @function toJSON
+         * @memberof InboxClaimOutput.Inventory
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Inventory.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Inventory
+         * @function getTypeUrl
+         * @memberof InboxClaimOutput.Inventory
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Inventory.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/InboxClaimOutput.Inventory";
+        };
+
+        return Inventory;
+    })();
+
+    return InboxClaimOutput;
+})();
+
+$root.InboxDeleteInput = (function() {
+
+    /**
+     * Properties of an InboxDeleteInput.
+     * @exports IInboxDeleteInput
+     * @interface IInboxDeleteInput
+     * @property {Array.<string>|null} [inboxList] InboxDeleteInput inboxList
+     */
+
+    /**
+     * Constructs a new InboxDeleteInput.
+     * @exports InboxDeleteInput
+     * @classdesc Represents an InboxDeleteInput.
+     * @implements IInboxDeleteInput
+     * @constructor
+     * @param {IInboxDeleteInput=} [properties] Properties to set
+     */
+    function InboxDeleteInput(properties) {
+        this.inboxList = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * InboxDeleteInput inboxList.
+     * @member {Array.<string>} inboxList
+     * @memberof InboxDeleteInput
+     * @instance
+     */
+    InboxDeleteInput.prototype.inboxList = $util.emptyArray;
+
+    /**
+     * Creates a new InboxDeleteInput instance using the specified properties.
+     * @function create
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {IInboxDeleteInput=} [properties] Properties to set
+     * @returns {InboxDeleteInput} InboxDeleteInput instance
+     */
+    InboxDeleteInput.create = function create(properties) {
+        return new InboxDeleteInput(properties);
+    };
+
+    /**
+     * Encodes the specified InboxDeleteInput message. Does not implicitly {@link InboxDeleteInput.verify|verify} messages.
+     * @function encode
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {IInboxDeleteInput} message InboxDeleteInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxDeleteInput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.inboxList != null && message.inboxList.length)
+            for (var i = 0; i < message.inboxList.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.inboxList[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified InboxDeleteInput message, length delimited. Does not implicitly {@link InboxDeleteInput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {IInboxDeleteInput} message InboxDeleteInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxDeleteInput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an InboxDeleteInput message from the specified reader or buffer.
+     * @function decode
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {InboxDeleteInput} InboxDeleteInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxDeleteInput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxDeleteInput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.inboxList && message.inboxList.length))
+                        message.inboxList = [];
+                    message.inboxList.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an InboxDeleteInput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {InboxDeleteInput} InboxDeleteInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxDeleteInput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an InboxDeleteInput message.
+     * @function verify
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    InboxDeleteInput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.inboxList != null && message.hasOwnProperty("inboxList")) {
+            if (!Array.isArray(message.inboxList))
+                return "inboxList: array expected";
+            for (var i = 0; i < message.inboxList.length; ++i)
+                if (!$util.isString(message.inboxList[i]))
+                    return "inboxList: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates an InboxDeleteInput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {InboxDeleteInput} InboxDeleteInput
+     */
+    InboxDeleteInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.InboxDeleteInput)
+            return object;
+        var message = new $root.InboxDeleteInput();
+        if (object.inboxList) {
+            if (!Array.isArray(object.inboxList))
+                throw TypeError(".InboxDeleteInput.inboxList: array expected");
+            message.inboxList = [];
+            for (var i = 0; i < object.inboxList.length; ++i)
+                message.inboxList[i] = String(object.inboxList[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an InboxDeleteInput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {InboxDeleteInput} message InboxDeleteInput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    InboxDeleteInput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.inboxList = [];
+        if (message.inboxList && message.inboxList.length) {
+            object.inboxList = [];
+            for (var j = 0; j < message.inboxList.length; ++j)
+                object.inboxList[j] = message.inboxList[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this InboxDeleteInput to JSON.
+     * @function toJSON
+     * @memberof InboxDeleteInput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    InboxDeleteInput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for InboxDeleteInput
+     * @function getTypeUrl
+     * @memberof InboxDeleteInput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    InboxDeleteInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/InboxDeleteInput";
+    };
+
+    return InboxDeleteInput;
+})();
+
+$root.InboxDeleteOutput = (function() {
+
+    /**
+     * Properties of an InboxDeleteOutput.
+     * @exports IInboxDeleteOutput
+     * @interface IInboxDeleteOutput
+     * @property {Array.<string>|null} [inboxList] InboxDeleteOutput inboxList
+     */
+
+    /**
+     * Constructs a new InboxDeleteOutput.
+     * @exports InboxDeleteOutput
+     * @classdesc Represents an InboxDeleteOutput.
+     * @implements IInboxDeleteOutput
+     * @constructor
+     * @param {IInboxDeleteOutput=} [properties] Properties to set
+     */
+    function InboxDeleteOutput(properties) {
+        this.inboxList = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * InboxDeleteOutput inboxList.
+     * @member {Array.<string>} inboxList
+     * @memberof InboxDeleteOutput
+     * @instance
+     */
+    InboxDeleteOutput.prototype.inboxList = $util.emptyArray;
+
+    /**
+     * Creates a new InboxDeleteOutput instance using the specified properties.
+     * @function create
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {IInboxDeleteOutput=} [properties] Properties to set
+     * @returns {InboxDeleteOutput} InboxDeleteOutput instance
+     */
+    InboxDeleteOutput.create = function create(properties) {
+        return new InboxDeleteOutput(properties);
+    };
+
+    /**
+     * Encodes the specified InboxDeleteOutput message. Does not implicitly {@link InboxDeleteOutput.verify|verify} messages.
+     * @function encode
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {IInboxDeleteOutput} message InboxDeleteOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxDeleteOutput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.inboxList != null && message.inboxList.length)
+            for (var i = 0; i < message.inboxList.length; ++i)
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.inboxList[i]);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified InboxDeleteOutput message, length delimited. Does not implicitly {@link InboxDeleteOutput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {IInboxDeleteOutput} message InboxDeleteOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    InboxDeleteOutput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an InboxDeleteOutput message from the specified reader or buffer.
+     * @function decode
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {InboxDeleteOutput} InboxDeleteOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxDeleteOutput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.InboxDeleteOutput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.inboxList && message.inboxList.length))
+                        message.inboxList = [];
+                    message.inboxList.push(reader.string());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an InboxDeleteOutput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {InboxDeleteOutput} InboxDeleteOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    InboxDeleteOutput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an InboxDeleteOutput message.
+     * @function verify
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    InboxDeleteOutput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.inboxList != null && message.hasOwnProperty("inboxList")) {
+            if (!Array.isArray(message.inboxList))
+                return "inboxList: array expected";
+            for (var i = 0; i < message.inboxList.length; ++i)
+                if (!$util.isString(message.inboxList[i]))
+                    return "inboxList: string[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates an InboxDeleteOutput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {InboxDeleteOutput} InboxDeleteOutput
+     */
+    InboxDeleteOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.InboxDeleteOutput)
+            return object;
+        var message = new $root.InboxDeleteOutput();
+        if (object.inboxList) {
+            if (!Array.isArray(object.inboxList))
+                throw TypeError(".InboxDeleteOutput.inboxList: array expected");
+            message.inboxList = [];
+            for (var i = 0; i < object.inboxList.length; ++i)
+                message.inboxList[i] = String(object.inboxList[i]);
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an InboxDeleteOutput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {InboxDeleteOutput} message InboxDeleteOutput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    InboxDeleteOutput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.inboxList = [];
+        if (message.inboxList && message.inboxList.length) {
+            object.inboxList = [];
+            for (var j = 0; j < message.inboxList.length; ++j)
+                object.inboxList[j] = message.inboxList[j];
+        }
+        return object;
+    };
+
+    /**
+     * Converts this InboxDeleteOutput to JSON.
+     * @function toJSON
+     * @memberof InboxDeleteOutput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    InboxDeleteOutput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for InboxDeleteOutput
+     * @function getTypeUrl
+     * @memberof InboxDeleteOutput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    InboxDeleteOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/InboxDeleteOutput";
+    };
+
+    return InboxDeleteOutput;
+})();
+
 $root.Player = (function() {
 
     /**

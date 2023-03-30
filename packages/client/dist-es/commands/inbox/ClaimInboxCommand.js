@@ -3,7 +3,7 @@ export class ClaimInboxCommand extends BaseCommand {
     constructor(param, classProtobuf) {
         super();
         this.serviceName = ServiceName.INBOX;
-        this.name = 'claim';
+        this.name = "claim";
         this.data = param;
         this.classP = classProtobuf;
     }

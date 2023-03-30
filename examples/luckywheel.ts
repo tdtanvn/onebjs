@@ -19,11 +19,17 @@ async function main() {
     const luckyWheelInfo = await client.send<LuckyWheel>(new CallGameScriptCommand("Lucky_Wheel", "getList"), LuckyWheel);
     console.log(luckyWheelInfo);
 
-    const checkCanClaim = await client.send<LuckyWheelCanClaimOutput>(new CallGameScriptCommand("Lucky_Wheel", "canClaimItem"), LuckyWheelCanClaimOutput);
+    const checkCanClaim = await client.send<LuckyWheelCanClaimOutput>(
+      new CallGameScriptCommand("Lucky_Wheel", "canClaimItem"),
+      LuckyWheelCanClaimOutput
+    );
     console.log(checkCanClaim);
 
     if (checkCanClaim.canClaim) {
-      const rewardsInfo = await client.send<LuckyWheelClaimItemOutput>(new CallGameScriptCommand("Lucky_Wheel", "claimItem"), LuckyWheelClaimItemOutput);
+      const rewardsInfo = await client.send<LuckyWheelClaimItemOutput>(
+        new CallGameScriptCommand("Lucky_Wheel", "claimItem"),
+        LuckyWheelClaimItemOutput
+      );
       console.log(rewardsInfo);
     }
   }

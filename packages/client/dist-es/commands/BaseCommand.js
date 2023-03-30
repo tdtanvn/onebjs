@@ -20,6 +20,8 @@ export class BaseCommand {
             [ServiceName.PLAYER, Service.PLAYER],
             [ServiceName.BLUEPRINT, Service.BLUEPRINT],
             [ServiceName.GAMESCRIPT, Service.GAMESCRIPT],
+            [ServiceName.INBOX, Service.INBOX],
+            [ServiceName.LEADERBOARD, Service.LEADERBOARD]
         ]);
         this.verb = RequestVerb.GET;
     }
@@ -52,6 +54,7 @@ export class BaseCommand {
             rawJson.data = this.data;
         }
         const protoMsg = ProtoMessage.create(rawJson);
+        console.log(protoMsg);
         const buffer = ProtoMessage.encode(protoMsg).finish();
         request.body = buffer;
         return request;

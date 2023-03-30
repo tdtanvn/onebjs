@@ -18,11 +18,17 @@ async function main() {
     const dailyRewardsInfo = await client.send<DAILY_REWARDS>(new GetBlueprintDataCommand("daily_rewards"), DAILY_REWARDS);
     console.log(dailyRewardsInfo);
 
-    const canClaimRewards = await client.send<DailyRewardsCanClaimRewardOutput>(new CallGameScriptCommand("Daily_Rewards", "canClaimRewards"), DailyRewardsCanClaimRewardOutput);
+    const canClaimRewards = await client.send<DailyRewardsCanClaimRewardOutput>(
+      new CallGameScriptCommand("Daily_Rewards", "canClaimRewards"),
+      DailyRewardsCanClaimRewardOutput
+    );
     console.log(canClaimRewards);
 
     if (canClaimRewards?.rewards?.length) {
-      const rewardsInfo = await client.send<DailyRewardsClaimRewardsOutput>(new CallGameScriptCommand("Daily_Rewards", "claimRewards"), DailyRewardsClaimRewardsOutput);
+      const rewardsInfo = await client.send<DailyRewardsClaimRewardsOutput>(
+        new CallGameScriptCommand("Daily_Rewards", "claimRewards"),
+        DailyRewardsClaimRewardsOutput
+      );
       console.log(rewardsInfo);
     }
   }

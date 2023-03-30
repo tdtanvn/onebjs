@@ -9,333 +9,6 @@ const $Reader = $protobuf.Reader, $Writer = $protobuf.Writer, $util = $protobuf.
 // Exported root namespace
 const $root = $protobuf.roots["default"] || ($protobuf.roots["default"] = {});
 
-export const ProtoMessage = $root.ProtoMessage = (() => {
-
-    /**
-     * Properties of a ProtoMessage.
-     * @exports IProtoMessage
-     * @interface IProtoMessage
-     * @property {Service|null} [service] ProtoMessage service
-     * @property {string|null} [functionName] ProtoMessage functionName
-     * @property {string|null} [namespace] ProtoMessage namespace
-     * @property {Array.<number>|null} [data] ProtoMessage data
-     */
-
-    /**
-     * Constructs a new ProtoMessage.
-     * @exports ProtoMessage
-     * @classdesc Represents a ProtoMessage.
-     * @implements IProtoMessage
-     * @constructor
-     * @param {IProtoMessage=} [properties] Properties to set
-     */
-    function ProtoMessage(properties) {
-        this.data = [];
-        if (properties)
-            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * ProtoMessage service.
-     * @member {Service} service
-     * @memberof ProtoMessage
-     * @instance
-     */
-    ProtoMessage.prototype.service = 0;
-
-    /**
-     * ProtoMessage functionName.
-     * @member {string} functionName
-     * @memberof ProtoMessage
-     * @instance
-     */
-    ProtoMessage.prototype.functionName = "";
-
-    /**
-     * ProtoMessage namespace.
-     * @member {string} namespace
-     * @memberof ProtoMessage
-     * @instance
-     */
-    ProtoMessage.prototype.namespace = "";
-
-    /**
-     * ProtoMessage data.
-     * @member {Array.<number>} data
-     * @memberof ProtoMessage
-     * @instance
-     */
-    ProtoMessage.prototype.data = $util.emptyArray;
-
-    /**
-     * Creates a new ProtoMessage instance using the specified properties.
-     * @function create
-     * @memberof ProtoMessage
-     * @static
-     * @param {IProtoMessage=} [properties] Properties to set
-     * @returns {ProtoMessage} ProtoMessage instance
-     */
-    ProtoMessage.create = function create(properties) {
-        return new ProtoMessage(properties);
-    };
-
-    /**
-     * Encodes the specified ProtoMessage message. Does not implicitly {@link ProtoMessage.verify|verify} messages.
-     * @function encode
-     * @memberof ProtoMessage
-     * @static
-     * @param {IProtoMessage} message ProtoMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    ProtoMessage.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.service != null && Object.hasOwnProperty.call(message, "service"))
-            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.service);
-        if (message.functionName != null && Object.hasOwnProperty.call(message, "functionName"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.functionName);
-        if (message.data != null && message.data.length) {
-            writer.uint32(/* id 3, wireType 2 =*/26).fork();
-            for (let i = 0; i < message.data.length; ++i)
-                writer.uint32(message.data[i]);
-            writer.ldelim();
-        }
-        if (message.namespace != null && Object.hasOwnProperty.call(message, "namespace"))
-            writer.uint32(/* id 4, wireType 2 =*/34).string(message.namespace);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified ProtoMessage message, length delimited. Does not implicitly {@link ProtoMessage.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof ProtoMessage
-     * @static
-     * @param {IProtoMessage} message ProtoMessage message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    ProtoMessage.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a ProtoMessage message from the specified reader or buffer.
-     * @function decode
-     * @memberof ProtoMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {ProtoMessage} ProtoMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    ProtoMessage.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoMessage();
-        while (reader.pos < end) {
-            let tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.service = reader.int32();
-                    break;
-                }
-            case 2: {
-                    message.functionName = reader.string();
-                    break;
-                }
-            case 4: {
-                    message.namespace = reader.string();
-                    break;
-                }
-            case 3: {
-                    if (!(message.data && message.data.length))
-                        message.data = [];
-                    if ((tag & 7) === 2) {
-                        let end2 = reader.uint32() + reader.pos;
-                        while (reader.pos < end2)
-                            message.data.push(reader.uint32());
-                    } else
-                        message.data.push(reader.uint32());
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a ProtoMessage message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof ProtoMessage
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {ProtoMessage} ProtoMessage
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    ProtoMessage.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a ProtoMessage message.
-     * @function verify
-     * @memberof ProtoMessage
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    ProtoMessage.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.service != null && message.hasOwnProperty("service"))
-            switch (message.service) {
-            default:
-                return "service: enum value expected";
-            case 0:
-            case 1:
-            case 2:
-            case 3:
-                break;
-            }
-        if (message.functionName != null && message.hasOwnProperty("functionName"))
-            if (!$util.isString(message.functionName))
-                return "functionName: string expected";
-        if (message.namespace != null && message.hasOwnProperty("namespace"))
-            if (!$util.isString(message.namespace))
-                return "namespace: string expected";
-        if (message.data != null && message.hasOwnProperty("data")) {
-            if (!Array.isArray(message.data))
-                return "data: array expected";
-            for (let i = 0; i < message.data.length; ++i)
-                if (!$util.isInteger(message.data[i]))
-                    return "data: integer[] expected";
-        }
-        return null;
-    };
-
-    /**
-     * Creates a ProtoMessage message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof ProtoMessage
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {ProtoMessage} ProtoMessage
-     */
-    ProtoMessage.fromObject = function fromObject(object) {
-        if (object instanceof $root.ProtoMessage)
-            return object;
-        let message = new $root.ProtoMessage();
-        switch (object.service) {
-        default:
-            if (typeof object.service === "number") {
-                message.service = object.service;
-                break;
-            }
-            break;
-        case "NOT_USE_THIS":
-        case 0:
-            message.service = 0;
-            break;
-        case "BLUEPRINT":
-        case 1:
-            message.service = 1;
-            break;
-        case "PLAYER":
-        case 2:
-            message.service = 2;
-            break;
-        case "GAMESCRIPT":
-        case 3:
-            message.service = 3;
-            break;
-        }
-        if (object.functionName != null)
-            message.functionName = String(object.functionName);
-        if (object.namespace != null)
-            message.namespace = String(object.namespace);
-        if (object.data) {
-            if (!Array.isArray(object.data))
-                throw TypeError(".ProtoMessage.data: array expected");
-            message.data = [];
-            for (let i = 0; i < object.data.length; ++i)
-                message.data[i] = object.data[i] >>> 0;
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a ProtoMessage message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof ProtoMessage
-     * @static
-     * @param {ProtoMessage} message ProtoMessage
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    ProtoMessage.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        let object = {};
-        if (options.arrays || options.defaults)
-            object.data = [];
-        if (options.defaults) {
-            object.service = options.enums === String ? "NOT_USE_THIS" : 0;
-            object.functionName = "";
-            object.namespace = "";
-        }
-        if (message.service != null && message.hasOwnProperty("service"))
-            object.service = options.enums === String ? $root.Service[message.service] === undefined ? message.service : $root.Service[message.service] : message.service;
-        if (message.functionName != null && message.hasOwnProperty("functionName"))
-            object.functionName = message.functionName;
-        if (message.data && message.data.length) {
-            object.data = [];
-            for (let j = 0; j < message.data.length; ++j)
-                object.data[j] = message.data[j];
-        }
-        if (message.namespace != null && message.hasOwnProperty("namespace"))
-            object.namespace = message.namespace;
-        return object;
-    };
-
-    /**
-     * Converts this ProtoMessage to JSON.
-     * @function toJSON
-     * @memberof ProtoMessage
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    ProtoMessage.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    /**
-     * Gets the default type url for ProtoMessage
-     * @function getTypeUrl
-     * @memberof ProtoMessage
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    ProtoMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/ProtoMessage";
-    };
-
-    return ProtoMessage;
-})();
-
 export const AuthLogin = $root.AuthLogin = (() => {
 
     /**
@@ -881,37 +554,378 @@ export const AuthResponse = $root.AuthResponse = (() => {
     return AuthResponse;
 })();
 
-/**
- * Method enum.
- * @exports Method
- * @enum {number}
- * @property {number} NOT_USE_THIS=0 NOT_USE_THIS value
- * @property {number} GET=1 GET value
- * @property {number} POST=2 POST value
- */
-export const Method = $root.Method = (() => {
-    const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "NOT_USE_THIS"] = 0;
-    values[valuesById[1] = "GET"] = 1;
-    values[valuesById[2] = "POST"] = 2;
-    return values;
+export const ProtoMessage = $root.ProtoMessage = (() => {
+
+    /**
+     * Properties of a ProtoMessage.
+     * @exports IProtoMessage
+     * @interface IProtoMessage
+     * @property {Service|null} [service] ProtoMessage service
+     * @property {string|null} [functionName] ProtoMessage functionName
+     * @property {string|null} [namespace] ProtoMessage namespace
+     * @property {Array.<number>|null} [data] ProtoMessage data
+     */
+
+    /**
+     * Constructs a new ProtoMessage.
+     * @exports ProtoMessage
+     * @classdesc Represents a ProtoMessage.
+     * @implements IProtoMessage
+     * @constructor
+     * @param {IProtoMessage=} [properties] Properties to set
+     */
+    function ProtoMessage(properties) {
+        this.data = [];
+        if (properties)
+            for (let keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * ProtoMessage service.
+     * @member {Service} service
+     * @memberof ProtoMessage
+     * @instance
+     */
+    ProtoMessage.prototype.service = 0;
+
+    /**
+     * ProtoMessage functionName.
+     * @member {string} functionName
+     * @memberof ProtoMessage
+     * @instance
+     */
+    ProtoMessage.prototype.functionName = "";
+
+    /**
+     * ProtoMessage namespace.
+     * @member {string} namespace
+     * @memberof ProtoMessage
+     * @instance
+     */
+    ProtoMessage.prototype.namespace = "";
+
+    /**
+     * ProtoMessage data.
+     * @member {Array.<number>} data
+     * @memberof ProtoMessage
+     * @instance
+     */
+    ProtoMessage.prototype.data = $util.emptyArray;
+
+    /**
+     * Creates a new ProtoMessage instance using the specified properties.
+     * @function create
+     * @memberof ProtoMessage
+     * @static
+     * @param {IProtoMessage=} [properties] Properties to set
+     * @returns {ProtoMessage} ProtoMessage instance
+     */
+    ProtoMessage.create = function create(properties) {
+        return new ProtoMessage(properties);
+    };
+
+    /**
+     * Encodes the specified ProtoMessage message. Does not implicitly {@link ProtoMessage.verify|verify} messages.
+     * @function encode
+     * @memberof ProtoMessage
+     * @static
+     * @param {IProtoMessage} message ProtoMessage message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoMessage.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.service != null && Object.hasOwnProperty.call(message, "service"))
+            writer.uint32(/* id 1, wireType 0 =*/8).int32(message.service);
+        if (message.functionName != null && Object.hasOwnProperty.call(message, "functionName"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.functionName);
+        if (message.data != null && message.data.length) {
+            writer.uint32(/* id 3, wireType 2 =*/26).fork();
+            for (let i = 0; i < message.data.length; ++i)
+                writer.uint32(message.data[i]);
+            writer.ldelim();
+        }
+        if (message.namespace != null && Object.hasOwnProperty.call(message, "namespace"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.namespace);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified ProtoMessage message, length delimited. Does not implicitly {@link ProtoMessage.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof ProtoMessage
+     * @static
+     * @param {IProtoMessage} message ProtoMessage message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    ProtoMessage.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a ProtoMessage message from the specified reader or buffer.
+     * @function decode
+     * @memberof ProtoMessage
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {ProtoMessage} ProtoMessage
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoMessage.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        let end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProtoMessage();
+        while (reader.pos < end) {
+            let tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.service = reader.int32();
+                    break;
+                }
+            case 2: {
+                    message.functionName = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.namespace = reader.string();
+                    break;
+                }
+            case 3: {
+                    if (!(message.data && message.data.length))
+                        message.data = [];
+                    if ((tag & 7) === 2) {
+                        let end2 = reader.uint32() + reader.pos;
+                        while (reader.pos < end2)
+                            message.data.push(reader.uint32());
+                    } else
+                        message.data.push(reader.uint32());
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a ProtoMessage message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof ProtoMessage
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {ProtoMessage} ProtoMessage
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    ProtoMessage.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a ProtoMessage message.
+     * @function verify
+     * @memberof ProtoMessage
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    ProtoMessage.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.service != null && message.hasOwnProperty("service"))
+            switch (message.service) {
+            default:
+                return "service: enum value expected";
+            case 0:
+            case 1:
+            case 2:
+            case 3:
+            case 4:
+            case 5:
+                break;
+            }
+        if (message.functionName != null && message.hasOwnProperty("functionName"))
+            if (!$util.isString(message.functionName))
+                return "functionName: string expected";
+        if (message.namespace != null && message.hasOwnProperty("namespace"))
+            if (!$util.isString(message.namespace))
+                return "namespace: string expected";
+        if (message.data != null && message.hasOwnProperty("data")) {
+            if (!Array.isArray(message.data))
+                return "data: array expected";
+            for (let i = 0; i < message.data.length; ++i)
+                if (!$util.isInteger(message.data[i]))
+                    return "data: integer[] expected";
+        }
+        return null;
+    };
+
+    /**
+     * Creates a ProtoMessage message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof ProtoMessage
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {ProtoMessage} ProtoMessage
+     */
+    ProtoMessage.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProtoMessage)
+            return object;
+        let message = new $root.ProtoMessage();
+        switch (object.service) {
+        default:
+            if (typeof object.service === "number") {
+                message.service = object.service;
+                break;
+            }
+            break;
+        case "NOT_USE":
+        case 0:
+            message.service = 0;
+            break;
+        case "BLUEPRINT":
+        case 1:
+            message.service = 1;
+            break;
+        case "PLAYER":
+        case 2:
+            message.service = 2;
+            break;
+        case "GAMESCRIPT":
+        case 3:
+            message.service = 3;
+            break;
+        case "INBOX":
+        case 4:
+            message.service = 4;
+            break;
+        case "LEADERBOARD":
+        case 5:
+            message.service = 5;
+            break;
+        }
+        if (object.functionName != null)
+            message.functionName = String(object.functionName);
+        if (object.namespace != null)
+            message.namespace = String(object.namespace);
+        if (object.data) {
+            if (!Array.isArray(object.data))
+                throw TypeError(".ProtoMessage.data: array expected");
+            message.data = [];
+            for (let i = 0; i < object.data.length; ++i)
+                message.data[i] = object.data[i] >>> 0;
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a ProtoMessage message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof ProtoMessage
+     * @static
+     * @param {ProtoMessage} message ProtoMessage
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    ProtoMessage.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        let object = {};
+        if (options.arrays || options.defaults)
+            object.data = [];
+        if (options.defaults) {
+            object.service = options.enums === String ? "NOT_USE" : 0;
+            object.functionName = "";
+            object.namespace = "";
+        }
+        if (message.service != null && message.hasOwnProperty("service"))
+            object.service = options.enums === String ? $root.Service[message.service] === undefined ? message.service : $root.Service[message.service] : message.service;
+        if (message.functionName != null && message.hasOwnProperty("functionName"))
+            object.functionName = message.functionName;
+        if (message.data && message.data.length) {
+            object.data = [];
+            for (let j = 0; j < message.data.length; ++j)
+                object.data[j] = message.data[j];
+        }
+        if (message.namespace != null && message.hasOwnProperty("namespace"))
+            object.namespace = message.namespace;
+        return object;
+    };
+
+    /**
+     * Converts this ProtoMessage to JSON.
+     * @function toJSON
+     * @memberof ProtoMessage
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    ProtoMessage.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for ProtoMessage
+     * @function getTypeUrl
+     * @memberof ProtoMessage
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    ProtoMessage.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/ProtoMessage";
+    };
+
+    return ProtoMessage;
 })();
 
 /**
  * Service enum.
  * @exports Service
  * @enum {number}
- * @property {number} NOT_USE_THIS=0 NOT_USE_THIS value
+ * @property {number} NOT_USE=0 NOT_USE value
  * @property {number} BLUEPRINT=1 BLUEPRINT value
  * @property {number} PLAYER=2 PLAYER value
  * @property {number} GAMESCRIPT=3 GAMESCRIPT value
+ * @property {number} INBOX=4 INBOX value
+ * @property {number} LEADERBOARD=5 LEADERBOARD value
  */
 export const Service = $root.Service = (() => {
     const valuesById = {}, values = Object.create(valuesById);
-    values[valuesById[0] = "NOT_USE_THIS"] = 0;
+    values[valuesById[0] = "NOT_USE"] = 0;
     values[valuesById[1] = "BLUEPRINT"] = 1;
     values[valuesById[2] = "PLAYER"] = 2;
     values[valuesById[3] = "GAMESCRIPT"] = 3;
+    values[valuesById[4] = "INBOX"] = 4;
+    values[valuesById[5] = "LEADERBOARD"] = 5;
+    return values;
+})();
+
+/**
+ * Method enum.
+ * @exports Method
+ * @enum {number}
+ * @property {number} NOT_USE=0 NOT_USE value
+ * @property {number} GET=1 GET value
+ * @property {number} POST=2 POST value
+ */
+export const Method = $root.Method = (() => {
+    const valuesById = {}, values = Object.create(valuesById);
+    values[valuesById[0] = "NOT_USE"] = 0;
+    values[valuesById[1] = "GET"] = 1;
+    values[valuesById[2] = "POST"] = 2;
     return values;
 })();
 

@@ -4516,6 +4516,1038 @@ export namespace LuckyWheelClaimItemOutput {
     }
 }
 
+/** Represents an Inbox */
+export class Inbox extends $protobuf.rpc.Service {
+
+    /**
+     * Constructs a new Inbox service.
+     * @param rpcImpl RPC implementation
+     * @param [requestDelimited=false] Whether requests are length-delimited
+     * @param [responseDelimited=false] Whether responses are length-delimited
+     */
+    constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+    /**
+     * Creates new Inbox service using the specified rpc implementation.
+     * @param rpcImpl RPC implementation
+     * @param [requestDelimited=false] Whether requests are length-delimited
+     * @param [responseDelimited=false] Whether responses are length-delimited
+     * @returns RPC service. Useful where requests and/or responses are streamed.
+     */
+    public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Inbox;
+
+    /**
+     * Calls me.
+     * @param request Empty message or plain object
+     * @param callback Node-style callback called with the error, if any, and InboxList
+     */
+    public me(request: IEmpty, callback: Inbox.meCallback): void;
+
+    /**
+     * Calls me.
+     * @param request Empty message or plain object
+     * @returns Promise
+     */
+    public me(request: IEmpty): Promise<InboxList>;
+
+    /**
+     * Calls claim.
+     * @param request InboxClaimInput message or plain object
+     * @param callback Node-style callback called with the error, if any, and InboxClaimOutput
+     */
+    public claim(request: IInboxClaimInput, callback: Inbox.claimCallback): void;
+
+    /**
+     * Calls claim.
+     * @param request InboxClaimInput message or plain object
+     * @returns Promise
+     */
+    public claim(request: IInboxClaimInput): Promise<InboxClaimOutput>;
+
+    /**
+     * Calls markdelete.
+     * @param request InboxDeleteInput message or plain object
+     * @param callback Node-style callback called with the error, if any, and InboxDeleteOutput
+     */
+    public markdelete(request: IInboxDeleteInput, callback: Inbox.markdeleteCallback): void;
+
+    /**
+     * Calls markdelete.
+     * @param request InboxDeleteInput message or plain object
+     * @returns Promise
+     */
+    public markdelete(request: IInboxDeleteInput): Promise<InboxDeleteOutput>;
+}
+
+export namespace Inbox {
+
+    /**
+     * Callback as used by {@link Inbox#me}.
+     * @param error Error, if any
+     * @param [response] InboxList
+     */
+    type meCallback = (error: (Error|null), response?: InboxList) => void;
+
+    /**
+     * Callback as used by {@link Inbox#claim}.
+     * @param error Error, if any
+     * @param [response] InboxClaimOutput
+     */
+    type claimCallback = (error: (Error|null), response?: InboxClaimOutput) => void;
+
+    /**
+     * Callback as used by {@link Inbox#markdelete}.
+     * @param error Error, if any
+     * @param [response] InboxDeleteOutput
+     */
+    type markdeleteCallback = (error: (Error|null), response?: InboxDeleteOutput) => void;
+}
+
+/** Properties of an InboxList. */
+export interface IInboxList {
+
+    /** InboxList items */
+    items?: (InboxList.IItems[]|null);
+}
+
+/** Represents an InboxList. */
+export class InboxList implements IInboxList {
+
+    /**
+     * Constructs a new InboxList.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IInboxList);
+
+    /** InboxList items. */
+    public items: InboxList.IItems[];
+
+    /**
+     * Creates a new InboxList instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns InboxList instance
+     */
+    public static create(properties?: IInboxList): InboxList;
+
+    /**
+     * Encodes the specified InboxList message. Does not implicitly {@link InboxList.verify|verify} messages.
+     * @param message InboxList message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IInboxList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified InboxList message, length delimited. Does not implicitly {@link InboxList.verify|verify} messages.
+     * @param message InboxList message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IInboxList, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an InboxList message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns InboxList
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxList;
+
+    /**
+     * Decodes an InboxList message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns InboxList
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxList;
+
+    /**
+     * Verifies an InboxList message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an InboxList message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns InboxList
+     */
+    public static fromObject(object: { [k: string]: any }): InboxList;
+
+    /**
+     * Creates a plain object from an InboxList message. Also converts values to other types if specified.
+     * @param message InboxList
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: InboxList, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this InboxList to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for InboxList
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+export namespace InboxList {
+
+    /** Properties of a Conditions. */
+    interface IConditions {
+
+        /** Conditions value */
+        value?: (string|null);
+
+        /** Conditions operator */
+        operator?: (string|null);
+
+        /** Conditions fieldName */
+        fieldName?: (string|null);
+    }
+
+    /** Represents a Conditions. */
+    class Conditions implements IConditions {
+
+        /**
+         * Constructs a new Conditions.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: InboxList.IConditions);
+
+        /** Conditions value. */
+        public value: string;
+
+        /** Conditions operator. */
+        public operator: string;
+
+        /** Conditions fieldName. */
+        public fieldName: string;
+
+        /**
+         * Creates a new Conditions instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Conditions instance
+         */
+        public static create(properties?: InboxList.IConditions): InboxList.Conditions;
+
+        /**
+         * Encodes the specified Conditions message. Does not implicitly {@link InboxList.Conditions.verify|verify} messages.
+         * @param message Conditions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: InboxList.IConditions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Conditions message, length delimited. Does not implicitly {@link InboxList.Conditions.verify|verify} messages.
+         * @param message Conditions message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: InboxList.IConditions, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Conditions message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Conditions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxList.Conditions;
+
+        /**
+         * Decodes a Conditions message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Conditions
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxList.Conditions;
+
+        /**
+         * Verifies a Conditions message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Conditions message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Conditions
+         */
+        public static fromObject(object: { [k: string]: any }): InboxList.Conditions;
+
+        /**
+         * Creates a plain object from a Conditions message. Also converts values to other types if specified.
+         * @param message Conditions
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: InboxList.Conditions, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Conditions to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Conditions
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a Gifts. */
+    interface IGifts {
+
+        /** Gifts itemId */
+        itemId?: (string|null);
+
+        /** Gifts amount */
+        amount?: (number|null);
+    }
+
+    /** Represents a Gifts. */
+    class Gifts implements IGifts {
+
+        /**
+         * Constructs a new Gifts.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: InboxList.IGifts);
+
+        /** Gifts itemId. */
+        public itemId: string;
+
+        /** Gifts amount. */
+        public amount: number;
+
+        /**
+         * Creates a new Gifts instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Gifts instance
+         */
+        public static create(properties?: InboxList.IGifts): InboxList.Gifts;
+
+        /**
+         * Encodes the specified Gifts message. Does not implicitly {@link InboxList.Gifts.verify|verify} messages.
+         * @param message Gifts message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: InboxList.IGifts, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Gifts message, length delimited. Does not implicitly {@link InboxList.Gifts.verify|verify} messages.
+         * @param message Gifts message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: InboxList.IGifts, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Gifts message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Gifts
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxList.Gifts;
+
+        /**
+         * Decodes a Gifts message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Gifts
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxList.Gifts;
+
+        /**
+         * Verifies a Gifts message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Gifts message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Gifts
+         */
+        public static fromObject(object: { [k: string]: any }): InboxList.Gifts;
+
+        /**
+         * Creates a plain object from a Gifts message. Also converts values to other types if specified.
+         * @param message Gifts
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: InboxList.Gifts, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Gifts to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Gifts
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of an Items. */
+    interface IItems {
+
+        /** Items content */
+        content?: (string|null);
+
+        /** Items conditions */
+        conditions?: (InboxList.IConditions[]|null);
+
+        /** Items gifts */
+        gifts?: (InboxList.IGifts[]|null);
+
+        /** Items expiryDate */
+        expiryDate?: (number|null);
+
+        /** Items id */
+        id?: (string|null);
+
+        /** Items title */
+        title?: (string|null);
+
+        /** Items canClaim */
+        canClaim?: (boolean|null);
+    }
+
+    /** Represents an Items. */
+    class Items implements IItems {
+
+        /**
+         * Constructs a new Items.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: InboxList.IItems);
+
+        /** Items content. */
+        public content: string;
+
+        /** Items conditions. */
+        public conditions: InboxList.IConditions[];
+
+        /** Items gifts. */
+        public gifts: InboxList.IGifts[];
+
+        /** Items expiryDate. */
+        public expiryDate: number;
+
+        /** Items id. */
+        public id: string;
+
+        /** Items title. */
+        public title: string;
+
+        /** Items canClaim. */
+        public canClaim: boolean;
+
+        /**
+         * Creates a new Items instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Items instance
+         */
+        public static create(properties?: InboxList.IItems): InboxList.Items;
+
+        /**
+         * Encodes the specified Items message. Does not implicitly {@link InboxList.Items.verify|verify} messages.
+         * @param message Items message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: InboxList.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link InboxList.Items.verify|verify} messages.
+         * @param message Items message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: InboxList.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Items message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxList.Items;
+
+        /**
+         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxList.Items;
+
+        /**
+         * Verifies an Items message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Items
+         */
+        public static fromObject(object: { [k: string]: any }): InboxList.Items;
+
+        /**
+         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * @param message Items
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: InboxList.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Items to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Items
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+}
+
+/** Properties of an InboxClaimInput. */
+export interface IInboxClaimInput {
+
+    /** InboxClaimInput inboxList */
+    inboxList?: (string[]|null);
+}
+
+/** Represents an InboxClaimInput. */
+export class InboxClaimInput implements IInboxClaimInput {
+
+    /**
+     * Constructs a new InboxClaimInput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IInboxClaimInput);
+
+    /** InboxClaimInput inboxList. */
+    public inboxList: string[];
+
+    /**
+     * Creates a new InboxClaimInput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns InboxClaimInput instance
+     */
+    public static create(properties?: IInboxClaimInput): InboxClaimInput;
+
+    /**
+     * Encodes the specified InboxClaimInput message. Does not implicitly {@link InboxClaimInput.verify|verify} messages.
+     * @param message InboxClaimInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IInboxClaimInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified InboxClaimInput message, length delimited. Does not implicitly {@link InboxClaimInput.verify|verify} messages.
+     * @param message InboxClaimInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IInboxClaimInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an InboxClaimInput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns InboxClaimInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxClaimInput;
+
+    /**
+     * Decodes an InboxClaimInput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns InboxClaimInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxClaimInput;
+
+    /**
+     * Verifies an InboxClaimInput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an InboxClaimInput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns InboxClaimInput
+     */
+    public static fromObject(object: { [k: string]: any }): InboxClaimInput;
+
+    /**
+     * Creates a plain object from an InboxClaimInput message. Also converts values to other types if specified.
+     * @param message InboxClaimInput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: InboxClaimInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this InboxClaimInput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for InboxClaimInput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of an InboxClaimOutput. */
+export interface IInboxClaimOutput {
+
+    /** InboxClaimOutput inventory */
+    inventory?: (InboxClaimOutput.IInventory[]|null);
+
+    /** InboxClaimOutput inboxList */
+    inboxList?: (string[]|null);
+}
+
+/** Represents an InboxClaimOutput. */
+export class InboxClaimOutput implements IInboxClaimOutput {
+
+    /**
+     * Constructs a new InboxClaimOutput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IInboxClaimOutput);
+
+    /** InboxClaimOutput inventory. */
+    public inventory: InboxClaimOutput.IInventory[];
+
+    /** InboxClaimOutput inboxList. */
+    public inboxList: string[];
+
+    /**
+     * Creates a new InboxClaimOutput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns InboxClaimOutput instance
+     */
+    public static create(properties?: IInboxClaimOutput): InboxClaimOutput;
+
+    /**
+     * Encodes the specified InboxClaimOutput message. Does not implicitly {@link InboxClaimOutput.verify|verify} messages.
+     * @param message InboxClaimOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IInboxClaimOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified InboxClaimOutput message, length delimited. Does not implicitly {@link InboxClaimOutput.verify|verify} messages.
+     * @param message InboxClaimOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IInboxClaimOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an InboxClaimOutput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns InboxClaimOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxClaimOutput;
+
+    /**
+     * Decodes an InboxClaimOutput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns InboxClaimOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxClaimOutput;
+
+    /**
+     * Verifies an InboxClaimOutput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an InboxClaimOutput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns InboxClaimOutput
+     */
+    public static fromObject(object: { [k: string]: any }): InboxClaimOutput;
+
+    /**
+     * Creates a plain object from an InboxClaimOutput message. Also converts values to other types if specified.
+     * @param message InboxClaimOutput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: InboxClaimOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this InboxClaimOutput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for InboxClaimOutput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+export namespace InboxClaimOutput {
+
+    /** Properties of an Inventory. */
+    interface IInventory {
+
+        /** Inventory itemId */
+        itemId?: (string|null);
+
+        /** Inventory amount */
+        amount?: (number|null);
+    }
+
+    /** Represents an Inventory. */
+    class Inventory implements IInventory {
+
+        /**
+         * Constructs a new Inventory.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: InboxClaimOutput.IInventory);
+
+        /** Inventory itemId. */
+        public itemId: string;
+
+        /** Inventory amount. */
+        public amount: number;
+
+        /**
+         * Creates a new Inventory instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Inventory instance
+         */
+        public static create(properties?: InboxClaimOutput.IInventory): InboxClaimOutput.Inventory;
+
+        /**
+         * Encodes the specified Inventory message. Does not implicitly {@link InboxClaimOutput.Inventory.verify|verify} messages.
+         * @param message Inventory message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: InboxClaimOutput.IInventory, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Inventory message, length delimited. Does not implicitly {@link InboxClaimOutput.Inventory.verify|verify} messages.
+         * @param message Inventory message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: InboxClaimOutput.IInventory, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Inventory message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Inventory
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxClaimOutput.Inventory;
+
+        /**
+         * Decodes an Inventory message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Inventory
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxClaimOutput.Inventory;
+
+        /**
+         * Verifies an Inventory message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Inventory message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Inventory
+         */
+        public static fromObject(object: { [k: string]: any }): InboxClaimOutput.Inventory;
+
+        /**
+         * Creates a plain object from an Inventory message. Also converts values to other types if specified.
+         * @param message Inventory
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: InboxClaimOutput.Inventory, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Inventory to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Inventory
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+}
+
+/** Properties of an InboxDeleteInput. */
+export interface IInboxDeleteInput {
+
+    /** InboxDeleteInput inboxList */
+    inboxList?: (string[]|null);
+}
+
+/** Represents an InboxDeleteInput. */
+export class InboxDeleteInput implements IInboxDeleteInput {
+
+    /**
+     * Constructs a new InboxDeleteInput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IInboxDeleteInput);
+
+    /** InboxDeleteInput inboxList. */
+    public inboxList: string[];
+
+    /**
+     * Creates a new InboxDeleteInput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns InboxDeleteInput instance
+     */
+    public static create(properties?: IInboxDeleteInput): InboxDeleteInput;
+
+    /**
+     * Encodes the specified InboxDeleteInput message. Does not implicitly {@link InboxDeleteInput.verify|verify} messages.
+     * @param message InboxDeleteInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IInboxDeleteInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified InboxDeleteInput message, length delimited. Does not implicitly {@link InboxDeleteInput.verify|verify} messages.
+     * @param message InboxDeleteInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IInboxDeleteInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an InboxDeleteInput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns InboxDeleteInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxDeleteInput;
+
+    /**
+     * Decodes an InboxDeleteInput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns InboxDeleteInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxDeleteInput;
+
+    /**
+     * Verifies an InboxDeleteInput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an InboxDeleteInput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns InboxDeleteInput
+     */
+    public static fromObject(object: { [k: string]: any }): InboxDeleteInput;
+
+    /**
+     * Creates a plain object from an InboxDeleteInput message. Also converts values to other types if specified.
+     * @param message InboxDeleteInput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: InboxDeleteInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this InboxDeleteInput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for InboxDeleteInput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of an InboxDeleteOutput. */
+export interface IInboxDeleteOutput {
+
+    /** InboxDeleteOutput inboxList */
+    inboxList?: (string[]|null);
+}
+
+/** Represents an InboxDeleteOutput. */
+export class InboxDeleteOutput implements IInboxDeleteOutput {
+
+    /**
+     * Constructs a new InboxDeleteOutput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IInboxDeleteOutput);
+
+    /** InboxDeleteOutput inboxList. */
+    public inboxList: string[];
+
+    /**
+     * Creates a new InboxDeleteOutput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns InboxDeleteOutput instance
+     */
+    public static create(properties?: IInboxDeleteOutput): InboxDeleteOutput;
+
+    /**
+     * Encodes the specified InboxDeleteOutput message. Does not implicitly {@link InboxDeleteOutput.verify|verify} messages.
+     * @param message InboxDeleteOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IInboxDeleteOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified InboxDeleteOutput message, length delimited. Does not implicitly {@link InboxDeleteOutput.verify|verify} messages.
+     * @param message InboxDeleteOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IInboxDeleteOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an InboxDeleteOutput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns InboxDeleteOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): InboxDeleteOutput;
+
+    /**
+     * Decodes an InboxDeleteOutput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns InboxDeleteOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): InboxDeleteOutput;
+
+    /**
+     * Verifies an InboxDeleteOutput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an InboxDeleteOutput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns InboxDeleteOutput
+     */
+    public static fromObject(object: { [k: string]: any }): InboxDeleteOutput;
+
+    /**
+     * Creates a plain object from an InboxDeleteOutput message. Also converts values to other types if specified.
+     * @param message InboxDeleteOutput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: InboxDeleteOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this InboxDeleteOutput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for InboxDeleteOutput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Represents a Player */
 export class Player extends $protobuf.rpc.Service {
 
