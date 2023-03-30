@@ -3,10 +3,7 @@
 ## Description
 
 OneB SDK for JavaScript, OneBServices Client for JS Game engines such as Cocos creator, Three.js, Pixi.js, Phaser...
-
-<fullname>OneB Services</fullname>
-
-<p>OneB Services is a Game backend as a service (GBaaS)</p>
+<p>OneB Services is Game backend as a service (GBaaS)</p>
 <p>Our APIs are encrypted into binary, boosting your game's performance beyond expectations while also increasing its overall security.
 </p>
 <p>With OneB, you have the freedom to host on your system, providing you with complete control over your game data and user data, with no need to share it with anyone else. This added level of security and privacy ensures that your game's data is protected and kept confidential at all times.</p>
@@ -52,6 +49,8 @@ To send a request, you:
 const client = new OneBServicesClient({ gameId: "DEMO" });
 
 const command = new GetBlueprintDataCommand(dataName);
+
+client.send(command);
 ```
 
 #### Async/await
@@ -112,7 +111,7 @@ The client can also support the use protobuf to send/receive binary messages by 
 To send a binary request, you:
 
 - Initiate client with apiType is BINARY
-- Download protobuf message from our services and build to the proto class
+- Download protobuf message from our services and build it to the proto class
 - Call `send` operation on the client with proto class
 
 ```ts
