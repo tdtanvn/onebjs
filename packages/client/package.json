@@ -1,7 +1,7 @@
 {
   "name": "@oneb-sdk/client",
   "version": "1.1.2",
-  "description": "The source code and documentation for this package are in the main [oneb-sdk](https://github.com/tdtanvn/onebjs) repo.",
+  "description": "OneBServices Client(GBaaS) for JS Game engines such as Cocos creator, Three.js, Pixi.js, Phaser",
   "main": "./dist-cjs/index.js",
   "types": "./dist-types/index.d.ts",
   "module": "./dist-es/index.js",
