@@ -1,13 +1,11 @@
 import { GetPlayerDataCommand, UpdatePlayerDataCommand, APIType, Environment, OneBServicesClient } from "@oneb-sdk/client";
 
-import { IPlayerProfileReq, PlayerDataRes, PlayerProfileReq, PlayerProfileRes } from "./bundle";
-
 async function main() {
   const client = new OneBServicesClient({
     gameId: "DEMO",
     enableLog: true,
     environment: Environment.DEVELOPMENT,
-    apiType: APIType.BINARY,
+    apiType: APIType.JSON,
   });
 
   const accessToken = await client.login({
@@ -17,22 +15,17 @@ async function main() {
   console.log("token", accessToken);
 
   if (accessToken) {
-    const playerData = await client.send<PlayerDataRes>(new GetPlayerDataCommand("Data"), PlayerDataRes);
+    const playerData = await client.send(new GetPlayerDataCommand("Data"));
     console.log("playerData", playerData);
 
-    const playerProfile = await client.send<PlayerProfileRes>(new GetPlayerDataCommand("Profile"), PlayerProfileRes);
+    const playerProfile = await client.send(new GetPlayerDataCommand("Profile"));
     console.log("playerProfile", playerProfile);
     //update
-    let playerProfileUpdate = await client.send<PlayerProfileRes>(
-      new UpdatePlayerDataCommand<IPlayerProfileReq>(
-        "Profile",
-        {
-          playerName: "DR.WHO",
-          country: "US",
-        },
-        PlayerProfileReq
-      ),
-      PlayerProfileRes
+    let playerProfileUpdate = await client.send(
+      new UpdatePlayerDataCommand("Profile", {
+        playerName: "DR.WHO",
+        country: "US",
+      })
     );
     console.log("playerProfileUpdate", playerProfileUpdate);
   }

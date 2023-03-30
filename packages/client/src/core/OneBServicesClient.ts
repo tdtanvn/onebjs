@@ -8,21 +8,21 @@ import { ISerializationOption } from "./ISerializationOption";
 import { JsonSerializationOption } from "./JsonSerializationOption";
 import { ProtoSerializationOption } from "./ProtoSerializationOption";
 import { RequestVerb } from "./Request";
+import { RequestException } from "./RequestException";
 
-export type ServiceInitParam = {
+export type ServiceConfig = {
   gameId: string;
   gameVersion?: string;
   apiType?: APIType;
   environment?: Environment;
   enableLog?: boolean;
 };
-export class OnlineServiceManager {
+export class OneBServicesClient {
   private baseURL = new Map<string, string>([
     ["LOCAL", "http://localhost:3000"],
     ["DEVELOPMENT", "https://dev.api.1bservices.com"],
     ["PRODUCTION", "https://api.1bservices.com"],
   ]);
-  private static instance: OnlineServiceManager;
   private accessToken?: string | null;
   private serializationOption!: ISerializationOption;
 
@@ -33,27 +33,12 @@ export class OnlineServiceManager {
 
   public enableLog!: boolean;
 
-  private constructor() {
-    if (OnlineServiceManager.instance) {
-      return OnlineServiceManager.instance;
-    }
-    OnlineServiceManager.instance = this;
-  }
-
-  public static getInstance(): OnlineServiceManager {
-    if (!OnlineServiceManager.instance) {
-      OnlineServiceManager.instance = new OnlineServiceManager();
-    }
-
-    return OnlineServiceManager.instance;
-  }
-
-  public init(param: ServiceInitParam) {
-    this.gameId = param.gameId;
-    this.gameVersion = param.gameVersion ?? "";
-    this.environment = param.environment ?? Environment.DEVELOPMENT;
-    this.enableLog = param.enableLog ?? false;
-    this.apiType = param.apiType ?? APIType.JSON;
+  public constructor(config: ServiceConfig) {
+    this.gameId = config.gameId;
+    this.gameVersion = config.gameVersion ?? "";
+    this.environment = config.environment ?? Environment.DEVELOPMENT;
+    this.enableLog = config.enableLog ?? false;
+    this.apiType = config.apiType ?? APIType.JSON;
     this.accessToken = "";
     if (this.apiType === APIType.JSON) {
       this.serializationOption = new JsonSerializationOption();
@@ -61,6 +46,7 @@ export class OnlineServiceManager {
       this.serializationOption = new ProtoSerializationOption();
     }
   }
+
   public async send<TResponseType>(cmd: ICommand, classMessage?: any) {
     const request = this.apiType === APIType.JSON ? cmd.getRequest() : cmd.getBinRequest();
     const uri = `${this.baseURL.get(this.environment)}/${request.service}/${request.param}`;
@@ -84,8 +70,10 @@ export class OnlineServiceManager {
       return this.serializationOption.Deserialize<TResponseType>(responseData, classMessage);
     } else {
       const errorMsg = await response.json();
-      console.log("Error:", errorMsg);
-      return undefined as TResponseType;
+      if (this.enableLog) {
+        console.log("Error:", errorMsg);
+      }
+      throw new RequestException(errorMsg);
     }
   }
   public async login(loginInput: IAuthLogin) {

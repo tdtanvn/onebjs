@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OnlineServiceManager = void 0;
+exports.OneBServicesClient = void 0;
 const tslib_1 = require("tslib");
 const node_fetch_1 = tslib_1.__importDefault(require("node-fetch"));
 const GetAuthTokenCommand_1 = require("../commands/GetAuthTokenCommand");
@@ -10,31 +10,20 @@ const EEnvironment_1 = require("./EEnvironment");
 const JsonSerializationOption_1 = require("./JsonSerializationOption");
 const ProtoSerializationOption_1 = require("./ProtoSerializationOption");
 const Request_1 = require("./Request");
-class OnlineServiceManager {
-    constructor() {
+const RequestException_1 = require("./RequestException");
+class OneBServicesClient {
+    constructor(config) {
+        var _a, _b, _c, _d;
         this.baseURL = new Map([
             ["LOCAL", "http://localhost:3000"],
             ["DEVELOPMENT", "https://dev.api.1bservices.com"],
             ["PRODUCTION", "https://api.1bservices.com"],
         ]);
-        if (OnlineServiceManager.instance) {
-            return OnlineServiceManager.instance;
-        }
-        OnlineServiceManager.instance = this;
-    }
-    static getInstance() {
-        if (!OnlineServiceManager.instance) {
-            OnlineServiceManager.instance = new OnlineServiceManager();
-        }
-        return OnlineServiceManager.instance;
-    }
-    init(param) {
-        var _a, _b, _c, _d;
-        this.gameId = param.gameId;
-        this.gameVersion = (_a = param.gameVersion) !== null && _a !== void 0 ? _a : "";
-        this.environment = (_b = param.environment) !== null && _b !== void 0 ? _b : EEnvironment_1.Environment.DEVELOPMENT;
-        this.enableLog = (_c = param.enableLog) !== null && _c !== void 0 ? _c : false;
-        this.apiType = (_d = param.apiType) !== null && _d !== void 0 ? _d : EAPIType_1.APIType.JSON;
+        this.gameId = config.gameId;
+        this.gameVersion = (_a = config.gameVersion) !== null && _a !== void 0 ? _a : "";
+        this.environment = (_b = config.environment) !== null && _b !== void 0 ? _b : EEnvironment_1.Environment.DEVELOPMENT;
+        this.enableLog = (_c = config.enableLog) !== null && _c !== void 0 ? _c : false;
+        this.apiType = (_d = config.apiType) !== null && _d !== void 0 ? _d : EAPIType_1.APIType.JSON;
         this.accessToken = "";
         if (this.apiType === EAPIType_1.APIType.JSON) {
             this.serializationOption = new JsonSerializationOption_1.JsonSerializationOption();
@@ -66,8 +55,10 @@ class OnlineServiceManager {
         }
         else {
             const errorMsg = await response.json();
-            console.log("Error:", errorMsg);
-            return undefined;
+            if (this.enableLog) {
+                console.log("Error:", errorMsg);
+            }
+            throw new RequestException_1.RequestException(errorMsg);
         }
     }
     async login(loginInput) {
@@ -84,4 +75,4 @@ class OnlineServiceManager {
         }
     }
 }
-exports.OnlineServiceManager = OnlineServiceManager;
+exports.OneBServicesClient = OneBServicesClient;

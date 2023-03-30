@@ -2,16 +2,15 @@ import { IAuthLogin } from "../proto/proto";
 import { APIType } from "./EAPIType";
 import { Environment } from "./EEnvironment";
 import { ICommand } from "./ICommand";
-export type ServiceInitParam = {
+export type ServiceConfig = {
     gameId: string;
     gameVersion?: string;
     apiType?: APIType;
     environment?: Environment;
     enableLog?: boolean;
 };
-export declare class OnlineServiceManager {
+export declare class OneBServicesClient {
     private baseURL;
-    private static instance;
     private accessToken?;
     private serializationOption;
     private gameId;
@@ -19,9 +18,7 @@ export declare class OnlineServiceManager {
     private gameVersion;
     private apiType;
     enableLog: boolean;
-    private constructor();
-    static getInstance(): OnlineServiceManager;
-    init(param: ServiceInitParam): void;
+    constructor(config: ServiceConfig);
     send<TResponseType>(cmd: ICommand, classMessage?: any): Promise<TResponseType>;
     login(loginInput: IAuthLogin): Promise<string>;
 }

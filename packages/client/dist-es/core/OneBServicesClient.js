@@ -6,30 +6,19 @@ import { Environment } from "./EEnvironment";
 import { JsonSerializationOption } from "./JsonSerializationOption";
 import { ProtoSerializationOption } from "./ProtoSerializationOption";
 import { RequestVerb } from "./Request";
-export class OnlineServiceManager {
-    constructor() {
+import { RequestException } from "./RequestException";
+export class OneBServicesClient {
+    constructor(config) {
         this.baseURL = new Map([
             ["LOCAL", "http://localhost:3000"],
             ["DEVELOPMENT", "https://dev.api.1bservices.com"],
             ["PRODUCTION", "https://api.1bservices.com"],
         ]);
-        if (OnlineServiceManager.instance) {
-            return OnlineServiceManager.instance;
-        }
-        OnlineServiceManager.instance = this;
-    }
-    static getInstance() {
-        if (!OnlineServiceManager.instance) {
-            OnlineServiceManager.instance = new OnlineServiceManager();
-        }
-        return OnlineServiceManager.instance;
-    }
-    init(param) {
-        this.gameId = param.gameId;
-        this.gameVersion = param.gameVersion ?? "";
-        this.environment = param.environment ?? Environment.DEVELOPMENT;
-        this.enableLog = param.enableLog ?? false;
-        this.apiType = param.apiType ?? APIType.JSON;
+        this.gameId = config.gameId;
+        this.gameVersion = config.gameVersion ?? "";
+        this.environment = config.environment ?? Environment.DEVELOPMENT;
+        this.enableLog = config.enableLog ?? false;
+        this.apiType = config.apiType ?? APIType.JSON;
         this.accessToken = "";
         if (this.apiType === APIType.JSON) {
             this.serializationOption = new JsonSerializationOption();
@@ -61,8 +50,10 @@ export class OnlineServiceManager {
         }
         else {
             const errorMsg = await response.json();
-            console.log("Error:", errorMsg);
-            return undefined;
+            if (this.enableLog) {
+                console.log("Error:", errorMsg);
+            }
+            throw new RequestException(errorMsg);
         }
     }
     async login(loginInput) {

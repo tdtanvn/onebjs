@@ -1,22 +1,22 @@
-import { OnlineServiceManager, APIType, Environment, CallGameScriptCommand } from "@oneb-sdk/client";
+import { OneBServicesClient, APIType, Environment, CallGameScriptCommand } from "@oneb-sdk/client";
 
 import {  ITestHelloWorldRes, TestHelloWorldRes } from "./bundle";
 
 async function main() {
-  OnlineServiceManager.getInstance().init({
+  const client = new OneBServicesClient({
     gameId: "DEMO",
     enableLog: true,
     environment: Environment.DEVELOPMENT,
     apiType: APIType.BINARY,
   });
 
-  const accessToken = await OnlineServiceManager.getInstance().login({
+  const accessToken = await client.login({
     playerId: "oneb:test001",
     secretKey: "bimat",
   });
 
   if (accessToken) {
-    const helloWorld = await OnlineServiceManager.getInstance().send<ITestHelloWorldRes>(new CallGameScriptCommand("Test", "helloWorld"), TestHelloWorldRes);
+    const helloWorld = await client.send<ITestHelloWorldRes>(new CallGameScriptCommand("Test", "helloWorld"), TestHelloWorldRes);
     console.log(helloWorld);
   }
 }

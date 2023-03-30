@@ -1,4 +1,4 @@
-export * from "./core/OnlineServiceManager";
+export * from "./core/OneBServicesClient";
 export * from "./commands";
 export * from "./core/EEnvironment"
 export * from "./core/EAPIType"

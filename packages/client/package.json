@@ -1,6 +1,6 @@
 {
   "name": "@oneb-sdk/client",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "The source code and documentation for this package are in the main [oneb-sdk](https://github.com/tdtanvn/onebjs) repo.",
   "main": "./dist-cjs/index.js",
   "types": "./dist-types/index.d.ts",
@@ -53,5 +53,5 @@
     "url": "https://oneb.tech"
   },
   "homepage": "https://oneb.tech",
-  "license": "MIT"
+  "license": "Apache-2.0"
 }
