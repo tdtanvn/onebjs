@@ -4,3 +4,6 @@ export * from "./GetPlayerDataCommand";
 export * from "./UpdatePlayerDataCommand";
 export * from "./GetBlueprintDataCommand";
 export * from "./CallGameScriptCommand";
+export * from "./inbox/ClaimInboxCommand";
+export * from "./inbox/GetInboxListCommand";
+export * from "./inbox/DeleteInboxCommand";

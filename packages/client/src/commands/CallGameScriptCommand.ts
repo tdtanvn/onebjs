@@ -3,8 +3,6 @@ import { BaseCommand, ServiceName } from "./BaseCommand";
 
 export class CallGameScriptCommand<T extends T & any> extends BaseCommand<T> {
   protected serviceName: ServiceName = ServiceName.GAMESCRIPT;
-  data: T & any;
-
   constructor(scriptName: string, functionName: string, param?: T, classProtobuf?: any) {
     super();
     this.namespace = scriptName;

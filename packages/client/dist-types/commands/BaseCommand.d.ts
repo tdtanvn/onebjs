@@ -5,7 +5,9 @@ export declare enum ServiceName {
     "PLAYER" = "player",
     "BLUEPRINT" = "blueprint",
     "GAMESCRIPT" = "gamescript",
-    "AUTH" = "auth"
+    "AUTH" = "auth",
+    "INBOX" = "inbox",
+    "LEADERBOARD" = "leaderboard"
 }
 export declare enum Prefix {
     "GET" = "Get",

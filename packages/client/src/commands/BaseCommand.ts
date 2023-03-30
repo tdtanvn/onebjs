@@ -7,6 +7,8 @@ export enum ServiceName {
   "BLUEPRINT" = "blueprint",
   "GAMESCRIPT" = "gamescript",
   "AUTH" = "auth",
+  "INBOX" = "inbox",
+  "LEADERBOARD" = "leaderboard"
 }
 export enum Prefix {
   "GET" = "Get",

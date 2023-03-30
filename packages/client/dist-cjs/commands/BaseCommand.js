@@ -9,6 +9,8 @@ var ServiceName;
     ServiceName["BLUEPRINT"] = "blueprint";
     ServiceName["GAMESCRIPT"] = "gamescript";
     ServiceName["AUTH"] = "auth";
+    ServiceName["INBOX"] = "inbox";
+    ServiceName["LEADERBOARD"] = "leaderboard";
 })(ServiceName = exports.ServiceName || (exports.ServiceName = {}));
 var Prefix;
 (function (Prefix) {
