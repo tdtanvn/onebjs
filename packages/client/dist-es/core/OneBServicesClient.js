@@ -14,6 +14,7 @@ export class OneBServicesClient {
             ["DEVELOPMENT", "https://dev.api.1bservices.com"],
             ["PRODUCTION", "https://api.1bservices.com"],
         ]);
+        this.appVersion = "1";
         this.gameId = config.gameId;
         this.gameVersion = config.gameVersion ?? "";
         this.environment = config.environment ?? Environment.DEVELOPMENT;
@@ -39,6 +40,7 @@ export class OneBServicesClient {
             headers: {
                 "Content-Type": this.serializationOption.ContentType,
                 Authorization: `Bearer ${this.accessToken}`,
+                "X-API-Version": this.appVersion,
             },
         });
         if (response.ok) {

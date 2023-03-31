@@ -5,6 +5,9 @@ export class ProtoSerializationOption {
             longs: Number,
             enums: Number,
             bytes: Number,
+            arrays: true,
+            objects: true,
+            defaults: true,
         };
     }
     Deserialize(data, messageClass) {

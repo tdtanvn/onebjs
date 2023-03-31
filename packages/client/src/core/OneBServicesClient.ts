@@ -30,7 +30,7 @@ export class OneBServicesClient {
   private environment!: Environment;
   private gameVersion!: string;
   private apiType!: APIType;
-
+  private apiVersion: string = "1";
   public enableLog!: boolean;
 
   public constructor(config: ServiceConfig) {
@@ -60,6 +60,7 @@ export class OneBServicesClient {
       headers: {
         "Content-Type": this.serializationOption.ContentType,
         Authorization: `Bearer ${this.accessToken}`,
+        "X-API-Version": this.apiVersion,
       },
     });
     if (response.ok) {

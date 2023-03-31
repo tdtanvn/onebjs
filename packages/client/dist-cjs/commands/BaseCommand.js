@@ -57,7 +57,6 @@ class BaseCommand {
             rawJson.data = this.data;
         }
         const protoMsg = proto_1.ProtoMessage.create(rawJson);
-        console.log(protoMsg);
         const buffer = proto_1.ProtoMessage.encode(protoMsg).finish();
         request.body = buffer;
         return request;

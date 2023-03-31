@@ -1,3 +1,4 @@
+import { RequestVerb } from "../../core/Request";
 import { BaseCommand, ServiceName } from "../BaseCommand";
 
 export class DeleteInboxCommand<T> extends BaseCommand<T> {
@@ -8,5 +9,6 @@ export class DeleteInboxCommand<T> extends BaseCommand<T> {
     this.name = "markdelete";
     this.data = param;
     this.classP = classProtobuf;
+    this.verb = RequestVerb.POST;
   }
 }

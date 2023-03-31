@@ -6,6 +6,9 @@ export declare class ProtoSerializationOption implements ISerializationOption {
         longs: NumberConstructor;
         enums: NumberConstructor;
         bytes: NumberConstructor;
+        arrays: boolean;
+        objects: boolean;
+        defaults: boolean;
     };
     Deserialize<T>(data: Buffer, messageClass: any): T;
 }

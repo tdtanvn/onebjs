@@ -27,7 +27,8 @@ async function main() {
 
   if (accessToken) {
     const inboxList = await client.send<IInboxList>(new GetInboxListCommand(), InboxList);
-    if (inboxList?.items.length) {
+    console.log(inboxList);
+    if (inboxList.items.length) {
       let inboxIds = inboxList.items.filter((item) => item.canClaim).map((item) => item.id);
       console.log(inboxIds);
       const result = await client.send<IInboxClaimOutput>(
@@ -46,7 +47,7 @@ async function main() {
         ),
         InboxDeleteOutput
       );
-      console.log(info)
+      console.log(info);
     }
   }
 }
