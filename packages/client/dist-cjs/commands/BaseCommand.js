@@ -14,8 +14,8 @@ var ServiceName;
 })(ServiceName = exports.ServiceName || (exports.ServiceName = {}));
 var Prefix;
 (function (Prefix) {
-    Prefix["GET"] = "Get";
-    Prefix["UPDATE"] = "Update";
+    Prefix["GET"] = "get";
+    Prefix["UPDATE"] = "update";
 })(Prefix = exports.Prefix || (exports.Prefix = {}));
 class BaseCommand {
     constructor() {
@@ -24,7 +24,7 @@ class BaseCommand {
             [ServiceName.BLUEPRINT, proto_1.Service.BLUEPRINT],
             [ServiceName.GAMESCRIPT, proto_1.Service.GAMESCRIPT],
             [ServiceName.INBOX, proto_1.Service.INBOX],
-            [ServiceName.LEADERBOARD, proto_1.Service.LEADERBOARD]
+            [ServiceName.LEADERBOARD, proto_1.Service.LEADERBOARD],
         ]);
         this.verb = Request_1.RequestVerb.GET;
     }

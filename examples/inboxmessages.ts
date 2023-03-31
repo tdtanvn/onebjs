@@ -17,7 +17,7 @@ async function main() {
     gameId: "DEMO",
     enableLog: true,
     environment: Environment.LOCAL,
-    apiType: APIType.BINARY,
+    apiType: APIType.JSON,
   });
 
   const accessToken = await client.login({

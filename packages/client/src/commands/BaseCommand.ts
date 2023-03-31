@@ -8,11 +8,11 @@ export enum ServiceName {
   "GAMESCRIPT" = "gamescript",
   "AUTH" = "auth",
   "INBOX" = "inbox",
-  "LEADERBOARD" = "leaderboard"
+  "LEADERBOARD" = "leaderboard",
 }
 export enum Prefix {
-  "GET" = "Get",
-  "UPDATE" = "Update",
+  "GET" = "get",
+  "UPDATE" = "update",
 }
 export abstract class BaseCommand<T> implements ICommand {
   protected serviceName!: ServiceName;
@@ -21,7 +21,7 @@ export abstract class BaseCommand<T> implements ICommand {
     [ServiceName.BLUEPRINT, Service.BLUEPRINT],
     [ServiceName.GAMESCRIPT, Service.GAMESCRIPT],
     [ServiceName.INBOX, Service.INBOX],
-    [ServiceName.LEADERBOARD, Service.LEADERBOARD]
+    [ServiceName.LEADERBOARD, Service.LEADERBOARD],
   ]);
   protected namespace?: string;
   protected name!: string;

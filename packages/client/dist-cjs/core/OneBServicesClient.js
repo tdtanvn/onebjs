@@ -19,7 +19,7 @@ class OneBServicesClient {
             ["DEVELOPMENT", "https://dev.api.1bservices.com"],
             ["PRODUCTION", "https://api.1bservices.com"],
         ]);
-        this.appVersion = "1";
+        this.apiVersion = "1";
         this.gameId = config.gameId;
         this.gameVersion = (_a = config.gameVersion) !== null && _a !== void 0 ? _a : "";
         this.environment = (_b = config.environment) !== null && _b !== void 0 ? _b : EEnvironment_1.Environment.DEVELOPMENT;
@@ -45,7 +45,7 @@ class OneBServicesClient {
             headers: {
                 "Content-Type": this.serializationOption.ContentType,
                 Authorization: `Bearer ${this.accessToken}`,
-                "X-API-Version": this.appVersion,
+                "X-API-Version": this.apiVersion,
             },
         });
         if (response.ok) {

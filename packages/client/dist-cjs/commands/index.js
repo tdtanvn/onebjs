@@ -10,3 +10,6 @@ tslib_1.__exportStar(require("./CallGameScriptCommand"), exports);
 tslib_1.__exportStar(require("./inbox/ClaimInboxCommand"), exports);
 tslib_1.__exportStar(require("./inbox/GetInboxListCommand"), exports);
 tslib_1.__exportStar(require("./inbox/DeleteInboxCommand"), exports);
+tslib_1.__exportStar(require("./leaderboard/GetMyRankLeaderboardCommand"), exports);
+tslib_1.__exportStar(require("./leaderboard/GetTopScoreLeaderboardCommand"), exports);
+tslib_1.__exportStar(require("./leaderboard/UpdateScoreLeaderboardCommand"), exports);

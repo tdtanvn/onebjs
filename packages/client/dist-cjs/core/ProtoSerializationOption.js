@@ -9,8 +9,7 @@ class ProtoSerializationOption {
             enums: Number,
             bytes: Number,
             arrays: true,
-            objects: true,
-            defaults: true,
+            objects: true
         };
     }
     Deserialize(data, messageClass) {

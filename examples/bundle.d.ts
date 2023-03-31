@@ -4537,70 +4537,70 @@ export class Inbox extends $protobuf.rpc.Service {
     public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Inbox;
 
     /**
-     * Calls me.
+     * Calls getInfo.
      * @param request Empty message or plain object
      * @param callback Node-style callback called with the error, if any, and InboxList
      */
-    public me(request: IEmpty, callback: Inbox.meCallback): void;
+    public getInfo(request: IEmpty, callback: Inbox.getInfoCallback): void;
 
     /**
-     * Calls me.
+     * Calls getInfo.
      * @param request Empty message or plain object
      * @returns Promise
      */
-    public me(request: IEmpty): Promise<InboxList>;
+    public getInfo(request: IEmpty): Promise<InboxList>;
 
     /**
-     * Calls claim.
+     * Calls claimItem.
      * @param request InboxClaimInput message or plain object
      * @param callback Node-style callback called with the error, if any, and InboxClaimOutput
      */
-    public claim(request: IInboxClaimInput, callback: Inbox.claimCallback): void;
+    public claimItem(request: IInboxClaimInput, callback: Inbox.claimItemCallback): void;
 
     /**
-     * Calls claim.
+     * Calls claimItem.
      * @param request InboxClaimInput message or plain object
      * @returns Promise
      */
-    public claim(request: IInboxClaimInput): Promise<InboxClaimOutput>;
+    public claimItem(request: IInboxClaimInput): Promise<InboxClaimOutput>;
 
     /**
-     * Calls markdelete.
+     * Calls markDeleteItem.
      * @param request InboxDeleteInput message or plain object
      * @param callback Node-style callback called with the error, if any, and InboxDeleteOutput
      */
-    public markdelete(request: IInboxDeleteInput, callback: Inbox.markdeleteCallback): void;
+    public markDeleteItem(request: IInboxDeleteInput, callback: Inbox.markDeleteItemCallback): void;
 
     /**
-     * Calls markdelete.
+     * Calls markDeleteItem.
      * @param request InboxDeleteInput message or plain object
      * @returns Promise
      */
-    public markdelete(request: IInboxDeleteInput): Promise<InboxDeleteOutput>;
+    public markDeleteItem(request: IInboxDeleteInput): Promise<InboxDeleteOutput>;
 }
 
 export namespace Inbox {
 
     /**
-     * Callback as used by {@link Inbox#me}.
+     * Callback as used by {@link Inbox#getInfo}.
      * @param error Error, if any
      * @param [response] InboxList
      */
-    type meCallback = (error: (Error|null), response?: InboxList) => void;
+    type getInfoCallback = (error: (Error|null), response?: InboxList) => void;
 
     /**
-     * Callback as used by {@link Inbox#claim}.
+     * Callback as used by {@link Inbox#claimItem}.
      * @param error Error, if any
      * @param [response] InboxClaimOutput
      */
-    type claimCallback = (error: (Error|null), response?: InboxClaimOutput) => void;
+    type claimItemCallback = (error: (Error|null), response?: InboxClaimOutput) => void;
 
     /**
-     * Callback as used by {@link Inbox#markdelete}.
+     * Callback as used by {@link Inbox#markDeleteItem}.
      * @param error Error, if any
      * @param [response] InboxDeleteOutput
      */
-    type markdeleteCallback = (error: (Error|null), response?: InboxDeleteOutput) => void;
+    type markDeleteItemCallback = (error: (Error|null), response?: InboxDeleteOutput) => void;
 }
 
 /** Properties of an InboxList. */
@@ -5548,6 +5548,989 @@ export class InboxDeleteOutput implements IInboxDeleteOutput {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+/** Represents a Leaderboard */
+export class Leaderboard extends $protobuf.rpc.Service {
+
+    /**
+     * Constructs a new Leaderboard service.
+     * @param rpcImpl RPC implementation
+     * @param [requestDelimited=false] Whether requests are length-delimited
+     * @param [responseDelimited=false] Whether responses are length-delimited
+     */
+    constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
+
+    /**
+     * Creates new Leaderboard service using the specified rpc implementation.
+     * @param rpcImpl RPC implementation
+     * @param [requestDelimited=false] Whether requests are length-delimited
+     * @param [responseDelimited=false] Whether responses are length-delimited
+     * @returns RPC service. Useful where requests and/or responses are streamed.
+     */
+    public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Leaderboard;
+
+    /**
+     * Calls getTopScore.
+     * @param request GetTopLeaderboardInput message or plain object
+     * @param callback Node-style callback called with the error, if any, and TopLeaderboard
+     */
+    public getTopScore(request: IGetTopLeaderboardInput, callback: Leaderboard.getTopScoreCallback): void;
+
+    /**
+     * Calls getTopScore.
+     * @param request GetTopLeaderboardInput message or plain object
+     * @returns Promise
+     */
+    public getTopScore(request: IGetTopLeaderboardInput): Promise<TopLeaderboard>;
+
+    /**
+     * Calls getMyRank.
+     * @param request GetMyRankLeaderboardInput message or plain object
+     * @param callback Node-style callback called with the error, if any, and GetMyRankLeaderboardOutput
+     */
+    public getMyRank(request: IGetMyRankLeaderboardInput, callback: Leaderboard.getMyRankCallback): void;
+
+    /**
+     * Calls getMyRank.
+     * @param request GetMyRankLeaderboardInput message or plain object
+     * @returns Promise
+     */
+    public getMyRank(request: IGetMyRankLeaderboardInput): Promise<GetMyRankLeaderboardOutput>;
+
+    /**
+     * Calls updateScore.
+     * @param request UpdateScoreLeaderboardInput message or plain object
+     * @param callback Node-style callback called with the error, if any, and UpdateScoreLeaderboardOutput
+     */
+    public updateScore(request: IUpdateScoreLeaderboardInput, callback: Leaderboard.updateScoreCallback): void;
+
+    /**
+     * Calls updateScore.
+     * @param request UpdateScoreLeaderboardInput message or plain object
+     * @returns Promise
+     */
+    public updateScore(request: IUpdateScoreLeaderboardInput): Promise<UpdateScoreLeaderboardOutput>;
+}
+
+export namespace Leaderboard {
+
+    /**
+     * Callback as used by {@link Leaderboard#getTopScore}.
+     * @param error Error, if any
+     * @param [response] TopLeaderboard
+     */
+    type getTopScoreCallback = (error: (Error|null), response?: TopLeaderboard) => void;
+
+    /**
+     * Callback as used by {@link Leaderboard#getMyRank}.
+     * @param error Error, if any
+     * @param [response] GetMyRankLeaderboardOutput
+     */
+    type getMyRankCallback = (error: (Error|null), response?: GetMyRankLeaderboardOutput) => void;
+
+    /**
+     * Callback as used by {@link Leaderboard#updateScore}.
+     * @param error Error, if any
+     * @param [response] UpdateScoreLeaderboardOutput
+     */
+    type updateScoreCallback = (error: (Error|null), response?: UpdateScoreLeaderboardOutput) => void;
+}
+
+/** Properties of a GetTopLeaderboardInput. */
+export interface IGetTopLeaderboardInput {
+
+    /** GetTopLeaderboardInput name */
+    name?: (string|null);
+
+    /** GetTopLeaderboardInput offset */
+    offset?: (number|null);
+
+    /** GetTopLeaderboardInput country */
+    country?: (string|null);
+
+    /** GetTopLeaderboardInput count */
+    count?: (number|null);
+
+    /** GetTopLeaderboardInput reverseOrder */
+    reverseOrder?: (boolean|null);
+}
+
+/** Represents a GetTopLeaderboardInput. */
+export class GetTopLeaderboardInput implements IGetTopLeaderboardInput {
+
+    /**
+     * Constructs a new GetTopLeaderboardInput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IGetTopLeaderboardInput);
+
+    /** GetTopLeaderboardInput name. */
+    public name?: (string|null);
+
+    /** GetTopLeaderboardInput offset. */
+    public offset: number;
+
+    /** GetTopLeaderboardInput country. */
+    public country: string;
+
+    /** GetTopLeaderboardInput count. */
+    public count?: (number|null);
+
+    /** GetTopLeaderboardInput reverseOrder. */
+    public reverseOrder: boolean;
+
+    /** GetTopLeaderboardInput _name. */
+    public _name?: "name";
+
+    /** GetTopLeaderboardInput _count. */
+    public _count?: "count";
+
+    /**
+     * Creates a new GetTopLeaderboardInput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns GetTopLeaderboardInput instance
+     */
+    public static create(properties?: IGetTopLeaderboardInput): GetTopLeaderboardInput;
+
+    /**
+     * Encodes the specified GetTopLeaderboardInput message. Does not implicitly {@link GetTopLeaderboardInput.verify|verify} messages.
+     * @param message GetTopLeaderboardInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IGetTopLeaderboardInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified GetTopLeaderboardInput message, length delimited. Does not implicitly {@link GetTopLeaderboardInput.verify|verify} messages.
+     * @param message GetTopLeaderboardInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IGetTopLeaderboardInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a GetTopLeaderboardInput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns GetTopLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): GetTopLeaderboardInput;
+
+    /**
+     * Decodes a GetTopLeaderboardInput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns GetTopLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): GetTopLeaderboardInput;
+
+    /**
+     * Verifies a GetTopLeaderboardInput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a GetTopLeaderboardInput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns GetTopLeaderboardInput
+     */
+    public static fromObject(object: { [k: string]: any }): GetTopLeaderboardInput;
+
+    /**
+     * Creates a plain object from a GetTopLeaderboardInput message. Also converts values to other types if specified.
+     * @param message GetTopLeaderboardInput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: GetTopLeaderboardInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this GetTopLeaderboardInput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for GetTopLeaderboardInput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a TopLeaderboard. */
+export interface ITopLeaderboard {
+
+    /** TopLeaderboard items */
+    items?: (TopLeaderboard.IItems[]|null);
+}
+
+/** Represents a TopLeaderboard. */
+export class TopLeaderboard implements ITopLeaderboard {
+
+    /**
+     * Constructs a new TopLeaderboard.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: ITopLeaderboard);
+
+    /** TopLeaderboard items. */
+    public items: TopLeaderboard.IItems[];
+
+    /**
+     * Creates a new TopLeaderboard instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns TopLeaderboard instance
+     */
+    public static create(properties?: ITopLeaderboard): TopLeaderboard;
+
+    /**
+     * Encodes the specified TopLeaderboard message. Does not implicitly {@link TopLeaderboard.verify|verify} messages.
+     * @param message TopLeaderboard message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: ITopLeaderboard, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified TopLeaderboard message, length delimited. Does not implicitly {@link TopLeaderboard.verify|verify} messages.
+     * @param message TopLeaderboard message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: ITopLeaderboard, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a TopLeaderboard message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns TopLeaderboard
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): TopLeaderboard;
+
+    /**
+     * Decodes a TopLeaderboard message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns TopLeaderboard
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): TopLeaderboard;
+
+    /**
+     * Verifies a TopLeaderboard message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a TopLeaderboard message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns TopLeaderboard
+     */
+    public static fromObject(object: { [k: string]: any }): TopLeaderboard;
+
+    /**
+     * Creates a plain object from a TopLeaderboard message. Also converts values to other types if specified.
+     * @param message TopLeaderboard
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: TopLeaderboard, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this TopLeaderboard to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for TopLeaderboard
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+export namespace TopLeaderboard {
+
+    /** Properties of an Items. */
+    interface IItems {
+
+        /** Items playerName */
+        playerName?: (string|null);
+
+        /** Items playerId */
+        playerId?: (string|null);
+
+        /** Items country */
+        country?: (string|null);
+
+        /** Items score */
+        score?: (number|null);
+
+        /** Items rank */
+        rank?: (number|null);
+    }
+
+    /** Represents an Items. */
+    class Items implements IItems {
+
+        /**
+         * Constructs a new Items.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: TopLeaderboard.IItems);
+
+        /** Items playerName. */
+        public playerName: string;
+
+        /** Items playerId. */
+        public playerId: string;
+
+        /** Items country. */
+        public country: string;
+
+        /** Items score. */
+        public score: number;
+
+        /** Items rank. */
+        public rank: number;
+
+        /**
+         * Creates a new Items instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Items instance
+         */
+        public static create(properties?: TopLeaderboard.IItems): TopLeaderboard.Items;
+
+        /**
+         * Encodes the specified Items message. Does not implicitly {@link TopLeaderboard.Items.verify|verify} messages.
+         * @param message Items message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: TopLeaderboard.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link TopLeaderboard.Items.verify|verify} messages.
+         * @param message Items message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: TopLeaderboard.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Items message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): TopLeaderboard.Items;
+
+        /**
+         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): TopLeaderboard.Items;
+
+        /**
+         * Verifies an Items message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Items
+         */
+        public static fromObject(object: { [k: string]: any }): TopLeaderboard.Items;
+
+        /**
+         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * @param message Items
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: TopLeaderboard.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Items to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Items
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+}
+
+/** Properties of a GetMyRankLeaderboardInput. */
+export interface IGetMyRankLeaderboardInput {
+
+    /** GetMyRankLeaderboardInput name */
+    name?: (string|null);
+
+    /** GetMyRankLeaderboardInput country */
+    country?: (string|null);
+
+    /** GetMyRankLeaderboardInput reverseOrder */
+    reverseOrder?: (boolean|null);
+}
+
+/** Represents a GetMyRankLeaderboardInput. */
+export class GetMyRankLeaderboardInput implements IGetMyRankLeaderboardInput {
+
+    /**
+     * Constructs a new GetMyRankLeaderboardInput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IGetMyRankLeaderboardInput);
+
+    /** GetMyRankLeaderboardInput name. */
+    public name: string;
+
+    /** GetMyRankLeaderboardInput country. */
+    public country: string;
+
+    /** GetMyRankLeaderboardInput reverseOrder. */
+    public reverseOrder: boolean;
+
+    /**
+     * Creates a new GetMyRankLeaderboardInput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns GetMyRankLeaderboardInput instance
+     */
+    public static create(properties?: IGetMyRankLeaderboardInput): GetMyRankLeaderboardInput;
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardInput message. Does not implicitly {@link GetMyRankLeaderboardInput.verify|verify} messages.
+     * @param message GetMyRankLeaderboardInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IGetMyRankLeaderboardInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardInput message, length delimited. Does not implicitly {@link GetMyRankLeaderboardInput.verify|verify} messages.
+     * @param message GetMyRankLeaderboardInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IGetMyRankLeaderboardInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a GetMyRankLeaderboardInput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns GetMyRankLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): GetMyRankLeaderboardInput;
+
+    /**
+     * Decodes a GetMyRankLeaderboardInput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns GetMyRankLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): GetMyRankLeaderboardInput;
+
+    /**
+     * Verifies a GetMyRankLeaderboardInput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a GetMyRankLeaderboardInput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns GetMyRankLeaderboardInput
+     */
+    public static fromObject(object: { [k: string]: any }): GetMyRankLeaderboardInput;
+
+    /**
+     * Creates a plain object from a GetMyRankLeaderboardInput message. Also converts values to other types if specified.
+     * @param message GetMyRankLeaderboardInput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: GetMyRankLeaderboardInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this GetMyRankLeaderboardInput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for GetMyRankLeaderboardInput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of a GetMyRankLeaderboardOutput. */
+export interface IGetMyRankLeaderboardOutput {
+
+    /** GetMyRankLeaderboardOutput rank */
+    rank?: (number|null);
+
+    /** GetMyRankLeaderboardOutput minRank */
+    minRank?: (number|null);
+
+    /** GetMyRankLeaderboardOutput score */
+    score?: (number|null);
+
+    /** GetMyRankLeaderboardOutput playerName */
+    playerName?: (string|null);
+
+    /** GetMyRankLeaderboardOutput playerId */
+    playerId?: (string|null);
+
+    /** GetMyRankLeaderboardOutput country */
+    country?: (string|null);
+}
+
+/** Represents a GetMyRankLeaderboardOutput. */
+export class GetMyRankLeaderboardOutput implements IGetMyRankLeaderboardOutput {
+
+    /**
+     * Constructs a new GetMyRankLeaderboardOutput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IGetMyRankLeaderboardOutput);
+
+    /** GetMyRankLeaderboardOutput rank. */
+    public rank: number;
+
+    /** GetMyRankLeaderboardOutput minRank. */
+    public minRank: number;
+
+    /** GetMyRankLeaderboardOutput score. */
+    public score: number;
+
+    /** GetMyRankLeaderboardOutput playerName. */
+    public playerName: string;
+
+    /** GetMyRankLeaderboardOutput playerId. */
+    public playerId: string;
+
+    /** GetMyRankLeaderboardOutput country. */
+    public country: string;
+
+    /**
+     * Creates a new GetMyRankLeaderboardOutput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns GetMyRankLeaderboardOutput instance
+     */
+    public static create(properties?: IGetMyRankLeaderboardOutput): GetMyRankLeaderboardOutput;
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardOutput message. Does not implicitly {@link GetMyRankLeaderboardOutput.verify|verify} messages.
+     * @param message GetMyRankLeaderboardOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IGetMyRankLeaderboardOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardOutput message, length delimited. Does not implicitly {@link GetMyRankLeaderboardOutput.verify|verify} messages.
+     * @param message GetMyRankLeaderboardOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IGetMyRankLeaderboardOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes a GetMyRankLeaderboardOutput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns GetMyRankLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): GetMyRankLeaderboardOutput;
+
+    /**
+     * Decodes a GetMyRankLeaderboardOutput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns GetMyRankLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): GetMyRankLeaderboardOutput;
+
+    /**
+     * Verifies a GetMyRankLeaderboardOutput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates a GetMyRankLeaderboardOutput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns GetMyRankLeaderboardOutput
+     */
+    public static fromObject(object: { [k: string]: any }): GetMyRankLeaderboardOutput;
+
+    /**
+     * Creates a plain object from a GetMyRankLeaderboardOutput message. Also converts values to other types if specified.
+     * @param message GetMyRankLeaderboardOutput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: GetMyRankLeaderboardOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this GetMyRankLeaderboardOutput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for GetMyRankLeaderboardOutput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+/** Properties of an UpdateScoreLeaderboardInput. */
+export interface IUpdateScoreLeaderboardInput {
+
+    /** UpdateScoreLeaderboardInput items */
+    items?: (UpdateScoreLeaderboardInput.IItems[]|null);
+}
+
+/** Represents an UpdateScoreLeaderboardInput. */
+export class UpdateScoreLeaderboardInput implements IUpdateScoreLeaderboardInput {
+
+    /**
+     * Constructs a new UpdateScoreLeaderboardInput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IUpdateScoreLeaderboardInput);
+
+    /** UpdateScoreLeaderboardInput items. */
+    public items: UpdateScoreLeaderboardInput.IItems[];
+
+    /**
+     * Creates a new UpdateScoreLeaderboardInput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns UpdateScoreLeaderboardInput instance
+     */
+    public static create(properties?: IUpdateScoreLeaderboardInput): UpdateScoreLeaderboardInput;
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardInput message. Does not implicitly {@link UpdateScoreLeaderboardInput.verify|verify} messages.
+     * @param message UpdateScoreLeaderboardInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IUpdateScoreLeaderboardInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardInput message, length delimited. Does not implicitly {@link UpdateScoreLeaderboardInput.verify|verify} messages.
+     * @param message UpdateScoreLeaderboardInput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IUpdateScoreLeaderboardInput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an UpdateScoreLeaderboardInput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns UpdateScoreLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UpdateScoreLeaderboardInput;
+
+    /**
+     * Decodes an UpdateScoreLeaderboardInput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns UpdateScoreLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UpdateScoreLeaderboardInput;
+
+    /**
+     * Verifies an UpdateScoreLeaderboardInput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an UpdateScoreLeaderboardInput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns UpdateScoreLeaderboardInput
+     */
+    public static fromObject(object: { [k: string]: any }): UpdateScoreLeaderboardInput;
+
+    /**
+     * Creates a plain object from an UpdateScoreLeaderboardInput message. Also converts values to other types if specified.
+     * @param message UpdateScoreLeaderboardInput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: UpdateScoreLeaderboardInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this UpdateScoreLeaderboardInput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for UpdateScoreLeaderboardInput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
+export namespace UpdateScoreLeaderboardInput {
+
+    /** Properties of an Items. */
+    interface IItems {
+
+        /** Items score */
+        score?: (number|null);
+
+        /** Items option */
+        option?: (string|null);
+
+        /** Items country */
+        country?: (string|null);
+
+        /** Items name */
+        name?: (string|null);
+    }
+
+    /** Represents an Items. */
+    class Items implements IItems {
+
+        /**
+         * Constructs a new Items.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: UpdateScoreLeaderboardInput.IItems);
+
+        /** Items score. */
+        public score: number;
+
+        /** Items option. */
+        public option: string;
+
+        /** Items country. */
+        public country: string;
+
+        /** Items name. */
+        public name: string;
+
+        /**
+         * Creates a new Items instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Items instance
+         */
+        public static create(properties?: UpdateScoreLeaderboardInput.IItems): UpdateScoreLeaderboardInput.Items;
+
+        /**
+         * Encodes the specified Items message. Does not implicitly {@link UpdateScoreLeaderboardInput.Items.verify|verify} messages.
+         * @param message Items message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: UpdateScoreLeaderboardInput.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link UpdateScoreLeaderboardInput.Items.verify|verify} messages.
+         * @param message Items message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: UpdateScoreLeaderboardInput.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes an Items message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UpdateScoreLeaderboardInput.Items;
+
+        /**
+         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UpdateScoreLeaderboardInput.Items;
+
+        /**
+         * Verifies an Items message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Items
+         */
+        public static fromObject(object: { [k: string]: any }): UpdateScoreLeaderboardInput.Items;
+
+        /**
+         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * @param message Items
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: UpdateScoreLeaderboardInput.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Items to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Items
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+}
+
+/** Properties of an UpdateScoreLeaderboardOutput. */
+export interface IUpdateScoreLeaderboardOutput {
+
+    /** UpdateScoreLeaderboardOutput status */
+    status?: (string|null);
+}
+
+/** Represents an UpdateScoreLeaderboardOutput. */
+export class UpdateScoreLeaderboardOutput implements IUpdateScoreLeaderboardOutput {
+
+    /**
+     * Constructs a new UpdateScoreLeaderboardOutput.
+     * @param [properties] Properties to set
+     */
+    constructor(properties?: IUpdateScoreLeaderboardOutput);
+
+    /** UpdateScoreLeaderboardOutput status. */
+    public status: string;
+
+    /**
+     * Creates a new UpdateScoreLeaderboardOutput instance using the specified properties.
+     * @param [properties] Properties to set
+     * @returns UpdateScoreLeaderboardOutput instance
+     */
+    public static create(properties?: IUpdateScoreLeaderboardOutput): UpdateScoreLeaderboardOutput;
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardOutput message. Does not implicitly {@link UpdateScoreLeaderboardOutput.verify|verify} messages.
+     * @param message UpdateScoreLeaderboardOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encode(message: IUpdateScoreLeaderboardOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardOutput message, length delimited. Does not implicitly {@link UpdateScoreLeaderboardOutput.verify|verify} messages.
+     * @param message UpdateScoreLeaderboardOutput message or plain object to encode
+     * @param [writer] Writer to encode to
+     * @returns Writer
+     */
+    public static encodeDelimited(message: IUpdateScoreLeaderboardOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+
+    /**
+     * Decodes an UpdateScoreLeaderboardOutput message from the specified reader or buffer.
+     * @param reader Reader or buffer to decode from
+     * @param [length] Message length if known beforehand
+     * @returns UpdateScoreLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): UpdateScoreLeaderboardOutput;
+
+    /**
+     * Decodes an UpdateScoreLeaderboardOutput message from the specified reader or buffer, length delimited.
+     * @param reader Reader or buffer to decode from
+     * @returns UpdateScoreLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): UpdateScoreLeaderboardOutput;
+
+    /**
+     * Verifies an UpdateScoreLeaderboardOutput message.
+     * @param message Plain object to verify
+     * @returns `null` if valid, otherwise the reason why it is not
+     */
+    public static verify(message: { [k: string]: any }): (string|null);
+
+    /**
+     * Creates an UpdateScoreLeaderboardOutput message from a plain object. Also converts values to their respective internal types.
+     * @param object Plain object
+     * @returns UpdateScoreLeaderboardOutput
+     */
+    public static fromObject(object: { [k: string]: any }): UpdateScoreLeaderboardOutput;
+
+    /**
+     * Creates a plain object from an UpdateScoreLeaderboardOutput message. Also converts values to other types if specified.
+     * @param message UpdateScoreLeaderboardOutput
+     * @param [options] Conversion options
+     * @returns Plain object
+     */
+    public static toObject(message: UpdateScoreLeaderboardOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+    /**
+     * Converts this UpdateScoreLeaderboardOutput to JSON.
+     * @returns JSON object
+     */
+    public toJSON(): { [k: string]: any };
+
+    /**
+     * Gets the default type url for UpdateScoreLeaderboardOutput
+     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns The default type url
+     */
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 /** Represents a Player */
 export class Player extends $protobuf.rpc.Service {
 
@@ -5569,42 +6552,42 @@ export class Player extends $protobuf.rpc.Service {
     public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Player;
 
     /**
-     * Calls GetProfile.
+     * Calls getProfile.
      * @param request Empty message or plain object
      * @param callback Node-style callback called with the error, if any, and PlayerProfileRes
      */
-    public getProfile(request: IEmpty, callback: Player.GetProfileCallback): void;
+    public getProfile(request: IEmpty, callback: Player.getProfileCallback): void;
 
     /**
-     * Calls GetProfile.
+     * Calls getProfile.
      * @param request Empty message or plain object
      * @returns Promise
      */
     public getProfile(request: IEmpty): Promise<PlayerProfileRes>;
 
     /**
-     * Calls UpdateProfile.
+     * Calls updateProfile.
      * @param request PlayerProfileReq message or plain object
      * @param callback Node-style callback called with the error, if any, and PlayerProfileRes
      */
-    public updateProfile(request: IPlayerProfileReq, callback: Player.UpdateProfileCallback): void;
+    public updateProfile(request: IPlayerProfileReq, callback: Player.updateProfileCallback): void;
 
     /**
-     * Calls UpdateProfile.
+     * Calls updateProfile.
      * @param request PlayerProfileReq message or plain object
      * @returns Promise
      */
     public updateProfile(request: IPlayerProfileReq): Promise<PlayerProfileRes>;
 
     /**
-     * Calls GetData.
+     * Calls getData.
      * @param request Empty message or plain object
      * @param callback Node-style callback called with the error, if any, and PlayerDataRes
      */
-    public getData(request: IEmpty, callback: Player.GetDataCallback): void;
+    public getData(request: IEmpty, callback: Player.getDataCallback): void;
 
     /**
-     * Calls GetData.
+     * Calls getData.
      * @param request Empty message or plain object
      * @returns Promise
      */
@@ -5618,21 +6601,21 @@ export namespace Player {
      * @param error Error, if any
      * @param [response] PlayerProfileRes
      */
-    type GetProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
+    type getProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
 
     /**
      * Callback as used by {@link Player#updateProfile}.
      * @param error Error, if any
      * @param [response] PlayerProfileRes
      */
-    type UpdateProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
+    type updateProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
 
     /**
      * Callback as used by {@link Player#getData}.
      * @param error Error, if any
      * @param [response] PlayerDataRes
      */
-    type GetDataCallback = (error: (Error|null), response?: PlayerDataRes) => void;
+    type getDataCallback = (error: (Error|null), response?: PlayerDataRes) => void;
 }
 
 /** Properties of a PlayerProfileRes. */

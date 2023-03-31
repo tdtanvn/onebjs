@@ -236,10 +236,10 @@ message LuckyWheelClaimItemOutput {
     _luckywheel _luckyWheel = 3;
 }
 
-service Inbox{
-  rpc me (Empty) returns (InboxList) {}
-  rpc claim (InboxClaimInput) returns (InboxClaimOutput) {}
-  rpc markdelete (InboxDeleteInput) returns (InboxDeleteOutput) {}
+service Inbox {
+  rpc getInfo (Empty) returns (InboxList) {}
+  rpc claimItem (InboxClaimInput) returns (InboxClaimOutput) {}
+  rpc markDeleteItem (InboxDeleteInput) returns (InboxDeleteOutput) {}
 }
 message InboxList {
     message Conditions {
@@ -284,11 +284,66 @@ message InboxDeleteOutput {
 }
 
 
-service Player {
-  rpc GetProfile(Empty) returns (PlayerProfileRes){}
-  rpc UpdateProfile(PlayerProfileReq) returns (PlayerProfileRes){}
-  rpc GetData(Empty) returns (PlayerDataRes){}
+service Leaderboard {
+  rpc getTopScore (GetTopLeaderboardInput) returns (TopLeaderboard) {}
+  rpc getMyRank (GetMyRankLeaderboardInput) returns (GetMyRankLeaderboardOutput) {}
+  rpc updateScore (UpdateScoreLeaderboardInput) returns (UpdateScoreLeaderboardOutput) {}
+}
 
+message GetTopLeaderboardInput {
+  optional string name = 1;
+  uint32 offset = 2;
+  string country = 3;
+  optional uint32 count = 4;
+  bool reverseOrder = 5;
+}
+
+message TopLeaderboard {
+ message Items {
+    string playerName = 1;
+    string playerId = 2;
+    string country = 3;
+    uint32 score = 4;
+    uint32 rank = 5;
+  }
+
+  repeated Items items = 1;
+}
+
+message GetMyRankLeaderboardInput {
+  string name = 1;
+  string country = 2;
+  bool reverseOrder = 3;
+}
+
+message GetMyRankLeaderboardOutput {
+  uint32 rank = 1;
+  uint32 minRank = 2;
+  uint32 score = 3;
+  string playerName = 4;
+  string playerId = 5;
+  string country = 6;
+}
+
+message UpdateScoreLeaderboardInput {
+  message Items {
+    uint32 score = 1;
+    string option = 2;
+    string country = 3;
+    string name = 4;
+  }
+  repeated Items items = 1;
+}
+
+message UpdateScoreLeaderboardOutput {
+  string status = 1;
+}
+
+
+service Player {
+  rpc getProfile(Empty) returns (PlayerProfileRes){}
+  rpc updateProfile(PlayerProfileReq) returns (PlayerProfileRes){}
+  rpc getData(Empty) returns (PlayerDataRes){}
 }
 
 message PlayerProfileRes {

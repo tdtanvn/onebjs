@@ -17,7 +17,7 @@ export declare class OneBServicesClient {
     private environment;
     private gameVersion;
     private apiType;
-    private appVersion;
+    private apiVersion;
     enableLog: boolean;
     constructor(config: ServiceConfig);
     send<TResponseType>(cmd: ICommand, classMessage?: any): Promise<TResponseType>;

@@ -10,8 +10,8 @@ export declare enum ServiceName {
     "LEADERBOARD" = "leaderboard"
 }
 export declare enum Prefix {
-    "GET" = "Get",
-    "UPDATE" = "Update"
+    "GET" = "get",
+    "UPDATE" = "update"
 }
 export declare abstract class BaseCommand<T> implements ICommand {
     protected serviceName: ServiceName;

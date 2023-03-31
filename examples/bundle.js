@@ -10161,31 +10161,31 @@ $root.Inbox = (function() {
     };
 
     /**
-     * Callback as used by {@link Inbox#me}.
+     * Callback as used by {@link Inbox#getInfo}.
      * @memberof Inbox
-     * @typedef meCallback
+     * @typedef getInfoCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {InboxList} [response] InboxList
      */
 
     /**
-     * Calls me.
-     * @function me
+     * Calls getInfo.
+     * @function getInfo
      * @memberof Inbox
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Inbox.meCallback} callback Node-style callback called with the error, if any, and InboxList
+     * @param {Inbox.getInfoCallback} callback Node-style callback called with the error, if any, and InboxList
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Inbox.prototype.me = function me(request, callback) {
-        return this.rpcCall(me, $root.Empty, $root.InboxList, request, callback);
-    }, "name", { value: "me" });
+    Object.defineProperty(Inbox.prototype.getInfo = function getInfo(request, callback) {
+        return this.rpcCall(getInfo, $root.Empty, $root.InboxList, request, callback);
+    }, "name", { value: "getInfo" });
 
     /**
-     * Calls me.
-     * @function me
+     * Calls getInfo.
+     * @function getInfo
      * @memberof Inbox
      * @instance
      * @param {IEmpty} request Empty message or plain object
@@ -10194,31 +10194,31 @@ $root.Inbox = (function() {
      */
 
     /**
-     * Callback as used by {@link Inbox#claim}.
+     * Callback as used by {@link Inbox#claimItem}.
      * @memberof Inbox
-     * @typedef claimCallback
+     * @typedef claimItemCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {InboxClaimOutput} [response] InboxClaimOutput
      */
 
     /**
-     * Calls claim.
-     * @function claim
+     * Calls claimItem.
+     * @function claimItem
      * @memberof Inbox
      * @instance
      * @param {IInboxClaimInput} request InboxClaimInput message or plain object
-     * @param {Inbox.claimCallback} callback Node-style callback called with the error, if any, and InboxClaimOutput
+     * @param {Inbox.claimItemCallback} callback Node-style callback called with the error, if any, and InboxClaimOutput
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Inbox.prototype.claim = function claim(request, callback) {
-        return this.rpcCall(claim, $root.InboxClaimInput, $root.InboxClaimOutput, request, callback);
-    }, "name", { value: "claim" });
+    Object.defineProperty(Inbox.prototype.claimItem = function claimItem(request, callback) {
+        return this.rpcCall(claimItem, $root.InboxClaimInput, $root.InboxClaimOutput, request, callback);
+    }, "name", { value: "claimItem" });
 
     /**
-     * Calls claim.
-     * @function claim
+     * Calls claimItem.
+     * @function claimItem
      * @memberof Inbox
      * @instance
      * @param {IInboxClaimInput} request InboxClaimInput message or plain object
@@ -10227,31 +10227,31 @@ $root.Inbox = (function() {
      */
 
     /**
-     * Callback as used by {@link Inbox#markdelete}.
+     * Callback as used by {@link Inbox#markDeleteItem}.
      * @memberof Inbox
-     * @typedef markdeleteCallback
+     * @typedef markDeleteItemCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {InboxDeleteOutput} [response] InboxDeleteOutput
      */
 
     /**
-     * Calls markdelete.
-     * @function markdelete
+     * Calls markDeleteItem.
+     * @function markDeleteItem
      * @memberof Inbox
      * @instance
      * @param {IInboxDeleteInput} request InboxDeleteInput message or plain object
-     * @param {Inbox.markdeleteCallback} callback Node-style callback called with the error, if any, and InboxDeleteOutput
+     * @param {Inbox.markDeleteItemCallback} callback Node-style callback called with the error, if any, and InboxDeleteOutput
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Inbox.prototype.markdelete = function markdelete(request, callback) {
-        return this.rpcCall(markdelete, $root.InboxDeleteInput, $root.InboxDeleteOutput, request, callback);
-    }, "name", { value: "markdelete" });
+    Object.defineProperty(Inbox.prototype.markDeleteItem = function markDeleteItem(request, callback) {
+        return this.rpcCall(markDeleteItem, $root.InboxDeleteInput, $root.InboxDeleteOutput, request, callback);
+    }, "name", { value: "markDeleteItem" });
 
     /**
-     * Calls markdelete.
-     * @function markdelete
+     * Calls markDeleteItem.
+     * @function markDeleteItem
      * @memberof Inbox
      * @instance
      * @param {IInboxDeleteInput} request InboxDeleteInput message or plain object
@@ -12497,6 +12497,2259 @@ $root.InboxDeleteOutput = (function() {
     return InboxDeleteOutput;
 })();
 
+$root.Leaderboard = (function() {
+
+    /**
+     * Constructs a new Leaderboard service.
+     * @exports Leaderboard
+     * @classdesc Represents a Leaderboard
+     * @extends $protobuf.rpc.Service
+     * @constructor
+     * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+     * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+     * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+     */
+    function Leaderboard(rpcImpl, requestDelimited, responseDelimited) {
+        $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
+    }
+
+    (Leaderboard.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Leaderboard;
+
+    /**
+     * Creates new Leaderboard service using the specified rpc implementation.
+     * @function create
+     * @memberof Leaderboard
+     * @static
+     * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
+     * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
+     * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
+     * @returns {Leaderboard} RPC service. Useful where requests and/or responses are streamed.
+     */
+    Leaderboard.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+        return new this(rpcImpl, requestDelimited, responseDelimited);
+    };
+
+    /**
+     * Callback as used by {@link Leaderboard#getTopScore}.
+     * @memberof Leaderboard
+     * @typedef getTopScoreCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {TopLeaderboard} [response] TopLeaderboard
+     */
+
+    /**
+     * Calls getTopScore.
+     * @function getTopScore
+     * @memberof Leaderboard
+     * @instance
+     * @param {IGetTopLeaderboardInput} request GetTopLeaderboardInput message or plain object
+     * @param {Leaderboard.getTopScoreCallback} callback Node-style callback called with the error, if any, and TopLeaderboard
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(Leaderboard.prototype.getTopScore = function getTopScore(request, callback) {
+        return this.rpcCall(getTopScore, $root.GetTopLeaderboardInput, $root.TopLeaderboard, request, callback);
+    }, "name", { value: "getTopScore" });
+
+    /**
+     * Calls getTopScore.
+     * @function getTopScore
+     * @memberof Leaderboard
+     * @instance
+     * @param {IGetTopLeaderboardInput} request GetTopLeaderboardInput message or plain object
+     * @returns {Promise<TopLeaderboard>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link Leaderboard#getMyRank}.
+     * @memberof Leaderboard
+     * @typedef getMyRankCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {GetMyRankLeaderboardOutput} [response] GetMyRankLeaderboardOutput
+     */
+
+    /**
+     * Calls getMyRank.
+     * @function getMyRank
+     * @memberof Leaderboard
+     * @instance
+     * @param {IGetMyRankLeaderboardInput} request GetMyRankLeaderboardInput message or plain object
+     * @param {Leaderboard.getMyRankCallback} callback Node-style callback called with the error, if any, and GetMyRankLeaderboardOutput
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(Leaderboard.prototype.getMyRank = function getMyRank(request, callback) {
+        return this.rpcCall(getMyRank, $root.GetMyRankLeaderboardInput, $root.GetMyRankLeaderboardOutput, request, callback);
+    }, "name", { value: "getMyRank" });
+
+    /**
+     * Calls getMyRank.
+     * @function getMyRank
+     * @memberof Leaderboard
+     * @instance
+     * @param {IGetMyRankLeaderboardInput} request GetMyRankLeaderboardInput message or plain object
+     * @returns {Promise<GetMyRankLeaderboardOutput>} Promise
+     * @variation 2
+     */
+
+    /**
+     * Callback as used by {@link Leaderboard#updateScore}.
+     * @memberof Leaderboard
+     * @typedef updateScoreCallback
+     * @type {function}
+     * @param {Error|null} error Error, if any
+     * @param {UpdateScoreLeaderboardOutput} [response] UpdateScoreLeaderboardOutput
+     */
+
+    /**
+     * Calls updateScore.
+     * @function updateScore
+     * @memberof Leaderboard
+     * @instance
+     * @param {IUpdateScoreLeaderboardInput} request UpdateScoreLeaderboardInput message or plain object
+     * @param {Leaderboard.updateScoreCallback} callback Node-style callback called with the error, if any, and UpdateScoreLeaderboardOutput
+     * @returns {undefined}
+     * @variation 1
+     */
+    Object.defineProperty(Leaderboard.prototype.updateScore = function updateScore(request, callback) {
+        return this.rpcCall(updateScore, $root.UpdateScoreLeaderboardInput, $root.UpdateScoreLeaderboardOutput, request, callback);
+    }, "name", { value: "updateScore" });
+
+    /**
+     * Calls updateScore.
+     * @function updateScore
+     * @memberof Leaderboard
+     * @instance
+     * @param {IUpdateScoreLeaderboardInput} request UpdateScoreLeaderboardInput message or plain object
+     * @returns {Promise<UpdateScoreLeaderboardOutput>} Promise
+     * @variation 2
+     */
+
+    return Leaderboard;
+})();
+
+$root.GetTopLeaderboardInput = (function() {
+
+    /**
+     * Properties of a GetTopLeaderboardInput.
+     * @exports IGetTopLeaderboardInput
+     * @interface IGetTopLeaderboardInput
+     * @property {string|null} [name] GetTopLeaderboardInput name
+     * @property {number|null} [offset] GetTopLeaderboardInput offset
+     * @property {string|null} [country] GetTopLeaderboardInput country
+     * @property {number|null} [count] GetTopLeaderboardInput count
+     * @property {boolean|null} [reverseOrder] GetTopLeaderboardInput reverseOrder
+     */
+
+    /**
+     * Constructs a new GetTopLeaderboardInput.
+     * @exports GetTopLeaderboardInput
+     * @classdesc Represents a GetTopLeaderboardInput.
+     * @implements IGetTopLeaderboardInput
+     * @constructor
+     * @param {IGetTopLeaderboardInput=} [properties] Properties to set
+     */
+    function GetTopLeaderboardInput(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * GetTopLeaderboardInput name.
+     * @member {string|null|undefined} name
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    GetTopLeaderboardInput.prototype.name = null;
+
+    /**
+     * GetTopLeaderboardInput offset.
+     * @member {number} offset
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    GetTopLeaderboardInput.prototype.offset = 0;
+
+    /**
+     * GetTopLeaderboardInput country.
+     * @member {string} country
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    GetTopLeaderboardInput.prototype.country = "";
+
+    /**
+     * GetTopLeaderboardInput count.
+     * @member {number|null|undefined} count
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    GetTopLeaderboardInput.prototype.count = null;
+
+    /**
+     * GetTopLeaderboardInput reverseOrder.
+     * @member {boolean} reverseOrder
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    GetTopLeaderboardInput.prototype.reverseOrder = false;
+
+    // OneOf field names bound to virtual getters and setters
+    var $oneOfFields;
+
+    /**
+     * GetTopLeaderboardInput _name.
+     * @member {"name"|undefined} _name
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    Object.defineProperty(GetTopLeaderboardInput.prototype, "_name", {
+        get: $util.oneOfGetter($oneOfFields = ["name"]),
+        set: $util.oneOfSetter($oneOfFields)
+    });
+
+    /**
+     * GetTopLeaderboardInput _count.
+     * @member {"count"|undefined} _count
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     */
+    Object.defineProperty(GetTopLeaderboardInput.prototype, "_count", {
+        get: $util.oneOfGetter($oneOfFields = ["count"]),
+        set: $util.oneOfSetter($oneOfFields)
+    });
+
+    /**
+     * Creates a new GetTopLeaderboardInput instance using the specified properties.
+     * @function create
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {IGetTopLeaderboardInput=} [properties] Properties to set
+     * @returns {GetTopLeaderboardInput} GetTopLeaderboardInput instance
+     */
+    GetTopLeaderboardInput.create = function create(properties) {
+        return new GetTopLeaderboardInput(properties);
+    };
+
+    /**
+     * Encodes the specified GetTopLeaderboardInput message. Does not implicitly {@link GetTopLeaderboardInput.verify|verify} messages.
+     * @function encode
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {IGetTopLeaderboardInput} message GetTopLeaderboardInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetTopLeaderboardInput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+        if (message.offset != null && Object.hasOwnProperty.call(message, "offset"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.offset);
+        if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+            writer.uint32(/* id 3, wireType 2 =*/26).string(message.country);
+        if (message.count != null && Object.hasOwnProperty.call(message, "count"))
+            writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.count);
+        if (message.reverseOrder != null && Object.hasOwnProperty.call(message, "reverseOrder"))
+            writer.uint32(/* id 5, wireType 0 =*/40).bool(message.reverseOrder);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified GetTopLeaderboardInput message, length delimited. Does not implicitly {@link GetTopLeaderboardInput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {IGetTopLeaderboardInput} message GetTopLeaderboardInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetTopLeaderboardInput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a GetTopLeaderboardInput message from the specified reader or buffer.
+     * @function decode
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {GetTopLeaderboardInput} GetTopLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetTopLeaderboardInput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.GetTopLeaderboardInput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.offset = reader.uint32();
+                    break;
+                }
+            case 3: {
+                    message.country = reader.string();
+                    break;
+                }
+            case 4: {
+                    message.count = reader.uint32();
+                    break;
+                }
+            case 5: {
+                    message.reverseOrder = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a GetTopLeaderboardInput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {GetTopLeaderboardInput} GetTopLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetTopLeaderboardInput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a GetTopLeaderboardInput message.
+     * @function verify
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    GetTopLeaderboardInput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        var properties = {};
+        if (message.name != null && message.hasOwnProperty("name")) {
+            properties._name = 1;
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        }
+        if (message.offset != null && message.hasOwnProperty("offset"))
+            if (!$util.isInteger(message.offset))
+                return "offset: integer expected";
+        if (message.country != null && message.hasOwnProperty("country"))
+            if (!$util.isString(message.country))
+                return "country: string expected";
+        if (message.count != null && message.hasOwnProperty("count")) {
+            properties._count = 1;
+            if (!$util.isInteger(message.count))
+                return "count: integer expected";
+        }
+        if (message.reverseOrder != null && message.hasOwnProperty("reverseOrder"))
+            if (typeof message.reverseOrder !== "boolean")
+                return "reverseOrder: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a GetTopLeaderboardInput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {GetTopLeaderboardInput} GetTopLeaderboardInput
+     */
+    GetTopLeaderboardInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.GetTopLeaderboardInput)
+            return object;
+        var message = new $root.GetTopLeaderboardInput();
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.offset != null)
+            message.offset = object.offset >>> 0;
+        if (object.country != null)
+            message.country = String(object.country);
+        if (object.count != null)
+            message.count = object.count >>> 0;
+        if (object.reverseOrder != null)
+            message.reverseOrder = Boolean(object.reverseOrder);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a GetTopLeaderboardInput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {GetTopLeaderboardInput} message GetTopLeaderboardInput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    GetTopLeaderboardInput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.offset = 0;
+            object.country = "";
+            object.reverseOrder = false;
+        }
+        if (message.name != null && message.hasOwnProperty("name")) {
+            object.name = message.name;
+            if (options.oneofs)
+                object._name = "name";
+        }
+        if (message.offset != null && message.hasOwnProperty("offset"))
+            object.offset = message.offset;
+        if (message.country != null && message.hasOwnProperty("country"))
+            object.country = message.country;
+        if (message.count != null && message.hasOwnProperty("count")) {
+            object.count = message.count;
+            if (options.oneofs)
+                object._count = "count";
+        }
+        if (message.reverseOrder != null && message.hasOwnProperty("reverseOrder"))
+            object.reverseOrder = message.reverseOrder;
+        return object;
+    };
+
+    /**
+     * Converts this GetTopLeaderboardInput to JSON.
+     * @function toJSON
+     * @memberof GetTopLeaderboardInput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    GetTopLeaderboardInput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for GetTopLeaderboardInput
+     * @function getTypeUrl
+     * @memberof GetTopLeaderboardInput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    GetTopLeaderboardInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/GetTopLeaderboardInput";
+    };
+
+    return GetTopLeaderboardInput;
+})();
+
+$root.TopLeaderboard = (function() {
+
+    /**
+     * Properties of a TopLeaderboard.
+     * @exports ITopLeaderboard
+     * @interface ITopLeaderboard
+     * @property {Array.<TopLeaderboard.IItems>|null} [items] TopLeaderboard items
+     */
+
+    /**
+     * Constructs a new TopLeaderboard.
+     * @exports TopLeaderboard
+     * @classdesc Represents a TopLeaderboard.
+     * @implements ITopLeaderboard
+     * @constructor
+     * @param {ITopLeaderboard=} [properties] Properties to set
+     */
+    function TopLeaderboard(properties) {
+        this.items = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * TopLeaderboard items.
+     * @member {Array.<TopLeaderboard.IItems>} items
+     * @memberof TopLeaderboard
+     * @instance
+     */
+    TopLeaderboard.prototype.items = $util.emptyArray;
+
+    /**
+     * Creates a new TopLeaderboard instance using the specified properties.
+     * @function create
+     * @memberof TopLeaderboard
+     * @static
+     * @param {ITopLeaderboard=} [properties] Properties to set
+     * @returns {TopLeaderboard} TopLeaderboard instance
+     */
+    TopLeaderboard.create = function create(properties) {
+        return new TopLeaderboard(properties);
+    };
+
+    /**
+     * Encodes the specified TopLeaderboard message. Does not implicitly {@link TopLeaderboard.verify|verify} messages.
+     * @function encode
+     * @memberof TopLeaderboard
+     * @static
+     * @param {ITopLeaderboard} message TopLeaderboard message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    TopLeaderboard.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.items != null && message.items.length)
+            for (var i = 0; i < message.items.length; ++i)
+                $root.TopLeaderboard.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified TopLeaderboard message, length delimited. Does not implicitly {@link TopLeaderboard.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof TopLeaderboard
+     * @static
+     * @param {ITopLeaderboard} message TopLeaderboard message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    TopLeaderboard.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a TopLeaderboard message from the specified reader or buffer.
+     * @function decode
+     * @memberof TopLeaderboard
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {TopLeaderboard} TopLeaderboard
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    TopLeaderboard.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.TopLeaderboard();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.items && message.items.length))
+                        message.items = [];
+                    message.items.push($root.TopLeaderboard.Items.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a TopLeaderboard message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof TopLeaderboard
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {TopLeaderboard} TopLeaderboard
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    TopLeaderboard.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a TopLeaderboard message.
+     * @function verify
+     * @memberof TopLeaderboard
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    TopLeaderboard.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.items != null && message.hasOwnProperty("items")) {
+            if (!Array.isArray(message.items))
+                return "items: array expected";
+            for (var i = 0; i < message.items.length; ++i) {
+                var error = $root.TopLeaderboard.Items.verify(message.items[i]);
+                if (error)
+                    return "items." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates a TopLeaderboard message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof TopLeaderboard
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {TopLeaderboard} TopLeaderboard
+     */
+    TopLeaderboard.fromObject = function fromObject(object) {
+        if (object instanceof $root.TopLeaderboard)
+            return object;
+        var message = new $root.TopLeaderboard();
+        if (object.items) {
+            if (!Array.isArray(object.items))
+                throw TypeError(".TopLeaderboard.items: array expected");
+            message.items = [];
+            for (var i = 0; i < object.items.length; ++i) {
+                if (typeof object.items[i] !== "object")
+                    throw TypeError(".TopLeaderboard.items: object expected");
+                message.items[i] = $root.TopLeaderboard.Items.fromObject(object.items[i]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a TopLeaderboard message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof TopLeaderboard
+     * @static
+     * @param {TopLeaderboard} message TopLeaderboard
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    TopLeaderboard.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.items = [];
+        if (message.items && message.items.length) {
+            object.items = [];
+            for (var j = 0; j < message.items.length; ++j)
+                object.items[j] = $root.TopLeaderboard.Items.toObject(message.items[j], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this TopLeaderboard to JSON.
+     * @function toJSON
+     * @memberof TopLeaderboard
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    TopLeaderboard.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for TopLeaderboard
+     * @function getTypeUrl
+     * @memberof TopLeaderboard
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    TopLeaderboard.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/TopLeaderboard";
+    };
+
+    TopLeaderboard.Items = (function() {
+
+        /**
+         * Properties of an Items.
+         * @memberof TopLeaderboard
+         * @interface IItems
+         * @property {string|null} [playerName] Items playerName
+         * @property {string|null} [playerId] Items playerId
+         * @property {string|null} [country] Items country
+         * @property {number|null} [score] Items score
+         * @property {number|null} [rank] Items rank
+         */
+
+        /**
+         * Constructs a new Items.
+         * @memberof TopLeaderboard
+         * @classdesc Represents an Items.
+         * @implements IItems
+         * @constructor
+         * @param {TopLeaderboard.IItems=} [properties] Properties to set
+         */
+        function Items(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Items playerName.
+         * @member {string} playerName
+         * @memberof TopLeaderboard.Items
+         * @instance
+         */
+        Items.prototype.playerName = "";
+
+        /**
+         * Items playerId.
+         * @member {string} playerId
+         * @memberof TopLeaderboard.Items
+         * @instance
+         */
+        Items.prototype.playerId = "";
+
+        /**
+         * Items country.
+         * @member {string} country
+         * @memberof TopLeaderboard.Items
+         * @instance
+         */
+        Items.prototype.country = "";
+
+        /**
+         * Items score.
+         * @member {number} score
+         * @memberof TopLeaderboard.Items
+         * @instance
+         */
+        Items.prototype.score = 0;
+
+        /**
+         * Items rank.
+         * @member {number} rank
+         * @memberof TopLeaderboard.Items
+         * @instance
+         */
+        Items.prototype.rank = 0;
+
+        /**
+         * Creates a new Items instance using the specified properties.
+         * @function create
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {TopLeaderboard.IItems=} [properties] Properties to set
+         * @returns {TopLeaderboard.Items} Items instance
+         */
+        Items.create = function create(properties) {
+            return new Items(properties);
+        };
+
+        /**
+         * Encodes the specified Items message. Does not implicitly {@link TopLeaderboard.Items.verify|verify} messages.
+         * @function encode
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {TopLeaderboard.IItems} message Items message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Items.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.playerName != null && Object.hasOwnProperty.call(message, "playerName"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.playerName);
+            if (message.playerId != null && Object.hasOwnProperty.call(message, "playerId"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.playerId);
+            if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.country);
+            if (message.score != null && Object.hasOwnProperty.call(message, "score"))
+                writer.uint32(/* id 4, wireType 0 =*/32).uint32(message.score);
+            if (message.rank != null && Object.hasOwnProperty.call(message, "rank"))
+                writer.uint32(/* id 5, wireType 0 =*/40).uint32(message.rank);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link TopLeaderboard.Items.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {TopLeaderboard.IItems} message Items message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Items.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an Items message from the specified reader or buffer.
+         * @function decode
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {TopLeaderboard.Items} Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Items.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.TopLeaderboard.Items();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.playerName = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.playerId = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.country = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.score = reader.uint32();
+                        break;
+                    }
+                case 5: {
+                        message.rank = reader.uint32();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {TopLeaderboard.Items} Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Items.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an Items message.
+         * @function verify
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Items.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.playerName != null && message.hasOwnProperty("playerName"))
+                if (!$util.isString(message.playerName))
+                    return "playerName: string expected";
+            if (message.playerId != null && message.hasOwnProperty("playerId"))
+                if (!$util.isString(message.playerId))
+                    return "playerId: string expected";
+            if (message.country != null && message.hasOwnProperty("country"))
+                if (!$util.isString(message.country))
+                    return "country: string expected";
+            if (message.score != null && message.hasOwnProperty("score"))
+                if (!$util.isInteger(message.score))
+                    return "score: integer expected";
+            if (message.rank != null && message.hasOwnProperty("rank"))
+                if (!$util.isInteger(message.rank))
+                    return "rank: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {TopLeaderboard.Items} Items
+         */
+        Items.fromObject = function fromObject(object) {
+            if (object instanceof $root.TopLeaderboard.Items)
+                return object;
+            var message = new $root.TopLeaderboard.Items();
+            if (object.playerName != null)
+                message.playerName = String(object.playerName);
+            if (object.playerId != null)
+                message.playerId = String(object.playerId);
+            if (object.country != null)
+                message.country = String(object.country);
+            if (object.score != null)
+                message.score = object.score >>> 0;
+            if (object.rank != null)
+                message.rank = object.rank >>> 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {TopLeaderboard.Items} message Items
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Items.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.playerName = "";
+                object.playerId = "";
+                object.country = "";
+                object.score = 0;
+                object.rank = 0;
+            }
+            if (message.playerName != null && message.hasOwnProperty("playerName"))
+                object.playerName = message.playerName;
+            if (message.playerId != null && message.hasOwnProperty("playerId"))
+                object.playerId = message.playerId;
+            if (message.country != null && message.hasOwnProperty("country"))
+                object.country = message.country;
+            if (message.score != null && message.hasOwnProperty("score"))
+                object.score = message.score;
+            if (message.rank != null && message.hasOwnProperty("rank"))
+                object.rank = message.rank;
+            return object;
+        };
+
+        /**
+         * Converts this Items to JSON.
+         * @function toJSON
+         * @memberof TopLeaderboard.Items
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Items.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Items
+         * @function getTypeUrl
+         * @memberof TopLeaderboard.Items
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/TopLeaderboard.Items";
+        };
+
+        return Items;
+    })();
+
+    return TopLeaderboard;
+})();
+
+$root.GetMyRankLeaderboardInput = (function() {
+
+    /**
+     * Properties of a GetMyRankLeaderboardInput.
+     * @exports IGetMyRankLeaderboardInput
+     * @interface IGetMyRankLeaderboardInput
+     * @property {string|null} [name] GetMyRankLeaderboardInput name
+     * @property {string|null} [country] GetMyRankLeaderboardInput country
+     * @property {boolean|null} [reverseOrder] GetMyRankLeaderboardInput reverseOrder
+     */
+
+    /**
+     * Constructs a new GetMyRankLeaderboardInput.
+     * @exports GetMyRankLeaderboardInput
+     * @classdesc Represents a GetMyRankLeaderboardInput.
+     * @implements IGetMyRankLeaderboardInput
+     * @constructor
+     * @param {IGetMyRankLeaderboardInput=} [properties] Properties to set
+     */
+    function GetMyRankLeaderboardInput(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * GetMyRankLeaderboardInput name.
+     * @member {string} name
+     * @memberof GetMyRankLeaderboardInput
+     * @instance
+     */
+    GetMyRankLeaderboardInput.prototype.name = "";
+
+    /**
+     * GetMyRankLeaderboardInput country.
+     * @member {string} country
+     * @memberof GetMyRankLeaderboardInput
+     * @instance
+     */
+    GetMyRankLeaderboardInput.prototype.country = "";
+
+    /**
+     * GetMyRankLeaderboardInput reverseOrder.
+     * @member {boolean} reverseOrder
+     * @memberof GetMyRankLeaderboardInput
+     * @instance
+     */
+    GetMyRankLeaderboardInput.prototype.reverseOrder = false;
+
+    /**
+     * Creates a new GetMyRankLeaderboardInput instance using the specified properties.
+     * @function create
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {IGetMyRankLeaderboardInput=} [properties] Properties to set
+     * @returns {GetMyRankLeaderboardInput} GetMyRankLeaderboardInput instance
+     */
+    GetMyRankLeaderboardInput.create = function create(properties) {
+        return new GetMyRankLeaderboardInput(properties);
+    };
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardInput message. Does not implicitly {@link GetMyRankLeaderboardInput.verify|verify} messages.
+     * @function encode
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {IGetMyRankLeaderboardInput} message GetMyRankLeaderboardInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMyRankLeaderboardInput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+        if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+            writer.uint32(/* id 2, wireType 2 =*/18).string(message.country);
+        if (message.reverseOrder != null && Object.hasOwnProperty.call(message, "reverseOrder"))
+            writer.uint32(/* id 3, wireType 0 =*/24).bool(message.reverseOrder);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardInput message, length delimited. Does not implicitly {@link GetMyRankLeaderboardInput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {IGetMyRankLeaderboardInput} message GetMyRankLeaderboardInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMyRankLeaderboardInput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a GetMyRankLeaderboardInput message from the specified reader or buffer.
+     * @function decode
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {GetMyRankLeaderboardInput} GetMyRankLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMyRankLeaderboardInput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.GetMyRankLeaderboardInput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.name = reader.string();
+                    break;
+                }
+            case 2: {
+                    message.country = reader.string();
+                    break;
+                }
+            case 3: {
+                    message.reverseOrder = reader.bool();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a GetMyRankLeaderboardInput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {GetMyRankLeaderboardInput} GetMyRankLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMyRankLeaderboardInput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a GetMyRankLeaderboardInput message.
+     * @function verify
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    GetMyRankLeaderboardInput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.name != null && message.hasOwnProperty("name"))
+            if (!$util.isString(message.name))
+                return "name: string expected";
+        if (message.country != null && message.hasOwnProperty("country"))
+            if (!$util.isString(message.country))
+                return "country: string expected";
+        if (message.reverseOrder != null && message.hasOwnProperty("reverseOrder"))
+            if (typeof message.reverseOrder !== "boolean")
+                return "reverseOrder: boolean expected";
+        return null;
+    };
+
+    /**
+     * Creates a GetMyRankLeaderboardInput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {GetMyRankLeaderboardInput} GetMyRankLeaderboardInput
+     */
+    GetMyRankLeaderboardInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.GetMyRankLeaderboardInput)
+            return object;
+        var message = new $root.GetMyRankLeaderboardInput();
+        if (object.name != null)
+            message.name = String(object.name);
+        if (object.country != null)
+            message.country = String(object.country);
+        if (object.reverseOrder != null)
+            message.reverseOrder = Boolean(object.reverseOrder);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a GetMyRankLeaderboardInput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {GetMyRankLeaderboardInput} message GetMyRankLeaderboardInput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    GetMyRankLeaderboardInput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.name = "";
+            object.country = "";
+            object.reverseOrder = false;
+        }
+        if (message.name != null && message.hasOwnProperty("name"))
+            object.name = message.name;
+        if (message.country != null && message.hasOwnProperty("country"))
+            object.country = message.country;
+        if (message.reverseOrder != null && message.hasOwnProperty("reverseOrder"))
+            object.reverseOrder = message.reverseOrder;
+        return object;
+    };
+
+    /**
+     * Converts this GetMyRankLeaderboardInput to JSON.
+     * @function toJSON
+     * @memberof GetMyRankLeaderboardInput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    GetMyRankLeaderboardInput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for GetMyRankLeaderboardInput
+     * @function getTypeUrl
+     * @memberof GetMyRankLeaderboardInput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    GetMyRankLeaderboardInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/GetMyRankLeaderboardInput";
+    };
+
+    return GetMyRankLeaderboardInput;
+})();
+
+$root.GetMyRankLeaderboardOutput = (function() {
+
+    /**
+     * Properties of a GetMyRankLeaderboardOutput.
+     * @exports IGetMyRankLeaderboardOutput
+     * @interface IGetMyRankLeaderboardOutput
+     * @property {number|null} [rank] GetMyRankLeaderboardOutput rank
+     * @property {number|null} [minRank] GetMyRankLeaderboardOutput minRank
+     * @property {number|null} [score] GetMyRankLeaderboardOutput score
+     * @property {string|null} [playerName] GetMyRankLeaderboardOutput playerName
+     * @property {string|null} [playerId] GetMyRankLeaderboardOutput playerId
+     * @property {string|null} [country] GetMyRankLeaderboardOutput country
+     */
+
+    /**
+     * Constructs a new GetMyRankLeaderboardOutput.
+     * @exports GetMyRankLeaderboardOutput
+     * @classdesc Represents a GetMyRankLeaderboardOutput.
+     * @implements IGetMyRankLeaderboardOutput
+     * @constructor
+     * @param {IGetMyRankLeaderboardOutput=} [properties] Properties to set
+     */
+    function GetMyRankLeaderboardOutput(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * GetMyRankLeaderboardOutput rank.
+     * @member {number} rank
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     */
+    GetMyRankLeaderboardOutput.prototype.rank = 0;
+
+    /**
+     * GetMyRankLeaderboardOutput minRank.
+     * @member {number} minRank
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     */
+    GetMyRankLeaderboardOutput.prototype.minRank = 0;
+
+    /**
+     * GetMyRankLeaderboardOutput score.
+     * @member {number} score
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     */
+    GetMyRankLeaderboardOutput.prototype.score = 0;
+
+    /**
+     * GetMyRankLeaderboardOutput playerName.
+     * @member {string} playerName
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     */
+    GetMyRankLeaderboardOutput.prototype.playerName = "";
+
+    /**
+     * GetMyRankLeaderboardOutput playerId.
+     * @member {string} playerId
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     */
+    GetMyRankLeaderboardOutput.prototype.playerId = "";
+
+    /**
+     * GetMyRankLeaderboardOutput country.
+     * @member {string} country
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     */
+    GetMyRankLeaderboardOutput.prototype.country = "";
+
+    /**
+     * Creates a new GetMyRankLeaderboardOutput instance using the specified properties.
+     * @function create
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {IGetMyRankLeaderboardOutput=} [properties] Properties to set
+     * @returns {GetMyRankLeaderboardOutput} GetMyRankLeaderboardOutput instance
+     */
+    GetMyRankLeaderboardOutput.create = function create(properties) {
+        return new GetMyRankLeaderboardOutput(properties);
+    };
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardOutput message. Does not implicitly {@link GetMyRankLeaderboardOutput.verify|verify} messages.
+     * @function encode
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {IGetMyRankLeaderboardOutput} message GetMyRankLeaderboardOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMyRankLeaderboardOutput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.rank != null && Object.hasOwnProperty.call(message, "rank"))
+            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.rank);
+        if (message.minRank != null && Object.hasOwnProperty.call(message, "minRank"))
+            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.minRank);
+        if (message.score != null && Object.hasOwnProperty.call(message, "score"))
+            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.score);
+        if (message.playerName != null && Object.hasOwnProperty.call(message, "playerName"))
+            writer.uint32(/* id 4, wireType 2 =*/34).string(message.playerName);
+        if (message.playerId != null && Object.hasOwnProperty.call(message, "playerId"))
+            writer.uint32(/* id 5, wireType 2 =*/42).string(message.playerId);
+        if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+            writer.uint32(/* id 6, wireType 2 =*/50).string(message.country);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified GetMyRankLeaderboardOutput message, length delimited. Does not implicitly {@link GetMyRankLeaderboardOutput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {IGetMyRankLeaderboardOutput} message GetMyRankLeaderboardOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    GetMyRankLeaderboardOutput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes a GetMyRankLeaderboardOutput message from the specified reader or buffer.
+     * @function decode
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {GetMyRankLeaderboardOutput} GetMyRankLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMyRankLeaderboardOutput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.GetMyRankLeaderboardOutput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.rank = reader.uint32();
+                    break;
+                }
+            case 2: {
+                    message.minRank = reader.uint32();
+                    break;
+                }
+            case 3: {
+                    message.score = reader.uint32();
+                    break;
+                }
+            case 4: {
+                    message.playerName = reader.string();
+                    break;
+                }
+            case 5: {
+                    message.playerId = reader.string();
+                    break;
+                }
+            case 6: {
+                    message.country = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes a GetMyRankLeaderboardOutput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {GetMyRankLeaderboardOutput} GetMyRankLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    GetMyRankLeaderboardOutput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies a GetMyRankLeaderboardOutput message.
+     * @function verify
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    GetMyRankLeaderboardOutput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.rank != null && message.hasOwnProperty("rank"))
+            if (!$util.isInteger(message.rank))
+                return "rank: integer expected";
+        if (message.minRank != null && message.hasOwnProperty("minRank"))
+            if (!$util.isInteger(message.minRank))
+                return "minRank: integer expected";
+        if (message.score != null && message.hasOwnProperty("score"))
+            if (!$util.isInteger(message.score))
+                return "score: integer expected";
+        if (message.playerName != null && message.hasOwnProperty("playerName"))
+            if (!$util.isString(message.playerName))
+                return "playerName: string expected";
+        if (message.playerId != null && message.hasOwnProperty("playerId"))
+            if (!$util.isString(message.playerId))
+                return "playerId: string expected";
+        if (message.country != null && message.hasOwnProperty("country"))
+            if (!$util.isString(message.country))
+                return "country: string expected";
+        return null;
+    };
+
+    /**
+     * Creates a GetMyRankLeaderboardOutput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {GetMyRankLeaderboardOutput} GetMyRankLeaderboardOutput
+     */
+    GetMyRankLeaderboardOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.GetMyRankLeaderboardOutput)
+            return object;
+        var message = new $root.GetMyRankLeaderboardOutput();
+        if (object.rank != null)
+            message.rank = object.rank >>> 0;
+        if (object.minRank != null)
+            message.minRank = object.minRank >>> 0;
+        if (object.score != null)
+            message.score = object.score >>> 0;
+        if (object.playerName != null)
+            message.playerName = String(object.playerName);
+        if (object.playerId != null)
+            message.playerId = String(object.playerId);
+        if (object.country != null)
+            message.country = String(object.country);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from a GetMyRankLeaderboardOutput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {GetMyRankLeaderboardOutput} message GetMyRankLeaderboardOutput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    GetMyRankLeaderboardOutput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults) {
+            object.rank = 0;
+            object.minRank = 0;
+            object.score = 0;
+            object.playerName = "";
+            object.playerId = "";
+            object.country = "";
+        }
+        if (message.rank != null && message.hasOwnProperty("rank"))
+            object.rank = message.rank;
+        if (message.minRank != null && message.hasOwnProperty("minRank"))
+            object.minRank = message.minRank;
+        if (message.score != null && message.hasOwnProperty("score"))
+            object.score = message.score;
+        if (message.playerName != null && message.hasOwnProperty("playerName"))
+            object.playerName = message.playerName;
+        if (message.playerId != null && message.hasOwnProperty("playerId"))
+            object.playerId = message.playerId;
+        if (message.country != null && message.hasOwnProperty("country"))
+            object.country = message.country;
+        return object;
+    };
+
+    /**
+     * Converts this GetMyRankLeaderboardOutput to JSON.
+     * @function toJSON
+     * @memberof GetMyRankLeaderboardOutput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    GetMyRankLeaderboardOutput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for GetMyRankLeaderboardOutput
+     * @function getTypeUrl
+     * @memberof GetMyRankLeaderboardOutput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    GetMyRankLeaderboardOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/GetMyRankLeaderboardOutput";
+    };
+
+    return GetMyRankLeaderboardOutput;
+})();
+
+$root.UpdateScoreLeaderboardInput = (function() {
+
+    /**
+     * Properties of an UpdateScoreLeaderboardInput.
+     * @exports IUpdateScoreLeaderboardInput
+     * @interface IUpdateScoreLeaderboardInput
+     * @property {Array.<UpdateScoreLeaderboardInput.IItems>|null} [items] UpdateScoreLeaderboardInput items
+     */
+
+    /**
+     * Constructs a new UpdateScoreLeaderboardInput.
+     * @exports UpdateScoreLeaderboardInput
+     * @classdesc Represents an UpdateScoreLeaderboardInput.
+     * @implements IUpdateScoreLeaderboardInput
+     * @constructor
+     * @param {IUpdateScoreLeaderboardInput=} [properties] Properties to set
+     */
+    function UpdateScoreLeaderboardInput(properties) {
+        this.items = [];
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * UpdateScoreLeaderboardInput items.
+     * @member {Array.<UpdateScoreLeaderboardInput.IItems>} items
+     * @memberof UpdateScoreLeaderboardInput
+     * @instance
+     */
+    UpdateScoreLeaderboardInput.prototype.items = $util.emptyArray;
+
+    /**
+     * Creates a new UpdateScoreLeaderboardInput instance using the specified properties.
+     * @function create
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {IUpdateScoreLeaderboardInput=} [properties] Properties to set
+     * @returns {UpdateScoreLeaderboardInput} UpdateScoreLeaderboardInput instance
+     */
+    UpdateScoreLeaderboardInput.create = function create(properties) {
+        return new UpdateScoreLeaderboardInput(properties);
+    };
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardInput message. Does not implicitly {@link UpdateScoreLeaderboardInput.verify|verify} messages.
+     * @function encode
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {IUpdateScoreLeaderboardInput} message UpdateScoreLeaderboardInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    UpdateScoreLeaderboardInput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.items != null && message.items.length)
+            for (var i = 0; i < message.items.length; ++i)
+                $root.UpdateScoreLeaderboardInput.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        return writer;
+    };
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardInput message, length delimited. Does not implicitly {@link UpdateScoreLeaderboardInput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {IUpdateScoreLeaderboardInput} message UpdateScoreLeaderboardInput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    UpdateScoreLeaderboardInput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an UpdateScoreLeaderboardInput message from the specified reader or buffer.
+     * @function decode
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {UpdateScoreLeaderboardInput} UpdateScoreLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    UpdateScoreLeaderboardInput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UpdateScoreLeaderboardInput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    if (!(message.items && message.items.length))
+                        message.items = [];
+                    message.items.push($root.UpdateScoreLeaderboardInput.Items.decode(reader, reader.uint32()));
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an UpdateScoreLeaderboardInput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {UpdateScoreLeaderboardInput} UpdateScoreLeaderboardInput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    UpdateScoreLeaderboardInput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an UpdateScoreLeaderboardInput message.
+     * @function verify
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    UpdateScoreLeaderboardInput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.items != null && message.hasOwnProperty("items")) {
+            if (!Array.isArray(message.items))
+                return "items: array expected";
+            for (var i = 0; i < message.items.length; ++i) {
+                var error = $root.UpdateScoreLeaderboardInput.Items.verify(message.items[i]);
+                if (error)
+                    return "items." + error;
+            }
+        }
+        return null;
+    };
+
+    /**
+     * Creates an UpdateScoreLeaderboardInput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {UpdateScoreLeaderboardInput} UpdateScoreLeaderboardInput
+     */
+    UpdateScoreLeaderboardInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.UpdateScoreLeaderboardInput)
+            return object;
+        var message = new $root.UpdateScoreLeaderboardInput();
+        if (object.items) {
+            if (!Array.isArray(object.items))
+                throw TypeError(".UpdateScoreLeaderboardInput.items: array expected");
+            message.items = [];
+            for (var i = 0; i < object.items.length; ++i) {
+                if (typeof object.items[i] !== "object")
+                    throw TypeError(".UpdateScoreLeaderboardInput.items: object expected");
+                message.items[i] = $root.UpdateScoreLeaderboardInput.Items.fromObject(object.items[i]);
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an UpdateScoreLeaderboardInput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {UpdateScoreLeaderboardInput} message UpdateScoreLeaderboardInput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    UpdateScoreLeaderboardInput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.arrays || options.defaults)
+            object.items = [];
+        if (message.items && message.items.length) {
+            object.items = [];
+            for (var j = 0; j < message.items.length; ++j)
+                object.items[j] = $root.UpdateScoreLeaderboardInput.Items.toObject(message.items[j], options);
+        }
+        return object;
+    };
+
+    /**
+     * Converts this UpdateScoreLeaderboardInput to JSON.
+     * @function toJSON
+     * @memberof UpdateScoreLeaderboardInput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    UpdateScoreLeaderboardInput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for UpdateScoreLeaderboardInput
+     * @function getTypeUrl
+     * @memberof UpdateScoreLeaderboardInput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    UpdateScoreLeaderboardInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/UpdateScoreLeaderboardInput";
+    };
+
+    UpdateScoreLeaderboardInput.Items = (function() {
+
+        /**
+         * Properties of an Items.
+         * @memberof UpdateScoreLeaderboardInput
+         * @interface IItems
+         * @property {number|null} [score] Items score
+         * @property {string|null} [option] Items option
+         * @property {string|null} [country] Items country
+         * @property {string|null} [name] Items name
+         */
+
+        /**
+         * Constructs a new Items.
+         * @memberof UpdateScoreLeaderboardInput
+         * @classdesc Represents an Items.
+         * @implements IItems
+         * @constructor
+         * @param {UpdateScoreLeaderboardInput.IItems=} [properties] Properties to set
+         */
+        function Items(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Items score.
+         * @member {number} score
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @instance
+         */
+        Items.prototype.score = 0;
+
+        /**
+         * Items option.
+         * @member {string} option
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @instance
+         */
+        Items.prototype.option = "";
+
+        /**
+         * Items country.
+         * @member {string} country
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @instance
+         */
+        Items.prototype.country = "";
+
+        /**
+         * Items name.
+         * @member {string} name
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @instance
+         */
+        Items.prototype.name = "";
+
+        /**
+         * Creates a new Items instance using the specified properties.
+         * @function create
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {UpdateScoreLeaderboardInput.IItems=} [properties] Properties to set
+         * @returns {UpdateScoreLeaderboardInput.Items} Items instance
+         */
+        Items.create = function create(properties) {
+            return new Items(properties);
+        };
+
+        /**
+         * Encodes the specified Items message. Does not implicitly {@link UpdateScoreLeaderboardInput.Items.verify|verify} messages.
+         * @function encode
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {UpdateScoreLeaderboardInput.IItems} message Items message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Items.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.score != null && Object.hasOwnProperty.call(message, "score"))
+                writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.score);
+            if (message.option != null && Object.hasOwnProperty.call(message, "option"))
+                writer.uint32(/* id 2, wireType 2 =*/18).string(message.option);
+            if (message.country != null && Object.hasOwnProperty.call(message, "country"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.country);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.name);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link UpdateScoreLeaderboardInput.Items.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {UpdateScoreLeaderboardInput.IItems} message Items message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Items.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes an Items message from the specified reader or buffer.
+         * @function decode
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {UpdateScoreLeaderboardInput.Items} Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Items.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UpdateScoreLeaderboardInput.Items();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.score = reader.uint32();
+                        break;
+                    }
+                case 2: {
+                        message.option = reader.string();
+                        break;
+                    }
+                case 3: {
+                        message.country = reader.string();
+                        break;
+                    }
+                case 4: {
+                        message.name = reader.string();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {UpdateScoreLeaderboardInput.Items} Items
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Items.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies an Items message.
+         * @function verify
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Items.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.score != null && message.hasOwnProperty("score"))
+                if (!$util.isInteger(message.score))
+                    return "score: integer expected";
+            if (message.option != null && message.hasOwnProperty("option"))
+                if (!$util.isString(message.option))
+                    return "option: string expected";
+            if (message.country != null && message.hasOwnProperty("country"))
+                if (!$util.isString(message.country))
+                    return "country: string expected";
+            if (message.name != null && message.hasOwnProperty("name"))
+                if (!$util.isString(message.name))
+                    return "name: string expected";
+            return null;
+        };
+
+        /**
+         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {UpdateScoreLeaderboardInput.Items} Items
+         */
+        Items.fromObject = function fromObject(object) {
+            if (object instanceof $root.UpdateScoreLeaderboardInput.Items)
+                return object;
+            var message = new $root.UpdateScoreLeaderboardInput.Items();
+            if (object.score != null)
+                message.score = object.score >>> 0;
+            if (object.option != null)
+                message.option = String(object.option);
+            if (object.country != null)
+                message.country = String(object.country);
+            if (object.name != null)
+                message.name = String(object.name);
+            return message;
+        };
+
+        /**
+         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {UpdateScoreLeaderboardInput.Items} message Items
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Items.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.score = 0;
+                object.option = "";
+                object.country = "";
+                object.name = "";
+            }
+            if (message.score != null && message.hasOwnProperty("score"))
+                object.score = message.score;
+            if (message.option != null && message.hasOwnProperty("option"))
+                object.option = message.option;
+            if (message.country != null && message.hasOwnProperty("country"))
+                object.country = message.country;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = message.name;
+            return object;
+        };
+
+        /**
+         * Converts this Items to JSON.
+         * @function toJSON
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Items.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Items
+         * @function getTypeUrl
+         * @memberof UpdateScoreLeaderboardInput.Items
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/UpdateScoreLeaderboardInput.Items";
+        };
+
+        return Items;
+    })();
+
+    return UpdateScoreLeaderboardInput;
+})();
+
+$root.UpdateScoreLeaderboardOutput = (function() {
+
+    /**
+     * Properties of an UpdateScoreLeaderboardOutput.
+     * @exports IUpdateScoreLeaderboardOutput
+     * @interface IUpdateScoreLeaderboardOutput
+     * @property {string|null} [status] UpdateScoreLeaderboardOutput status
+     */
+
+    /**
+     * Constructs a new UpdateScoreLeaderboardOutput.
+     * @exports UpdateScoreLeaderboardOutput
+     * @classdesc Represents an UpdateScoreLeaderboardOutput.
+     * @implements IUpdateScoreLeaderboardOutput
+     * @constructor
+     * @param {IUpdateScoreLeaderboardOutput=} [properties] Properties to set
+     */
+    function UpdateScoreLeaderboardOutput(properties) {
+        if (properties)
+            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                if (properties[keys[i]] != null)
+                    this[keys[i]] = properties[keys[i]];
+    }
+
+    /**
+     * UpdateScoreLeaderboardOutput status.
+     * @member {string} status
+     * @memberof UpdateScoreLeaderboardOutput
+     * @instance
+     */
+    UpdateScoreLeaderboardOutput.prototype.status = "";
+
+    /**
+     * Creates a new UpdateScoreLeaderboardOutput instance using the specified properties.
+     * @function create
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {IUpdateScoreLeaderboardOutput=} [properties] Properties to set
+     * @returns {UpdateScoreLeaderboardOutput} UpdateScoreLeaderboardOutput instance
+     */
+    UpdateScoreLeaderboardOutput.create = function create(properties) {
+        return new UpdateScoreLeaderboardOutput(properties);
+    };
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardOutput message. Does not implicitly {@link UpdateScoreLeaderboardOutput.verify|verify} messages.
+     * @function encode
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {IUpdateScoreLeaderboardOutput} message UpdateScoreLeaderboardOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    UpdateScoreLeaderboardOutput.encode = function encode(message, writer) {
+        if (!writer)
+            writer = $Writer.create();
+        if (message.status != null && Object.hasOwnProperty.call(message, "status"))
+            writer.uint32(/* id 1, wireType 2 =*/10).string(message.status);
+        return writer;
+    };
+
+    /**
+     * Encodes the specified UpdateScoreLeaderboardOutput message, length delimited. Does not implicitly {@link UpdateScoreLeaderboardOutput.verify|verify} messages.
+     * @function encodeDelimited
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {IUpdateScoreLeaderboardOutput} message UpdateScoreLeaderboardOutput message or plain object to encode
+     * @param {$protobuf.Writer} [writer] Writer to encode to
+     * @returns {$protobuf.Writer} Writer
+     */
+    UpdateScoreLeaderboardOutput.encodeDelimited = function encodeDelimited(message, writer) {
+        return this.encode(message, writer).ldelim();
+    };
+
+    /**
+     * Decodes an UpdateScoreLeaderboardOutput message from the specified reader or buffer.
+     * @function decode
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @param {number} [length] Message length if known beforehand
+     * @returns {UpdateScoreLeaderboardOutput} UpdateScoreLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    UpdateScoreLeaderboardOutput.decode = function decode(reader, length) {
+        if (!(reader instanceof $Reader))
+            reader = $Reader.create(reader);
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.UpdateScoreLeaderboardOutput();
+        while (reader.pos < end) {
+            var tag = reader.uint32();
+            switch (tag >>> 3) {
+            case 1: {
+                    message.status = reader.string();
+                    break;
+                }
+            default:
+                reader.skipType(tag & 7);
+                break;
+            }
+        }
+        return message;
+    };
+
+    /**
+     * Decodes an UpdateScoreLeaderboardOutput message from the specified reader or buffer, length delimited.
+     * @function decodeDelimited
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+     * @returns {UpdateScoreLeaderboardOutput} UpdateScoreLeaderboardOutput
+     * @throws {Error} If the payload is not a reader or valid buffer
+     * @throws {$protobuf.util.ProtocolError} If required fields are missing
+     */
+    UpdateScoreLeaderboardOutput.decodeDelimited = function decodeDelimited(reader) {
+        if (!(reader instanceof $Reader))
+            reader = new $Reader(reader);
+        return this.decode(reader, reader.uint32());
+    };
+
+    /**
+     * Verifies an UpdateScoreLeaderboardOutput message.
+     * @function verify
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {Object.<string,*>} message Plain object to verify
+     * @returns {string|null} `null` if valid, otherwise the reason why it is not
+     */
+    UpdateScoreLeaderboardOutput.verify = function verify(message) {
+        if (typeof message !== "object" || message === null)
+            return "object expected";
+        if (message.status != null && message.hasOwnProperty("status"))
+            if (!$util.isString(message.status))
+                return "status: string expected";
+        return null;
+    };
+
+    /**
+     * Creates an UpdateScoreLeaderboardOutput message from a plain object. Also converts values to their respective internal types.
+     * @function fromObject
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {Object.<string,*>} object Plain object
+     * @returns {UpdateScoreLeaderboardOutput} UpdateScoreLeaderboardOutput
+     */
+    UpdateScoreLeaderboardOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.UpdateScoreLeaderboardOutput)
+            return object;
+        var message = new $root.UpdateScoreLeaderboardOutput();
+        if (object.status != null)
+            message.status = String(object.status);
+        return message;
+    };
+
+    /**
+     * Creates a plain object from an UpdateScoreLeaderboardOutput message. Also converts values to other types if specified.
+     * @function toObject
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {UpdateScoreLeaderboardOutput} message UpdateScoreLeaderboardOutput
+     * @param {$protobuf.IConversionOptions} [options] Conversion options
+     * @returns {Object.<string,*>} Plain object
+     */
+    UpdateScoreLeaderboardOutput.toObject = function toObject(message, options) {
+        if (!options)
+            options = {};
+        var object = {};
+        if (options.defaults)
+            object.status = "";
+        if (message.status != null && message.hasOwnProperty("status"))
+            object.status = message.status;
+        return object;
+    };
+
+    /**
+     * Converts this UpdateScoreLeaderboardOutput to JSON.
+     * @function toJSON
+     * @memberof UpdateScoreLeaderboardOutput
+     * @instance
+     * @returns {Object.<string,*>} JSON object
+     */
+    UpdateScoreLeaderboardOutput.prototype.toJSON = function toJSON() {
+        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+    };
+
+    /**
+     * Gets the default type url for UpdateScoreLeaderboardOutput
+     * @function getTypeUrl
+     * @memberof UpdateScoreLeaderboardOutput
+     * @static
+     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+     * @returns {string} The default type url
+     */
+    UpdateScoreLeaderboardOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        if (typeUrlPrefix === undefined) {
+            typeUrlPrefix = "type.googleapis.com";
+        }
+        return typeUrlPrefix + "/UpdateScoreLeaderboardOutput";
+    };
+
+    return UpdateScoreLeaderboardOutput;
+})();
+
 $root.Player = (function() {
 
     /**
@@ -12532,28 +14785,28 @@ $root.Player = (function() {
     /**
      * Callback as used by {@link Player#getProfile}.
      * @memberof Player
-     * @typedef GetProfileCallback
+     * @typedef getProfileCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {PlayerProfileRes} [response] PlayerProfileRes
      */
 
     /**
-     * Calls GetProfile.
+     * Calls getProfile.
      * @function getProfile
      * @memberof Player
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Player.GetProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
+     * @param {Player.getProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Player.prototype.getProfile = function getProfile(request, callback) {
         return this.rpcCall(getProfile, $root.Empty, $root.PlayerProfileRes, request, callback);
-    }, "name", { value: "GetProfile" });
+    }, "name", { value: "getProfile" });
 
     /**
-     * Calls GetProfile.
+     * Calls getProfile.
      * @function getProfile
      * @memberof Player
      * @instance
@@ -12565,28 +14818,28 @@ $root.Player = (function() {
     /**
      * Callback as used by {@link Player#updateProfile}.
      * @memberof Player
-     * @typedef UpdateProfileCallback
+     * @typedef updateProfileCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {PlayerProfileRes} [response] PlayerProfileRes
      */
 
     /**
-     * Calls UpdateProfile.
+     * Calls updateProfile.
      * @function updateProfile
      * @memberof Player
      * @instance
      * @param {IPlayerProfileReq} request PlayerProfileReq message or plain object
-     * @param {Player.UpdateProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
+     * @param {Player.updateProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Player.prototype.updateProfile = function updateProfile(request, callback) {
         return this.rpcCall(updateProfile, $root.PlayerProfileReq, $root.PlayerProfileRes, request, callback);
-    }, "name", { value: "UpdateProfile" });
+    }, "name", { value: "updateProfile" });
 
     /**
-     * Calls UpdateProfile.
+     * Calls updateProfile.
      * @function updateProfile
      * @memberof Player
      * @instance
@@ -12598,28 +14851,28 @@ $root.Player = (function() {
     /**
      * Callback as used by {@link Player#getData}.
      * @memberof Player
-     * @typedef GetDataCallback
+     * @typedef getDataCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {PlayerDataRes} [response] PlayerDataRes
      */
 
     /**
-     * Calls GetData.
+     * Calls getData.
      * @function getData
      * @memberof Player
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Player.GetDataCallback} callback Node-style callback called with the error, if any, and PlayerDataRes
+     * @param {Player.getDataCallback} callback Node-style callback called with the error, if any, and PlayerDataRes
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Player.prototype.getData = function getData(request, callback) {
         return this.rpcCall(getData, $root.Empty, $root.PlayerDataRes, request, callback);
-    }, "name", { value: "GetData" });
+    }, "name", { value: "getData" });
 
     /**
-     * Calls GetData.
+     * Calls getData.
      * @function getData
      * @memberof Player
      * @instance

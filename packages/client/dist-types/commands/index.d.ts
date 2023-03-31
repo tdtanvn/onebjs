@@ -7,3 +7,6 @@ export * from "./CallGameScriptCommand";
 export * from "./inbox/ClaimInboxCommand";
 export * from "./inbox/GetInboxListCommand";
 export * from "./inbox/DeleteInboxCommand";
+export * from "./leaderboard/GetMyRankLeaderboardCommand";
+export * from "./leaderboard/GetTopScoreLeaderboardCommand";
+export * from "./leaderboard/UpdateScoreLeaderboardCommand";
