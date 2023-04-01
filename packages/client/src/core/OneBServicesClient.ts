@@ -47,7 +47,7 @@ export class OneBServicesClient {
     }
   }
 
-  public async send<TResponseType>(cmd: ICommand, classMessage?: any) {
+  public async send<TResponseType = any>(cmd: ICommand, classMessage?: any) {
     const request = this.apiType === APIType.JSON ? cmd.getRequest() : cmd.getBinRequest();
     const uri = `${this.baseURL.get(this.environment)}/${request.service}/${request.param}`;
 

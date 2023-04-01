@@ -19,7 +19,7 @@ async function main() {
     });
   } catch (error) {
     const {message} = error
-    console.log("error here----", message, error)
+    console.log("error", message, error)
   }
   console.log("token", accessToken);
 

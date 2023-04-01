@@ -18,7 +18,181 @@ message ProtoMessage {
    string namespace           = 4;
    repeated uint32 data       = 3;
 }
+message DailyQuestDefaultOutput {
+   message Dailyquest {
+      uint32 conditionReach = 1;
+      uint32 rewardQuantity = 2;
+      string condition = 3;
+      string rewardId = 4;
+      string id = 5;
+      string questName = 6;
+      uint32 progress = 7;
+      bool canClaim = 8;
+   }
 
+   repeated Dailyquest dailyQuest = 1;
+}
+
+message DailyQuestUpdateQuestInput {
+   message Items {
+      string id = 1;
+      uint32 amount = 2;
+   }
+   repeated Items items = 1;
+}
+message DailyQuestUpdateQuestOutput {
+   repeated string questsCanClaim = 2;
+}
+message DailyQuestClaimQuestInput {
+   repeated string items = 1;
+}
+message DailyQuestClaimQuestOutput {
+message Rewards {
+      string itemId = 1;
+      uint32 amount = 2;
+   }
+   repeated Rewards rewards = 1;
+}
+message DailyRewardsCanClaimRewardOutput {
+   message Rewards {
+      string itemId = 1;
+      uint32 step = 2;
+      uint32 amount = 3;
+   }
+
+   uint32 curStep = 1;
+   repeated Rewards rewards = 2;
+}
+
+message DailyRewardsClaimRewardsOutput {
+   message Rewards {
+         string itemId = 1;
+         uint32 amount = 2;
+   }
+
+   repeated Rewards rewards = 1;
+}
+message LuckyWheel {
+   message Items {
+         string itemId = 1;
+         uint32 weight = 2;
+         uint32 quantity = 3;
+   }
+
+   uint32 maxFullSpins = 1;
+   uint32 minFullSpins = 2;
+   uint32 dailyLimit = 3;
+   repeated Items items = 4;
+}
+message LuckyWheelCanClaimOutput {
+   bool canClaim = 1;
+}
+message LuckyWheelClaimItemOutput {
+   message Itemreward {
+         string itemId = 1;
+         uint32 weight = 2;
+         uint32 quantity = 3;
+   }
+
+   message Inventory {
+         string itemId = 1;
+         uint32 amount = 2;
+   }
+
+   Itemreward itemReward = 1;
+   repeated Inventory inventory = 2;
+}
+
+message InboxList {
+   message Conditions {
+         string value = 1;
+         string operator = 2;
+         string fieldName = 3;
+   }
+
+   message Gifts {
+         string itemId = 1;
+         uint32 amount = 2;
+   }
+
+   message Items {
+         string content = 1;
+         repeated Conditions conditions = 2;
+         repeated Gifts gifts = 3;
+         uint32 expiryDate = 4;
+         string id = 5;
+         string title = 6;
+         bool canClaim = 7;
+   }
+
+   repeated Items items = 1;
+}
+message InboxClaimInput {
+   repeated string inboxList = 1;
+}
+message InboxClaimOutput {
+   message Inventory {
+         string itemId = 1;
+         uint32 amount = 2;
+   }
+   repeated Inventory inventory = 1;
+   repeated string inboxList    = 2;
+}
+message InboxDeleteInput {
+   repeated string inboxList = 1;
+}
+message InboxDeleteOutput {
+   repeated string inboxList = 1;
+}
+
+message GetTopLeaderboardInput {
+   optional string name = 1;
+   uint32 offset = 2;
+   string country = 3;
+   optional uint32 count = 4;
+   bool reverseOrder = 5;
+}
+
+message TopLeaderboard {
+message Items {
+   string playerName = 1;
+   string playerId = 2;
+   string country = 3;
+   uint32 score = 4;
+   uint32 rank = 5;
+   }
+
+   repeated Items items = 1;
+}
+
+message GetMyRankLeaderboardInput {
+   string name = 1;
+   string country = 2;
+   bool reverseOrder = 3;
+}
+
+message GetMyRankLeaderboardOutput {
+   uint32 rank = 1;
+   uint32 minRank = 2;
+   uint32 score = 3;
+   string playerName = 4;
+   string playerId = 5;
+   string country = 6;
+}
+  
+message UpdateScoreLeaderboardInput {
+   message Items {
+   uint32 score = 1;
+   string option = 2;
+   string country = 3;
+   string name = 4;
+   }
+   repeated Items items = 1;
+}
+
+message UpdateScoreLeaderboardOutput {
+   string status = 1;
+}
 enum Service {
    NOT_USE                    = 0;
    BLUEPRINT                  = 1;

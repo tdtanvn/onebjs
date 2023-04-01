@@ -1,10 +1,12 @@
 import { RequestVerb } from "../../core/Request";
+import { UpdateScoreLeaderboardInput } from "../../proto/proto";
+import { IUpdateScoreLeaderboardInput } from "../../proto/proto";
 import { BaseCommand, ServiceName } from "../BaseCommand";
 
-export class UpdateScoreLeaderboardCommand<T> extends BaseCommand<T> {
+export class UpdateScoreLeaderboardCommand<T = IUpdateScoreLeaderboardInput> extends BaseCommand<T> {
   protected serviceName: ServiceName = ServiceName.LEADERBOARD;
 
-  constructor(param?: T, classProtobuf?: any) {
+  constructor(param?: T, classProtobuf: any = UpdateScoreLeaderboardInput) {
     super();
     this.name = "updateScore";
     this.data = param;

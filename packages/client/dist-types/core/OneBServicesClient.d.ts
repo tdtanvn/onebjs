@@ -20,6 +20,6 @@ export declare class OneBServicesClient {
     private apiVersion;
     enableLog: boolean;
     constructor(config: ServiceConfig);
-    send<TResponseType>(cmd: ICommand, classMessage?: any): Promise<TResponseType>;
+    send<TResponseType = any>(cmd: ICommand, classMessage?: any): Promise<TResponseType>;
     login(loginInput: IAuthLogin): Promise<string>;
 }

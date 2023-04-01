@@ -1,14 +1,10 @@
 import { OneBServicesClient, APIType, Environment, GetInboxListCommand, ClaimInboxCommand, DeleteInboxCommand } from "@oneb-sdk/client";
 import { InboxDeleteOutput } from "./bundle";
 import {
-  IInboxClaimInput,
   IInboxClaimOutput,
-  IInboxDeleteInput,
   IInboxDeleteOutput,
   IInboxList,
-  InboxClaimInput,
   InboxClaimOutput,
-  InboxDeleteInput,
   InboxList,
 } from "./bundle";
 
@@ -32,18 +28,17 @@ async function main() {
       let inboxIds = inboxList.items.filter((item) => item.canClaim).map((item) => item.id);
       console.log(inboxIds);
       const result = await client.send<IInboxClaimOutput>(
-        new ClaimInboxCommand<IInboxClaimInput>({ inboxList: inboxIds }, InboxClaimInput),
+        new ClaimInboxCommand({ inboxList: inboxIds }),
         InboxClaimOutput
       );
       console.log(result);
       inboxIds = inboxList.items.map((item) => item.id);
       //mark delete
       let info = await client.send<IInboxDeleteOutput>(
-        new DeleteInboxCommand<IInboxDeleteInput>(
+        new DeleteInboxCommand(
           {
             inboxList: inboxIds,
-          },
-          InboxDeleteInput
+          }
         ),
         InboxDeleteOutput
       );
