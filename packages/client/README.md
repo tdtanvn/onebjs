@@ -3,9 +3,10 @@
 ## Description
 
 OneB SDK for JavaScript, OneBServices Client for JS Game engines such as Cocos creator, Three.js, Pixi.js, Phaser...
-<p>OneB Services is Game backend as a service (GBaaS)</p>
-<p>Our APIs are encrypted into binary, boosting your game's performance beyond expectations while also increasing its overall security.
-</p>
+
+[OneB Services](https://oneb.tech) is a Game backend as a service (GBaaS)
+
+<p>Our APIs are encrypted into binary, boosting your game's performance beyond expectations while also increasing its overall security.</p>
 <p>With OneB, you have the freedom to host on your system, providing you with complete control over your game data and user data, with no need to share it with anyone else. This added level of security and privacy ensures that your game's data is protected and kept confidential at all times.</p>
 <p>With OneB, you can write and debug code directly on the cloud, enabling you to effortlessly modify game features without the need to rebuild game client versions. This feature not only saves you time but also provides a more streamlined development process, allowing you to focus on creating the best possible gaming experience for your players.</p>
 
