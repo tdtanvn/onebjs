@@ -5,7 +5,7 @@ import { DAILY_REWARDS, EQUIPMENTS, ITEM_TABLE } from "./bundle";
 async function main() {
   const client = new OneBServicesClient({
     gameId: "DEMO",
-    enableLog: true,
+    enableLog: false,
     environment: Environment.DEVELOPMENT,
     apiType: APIType.BINARY,
   });

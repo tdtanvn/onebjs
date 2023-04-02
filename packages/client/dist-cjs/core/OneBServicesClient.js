@@ -16,6 +16,7 @@ const node_https_1 = tslib_1.__importDefault(require("node:https"));
 const httpAgent = new node_http_1.default.Agent({ keepAlive: true });
 const httpsAgent = new node_https_1.default.Agent({ keepAlive: true });
 const agent = (_parsedURL) => (_parsedURL.protocol == "http:" ? httpAgent : httpsAgent);
+const X_API_VERSION = "1";
 class OneBServicesClient {
     constructor(config) {
         var _a, _b, _c, _d;
@@ -24,7 +25,6 @@ class OneBServicesClient {
             ["DEVELOPMENT", "https://dev.api.1bservices.com"],
             ["PRODUCTION", "https://api.1bservices.com"],
         ]);
-        this.apiVersion = "1";
         this.gameId = config.gameId;
         this.gameVersion = (_a = config.gameVersion) !== null && _a !== void 0 ? _a : "";
         this.environment = (_b = config.environment) !== null && _b !== void 0 ? _b : EEnvironment_1.Environment.DEVELOPMENT;
@@ -50,7 +50,7 @@ class OneBServicesClient {
             headers: {
                 "Content-Type": this.serializationOption.ContentType,
                 Authorization: `Bearer ${this.accessToken}`,
-                "X-API-Version": this.apiVersion,
+                "X-API-Version": X_API_VERSION,
             },
             agent,
         });

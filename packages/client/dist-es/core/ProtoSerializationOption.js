@@ -7,7 +7,6 @@ export class ProtoSerializationOption {
             bytes: Number,
             arrays: true,
             objects: true,
-            defaults: true,
         };
     }
     Deserialize(data, messageClass) {

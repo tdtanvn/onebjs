@@ -15,6 +15,7 @@ import https from "node:https";
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
 const agent = (_parsedURL: URL) => (_parsedURL.protocol == "http:" ? httpAgent : httpsAgent);
+const X_API_VERSION = "1";
 
 export type ServiceConfig = {
   gameId: string;
@@ -36,7 +37,6 @@ export class OneBServicesClient {
   private environment!: Environment;
   private gameVersion!: string;
   private apiType!: APIType;
-  private apiVersion: string = "1";
   public enableLog!: boolean;
 
   public constructor(config: ServiceConfig) {
@@ -66,7 +66,7 @@ export class OneBServicesClient {
       headers: {
         "Content-Type": this.serializationOption.ContentType,
         Authorization: `Bearer ${this.accessToken}`,
-        "X-API-Version": this.apiVersion,
+        "X-API-Version": X_API_VERSION,
       },
       agent,
     });

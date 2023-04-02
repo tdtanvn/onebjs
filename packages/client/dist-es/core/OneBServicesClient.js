@@ -12,6 +12,7 @@ import https from "node:https";
 const httpAgent = new http.Agent({ keepAlive: true });
 const httpsAgent = new https.Agent({ keepAlive: true });
 const agent = (_parsedURL) => (_parsedURL.protocol == "http:" ? httpAgent : httpsAgent);
+const X_API_VERSION = "1";
 export class OneBServicesClient {
     constructor(config) {
         this.baseURL = new Map([
@@ -19,7 +20,6 @@ export class OneBServicesClient {
             ["DEVELOPMENT", "https://dev.api.1bservices.com"],
             ["PRODUCTION", "https://api.1bservices.com"],
         ]);
-        this.apiVersion = "1";
         this.gameId = config.gameId;
         this.gameVersion = config.gameVersion ?? "";
         this.environment = config.environment ?? Environment.DEVELOPMENT;
@@ -45,7 +45,7 @@ export class OneBServicesClient {
             headers: {
                 "Content-Type": this.serializationOption.ContentType,
                 Authorization: `Bearer ${this.accessToken}`,
-                "X-API-Version": this.apiVersion,
+                "X-API-Version": X_API_VERSION,
             },
             agent,
         });

@@ -1,7 +1,7 @@
 import { Request, RequestVerb } from "../core/Request";
 import { BaseCommand, ServiceName } from "./BaseCommand";
 
-export class CallGameScriptCommand<T extends T & any> extends BaseCommand<T> {
+export class CallGameScriptCommand<T = any> extends BaseCommand<T> {
   protected serviceName: ServiceName = ServiceName.GAMESCRIPT;
   constructor(scriptName: string, functionName: string, param?: T, classProtobuf?: any) {
     super();
