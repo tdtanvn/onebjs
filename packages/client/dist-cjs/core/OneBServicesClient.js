@@ -11,6 +11,11 @@ const JsonSerializationOption_1 = require("./JsonSerializationOption");
 const ProtoSerializationOption_1 = require("./ProtoSerializationOption");
 const Request_1 = require("./Request");
 const RequestException_1 = require("./RequestException");
+const node_http_1 = tslib_1.__importDefault(require("node:http"));
+const node_https_1 = tslib_1.__importDefault(require("node:https"));
+const httpAgent = new node_http_1.default.Agent({ keepAlive: true });
+const httpsAgent = new node_https_1.default.Agent({ keepAlive: true });
+const agent = (_parsedURL) => (_parsedURL.protocol == "http:" ? httpAgent : httpsAgent);
 class OneBServicesClient {
     constructor(config) {
         var _a, _b, _c, _d;
@@ -47,6 +52,7 @@ class OneBServicesClient {
                 Authorization: `Bearer ${this.accessToken}`,
                 "X-API-Version": this.apiVersion,
             },
+            agent,
         });
         if (response.ok) {
             const responseData = this.apiType === EAPIType_1.APIType.JSON ? await response.text() : await response.buffer();

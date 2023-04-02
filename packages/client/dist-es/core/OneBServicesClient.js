@@ -7,6 +7,11 @@ import { JsonSerializationOption } from "./JsonSerializationOption";
 import { ProtoSerializationOption } from "./ProtoSerializationOption";
 import { RequestVerb } from "./Request";
 import { RequestException } from "./RequestException";
+import http from "node:http";
+import https from "node:https";
+const httpAgent = new http.Agent({ keepAlive: true });
+const httpsAgent = new https.Agent({ keepAlive: true });
+const agent = (_parsedURL) => (_parsedURL.protocol == "http:" ? httpAgent : httpsAgent);
 export class OneBServicesClient {
     constructor(config) {
         this.baseURL = new Map([
@@ -42,6 +47,7 @@ export class OneBServicesClient {
                 Authorization: `Bearer ${this.accessToken}`,
                 "X-API-Version": this.apiVersion,
             },
+            agent,
         });
         if (response.ok) {
             const responseData = this.apiType === APIType.JSON ? await response.text() : await response.buffer();
