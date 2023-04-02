@@ -8,7 +8,6 @@ export class ProtoSerializationOption implements ISerializationOption {
     bytes: Number,
     arrays: true,
     objects: true,
-    defaults: true,
   };
   Deserialize<T>(data: Buffer, messageClass: any): T {
     const decodedMessage = messageClass.decode(data);
