@@ -6,7 +6,7 @@ class JsonSerializationOption {
         this.ContentType = "application/json";
     }
     Deserialize(text) {
-        return JSON.parse(text);
+        return text ? JSON.parse(text) : undefined;
     }
 }
 exports.JsonSerializationOption = JsonSerializationOption;
