@@ -5,7 +5,7 @@ export class GetInboxListCommand<T> extends BaseCommand<T> {
 
   constructor(classProtobuf?: any) {
     super();
-    this.name = "getInfo";
+    this.name = "GetInfo";
     this.classP = classProtobuf;
   }
 }

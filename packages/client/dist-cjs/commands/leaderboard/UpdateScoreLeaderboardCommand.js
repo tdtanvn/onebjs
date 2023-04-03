@@ -8,7 +8,7 @@ class UpdateScoreLeaderboardCommand extends BaseCommand_1.BaseCommand {
     constructor(param, classProtobuf = proto_1.UpdateScoreLeaderboardInput) {
         super();
         this.serviceName = BaseCommand_1.ServiceName.LEADERBOARD;
-        this.name = "updateScore";
+        this.name = "UpdateScore";
         this.data = param;
         this.classP = classProtobuf;
         this.verb = Request_1.RequestVerb.POST;

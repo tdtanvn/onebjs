@@ -6,7 +6,7 @@ class GetInboxListCommand extends BaseCommand_1.BaseCommand {
     constructor(classProtobuf) {
         super();
         this.serviceName = BaseCommand_1.ServiceName.INBOX;
-        this.name = "getInfo";
+        this.name = "GetInfo";
         this.classP = classProtobuf;
     }
 }

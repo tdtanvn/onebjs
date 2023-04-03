@@ -5,7 +5,7 @@ export class UpdateScoreLeaderboardCommand extends BaseCommand {
     constructor(param, classProtobuf = UpdateScoreLeaderboardInput) {
         super();
         this.serviceName = ServiceName.LEADERBOARD;
-        this.name = "updateScore";
+        this.name = "UpdateScore";
         this.data = param;
         this.classP = classProtobuf;
         this.verb = RequestVerb.POST;

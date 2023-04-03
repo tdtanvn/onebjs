@@ -5,7 +5,7 @@ export class DeleteInboxCommand extends BaseCommand {
     constructor(param, classProtobuf = InboxDeleteInput) {
         super();
         this.serviceName = ServiceName.INBOX;
-        this.name = "markDeleteItem";
+        this.name = "MarkDeleteItem";
         this.data = param;
         this.classP = classProtobuf;
         this.verb = RequestVerb.POST;

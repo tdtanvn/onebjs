@@ -8,7 +8,7 @@ class GetTopScoreLeaderboardCommand extends BaseCommand_1.BaseCommand {
     constructor(param, classProtobuf = proto_1.GetTopLeaderboardInput) {
         super();
         this.serviceName = BaseCommand_1.ServiceName.LEADERBOARD;
-        this.name = "getTopScore";
+        this.name = "GetTopScore";
         this.data = param;
         this.classP = classProtobuf;
         this.verb = Request_1.RequestVerb.POST;

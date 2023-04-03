@@ -7,7 +7,7 @@ export class ClaimInboxCommand<T = IInboxClaimInput> extends BaseCommand<T> {
 
   constructor(param?: T, classProtobuf: any = InboxClaimInput) {
     super();
-    this.name = "claimItem";
+    this.name = "ClaimItem";
     this.data = param;
     this.classP = classProtobuf;
     this.verb = RequestVerb.POST;

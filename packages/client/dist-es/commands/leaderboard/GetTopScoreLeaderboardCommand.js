@@ -5,7 +5,7 @@ export class GetTopScoreLeaderboardCommand extends BaseCommand {
     constructor(param, classProtobuf = GetTopLeaderboardInput) {
         super();
         this.serviceName = ServiceName.LEADERBOARD;
-        this.name = "getTopScore";
+        this.name = "GetTopScore";
         this.data = param;
         this.classP = classProtobuf;
         this.verb = RequestVerb.POST;

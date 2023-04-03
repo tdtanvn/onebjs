@@ -8,7 +8,7 @@ export class UpdateScoreLeaderboardCommand<T = IUpdateScoreLeaderboardInput> ext
 
   constructor(param?: T, classProtobuf: any = UpdateScoreLeaderboardInput) {
     super();
-    this.name = "updateScore";
+    this.name = "UpdateScore";
     this.data = param;
     this.classP = classProtobuf;
     this.verb = RequestVerb.POST;

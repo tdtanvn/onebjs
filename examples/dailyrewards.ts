@@ -15,11 +15,11 @@ async function main() {
   });
 
   if (accessToken) {
-    const dailyRewardsInfo = await client.send<DAILY_REWARDS>(new GetBlueprintDataCommand("daily_rewards"), DAILY_REWARDS);
+    const dailyRewardsInfo = await client.send<DAILY_REWARDS>(new GetBlueprintDataCommand("DAILY_REWARDS"), DAILY_REWARDS);
     console.log(dailyRewardsInfo);
 
     const canClaimRewards = await client.send<DailyRewardsCanClaimRewardOutput>(
-      new CallGameScriptCommand("Daily_Rewards", "canClaimRewards"),
+      new CallGameScriptCommand("DAILY_REWARDS", "canClaimRewards"),
       DailyRewardsCanClaimRewardOutput
     );
     console.log(canClaimRewards);

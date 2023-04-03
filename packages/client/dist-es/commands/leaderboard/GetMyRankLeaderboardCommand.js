@@ -5,7 +5,7 @@ export class GetMyRankLeaderboardCommand extends BaseCommand {
     constructor(param, classProtobuf = GetMyRankLeaderboardInput) {
         super();
         this.serviceName = ServiceName.LEADERBOARD;
-        this.name = "getMyRank";
+        this.name = "GetMyRank";
         this.data = param;
         this.classP = classProtobuf;
         this.verb = RequestVerb.POST;

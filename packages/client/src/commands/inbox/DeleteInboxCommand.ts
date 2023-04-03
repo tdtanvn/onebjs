@@ -8,7 +8,7 @@ export class DeleteInboxCommand<T = IInboxDeleteInput> extends BaseCommand<T> {
 
   constructor(param?: T, classProtobuf: any = InboxDeleteInput) {
     super();
-    this.name = "markDeleteItem";
+    this.name = "MarkDeleteItem";
     this.data = param;
     this.classP = classProtobuf;
     this.verb = RequestVerb.POST;

@@ -8,7 +8,7 @@ export class GetMyRankLeaderboardCommand<T = IGetMyRankLeaderboardInput> extends
 
   constructor(param?: T, classProtobuf: any = GetMyRankLeaderboardInput) {
     super();
-    this.name = "getMyRank";
+    this.name = "GetMyRank";
     this.data = param;
     this.classP = classProtobuf;
     this.verb = RequestVerb.POST;
