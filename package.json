@@ -5,7 +5,7 @@
     "type": "git",
     "url": "https://github.com/tdtanvn/onebjs.git"
   },
-  "author": "Tu Dinh Tan <tdtanvn@gmail.com> (https://oneb.tech)",
+  "author": "oneb.tech",
   "license": "MIT",
   "workspaces": [
     "packages/*"
