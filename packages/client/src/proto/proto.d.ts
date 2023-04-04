@@ -54,15 +54,18 @@ export interface IProtoMessage {
     service?: (Service|null);
     functionName?: (string|null);
     namespace?: (string|null);
-    data?: (number[]|null);
+    data?: (Uint8Array|null);
 }
 
 export class ProtoMessage implements IProtoMessage {
     constructor(properties?: IProtoMessage);
     public service: Service;
-    public functionName: string;
-    public namespace: string;
-    public data: number[];
+    public functionName?: (string|null);
+    public namespace?: (string|null);
+    public data?: (Uint8Array|null);
+    public _functionName?: "functionName";
+    public _namespace?: "namespace";
+    public _data?: "data";
     public static create(properties?: IProtoMessage): ProtoMessage;
     public static encode(message: IProtoMessage, writer?: $protobuf.Writer): $protobuf.Writer;
     public static encodeDelimited(message: IProtoMessage, writer?: $protobuf.Writer): $protobuf.Writer;
@@ -73,413 +76,6 @@ export class ProtoMessage implements IProtoMessage {
     public static toObject(message: ProtoMessage, options?: $protobuf.IConversionOptions): { [k: string]: any };
     public toJSON(): { [k: string]: any };
     public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export interface IDailyQuestDefaultOutput {
-    dailyQuest?: (DailyQuestDefaultOutput.IDailyquest[]|null);
-}
-
-export class DailyQuestDefaultOutput implements IDailyQuestDefaultOutput {
-    constructor(properties?: IDailyQuestDefaultOutput);
-    public dailyQuest: DailyQuestDefaultOutput.IDailyquest[];
-    public static create(properties?: IDailyQuestDefaultOutput): DailyQuestDefaultOutput;
-    public static encode(message: IDailyQuestDefaultOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyQuestDefaultOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestDefaultOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestDefaultOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyQuestDefaultOutput;
-    public static toObject(message: DailyQuestDefaultOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace DailyQuestDefaultOutput {
-
-    interface IDailyquest {
-        conditionReach?: (number|null);
-        rewardQuantity?: (number|null);
-        condition?: (string|null);
-        rewardId?: (string|null);
-        id?: (string|null);
-        questName?: (string|null);
-        progress?: (number|null);
-        canClaim?: (boolean|null);
-    }
-
-    class Dailyquest implements IDailyquest {
-        constructor(properties?: DailyQuestDefaultOutput.IDailyquest);
-        public conditionReach: number;
-        public rewardQuantity: number;
-        public condition: string;
-        public rewardId: string;
-        public id: string;
-        public questName: string;
-        public progress: number;
-        public canClaim: boolean;
-        public static create(properties?: DailyQuestDefaultOutput.IDailyquest): DailyQuestDefaultOutput.Dailyquest;
-        public static encode(message: DailyQuestDefaultOutput.IDailyquest, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: DailyQuestDefaultOutput.IDailyquest, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestDefaultOutput.Dailyquest;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestDefaultOutput.Dailyquest;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): DailyQuestDefaultOutput.Dailyquest;
-        public static toObject(message: DailyQuestDefaultOutput.Dailyquest, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-export interface IDailyQuestUpdateQuestInput {
-    items?: (DailyQuestUpdateQuestInput.IItems[]|null);
-}
-
-export class DailyQuestUpdateQuestInput implements IDailyQuestUpdateQuestInput {
-    constructor(properties?: IDailyQuestUpdateQuestInput);
-    public items: DailyQuestUpdateQuestInput.IItems[];
-    public static create(properties?: IDailyQuestUpdateQuestInput): DailyQuestUpdateQuestInput;
-    public static encode(message: IDailyQuestUpdateQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyQuestUpdateQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestUpdateQuestInput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestUpdateQuestInput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyQuestUpdateQuestInput;
-    public static toObject(message: DailyQuestUpdateQuestInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace DailyQuestUpdateQuestInput {
-
-    interface IItems {
-        id?: (string|null);
-        amount?: (number|null);
-    }
-
-    class Items implements IItems {
-        constructor(properties?: DailyQuestUpdateQuestInput.IItems);
-        public id: string;
-        public amount: number;
-        public static create(properties?: DailyQuestUpdateQuestInput.IItems): DailyQuestUpdateQuestInput.Items;
-        public static encode(message: DailyQuestUpdateQuestInput.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: DailyQuestUpdateQuestInput.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestUpdateQuestInput.Items;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestUpdateQuestInput.Items;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): DailyQuestUpdateQuestInput.Items;
-        public static toObject(message: DailyQuestUpdateQuestInput.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-export interface IDailyQuestUpdateQuestOutput {
-    questsCanClaim?: (string[]|null);
-}
-
-export class DailyQuestUpdateQuestOutput implements IDailyQuestUpdateQuestOutput {
-    constructor(properties?: IDailyQuestUpdateQuestOutput);
-    public questsCanClaim: string[];
-    public static create(properties?: IDailyQuestUpdateQuestOutput): DailyQuestUpdateQuestOutput;
-    public static encode(message: IDailyQuestUpdateQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyQuestUpdateQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestUpdateQuestOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestUpdateQuestOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyQuestUpdateQuestOutput;
-    public static toObject(message: DailyQuestUpdateQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export interface IDailyQuestClaimQuestInput {
-    items?: (string[]|null);
-}
-
-export class DailyQuestClaimQuestInput implements IDailyQuestClaimQuestInput {
-    constructor(properties?: IDailyQuestClaimQuestInput);
-    public items: string[];
-    public static create(properties?: IDailyQuestClaimQuestInput): DailyQuestClaimQuestInput;
-    public static encode(message: IDailyQuestClaimQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyQuestClaimQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestClaimQuestInput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestClaimQuestInput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyQuestClaimQuestInput;
-    public static toObject(message: DailyQuestClaimQuestInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export interface IDailyQuestClaimQuestOutput {
-    rewards?: (DailyQuestClaimQuestOutput.IRewards[]|null);
-}
-
-export class DailyQuestClaimQuestOutput implements IDailyQuestClaimQuestOutput {
-    constructor(properties?: IDailyQuestClaimQuestOutput);
-    public rewards: DailyQuestClaimQuestOutput.IRewards[];
-    public static create(properties?: IDailyQuestClaimQuestOutput): DailyQuestClaimQuestOutput;
-    public static encode(message: IDailyQuestClaimQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyQuestClaimQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestClaimQuestOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestClaimQuestOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyQuestClaimQuestOutput;
-    public static toObject(message: DailyQuestClaimQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace DailyQuestClaimQuestOutput {
-
-    interface IRewards {
-        itemId?: (string|null);
-        amount?: (number|null);
-    }
-
-    class Rewards implements IRewards {
-        constructor(properties?: DailyQuestClaimQuestOutput.IRewards);
-        public itemId: string;
-        public amount: number;
-        public static create(properties?: DailyQuestClaimQuestOutput.IRewards): DailyQuestClaimQuestOutput.Rewards;
-        public static encode(message: DailyQuestClaimQuestOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: DailyQuestClaimQuestOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestClaimQuestOutput.Rewards;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestClaimQuestOutput.Rewards;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): DailyQuestClaimQuestOutput.Rewards;
-        public static toObject(message: DailyQuestClaimQuestOutput.Rewards, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-export interface IDailyRewardsCanClaimRewardOutput {
-    curStep?: (number|null);
-    rewards?: (DailyRewardsCanClaimRewardOutput.IRewards[]|null);
-}
-
-export class DailyRewardsCanClaimRewardOutput implements IDailyRewardsCanClaimRewardOutput {
-    constructor(properties?: IDailyRewardsCanClaimRewardOutput);
-    public curStep: number;
-    public rewards: DailyRewardsCanClaimRewardOutput.IRewards[];
-    public static create(properties?: IDailyRewardsCanClaimRewardOutput): DailyRewardsCanClaimRewardOutput;
-    public static encode(message: IDailyRewardsCanClaimRewardOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyRewardsCanClaimRewardOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewardsCanClaimRewardOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewardsCanClaimRewardOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyRewardsCanClaimRewardOutput;
-    public static toObject(message: DailyRewardsCanClaimRewardOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace DailyRewardsCanClaimRewardOutput {
-
-    interface IRewards {
-        itemId?: (string|null);
-        step?: (number|null);
-        amount?: (number|null);
-    }
-
-    class Rewards implements IRewards {
-        constructor(properties?: DailyRewardsCanClaimRewardOutput.IRewards);
-        public itemId: string;
-        public step: number;
-        public amount: number;
-        public static create(properties?: DailyRewardsCanClaimRewardOutput.IRewards): DailyRewardsCanClaimRewardOutput.Rewards;
-        public static encode(message: DailyRewardsCanClaimRewardOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: DailyRewardsCanClaimRewardOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewardsCanClaimRewardOutput.Rewards;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewardsCanClaimRewardOutput.Rewards;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): DailyRewardsCanClaimRewardOutput.Rewards;
-        public static toObject(message: DailyRewardsCanClaimRewardOutput.Rewards, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-export interface IDailyRewardsClaimRewardsOutput {
-    rewards?: (DailyRewardsClaimRewardsOutput.IRewards[]|null);
-}
-
-export class DailyRewardsClaimRewardsOutput implements IDailyRewardsClaimRewardsOutput {
-    constructor(properties?: IDailyRewardsClaimRewardsOutput);
-    public rewards: DailyRewardsClaimRewardsOutput.IRewards[];
-    public static create(properties?: IDailyRewardsClaimRewardsOutput): DailyRewardsClaimRewardsOutput;
-    public static encode(message: IDailyRewardsClaimRewardsOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: IDailyRewardsClaimRewardsOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewardsClaimRewardsOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewardsClaimRewardsOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): DailyRewardsClaimRewardsOutput;
-    public static toObject(message: DailyRewardsClaimRewardsOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace DailyRewardsClaimRewardsOutput {
-
-    interface IRewards {
-        itemId?: (string|null);
-        amount?: (number|null);
-    }
-
-    class Rewards implements IRewards {
-        constructor(properties?: DailyRewardsClaimRewardsOutput.IRewards);
-        public itemId: string;
-        public amount: number;
-        public static create(properties?: DailyRewardsClaimRewardsOutput.IRewards): DailyRewardsClaimRewardsOutput.Rewards;
-        public static encode(message: DailyRewardsClaimRewardsOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: DailyRewardsClaimRewardsOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewardsClaimRewardsOutput.Rewards;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewardsClaimRewardsOutput.Rewards;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): DailyRewardsClaimRewardsOutput.Rewards;
-        public static toObject(message: DailyRewardsClaimRewardsOutput.Rewards, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-export interface ILuckyWheel {
-    maxFullSpins?: (number|null);
-    minFullSpins?: (number|null);
-    dailyLimit?: (number|null);
-    items?: (LuckyWheel.IItems[]|null);
-}
-
-export class LuckyWheel implements ILuckyWheel {
-    constructor(properties?: ILuckyWheel);
-    public maxFullSpins: number;
-    public minFullSpins: number;
-    public dailyLimit: number;
-    public items: LuckyWheel.IItems[];
-    public static create(properties?: ILuckyWheel): LuckyWheel;
-    public static encode(message: ILuckyWheel, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: ILuckyWheel, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheel;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheel;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): LuckyWheel;
-    public static toObject(message: LuckyWheel, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace LuckyWheel {
-
-    interface IItems {
-        itemId?: (string|null);
-        weight?: (number|null);
-        quantity?: (number|null);
-    }
-
-    class Items implements IItems {
-        constructor(properties?: LuckyWheel.IItems);
-        public itemId: string;
-        public weight: number;
-        public quantity: number;
-        public static create(properties?: LuckyWheel.IItems): LuckyWheel.Items;
-        public static encode(message: LuckyWheel.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: LuckyWheel.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheel.Items;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheel.Items;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): LuckyWheel.Items;
-        public static toObject(message: LuckyWheel.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-export interface ILuckyWheelCanClaimOutput {
-    canClaim?: (boolean|null);
-}
-
-export class LuckyWheelCanClaimOutput implements ILuckyWheelCanClaimOutput {
-    constructor(properties?: ILuckyWheelCanClaimOutput);
-    public canClaim: boolean;
-    public static create(properties?: ILuckyWheelCanClaimOutput): LuckyWheelCanClaimOutput;
-    public static encode(message: ILuckyWheelCanClaimOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: ILuckyWheelCanClaimOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheelCanClaimOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheelCanClaimOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): LuckyWheelCanClaimOutput;
-    public static toObject(message: LuckyWheelCanClaimOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export interface ILuckyWheelClaimItemOutput {
-    itemReward?: (LuckyWheelClaimItemOutput.IItemreward|null);
-    inventory?: (LuckyWheelClaimItemOutput.IInventory[]|null);
-}
-
-export class LuckyWheelClaimItemOutput implements ILuckyWheelClaimItemOutput {
-    constructor(properties?: ILuckyWheelClaimItemOutput);
-    public itemReward?: (LuckyWheelClaimItemOutput.IItemreward|null);
-    public inventory: LuckyWheelClaimItemOutput.IInventory[];
-    public static create(properties?: ILuckyWheelClaimItemOutput): LuckyWheelClaimItemOutput;
-    public static encode(message: ILuckyWheelClaimItemOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static encodeDelimited(message: ILuckyWheelClaimItemOutput, writer?: $protobuf.Writer): $protobuf.Writer;
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheelClaimItemOutput;
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheelClaimItemOutput;
-    public static verify(message: { [k: string]: any }): (string|null);
-    public static fromObject(object: { [k: string]: any }): LuckyWheelClaimItemOutput;
-    public static toObject(message: LuckyWheelClaimItemOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
-    public toJSON(): { [k: string]: any };
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace LuckyWheelClaimItemOutput {
-
-    interface IItemreward {
-        itemId?: (string|null);
-        weight?: (number|null);
-        quantity?: (number|null);
-    }
-
-    class Itemreward implements IItemreward {
-        constructor(properties?: LuckyWheelClaimItemOutput.IItemreward);
-        public itemId: string;
-        public weight: number;
-        public quantity: number;
-        public static create(properties?: LuckyWheelClaimItemOutput.IItemreward): LuckyWheelClaimItemOutput.Itemreward;
-        public static encode(message: LuckyWheelClaimItemOutput.IItemreward, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: LuckyWheelClaimItemOutput.IItemreward, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheelClaimItemOutput.Itemreward;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheelClaimItemOutput.Itemreward;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): LuckyWheelClaimItemOutput.Itemreward;
-        public static toObject(message: LuckyWheelClaimItemOutput.Itemreward, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-
-    interface IInventory {
-        itemId?: (string|null);
-        amount?: (number|null);
-    }
-
-    class Inventory implements IInventory {
-        constructor(properties?: LuckyWheelClaimItemOutput.IInventory);
-        public itemId: string;
-        public amount: number;
-        public static create(properties?: LuckyWheelClaimItemOutput.IInventory): LuckyWheelClaimItemOutput.Inventory;
-        public static encode(message: LuckyWheelClaimItemOutput.IInventory, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static encodeDelimited(message: LuckyWheelClaimItemOutput.IInventory, writer?: $protobuf.Writer): $protobuf.Writer;
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheelClaimItemOutput.Inventory;
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheelClaimItemOutput.Inventory;
-        public static verify(message: { [k: string]: any }): (string|null);
-        public static fromObject(object: { [k: string]: any }): LuckyWheelClaimItemOutput.Inventory;
-        public static toObject(message: LuckyWheelClaimItemOutput.Inventory, options?: $protobuf.IConversionOptions): { [k: string]: any };
-        public toJSON(): { [k: string]: any };
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
 }
 
 export interface IInboxList {
@@ -877,6 +473,23 @@ export class UpdateScoreLeaderboardOutput implements IUpdateScoreLeaderboardOutp
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
+export interface IEmpty {
+}
+
+export class Empty implements IEmpty {
+    constructor(properties?: IEmpty);
+    public static create(properties?: IEmpty): Empty;
+    public static encode(message: IEmpty, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IEmpty, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): Empty;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): Empty;
+    public static verify(message: { [k: string]: any }): (string|null);
+    public static fromObject(object: { [k: string]: any }): Empty;
+    public static toObject(message: Empty, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public toJSON(): { [k: string]: any };
+    public static getTypeUrl(typeUrlPrefix?: string): string;
+}
+
 export enum Service {
     NOT_USE = 0,
     BLUEPRINT = 1,
@@ -884,10 +497,4 @@ export enum Service {
     GAMESCRIPT = 3,
     INBOX = 4,
     LEADERBOARD = 5
-}
-
-export enum Method {
-    NOT_USE = 0,
-    GET = 1,
-    POST = 2
 }

@@ -53,7 +53,7 @@ export abstract class BaseCommand<T> implements ICommand {
       const dataBuffer = this.classP.encode(dataMsg).finish();
       rawJson.data = dataBuffer;
     } else {
-      rawJson.data = this.data as number[];
+      rawJson.data = this.data as Uint8Array;
     }
     const protoMsg = ProtoMessage.create(rawJson);
     const buffer = ProtoMessage.encode(protoMsg).finish();

@@ -14,9 +14,9 @@ message AuthResponse {
 }
 message ProtoMessage {
    Service service            = 1;
-   string functionName        = 2;
-   string namespace           = 4;
-   repeated uint32 data       = 3;
+   optional string functionName        = 2;
+   optional string namespace           = 4;
+   optional bytes data       	         = 3;
 }
 
 message InboxList {
@@ -109,6 +109,9 @@ message UpdateScoreLeaderboardInput {
 message UpdateScoreLeaderboardOutput {
    string status = 1;
 }
+message Empty {
+   
+}
 enum Service {
    NOT_USE                    = 0;
    BLUEPRINT                  = 1;
@@ -116,9 +119,4 @@ enum Service {
    GAMESCRIPT                 = 3;
    INBOX                      = 4;
    LEADERBOARD                = 5;
-}
-enum Method {
-   NOT_USE                    = 0;
-   GET                        = 1;
-   POST                       = 2;
 }
