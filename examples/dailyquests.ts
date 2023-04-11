@@ -6,12 +6,12 @@ async function main() {
   const client = new OneBServicesClient({
     gameId: "DEMO",
     enableLog: true,
-    environment: Environment.DEVELOPMENT,
+    environment: Environment.UAT,
     apiType: APIType.BINARY,
   });
 
   const accessToken = await client.login({
-    playerId: "oneb:test002",
+    playerId: "oneb:test01",
     secretKey: "bimat",
   });
 
