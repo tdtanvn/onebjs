@@ -27,8 +27,9 @@ export type ServiceConfig = {
 export class OneBServicesClient {
   private baseURL = new Map<string, string>([
     ["LOCAL", "http://localhost:3000"],
-    ["DEVELOPMENT", "https://dev.api.1bservices.com"],
-    ["PRODUCTION", "https://api.1bservices.com"],
+    ["DEVELOPMENT", "https://dev.api.oneb.tech"],
+    ["UAT", "https://uat.api.oneb.tech"],
+    ["PRODUCTION", "https://prod.api.oneb.tech"],
   ]);
   private accessToken?: string | null;
   private serializationOption!: ISerializationOption;

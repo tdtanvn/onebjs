@@ -12,8 +12,8 @@ async function main() {
   const client = new OneBServicesClient({
     gameId: "DEMO",
     enableLog: true,
-    environment: Environment.LOCAL,
-    apiType: APIType.JSON,
+    environment: Environment.DEVELOPMENT,
+    apiType: APIType.BINARY,
   });
 
   const accessToken = await client.login({

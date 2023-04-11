@@ -14,8 +14,8 @@ var ServiceName;
 })(ServiceName = exports.ServiceName || (exports.ServiceName = {}));
 var Prefix;
 (function (Prefix) {
-    Prefix["GET"] = "get";
-    Prefix["UPDATE"] = "update";
+    Prefix["GET"] = "Get";
+    Prefix["UPDATE"] = "Update";
 })(Prefix = exports.Prefix || (exports.Prefix = {}));
 class BaseCommand {
     constructor() {

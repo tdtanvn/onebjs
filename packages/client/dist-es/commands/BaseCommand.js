@@ -11,8 +11,8 @@ export var ServiceName;
 })(ServiceName || (ServiceName = {}));
 export var Prefix;
 (function (Prefix) {
-    Prefix["GET"] = "get";
-    Prefix["UPDATE"] = "update";
+    Prefix["GET"] = "Get";
+    Prefix["UPDATE"] = "Update";
 })(Prefix || (Prefix = {}));
 export class BaseCommand {
     constructor() {

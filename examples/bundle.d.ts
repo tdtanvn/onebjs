@@ -21,777 +21,569 @@ export class Blueprint extends $protobuf.rpc.Service {
     public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Blueprint;
 
     /**
-     * Calls characters.
+     * Calls GetDailyQuests.
      * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and CHARACTERS
+     * @param callback Node-style callback called with the error, if any, and DailyQuests
      */
-    public characters(request: IEmpty, callback: Blueprint.charactersCallback): void;
+    public getDailyQuests(request: IEmpty, callback: Blueprint.GetDailyQuestsCallback): void;
 
     /**
-     * Calls characters.
+     * Calls GetDailyQuests.
      * @param request Empty message or plain object
      * @returns Promise
      */
-    public characters(request: IEmpty): Promise<CHARACTERS>;
+    public getDailyQuests(request: IEmpty): Promise<DailyQuests>;
 
     /**
-     * Calls daily_quest.
+     * Calls GetDailyRewards.
      * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and DAILY_QUEST
+     * @param callback Node-style callback called with the error, if any, and DailyRewards
      */
-    public daily_quest(request: IEmpty, callback: Blueprint.daily_questCallback): void;
+    public getDailyRewards(request: IEmpty, callback: Blueprint.GetDailyRewardsCallback): void;
 
     /**
-     * Calls daily_quest.
-     * @param request Empty message or plain object
-     * @returns Promise
-     */
-    public daily_quest(request: IEmpty): Promise<DAILY_QUEST>;
-
-    /**
-     * Calls daily_rewards.
-     * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and DAILY_REWARDS
-     */
-    public daily_rewards(request: IEmpty, callback: Blueprint.daily_rewardsCallback): void;
-
-    /**
-     * Calls daily_rewards.
+     * Calls GetDailyRewards.
      * @param request Empty message or plain object
      * @returns Promise
      */
-    public daily_rewards(request: IEmpty): Promise<DAILY_REWARDS>;
+    public getDailyRewards(request: IEmpty): Promise<DailyRewards>;
 
     /**
-     * Calls equipments.
+     * Calls GetItemTable.
      * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and EQUIPMENTS
+     * @param callback Node-style callback called with the error, if any, and ItemTable
      */
-    public equipments(request: IEmpty, callback: Blueprint.equipmentsCallback): void;
+    public getItemTable(request: IEmpty, callback: Blueprint.GetItemTableCallback): void;
 
     /**
-     * Calls equipments.
-     * @param request Empty message or plain object
-     * @returns Promise
-     */
-    public equipments(request: IEmpty): Promise<EQUIPMENTS>;
-
-    /**
-     * Calls item_table.
-     * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and ITEM_TABLE
-     */
-    public item_table(request: IEmpty, callback: Blueprint.item_tableCallback): void;
-
-    /**
-     * Calls item_table.
+     * Calls GetItemTable.
      * @param request Empty message or plain object
      * @returns Promise
      */
-    public item_table(request: IEmpty): Promise<ITEM_TABLE>;
+    public getItemTable(request: IEmpty): Promise<ItemTable>;
 
     /**
-     * Calls lucky_wheel.
+     * Calls GetLuckyWheel.
      * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and LUCKY_WHEEL
+     * @param callback Node-style callback called with the error, if any, and LuckyWheel
      */
-    public lucky_wheel(request: IEmpty, callback: Blueprint.lucky_wheelCallback): void;
+    public getLuckyWheel(request: IEmpty, callback: Blueprint.GetLuckyWheelCallback): void;
 
     /**
-     * Calls lucky_wheel.
-     * @param request Empty message or plain object
-     * @returns Promise
-     */
-    public lucky_wheel(request: IEmpty): Promise<LUCKY_WHEEL>;
-
-    /**
-     * Calls progress_quest.
-     * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and PROGRESS_QUEST
-     */
-    public progress_quest(request: IEmpty, callback: Blueprint.progress_questCallback): void;
-
-    /**
-     * Calls progress_quest.
+     * Calls GetLuckyWheel.
      * @param request Empty message or plain object
      * @returns Promise
      */
-    public progress_quest(request: IEmpty): Promise<PROGRESS_QUEST>;
+    public getLuckyWheel(request: IEmpty): Promise<LuckyWheel>;
 
     /**
-     * Calls test.
+     * Calls GetProgressQuests.
      * @param request Empty message or plain object
-     * @param callback Node-style callback called with the error, if any, and TEST
+     * @param callback Node-style callback called with the error, if any, and ProgressQuests
      */
-    public test(request: IEmpty, callback: Blueprint.testCallback): void;
+    public getProgressQuests(request: IEmpty, callback: Blueprint.GetProgressQuestsCallback): void;
 
     /**
-     * Calls test.
+     * Calls GetProgressQuests.
      * @param request Empty message or plain object
      * @returns Promise
      */
-    public test(request: IEmpty): Promise<TEST>;
+    public getProgressQuests(request: IEmpty): Promise<ProgressQuests>;
 }
 
 export namespace Blueprint {
 
     /**
-     * Callback as used by {@link Blueprint#characters}.
+     * Callback as used by {@link Blueprint#getDailyQuests}.
      * @param error Error, if any
-     * @param [response] CHARACTERS
+     * @param [response] DailyQuests
      */
-    type charactersCallback = (error: (Error|null), response?: CHARACTERS) => void;
+    type GetDailyQuestsCallback = (error: (Error|null), response?: DailyQuests) => void;
 
     /**
-     * Callback as used by {@link Blueprint#daily_quest}.
+     * Callback as used by {@link Blueprint#getDailyRewards}.
      * @param error Error, if any
-     * @param [response] DAILY_QUEST
+     * @param [response] DailyRewards
      */
-    type daily_questCallback = (error: (Error|null), response?: DAILY_QUEST) => void;
+    type GetDailyRewardsCallback = (error: (Error|null), response?: DailyRewards) => void;
 
     /**
-     * Callback as used by {@link Blueprint#daily_rewards}.
+     * Callback as used by {@link Blueprint#getItemTable}.
      * @param error Error, if any
-     * @param [response] DAILY_REWARDS
+     * @param [response] ItemTable
      */
-    type daily_rewardsCallback = (error: (Error|null), response?: DAILY_REWARDS) => void;
+    type GetItemTableCallback = (error: (Error|null), response?: ItemTable) => void;
 
     /**
-     * Callback as used by {@link Blueprint#equipments}.
+     * Callback as used by {@link Blueprint#getLuckyWheel}.
      * @param error Error, if any
-     * @param [response] EQUIPMENTS
+     * @param [response] LuckyWheel
      */
-    type equipmentsCallback = (error: (Error|null), response?: EQUIPMENTS) => void;
+    type GetLuckyWheelCallback = (error: (Error|null), response?: LuckyWheel) => void;
 
     /**
-     * Callback as used by {@link Blueprint#item_table}.
+     * Callback as used by {@link Blueprint#getProgressQuests}.
      * @param error Error, if any
-     * @param [response] ITEM_TABLE
+     * @param [response] ProgressQuests
      */
-    type item_tableCallback = (error: (Error|null), response?: ITEM_TABLE) => void;
-
-    /**
-     * Callback as used by {@link Blueprint#lucky_wheel}.
-     * @param error Error, if any
-     * @param [response] LUCKY_WHEEL
-     */
-    type lucky_wheelCallback = (error: (Error|null), response?: LUCKY_WHEEL) => void;
-
-    /**
-     * Callback as used by {@link Blueprint#progress_quest}.
-     * @param error Error, if any
-     * @param [response] PROGRESS_QUEST
-     */
-    type progress_questCallback = (error: (Error|null), response?: PROGRESS_QUEST) => void;
-
-    /**
-     * Callback as used by {@link Blueprint#test}.
-     * @param error Error, if any
-     * @param [response] TEST
-     */
-    type testCallback = (error: (Error|null), response?: TEST) => void;
+    type GetProgressQuestsCallback = (error: (Error|null), response?: ProgressQuests) => void;
 }
 
-/** Properties of a CHARACTERS. */
-export interface ICHARACTERS {
+/** Properties of a DailyQuests. */
+export interface IDailyQuests {
 
-    /** CHARACTERS name */
-    name?: (string|null);
-
-    /** CHARACTERS items */
-    items?: (CHARACTERS.IItems[]|null);
+    /** DailyQuests quests */
+    quests?: (DailyQuests.IQuests[]|null);
 }
 
-/** Represents a CHARACTERS. */
-export class CHARACTERS implements ICHARACTERS {
+/** Represents a DailyQuests. */
+export class DailyQuests implements IDailyQuests {
 
     /**
-     * Constructs a new CHARACTERS.
+     * Constructs a new DailyQuests.
      * @param [properties] Properties to set
      */
-    constructor(properties?: ICHARACTERS);
+    constructor(properties?: IDailyQuests);
 
-    /** CHARACTERS name. */
-    public name: string;
-
-    /** CHARACTERS items. */
-    public items: CHARACTERS.IItems[];
+    /** DailyQuests quests. */
+    public quests: DailyQuests.IQuests[];
 
     /**
-     * Creates a new CHARACTERS instance using the specified properties.
+     * Creates a new DailyQuests instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns CHARACTERS instance
+     * @returns DailyQuests instance
      */
-    public static create(properties?: ICHARACTERS): CHARACTERS;
+    public static create(properties?: IDailyQuests): DailyQuests;
 
     /**
-     * Encodes the specified CHARACTERS message. Does not implicitly {@link CHARACTERS.verify|verify} messages.
-     * @param message CHARACTERS message or plain object to encode
+     * Encodes the specified DailyQuests message. Does not implicitly {@link DailyQuests.verify|verify} messages.
+     * @param message DailyQuests message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: ICHARACTERS, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified CHARACTERS message, length delimited. Does not implicitly {@link CHARACTERS.verify|verify} messages.
-     * @param message CHARACTERS message or plain object to encode
+     * Encodes the specified DailyQuests message, length delimited. Does not implicitly {@link DailyQuests.verify|verify} messages.
+     * @param message DailyQuests message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: ICHARACTERS, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a CHARACTERS message from the specified reader or buffer.
+     * Decodes a DailyQuests message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns CHARACTERS
+     * @returns DailyQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): CHARACTERS;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuests;
 
     /**
-     * Decodes a CHARACTERS message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuests message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns CHARACTERS
+     * @returns DailyQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): CHARACTERS;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuests;
 
     /**
-     * Verifies a CHARACTERS message.
+     * Verifies a DailyQuests message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a CHARACTERS message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuests message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns CHARACTERS
+     * @returns DailyQuests
      */
-    public static fromObject(object: { [k: string]: any }): CHARACTERS;
+    public static fromObject(object: { [k: string]: any }): DailyQuests;
 
     /**
-     * Creates a plain object from a CHARACTERS message. Also converts values to other types if specified.
-     * @param message CHARACTERS
+     * Creates a plain object from a DailyQuests message. Also converts values to other types if specified.
+     * @param message DailyQuests
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: CHARACTERS, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyQuests, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this CHARACTERS to JSON.
+     * Converts this DailyQuests to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for CHARACTERS
+     * Gets the default type url for DailyQuests
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace CHARACTERS {
+export namespace DailyQuests {
 
-    /** Properties of an Items. */
-    interface IItems {
+    /** Properties of a Quests. */
+    interface IQuests {
 
-        /** Items basePointsSpecialAttack */
-        basePointsSpecialAttack?: (number|null);
+        /** Quests name */
+        name?: (string|null);
 
-        /** Items basePointsCriticalHit */
-        basePointsCriticalHit?: (number|null);
+        /** Quests reward */
+        reward?: (DailyQuests.Quests.IReward|null);
 
-        /** Items basePointsDefense */
-        basePointsDefense?: (number|null);
+        /** Quests description */
+        description?: (string|null);
 
-        /** Items basePointsAttack */
-        basePointsAttack?: (number|null);
-
-        /** Items basePointsLife */
-        basePointsLife?: (number|null);
-
-        /** Items characterName */
-        characterName?: (string|null);
-
-        /** Items id */
+        /** Quests id */
         id?: (string|null);
 
-        /** Items bioTitle */
-        bioTitle?: (string|null);
+        /** Quests type */
+        type?: (string|null);
 
-        /** Items basePointsAttackSpeed */
-        basePointsAttackSpeed?: (number|null);
+        /** Quests target */
+        target?: (number|null);
     }
 
-    /** Represents an Items. */
-    class Items implements IItems {
+    /** Represents a Quests. */
+    class Quests implements IQuests {
 
         /**
-         * Constructs a new Items.
+         * Constructs a new Quests.
          * @param [properties] Properties to set
          */
-        constructor(properties?: CHARACTERS.IItems);
+        constructor(properties?: DailyQuests.IQuests);
 
-        /** Items basePointsSpecialAttack. */
-        public basePointsSpecialAttack: number;
+        /** Quests name. */
+        public name: string;
 
-        /** Items basePointsCriticalHit. */
-        public basePointsCriticalHit: number;
+        /** Quests reward. */
+        public reward?: (DailyQuests.Quests.IReward|null);
 
-        /** Items basePointsDefense. */
-        public basePointsDefense: number;
+        /** Quests description. */
+        public description: string;
 
-        /** Items basePointsAttack. */
-        public basePointsAttack: number;
-
-        /** Items basePointsLife. */
-        public basePointsLife: number;
-
-        /** Items characterName. */
-        public characterName: string;
-
-        /** Items id. */
+        /** Quests id. */
         public id: string;
 
-        /** Items bioTitle. */
-        public bioTitle: string;
+        /** Quests type. */
+        public type: string;
 
-        /** Items basePointsAttackSpeed. */
-        public basePointsAttackSpeed: number;
+        /** Quests target. */
+        public target: number;
 
         /**
-         * Creates a new Items instance using the specified properties.
+         * Creates a new Quests instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns Items instance
+         * @returns Quests instance
          */
-        public static create(properties?: CHARACTERS.IItems): CHARACTERS.Items;
+        public static create(properties?: DailyQuests.IQuests): DailyQuests.Quests;
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link CHARACTERS.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
+         * Encodes the specified Quests message. Does not implicitly {@link DailyQuests.Quests.verify|verify} messages.
+         * @param message Quests message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: CHARACTERS.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: DailyQuests.IQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link CHARACTERS.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
+         * Encodes the specified Quests message, length delimited. Does not implicitly {@link DailyQuests.Quests.verify|verify} messages.
+         * @param message Quests message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: CHARACTERS.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: DailyQuests.IQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes an Items message from the specified reader or buffer.
+         * Decodes a Quests message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns Items
+         * @returns Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): CHARACTERS.Items;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuests.Quests;
 
         /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * Decodes a Quests message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns Items
+         * @returns Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): CHARACTERS.Items;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuests.Quests;
 
         /**
-         * Verifies an Items message.
+         * Verifies a Quests message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * Creates a Quests message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns Items
+         * @returns Quests
          */
-        public static fromObject(object: { [k: string]: any }): CHARACTERS.Items;
+        public static fromObject(object: { [k: string]: any }): DailyQuests.Quests;
 
         /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @param message Items
+         * Creates a plain object from a Quests message. Also converts values to other types if specified.
+         * @param message Quests
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: CHARACTERS.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: DailyQuests.Quests, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this Items to JSON.
+         * Converts this Quests to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for Items
+         * Gets the default type url for Quests
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
         public static getTypeUrl(typeUrlPrefix?: string): string;
     }
-}
 
-/** Properties of a DAILY_QUEST. */
-export interface IDAILY_QUEST {
+    namespace Quests {
 
-    /** DAILY_QUEST items */
-    items?: (DAILY_QUEST.IItems[]|null);
-}
+        /** Properties of a Reward. */
+        interface IReward {
 
-/** Represents a DAILY_QUEST. */
-export class DAILY_QUEST implements IDAILY_QUEST {
+            /** Reward id */
+            id?: (string|null);
 
-    /**
-     * Constructs a new DAILY_QUEST.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IDAILY_QUEST);
+            /** Reward quantity */
+            quantity?: (number|null);
+        }
 
-    /** DAILY_QUEST items. */
-    public items: DAILY_QUEST.IItems[];
+        /** Represents a Reward. */
+        class Reward implements IReward {
 
-    /**
-     * Creates a new DAILY_QUEST instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns DAILY_QUEST instance
-     */
-    public static create(properties?: IDAILY_QUEST): DAILY_QUEST;
+            /**
+             * Constructs a new Reward.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: DailyQuests.Quests.IReward);
 
-    /**
-     * Encodes the specified DAILY_QUEST message. Does not implicitly {@link DAILY_QUEST.verify|verify} messages.
-     * @param message DAILY_QUEST message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IDAILY_QUEST, writer?: $protobuf.Writer): $protobuf.Writer;
+            /** Reward id. */
+            public id: string;
 
-    /**
-     * Encodes the specified DAILY_QUEST message, length delimited. Does not implicitly {@link DAILY_QUEST.verify|verify} messages.
-     * @param message DAILY_QUEST message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IDAILY_QUEST, writer?: $protobuf.Writer): $protobuf.Writer;
+            /** Reward quantity. */
+            public quantity: number;
 
-    /**
-     * Decodes a DAILY_QUEST message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns DAILY_QUEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DAILY_QUEST;
+            /**
+             * Creates a new Reward instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Reward instance
+             */
+            public static create(properties?: DailyQuests.Quests.IReward): DailyQuests.Quests.Reward;
 
-    /**
-     * Decodes a DAILY_QUEST message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns DAILY_QUEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DAILY_QUEST;
+            /**
+             * Encodes the specified Reward message. Does not implicitly {@link DailyQuests.Quests.Reward.verify|verify} messages.
+             * @param message Reward message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: DailyQuests.Quests.IReward, writer?: $protobuf.Writer): $protobuf.Writer;
 
-    /**
-     * Verifies a DAILY_QUEST message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
+            /**
+             * Encodes the specified Reward message, length delimited. Does not implicitly {@link DailyQuests.Quests.Reward.verify|verify} messages.
+             * @param message Reward message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: DailyQuests.Quests.IReward, writer?: $protobuf.Writer): $protobuf.Writer;
 
-    /**
-     * Creates a DAILY_QUEST message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns DAILY_QUEST
-     */
-    public static fromObject(object: { [k: string]: any }): DAILY_QUEST;
+            /**
+             * Decodes a Reward message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuests.Quests.Reward;
 
-    /**
-     * Creates a plain object from a DAILY_QUEST message. Also converts values to other types if specified.
-     * @param message DAILY_QUEST
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: DAILY_QUEST, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            /**
+             * Decodes a Reward message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuests.Quests.Reward;
 
-    /**
-     * Converts this DAILY_QUEST to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
+            /**
+             * Verifies a Reward message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
 
-    /**
-     * Gets the default type url for DAILY_QUEST
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
-     */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
+            /**
+             * Creates a Reward message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Reward
+             */
+            public static fromObject(object: { [k: string]: any }): DailyQuests.Quests.Reward;
 
-export namespace DAILY_QUEST {
+            /**
+             * Creates a plain object from a Reward message. Also converts values to other types if specified.
+             * @param message Reward
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: DailyQuests.Quests.Reward, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
-    /** Properties of an Items. */
-    interface IItems {
+            /**
+             * Converts this Reward to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
 
-        /** Items conditionReach */
-        conditionReach?: (number|null);
-
-        /** Items rewardQuantity */
-        rewardQuantity?: (number|null);
-
-        /** Items condition */
-        condition?: (string|null);
-
-        /** Items rewardId */
-        rewardId?: (string|null);
-
-        /** Items id */
-        id?: (string|null);
-
-        /** Items questName */
-        questName?: (string|null);
-    }
-
-    /** Represents an Items. */
-    class Items implements IItems {
-
-        /**
-         * Constructs a new Items.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: DAILY_QUEST.IItems);
-
-        /** Items conditionReach. */
-        public conditionReach: number;
-
-        /** Items rewardQuantity. */
-        public rewardQuantity: number;
-
-        /** Items condition. */
-        public condition: string;
-
-        /** Items rewardId. */
-        public rewardId: string;
-
-        /** Items id. */
-        public id: string;
-
-        /** Items questName. */
-        public questName: string;
-
-        /**
-         * Creates a new Items instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns Items instance
-         */
-        public static create(properties?: DAILY_QUEST.IItems): DAILY_QUEST.Items;
-
-        /**
-         * Encodes the specified Items message. Does not implicitly {@link DAILY_QUEST.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: DAILY_QUEST.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link DAILY_QUEST.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: DAILY_QUEST.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes an Items message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DAILY_QUEST.Items;
-
-        /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DAILY_QUEST.Items;
-
-        /**
-         * Verifies an Items message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Items
-         */
-        public static fromObject(object: { [k: string]: any }): DAILY_QUEST.Items;
-
-        /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @param message Items
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: DAILY_QUEST.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Items to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Items
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
+            /**
+             * Gets the default type url for Reward
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
     }
 }
 
-/** Properties of a DAILY_REWARDS. */
-export interface IDAILY_REWARDS {
+/** Properties of a DailyRewards. */
+export interface IDailyRewards {
 
-    /** DAILY_REWARDS hoursToReceive */
+    /** DailyRewards hoursToReceive */
     hoursToReceive?: (number|null);
 
-    /** DAILY_REWARDS resetIfFail */
+    /** DailyRewards resetIfFail */
     resetIfFail?: (boolean|null);
 
-    /** DAILY_REWARDS steps */
-    steps?: (DAILY_REWARDS.ISteps[]|null);
+    /** DailyRewards steps */
+    steps?: (DailyRewards.ISteps[]|null);
 
-    /** DAILY_REWARDS enabled */
+    /** DailyRewards enabled */
     enabled?: (boolean|null);
 
-    /** DAILY_REWARDS defaultRewardIfAlreadyOwned */
-    defaultRewardIfAlreadyOwned?: (DAILY_REWARDS.IDefaultRewardIfAlreadyOwned|null);
+    /** DailyRewards defaultRewardIfAlreadyOwned */
+    defaultRewardIfAlreadyOwned?: (DailyRewards.IDefaultRewardIfAlreadyOwned|null);
 }
 
-/** Represents a DAILY_REWARDS. */
-export class DAILY_REWARDS implements IDAILY_REWARDS {
+/** Represents a DailyRewards. */
+export class DailyRewards implements IDailyRewards {
 
     /**
-     * Constructs a new DAILY_REWARDS.
+     * Constructs a new DailyRewards.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IDAILY_REWARDS);
+    constructor(properties?: IDailyRewards);
 
-    /** DAILY_REWARDS hoursToReceive. */
+    /** DailyRewards hoursToReceive. */
     public hoursToReceive: number;
 
-    /** DAILY_REWARDS resetIfFail. */
+    /** DailyRewards resetIfFail. */
     public resetIfFail: boolean;
 
-    /** DAILY_REWARDS steps. */
-    public steps: DAILY_REWARDS.ISteps[];
+    /** DailyRewards steps. */
+    public steps: DailyRewards.ISteps[];
 
-    /** DAILY_REWARDS enabled. */
+    /** DailyRewards enabled. */
     public enabled: boolean;
 
-    /** DAILY_REWARDS defaultRewardIfAlreadyOwned. */
-    public defaultRewardIfAlreadyOwned?: (DAILY_REWARDS.IDefaultRewardIfAlreadyOwned|null);
+    /** DailyRewards defaultRewardIfAlreadyOwned. */
+    public defaultRewardIfAlreadyOwned?: (DailyRewards.IDefaultRewardIfAlreadyOwned|null);
 
     /**
-     * Creates a new DAILY_REWARDS instance using the specified properties.
+     * Creates a new DailyRewards instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns DAILY_REWARDS instance
+     * @returns DailyRewards instance
      */
-    public static create(properties?: IDAILY_REWARDS): DAILY_REWARDS;
+    public static create(properties?: IDailyRewards): DailyRewards;
 
     /**
-     * Encodes the specified DAILY_REWARDS message. Does not implicitly {@link DAILY_REWARDS.verify|verify} messages.
-     * @param message DAILY_REWARDS message or plain object to encode
+     * Encodes the specified DailyRewards message. Does not implicitly {@link DailyRewards.verify|verify} messages.
+     * @param message DailyRewards message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IDAILY_REWARDS, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyRewards, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified DAILY_REWARDS message, length delimited. Does not implicitly {@link DAILY_REWARDS.verify|verify} messages.
-     * @param message DAILY_REWARDS message or plain object to encode
+     * Encodes the specified DailyRewards message, length delimited. Does not implicitly {@link DailyRewards.verify|verify} messages.
+     * @param message DailyRewards message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IDAILY_REWARDS, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyRewards, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a DAILY_REWARDS message from the specified reader or buffer.
+     * Decodes a DailyRewards message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns DAILY_REWARDS
+     * @returns DailyRewards
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DAILY_REWARDS;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewards;
 
     /**
-     * Decodes a DAILY_REWARDS message from the specified reader or buffer, length delimited.
+     * Decodes a DailyRewards message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns DAILY_REWARDS
+     * @returns DailyRewards
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DAILY_REWARDS;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewards;
 
     /**
-     * Verifies a DAILY_REWARDS message.
+     * Verifies a DailyRewards message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a DAILY_REWARDS message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyRewards message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns DAILY_REWARDS
+     * @returns DailyRewards
      */
-    public static fromObject(object: { [k: string]: any }): DAILY_REWARDS;
+    public static fromObject(object: { [k: string]: any }): DailyRewards;
 
     /**
-     * Creates a plain object from a DAILY_REWARDS message. Also converts values to other types if specified.
-     * @param message DAILY_REWARDS
+     * Creates a plain object from a DailyRewards message. Also converts values to other types if specified.
+     * @param message DailyRewards
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: DAILY_REWARDS, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyRewards, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this DAILY_REWARDS to JSON.
+     * Converts this DailyRewards to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for DAILY_REWARDS
+     * Gets the default type url for DailyRewards
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace DAILY_REWARDS {
+export namespace DailyRewards {
 
     /** Properties of a Steps. */
     interface ISteps {
@@ -813,7 +605,7 @@ export namespace DAILY_REWARDS {
          * Constructs a new Steps.
          * @param [properties] Properties to set
          */
-        constructor(properties?: DAILY_REWARDS.ISteps);
+        constructor(properties?: DailyRewards.ISteps);
 
         /** Steps itemId. */
         public itemId: string;
@@ -829,23 +621,23 @@ export namespace DAILY_REWARDS {
          * @param [properties] Properties to set
          * @returns Steps instance
          */
-        public static create(properties?: DAILY_REWARDS.ISteps): DAILY_REWARDS.Steps;
+        public static create(properties?: DailyRewards.ISteps): DailyRewards.Steps;
 
         /**
-         * Encodes the specified Steps message. Does not implicitly {@link DAILY_REWARDS.Steps.verify|verify} messages.
+         * Encodes the specified Steps message. Does not implicitly {@link DailyRewards.Steps.verify|verify} messages.
          * @param message Steps message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: DAILY_REWARDS.ISteps, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: DailyRewards.ISteps, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Steps message, length delimited. Does not implicitly {@link DAILY_REWARDS.Steps.verify|verify} messages.
+         * Encodes the specified Steps message, length delimited. Does not implicitly {@link DailyRewards.Steps.verify|verify} messages.
          * @param message Steps message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: DAILY_REWARDS.ISteps, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: DailyRewards.ISteps, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Steps message from the specified reader or buffer.
@@ -855,7 +647,7 @@ export namespace DAILY_REWARDS {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DAILY_REWARDS.Steps;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewards.Steps;
 
         /**
          * Decodes a Steps message from the specified reader or buffer, length delimited.
@@ -864,7 +656,7 @@ export namespace DAILY_REWARDS {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DAILY_REWARDS.Steps;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewards.Steps;
 
         /**
          * Verifies a Steps message.
@@ -878,7 +670,7 @@ export namespace DAILY_REWARDS {
          * @param object Plain object
          * @returns Steps
          */
-        public static fromObject(object: { [k: string]: any }): DAILY_REWARDS.Steps;
+        public static fromObject(object: { [k: string]: any }): DailyRewards.Steps;
 
         /**
          * Creates a plain object from a Steps message. Also converts values to other types if specified.
@@ -886,7 +678,7 @@ export namespace DAILY_REWARDS {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: DAILY_REWARDS.Steps, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: DailyRewards.Steps, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Steps to JSON.
@@ -919,7 +711,7 @@ export namespace DAILY_REWARDS {
          * Constructs a new DefaultRewardIfAlreadyOwned.
          * @param [properties] Properties to set
          */
-        constructor(properties?: DAILY_REWARDS.IDefaultRewardIfAlreadyOwned);
+        constructor(properties?: DailyRewards.IDefaultRewardIfAlreadyOwned);
 
         /** DefaultRewardIfAlreadyOwned itemId. */
         public itemId: string;
@@ -932,23 +724,23 @@ export namespace DAILY_REWARDS {
          * @param [properties] Properties to set
          * @returns DefaultRewardIfAlreadyOwned instance
          */
-        public static create(properties?: DAILY_REWARDS.IDefaultRewardIfAlreadyOwned): DAILY_REWARDS.DefaultRewardIfAlreadyOwned;
+        public static create(properties?: DailyRewards.IDefaultRewardIfAlreadyOwned): DailyRewards.DefaultRewardIfAlreadyOwned;
 
         /**
-         * Encodes the specified DefaultRewardIfAlreadyOwned message. Does not implicitly {@link DAILY_REWARDS.DefaultRewardIfAlreadyOwned.verify|verify} messages.
+         * Encodes the specified DefaultRewardIfAlreadyOwned message. Does not implicitly {@link DailyRewards.DefaultRewardIfAlreadyOwned.verify|verify} messages.
          * @param message DefaultRewardIfAlreadyOwned message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: DAILY_REWARDS.IDefaultRewardIfAlreadyOwned, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: DailyRewards.IDefaultRewardIfAlreadyOwned, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified DefaultRewardIfAlreadyOwned message, length delimited. Does not implicitly {@link DAILY_REWARDS.DefaultRewardIfAlreadyOwned.verify|verify} messages.
+         * Encodes the specified DefaultRewardIfAlreadyOwned message, length delimited. Does not implicitly {@link DailyRewards.DefaultRewardIfAlreadyOwned.verify|verify} messages.
          * @param message DefaultRewardIfAlreadyOwned message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: DAILY_REWARDS.IDefaultRewardIfAlreadyOwned, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: DailyRewards.IDefaultRewardIfAlreadyOwned, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a DefaultRewardIfAlreadyOwned message from the specified reader or buffer.
@@ -958,7 +750,7 @@ export namespace DAILY_REWARDS {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DAILY_REWARDS.DefaultRewardIfAlreadyOwned;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyRewards.DefaultRewardIfAlreadyOwned;
 
         /**
          * Decodes a DefaultRewardIfAlreadyOwned message from the specified reader or buffer, length delimited.
@@ -967,7 +759,7 @@ export namespace DAILY_REWARDS {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DAILY_REWARDS.DefaultRewardIfAlreadyOwned;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyRewards.DefaultRewardIfAlreadyOwned;
 
         /**
          * Verifies a DefaultRewardIfAlreadyOwned message.
@@ -981,7 +773,7 @@ export namespace DAILY_REWARDS {
          * @param object Plain object
          * @returns DefaultRewardIfAlreadyOwned
          */
-        public static fromObject(object: { [k: string]: any }): DAILY_REWARDS.DefaultRewardIfAlreadyOwned;
+        public static fromObject(object: { [k: string]: any }): DailyRewards.DefaultRewardIfAlreadyOwned;
 
         /**
          * Creates a plain object from a DefaultRewardIfAlreadyOwned message. Also converts values to other types if specified.
@@ -989,7 +781,7 @@ export namespace DAILY_REWARDS {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: DAILY_REWARDS.DefaultRewardIfAlreadyOwned, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: DailyRewards.DefaultRewardIfAlreadyOwned, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this DefaultRewardIfAlreadyOwned to JSON.
@@ -1006,331 +798,104 @@ export namespace DAILY_REWARDS {
     }
 }
 
-/** Properties of a EQUIPMENTS. */
-export interface IEQUIPMENTS {
+/** Properties of an ItemTable. */
+export interface IItemTable {
 
-    /** EQUIPMENTS items */
-    items?: (EQUIPMENTS.IItems[]|null);
+    /** ItemTable items */
+    items?: (ItemTable.IItems[]|null);
 }
 
-/** Represents a EQUIPMENTS. */
-export class EQUIPMENTS implements IEQUIPMENTS {
+/** Represents an ItemTable. */
+export class ItemTable implements IItemTable {
 
     /**
-     * Constructs a new EQUIPMENTS.
+     * Constructs a new ItemTable.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IEQUIPMENTS);
+    constructor(properties?: IItemTable);
 
-    /** EQUIPMENTS items. */
-    public items: EQUIPMENTS.IItems[];
+    /** ItemTable items. */
+    public items: ItemTable.IItems[];
 
     /**
-     * Creates a new EQUIPMENTS instance using the specified properties.
+     * Creates a new ItemTable instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns EQUIPMENTS instance
+     * @returns ItemTable instance
      */
-    public static create(properties?: IEQUIPMENTS): EQUIPMENTS;
+    public static create(properties?: IItemTable): ItemTable;
 
     /**
-     * Encodes the specified EQUIPMENTS message. Does not implicitly {@link EQUIPMENTS.verify|verify} messages.
-     * @param message EQUIPMENTS message or plain object to encode
+     * Encodes the specified ItemTable message. Does not implicitly {@link ItemTable.verify|verify} messages.
+     * @param message ItemTable message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IEQUIPMENTS, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IItemTable, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified EQUIPMENTS message, length delimited. Does not implicitly {@link EQUIPMENTS.verify|verify} messages.
-     * @param message EQUIPMENTS message or plain object to encode
+     * Encodes the specified ItemTable message, length delimited. Does not implicitly {@link ItemTable.verify|verify} messages.
+     * @param message ItemTable message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IEQUIPMENTS, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IItemTable, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a EQUIPMENTS message from the specified reader or buffer.
+     * Decodes an ItemTable message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns EQUIPMENTS
+     * @returns ItemTable
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): EQUIPMENTS;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ItemTable;
 
     /**
-     * Decodes a EQUIPMENTS message from the specified reader or buffer, length delimited.
+     * Decodes an ItemTable message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns EQUIPMENTS
+     * @returns ItemTable
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): EQUIPMENTS;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ItemTable;
 
     /**
-     * Verifies a EQUIPMENTS message.
+     * Verifies an ItemTable message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a EQUIPMENTS message from a plain object. Also converts values to their respective internal types.
+     * Creates an ItemTable message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns EQUIPMENTS
+     * @returns ItemTable
      */
-    public static fromObject(object: { [k: string]: any }): EQUIPMENTS;
+    public static fromObject(object: { [k: string]: any }): ItemTable;
 
     /**
-     * Creates a plain object from a EQUIPMENTS message. Also converts values to other types if specified.
-     * @param message EQUIPMENTS
+     * Creates a plain object from an ItemTable message. Also converts values to other types if specified.
+     * @param message ItemTable
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: EQUIPMENTS, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: ItemTable, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this EQUIPMENTS to JSON.
+     * Converts this ItemTable to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for EQUIPMENTS
+     * Gets the default type url for ItemTable
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace EQUIPMENTS {
-
-    /** Properties of an Items. */
-    interface IItems {
-
-        /** Items image */
-        image?: (string|null);
-
-        /** Items equipmentName */
-        equipmentName?: (string|null);
-
-        /** Items id */
-        id?: (string|null);
-
-        /** Items equipmentType */
-        equipmentType?: (string|null);
-
-        /** Items rarity */
-        rarity?: (string|null);
-
-        /** Items points */
-        points?: (number|null);
-    }
-
-    /** Represents an Items. */
-    class Items implements IItems {
-
-        /**
-         * Constructs a new Items.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: EQUIPMENTS.IItems);
-
-        /** Items image. */
-        public image: string;
-
-        /** Items equipmentName. */
-        public equipmentName: string;
-
-        /** Items id. */
-        public id: string;
-
-        /** Items equipmentType. */
-        public equipmentType: string;
-
-        /** Items rarity. */
-        public rarity: string;
-
-        /** Items points. */
-        public points: number;
-
-        /**
-         * Creates a new Items instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns Items instance
-         */
-        public static create(properties?: EQUIPMENTS.IItems): EQUIPMENTS.Items;
-
-        /**
-         * Encodes the specified Items message. Does not implicitly {@link EQUIPMENTS.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: EQUIPMENTS.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link EQUIPMENTS.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: EQUIPMENTS.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes an Items message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): EQUIPMENTS.Items;
-
-        /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): EQUIPMENTS.Items;
-
-        /**
-         * Verifies an Items message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Items
-         */
-        public static fromObject(object: { [k: string]: any }): EQUIPMENTS.Items;
-
-        /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @param message Items
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: EQUIPMENTS.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Items to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Items
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-/** Properties of a ITEM_TABLE. */
-export interface IITEM_TABLE {
-
-    /** ITEM_TABLE items */
-    items?: (ITEM_TABLE.IItems[]|null);
-}
-
-/** Represents a ITEM_TABLE. */
-export class ITEM_TABLE implements IITEM_TABLE {
-
-    /**
-     * Constructs a new ITEM_TABLE.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: IITEM_TABLE);
-
-    /** ITEM_TABLE items. */
-    public items: ITEM_TABLE.IItems[];
-
-    /**
-     * Creates a new ITEM_TABLE instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns ITEM_TABLE instance
-     */
-    public static create(properties?: IITEM_TABLE): ITEM_TABLE;
-
-    /**
-     * Encodes the specified ITEM_TABLE message. Does not implicitly {@link ITEM_TABLE.verify|verify} messages.
-     * @param message ITEM_TABLE message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: IITEM_TABLE, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified ITEM_TABLE message, length delimited. Does not implicitly {@link ITEM_TABLE.verify|verify} messages.
-     * @param message ITEM_TABLE message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: IITEM_TABLE, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a ITEM_TABLE message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns ITEM_TABLE
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ITEM_TABLE;
-
-    /**
-     * Decodes a ITEM_TABLE message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns ITEM_TABLE
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ITEM_TABLE;
-
-    /**
-     * Verifies a ITEM_TABLE message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a ITEM_TABLE message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns ITEM_TABLE
-     */
-    public static fromObject(object: { [k: string]: any }): ITEM_TABLE;
-
-    /**
-     * Creates a plain object from a ITEM_TABLE message. Also converts values to other types if specified.
-     * @param message ITEM_TABLE
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: ITEM_TABLE, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this ITEM_TABLE to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-
-    /**
-     * Gets the default type url for ITEM_TABLE
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
-     */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace ITEM_TABLE {
+export namespace ItemTable {
 
     /** Properties of an Items. */
     interface IItems {
@@ -1352,7 +917,7 @@ export namespace ITEM_TABLE {
          * Constructs a new Items.
          * @param [properties] Properties to set
          */
-        constructor(properties?: ITEM_TABLE.IItems);
+        constructor(properties?: ItemTable.IItems);
 
         /** Items name. */
         public name: string;
@@ -1368,23 +933,23 @@ export namespace ITEM_TABLE {
          * @param [properties] Properties to set
          * @returns Items instance
          */
-        public static create(properties?: ITEM_TABLE.IItems): ITEM_TABLE.Items;
+        public static create(properties?: ItemTable.IItems): ItemTable.Items;
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link ITEM_TABLE.Items.verify|verify} messages.
+         * Encodes the specified Items message. Does not implicitly {@link ItemTable.Items.verify|verify} messages.
          * @param message Items message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: ITEM_TABLE.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: ItemTable.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link ITEM_TABLE.Items.verify|verify} messages.
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link ItemTable.Items.verify|verify} messages.
          * @param message Items message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: ITEM_TABLE.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: ItemTable.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Items message from the specified reader or buffer.
@@ -1394,7 +959,7 @@ export namespace ITEM_TABLE {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ITEM_TABLE.Items;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ItemTable.Items;
 
         /**
          * Decodes an Items message from the specified reader or buffer, length delimited.
@@ -1403,7 +968,7 @@ export namespace ITEM_TABLE {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ITEM_TABLE.Items;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ItemTable.Items;
 
         /**
          * Verifies an Items message.
@@ -1417,7 +982,7 @@ export namespace ITEM_TABLE {
          * @param object Plain object
          * @returns Items
          */
-        public static fromObject(object: { [k: string]: any }): ITEM_TABLE.Items;
+        public static fromObject(object: { [k: string]: any }): ItemTable.Items;
 
         /**
          * Creates a plain object from an Items message. Also converts values to other types if specified.
@@ -1425,7 +990,7 @@ export namespace ITEM_TABLE {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: ITEM_TABLE.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: ItemTable.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Items to JSON.
@@ -1442,122 +1007,122 @@ export namespace ITEM_TABLE {
     }
 }
 
-/** Properties of a LUCKY_WHEEL. */
-export interface ILUCKY_WHEEL {
+/** Properties of a LuckyWheel. */
+export interface ILuckyWheel {
 
-    /** LUCKY_WHEEL minFullSpins */
+    /** LuckyWheel minFullSpins */
     minFullSpins?: (number|null);
 
-    /** LUCKY_WHEEL maxFullSpins */
+    /** LuckyWheel maxFullSpins */
     maxFullSpins?: (number|null);
 
-    /** LUCKY_WHEEL items */
-    items?: (LUCKY_WHEEL.IItems[]|null);
+    /** LuckyWheel items */
+    items?: (LuckyWheel.IItems[]|null);
 
-    /** LUCKY_WHEEL dailyLimit */
+    /** LuckyWheel dailyLimit */
     dailyLimit?: (number|null);
 }
 
-/** Represents a LUCKY_WHEEL. */
-export class LUCKY_WHEEL implements ILUCKY_WHEEL {
+/** Represents a LuckyWheel. */
+export class LuckyWheel implements ILuckyWheel {
 
     /**
-     * Constructs a new LUCKY_WHEEL.
+     * Constructs a new LuckyWheel.
      * @param [properties] Properties to set
      */
-    constructor(properties?: ILUCKY_WHEEL);
+    constructor(properties?: ILuckyWheel);
 
-    /** LUCKY_WHEEL minFullSpins. */
+    /** LuckyWheel minFullSpins. */
     public minFullSpins: number;
 
-    /** LUCKY_WHEEL maxFullSpins. */
+    /** LuckyWheel maxFullSpins. */
     public maxFullSpins: number;
 
-    /** LUCKY_WHEEL items. */
-    public items: LUCKY_WHEEL.IItems[];
+    /** LuckyWheel items. */
+    public items: LuckyWheel.IItems[];
 
-    /** LUCKY_WHEEL dailyLimit. */
+    /** LuckyWheel dailyLimit. */
     public dailyLimit: number;
 
     /**
-     * Creates a new LUCKY_WHEEL instance using the specified properties.
+     * Creates a new LuckyWheel instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns LUCKY_WHEEL instance
+     * @returns LuckyWheel instance
      */
-    public static create(properties?: ILUCKY_WHEEL): LUCKY_WHEEL;
+    public static create(properties?: ILuckyWheel): LuckyWheel;
 
     /**
-     * Encodes the specified LUCKY_WHEEL message. Does not implicitly {@link LUCKY_WHEEL.verify|verify} messages.
-     * @param message LUCKY_WHEEL message or plain object to encode
+     * Encodes the specified LuckyWheel message. Does not implicitly {@link LuckyWheel.verify|verify} messages.
+     * @param message LuckyWheel message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: ILUCKY_WHEEL, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: ILuckyWheel, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified LUCKY_WHEEL message, length delimited. Does not implicitly {@link LUCKY_WHEEL.verify|verify} messages.
-     * @param message LUCKY_WHEEL message or plain object to encode
+     * Encodes the specified LuckyWheel message, length delimited. Does not implicitly {@link LuckyWheel.verify|verify} messages.
+     * @param message LuckyWheel message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: ILUCKY_WHEEL, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: ILuckyWheel, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a LUCKY_WHEEL message from the specified reader or buffer.
+     * Decodes a LuckyWheel message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns LUCKY_WHEEL
+     * @returns LuckyWheel
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LUCKY_WHEEL;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheel;
 
     /**
-     * Decodes a LUCKY_WHEEL message from the specified reader or buffer, length delimited.
+     * Decodes a LuckyWheel message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns LUCKY_WHEEL
+     * @returns LuckyWheel
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LUCKY_WHEEL;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheel;
 
     /**
-     * Verifies a LUCKY_WHEEL message.
+     * Verifies a LuckyWheel message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a LUCKY_WHEEL message from a plain object. Also converts values to their respective internal types.
+     * Creates a LuckyWheel message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns LUCKY_WHEEL
+     * @returns LuckyWheel
      */
-    public static fromObject(object: { [k: string]: any }): LUCKY_WHEEL;
+    public static fromObject(object: { [k: string]: any }): LuckyWheel;
 
     /**
-     * Creates a plain object from a LUCKY_WHEEL message. Also converts values to other types if specified.
-     * @param message LUCKY_WHEEL
+     * Creates a plain object from a LuckyWheel message. Also converts values to other types if specified.
+     * @param message LuckyWheel
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: LUCKY_WHEEL, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: LuckyWheel, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this LUCKY_WHEEL to JSON.
+     * Converts this LuckyWheel to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for LUCKY_WHEEL
+     * Gets the default type url for LuckyWheel
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace LUCKY_WHEEL {
+export namespace LuckyWheel {
 
     /** Properties of an Items. */
     interface IItems {
@@ -1579,7 +1144,7 @@ export namespace LUCKY_WHEEL {
          * Constructs a new Items.
          * @param [properties] Properties to set
          */
-        constructor(properties?: LUCKY_WHEEL.IItems);
+        constructor(properties?: LuckyWheel.IItems);
 
         /** Items itemId. */
         public itemId: string;
@@ -1595,23 +1160,23 @@ export namespace LUCKY_WHEEL {
          * @param [properties] Properties to set
          * @returns Items instance
          */
-        public static create(properties?: LUCKY_WHEEL.IItems): LUCKY_WHEEL.Items;
+        public static create(properties?: LuckyWheel.IItems): LuckyWheel.Items;
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link LUCKY_WHEEL.Items.verify|verify} messages.
+         * Encodes the specified Items message. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
          * @param message Items message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: LUCKY_WHEEL.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: LuckyWheel.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link LUCKY_WHEEL.Items.verify|verify} messages.
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
          * @param message Items message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: LUCKY_WHEEL.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: LuckyWheel.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes an Items message from the specified reader or buffer.
@@ -1621,7 +1186,7 @@ export namespace LUCKY_WHEEL {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LUCKY_WHEEL.Items;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheel.Items;
 
         /**
          * Decodes an Items message from the specified reader or buffer, length delimited.
@@ -1630,7 +1195,7 @@ export namespace LUCKY_WHEEL {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LUCKY_WHEEL.Items;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheel.Items;
 
         /**
          * Verifies an Items message.
@@ -1644,7 +1209,7 @@ export namespace LUCKY_WHEEL {
          * @param object Plain object
          * @returns Items
          */
-        public static fromObject(object: { [k: string]: any }): LUCKY_WHEEL.Items;
+        public static fromObject(object: { [k: string]: any }): LuckyWheel.Items;
 
         /**
          * Creates a plain object from an Items message. Also converts values to other types if specified.
@@ -1652,7 +1217,7 @@ export namespace LUCKY_WHEEL {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: LUCKY_WHEEL.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: LuckyWheel.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Items to JSON.
@@ -1669,340 +1234,337 @@ export namespace LUCKY_WHEEL {
     }
 }
 
-/** Properties of a PROGRESS_QUEST. */
-export interface IPROGRESS_QUEST {
+/** Properties of a ProgressQuests. */
+export interface IProgressQuests {
 
-    /** PROGRESS_QUEST items */
-    items?: (PROGRESS_QUEST.IItems[]|null);
+    /** ProgressQuests quests */
+    quests?: (ProgressQuests.IQuests[]|null);
 }
 
-/** Represents a PROGRESS_QUEST. */
-export class PROGRESS_QUEST implements IPROGRESS_QUEST {
+/** Represents a ProgressQuests. */
+export class ProgressQuests implements IProgressQuests {
 
     /**
-     * Constructs a new PROGRESS_QUEST.
+     * Constructs a new ProgressQuests.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IPROGRESS_QUEST);
+    constructor(properties?: IProgressQuests);
 
-    /** PROGRESS_QUEST items. */
-    public items: PROGRESS_QUEST.IItems[];
+    /** ProgressQuests quests. */
+    public quests: ProgressQuests.IQuests[];
 
     /**
-     * Creates a new PROGRESS_QUEST instance using the specified properties.
+     * Creates a new ProgressQuests instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns PROGRESS_QUEST instance
+     * @returns ProgressQuests instance
      */
-    public static create(properties?: IPROGRESS_QUEST): PROGRESS_QUEST;
+    public static create(properties?: IProgressQuests): ProgressQuests;
 
     /**
-     * Encodes the specified PROGRESS_QUEST message. Does not implicitly {@link PROGRESS_QUEST.verify|verify} messages.
-     * @param message PROGRESS_QUEST message or plain object to encode
+     * Encodes the specified ProgressQuests message. Does not implicitly {@link ProgressQuests.verify|verify} messages.
+     * @param message ProgressQuests message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IPROGRESS_QUEST, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IProgressQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified PROGRESS_QUEST message, length delimited. Does not implicitly {@link PROGRESS_QUEST.verify|verify} messages.
-     * @param message PROGRESS_QUEST message or plain object to encode
+     * Encodes the specified ProgressQuests message, length delimited. Does not implicitly {@link ProgressQuests.verify|verify} messages.
+     * @param message ProgressQuests message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IPROGRESS_QUEST, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IProgressQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a PROGRESS_QUEST message from the specified reader or buffer.
+     * Decodes a ProgressQuests message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns PROGRESS_QUEST
+     * @returns ProgressQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROGRESS_QUEST;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProgressQuests;
 
     /**
-     * Decodes a PROGRESS_QUEST message from the specified reader or buffer, length delimited.
+     * Decodes a ProgressQuests message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns PROGRESS_QUEST
+     * @returns ProgressQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROGRESS_QUEST;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProgressQuests;
 
     /**
-     * Verifies a PROGRESS_QUEST message.
+     * Verifies a ProgressQuests message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a PROGRESS_QUEST message from a plain object. Also converts values to their respective internal types.
+     * Creates a ProgressQuests message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns PROGRESS_QUEST
+     * @returns ProgressQuests
      */
-    public static fromObject(object: { [k: string]: any }): PROGRESS_QUEST;
+    public static fromObject(object: { [k: string]: any }): ProgressQuests;
 
     /**
-     * Creates a plain object from a PROGRESS_QUEST message. Also converts values to other types if specified.
-     * @param message PROGRESS_QUEST
+     * Creates a plain object from a ProgressQuests message. Also converts values to other types if specified.
+     * @param message ProgressQuests
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: PROGRESS_QUEST, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: ProgressQuests, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this PROGRESS_QUEST to JSON.
+     * Converts this ProgressQuests to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for PROGRESS_QUEST
+     * Gets the default type url for ProgressQuests
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace PROGRESS_QUEST {
+export namespace ProgressQuests {
 
-    /** Properties of an Items. */
-    interface IItems {
+    /** Properties of a Quests. */
+    interface IQuests {
 
-        /** Items conditionReach */
-        conditionReach?: (number|null);
+        /** Quests name */
+        name?: (string|null);
 
-        /** Items condition */
-        condition?: (string|null);
+        /** Quests reward */
+        reward?: (ProgressQuests.Quests.IReward|null);
 
-        /** Items rewardId */
-        rewardId?: (string|null);
+        /** Quests description */
+        description?: (string|null);
 
-        /** Items questName */
-        questName?: (string|null);
-
-        /** Items rewardQuantity */
-        rewardQuantity?: (number|null);
-
-        /** Items id */
+        /** Quests id */
         id?: (string|null);
 
-        /** Items levelUnlock */
-        levelUnlock?: (number|null);
+        /** Quests type */
+        type?: (string|null);
+
+        /** Quests target */
+        target?: (number|null);
     }
 
-    /** Represents an Items. */
-    class Items implements IItems {
+    /** Represents a Quests. */
+    class Quests implements IQuests {
 
         /**
-         * Constructs a new Items.
+         * Constructs a new Quests.
          * @param [properties] Properties to set
          */
-        constructor(properties?: PROGRESS_QUEST.IItems);
+        constructor(properties?: ProgressQuests.IQuests);
 
-        /** Items conditionReach. */
-        public conditionReach: number;
+        /** Quests name. */
+        public name: string;
 
-        /** Items condition. */
-        public condition: string;
+        /** Quests reward. */
+        public reward?: (ProgressQuests.Quests.IReward|null);
 
-        /** Items rewardId. */
-        public rewardId: string;
+        /** Quests description. */
+        public description: string;
 
-        /** Items questName. */
-        public questName: string;
-
-        /** Items rewardQuantity. */
-        public rewardQuantity: number;
-
-        /** Items id. */
+        /** Quests id. */
         public id: string;
 
-        /** Items levelUnlock. */
-        public levelUnlock: number;
+        /** Quests type. */
+        public type: string;
+
+        /** Quests target. */
+        public target: number;
 
         /**
-         * Creates a new Items instance using the specified properties.
+         * Creates a new Quests instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns Items instance
+         * @returns Quests instance
          */
-        public static create(properties?: PROGRESS_QUEST.IItems): PROGRESS_QUEST.Items;
+        public static create(properties?: ProgressQuests.IQuests): ProgressQuests.Quests;
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link PROGRESS_QUEST.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
+         * Encodes the specified Quests message. Does not implicitly {@link ProgressQuests.Quests.verify|verify} messages.
+         * @param message Quests message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: PROGRESS_QUEST.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: ProgressQuests.IQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link PROGRESS_QUEST.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
+         * Encodes the specified Quests message, length delimited. Does not implicitly {@link ProgressQuests.Quests.verify|verify} messages.
+         * @param message Quests message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: PROGRESS_QUEST.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: ProgressQuests.IQuests, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes an Items message from the specified reader or buffer.
+         * Decodes a Quests message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns Items
+         * @returns Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): PROGRESS_QUEST.Items;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProgressQuests.Quests;
 
         /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * Decodes a Quests message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns Items
+         * @returns Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): PROGRESS_QUEST.Items;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProgressQuests.Quests;
 
         /**
-         * Verifies an Items message.
+         * Verifies a Quests message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * Creates a Quests message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns Items
+         * @returns Quests
          */
-        public static fromObject(object: { [k: string]: any }): PROGRESS_QUEST.Items;
+        public static fromObject(object: { [k: string]: any }): ProgressQuests.Quests;
 
         /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @param message Items
+         * Creates a plain object from a Quests message. Also converts values to other types if specified.
+         * @param message Quests
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: PROGRESS_QUEST.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: ProgressQuests.Quests, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this Items to JSON.
+         * Converts this Quests to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for Items
+         * Gets the default type url for Quests
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
         public static getTypeUrl(typeUrlPrefix?: string): string;
     }
-}
 
-/** Properties of a TEST. */
-export interface ITEST {
+    namespace Quests {
 
-    /** TEST name */
-    name?: (string|null);
+        /** Properties of a Reward. */
+        interface IReward {
 
-    /** TEST image */
-    image?: (string|null);
-}
+            /** Reward id */
+            id?: (string|null);
 
-/** Represents a TEST. */
-export class TEST implements ITEST {
+            /** Reward quantity */
+            quantity?: (number|null);
+        }
 
-    /**
-     * Constructs a new TEST.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: ITEST);
+        /** Represents a Reward. */
+        class Reward implements IReward {
 
-    /** TEST name. */
-    public name: string;
+            /**
+             * Constructs a new Reward.
+             * @param [properties] Properties to set
+             */
+            constructor(properties?: ProgressQuests.Quests.IReward);
 
-    /** TEST image. */
-    public image: string;
+            /** Reward id. */
+            public id: string;
 
-    /**
-     * Creates a new TEST instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns TEST instance
-     */
-    public static create(properties?: ITEST): TEST;
+            /** Reward quantity. */
+            public quantity: number;
 
-    /**
-     * Encodes the specified TEST message. Does not implicitly {@link TEST.verify|verify} messages.
-     * @param message TEST message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: ITEST, writer?: $protobuf.Writer): $protobuf.Writer;
+            /**
+             * Creates a new Reward instance using the specified properties.
+             * @param [properties] Properties to set
+             * @returns Reward instance
+             */
+            public static create(properties?: ProgressQuests.Quests.IReward): ProgressQuests.Quests.Reward;
 
-    /**
-     * Encodes the specified TEST message, length delimited. Does not implicitly {@link TEST.verify|verify} messages.
-     * @param message TEST message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: ITEST, writer?: $protobuf.Writer): $protobuf.Writer;
+            /**
+             * Encodes the specified Reward message. Does not implicitly {@link ProgressQuests.Quests.Reward.verify|verify} messages.
+             * @param message Reward message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encode(message: ProgressQuests.Quests.IReward, writer?: $protobuf.Writer): $protobuf.Writer;
 
-    /**
-     * Decodes a TEST message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns TEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): TEST;
+            /**
+             * Encodes the specified Reward message, length delimited. Does not implicitly {@link ProgressQuests.Quests.Reward.verify|verify} messages.
+             * @param message Reward message or plain object to encode
+             * @param [writer] Writer to encode to
+             * @returns Writer
+             */
+            public static encodeDelimited(message: ProgressQuests.Quests.IReward, writer?: $protobuf.Writer): $protobuf.Writer;
 
-    /**
-     * Decodes a TEST message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns TEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): TEST;
+            /**
+             * Decodes a Reward message from the specified reader or buffer.
+             * @param reader Reader or buffer to decode from
+             * @param [length] Message length if known beforehand
+             * @returns Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): ProgressQuests.Quests.Reward;
 
-    /**
-     * Verifies a TEST message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
+            /**
+             * Decodes a Reward message from the specified reader or buffer, length delimited.
+             * @param reader Reader or buffer to decode from
+             * @returns Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): ProgressQuests.Quests.Reward;
 
-    /**
-     * Creates a TEST message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns TEST
-     */
-    public static fromObject(object: { [k: string]: any }): TEST;
+            /**
+             * Verifies a Reward message.
+             * @param message Plain object to verify
+             * @returns `null` if valid, otherwise the reason why it is not
+             */
+            public static verify(message: { [k: string]: any }): (string|null);
 
-    /**
-     * Creates a plain object from a TEST message. Also converts values to other types if specified.
-     * @param message TEST
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: TEST, options?: $protobuf.IConversionOptions): { [k: string]: any };
+            /**
+             * Creates a Reward message from a plain object. Also converts values to their respective internal types.
+             * @param object Plain object
+             * @returns Reward
+             */
+            public static fromObject(object: { [k: string]: any }): ProgressQuests.Quests.Reward;
 
-    /**
-     * Converts this TEST to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
+            /**
+             * Creates a plain object from a Reward message. Also converts values to other types if specified.
+             * @param message Reward
+             * @param [options] Conversion options
+             * @returns Plain object
+             */
+            public static toObject(message: ProgressQuests.Quests.Reward, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
-    /**
-     * Gets the default type url for TEST
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
-     */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
+            /**
+             * Converts this Reward to JSON.
+             * @returns JSON object
+             */
+            public toJSON(): { [k: string]: any };
+
+            /**
+             * Gets the default type url for Reward
+             * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns The default type url
+             */
+            public static getTypeUrl(typeUrlPrefix?: string): string;
+        }
+    }
 }
 
 /** Properties of an Empty. */
@@ -2119,11 +1681,11 @@ export class GameScripts extends $protobuf.rpc.Service {
 
 export namespace GameScripts {
 
-    /** Represents a Test */
-    class Test extends $protobuf.rpc.Service {
+    /** Represents a LuckyWheel */
+    class LuckyWheel extends $protobuf.rpc.Service {
 
         /**
-         * Constructs a new Test service.
+         * Constructs a new LuckyWheel service.
          * @param rpcImpl RPC implementation
          * @param [requestDelimited=false] Whether requests are length-delimited
          * @param [responseDelimited=false] Whether responses are length-delimited
@@ -2131,131 +1693,86 @@ export namespace GameScripts {
         constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
         /**
-         * Creates new Test service using the specified rpc implementation.
+         * Creates new LuckyWheel service using the specified rpc implementation.
          * @param rpcImpl RPC implementation
          * @param [requestDelimited=false] Whether requests are length-delimited
          * @param [responseDelimited=false] Whether responses are length-delimited
          * @returns RPC service. Useful where requests and/or responses are streamed.
          */
-        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Test;
+        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): LuckyWheel;
 
         /**
-         * Calls helloWorld.
-         * @param request Empty message or plain object
-         * @param callback Node-style callback called with the error, if any, and TestHelloWorldRes
-         */
-        public helloWorld(request: IEmpty, callback: GameScripts.Test.helloWorldCallback): void;
-
-        /**
-         * Calls helloWorld.
-         * @param request Empty message or plain object
-         * @returns Promise
-         */
-        public helloWorld(request: IEmpty): Promise<TestHelloWorldRes>;
-    }
-
-    namespace Test {
-
-        /**
-         * Callback as used by {@link GameScripts.Test#helloWorld}.
-         * @param error Error, if any
-         * @param [response] TestHelloWorldRes
-         */
-        type helloWorldCallback = (error: (Error|null), response?: TestHelloWorldRes) => void;
-    }
-
-    /** Represents a Lucky_Wheel */
-    class Lucky_Wheel extends $protobuf.rpc.Service {
-
-        /**
-         * Constructs a new Lucky_Wheel service.
-         * @param rpcImpl RPC implementation
-         * @param [requestDelimited=false] Whether requests are length-delimited
-         * @param [responseDelimited=false] Whether responses are length-delimited
-         */
-        constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
-
-        /**
-         * Creates new Lucky_Wheel service using the specified rpc implementation.
-         * @param rpcImpl RPC implementation
-         * @param [requestDelimited=false] Whether requests are length-delimited
-         * @param [responseDelimited=false] Whether responses are length-delimited
-         * @returns RPC service. Useful where requests and/or responses are streamed.
-         */
-        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Lucky_Wheel;
-
-        /**
-         * Calls claimItem.
+         * Calls ClaimItem.
          * @param request Empty message or plain object
          * @param callback Node-style callback called with the error, if any, and LuckyWheelClaimItemOutput
          */
-        public claimItem(request: IEmpty, callback: GameScripts.Lucky_Wheel.claimItemCallback): void;
+        public claimItem(request: IEmpty, callback: GameScripts.LuckyWheel.ClaimItemCallback): void;
 
         /**
-         * Calls claimItem.
+         * Calls ClaimItem.
          * @param request Empty message or plain object
          * @returns Promise
          */
         public claimItem(request: IEmpty): Promise<LuckyWheelClaimItemOutput>;
 
         /**
-         * Calls canClaimItem.
+         * Calls CanClaimItem.
          * @param request Empty message or plain object
          * @param callback Node-style callback called with the error, if any, and LuckyWheelCanClaimOutput
          */
-        public canClaimItem(request: IEmpty, callback: GameScripts.Lucky_Wheel.canClaimItemCallback): void;
+        public canClaimItem(request: IEmpty, callback: GameScripts.LuckyWheel.CanClaimItemCallback): void;
 
         /**
-         * Calls canClaimItem.
+         * Calls CanClaimItem.
          * @param request Empty message or plain object
          * @returns Promise
          */
         public canClaimItem(request: IEmpty): Promise<LuckyWheelCanClaimOutput>;
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @param request Empty message or plain object
          * @param callback Node-style callback called with the error, if any, and LuckyWheel
          */
-        public getList(request: IEmpty, callback: GameScripts.Lucky_Wheel.getListCallback): void;
+        public getList(request: IEmpty, callback: GameScripts.LuckyWheel.GetListCallback): void;
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @param request Empty message or plain object
          * @returns Promise
          */
         public getList(request: IEmpty): Promise<LuckyWheel>;
     }
 
-    namespace Lucky_Wheel {
+    namespace LuckyWheel {
 
         /**
-         * Callback as used by {@link GameScripts.Lucky_Wheel#claimItem}.
+         * Callback as used by {@link GameScripts.LuckyWheel#claimItem}.
          * @param error Error, if any
          * @param [response] LuckyWheelClaimItemOutput
          */
-        type claimItemCallback = (error: (Error|null), response?: LuckyWheelClaimItemOutput) => void;
+        type ClaimItemCallback = (error: (Error|null), response?: LuckyWheelClaimItemOutput) => void;
 
         /**
-         * Callback as used by {@link GameScripts.Lucky_Wheel#canClaimItem}.
+         * Callback as used by {@link GameScripts.LuckyWheel#canClaimItem}.
          * @param error Error, if any
          * @param [response] LuckyWheelCanClaimOutput
          */
-        type canClaimItemCallback = (error: (Error|null), response?: LuckyWheelCanClaimOutput) => void;
+        type CanClaimItemCallback = (error: (Error|null), response?: LuckyWheelCanClaimOutput) => void;
 
         /**
-         * Callback as used by {@link GameScripts.Lucky_Wheel#getList}.
+         * Callback as used by {@link GameScripts.LuckyWheel#getList}.
          * @param error Error, if any
          * @param [response] LuckyWheel
          */
-        type getListCallback = (error: (Error|null), response?: LuckyWheel) => void;
+        type GetListCallback = (error: (Error|null), response?: LuckyWheel) => void;
     }
 
-    /** Represents a Daily_Rewards */
-    class Daily_Rewards extends $protobuf.rpc.Service {
+    /** Represents a DailyRewards */
+    class DailyRewards extends $protobuf.rpc.Service {
 
         /**
-         * Constructs a new Daily_Rewards service.
+         * Constructs a new DailyRewards service.
          * @param rpcImpl RPC implementation
          * @param [requestDelimited=false] Whether requests are length-delimited
          * @param [responseDelimited=false] Whether responses are length-delimited
@@ -2263,65 +1780,65 @@ export namespace GameScripts {
         constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
         /**
-         * Creates new Daily_Rewards service using the specified rpc implementation.
+         * Creates new DailyRewards service using the specified rpc implementation.
          * @param rpcImpl RPC implementation
          * @param [requestDelimited=false] Whether requests are length-delimited
          * @param [responseDelimited=false] Whether responses are length-delimited
          * @returns RPC service. Useful where requests and/or responses are streamed.
          */
-        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Daily_Rewards;
+        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): DailyRewards;
 
         /**
-         * Calls canClaimRewards.
+         * Calls CanClaimRewards.
          * @param request Empty message or plain object
          * @param callback Node-style callback called with the error, if any, and DailyRewardsCanClaimRewardOutput
          */
-        public canClaimRewards(request: IEmpty, callback: GameScripts.Daily_Rewards.canClaimRewardsCallback): void;
+        public canClaimRewards(request: IEmpty, callback: GameScripts.DailyRewards.CanClaimRewardsCallback): void;
 
         /**
-         * Calls canClaimRewards.
+         * Calls CanClaimRewards.
          * @param request Empty message or plain object
          * @returns Promise
          */
         public canClaimRewards(request: IEmpty): Promise<DailyRewardsCanClaimRewardOutput>;
 
         /**
-         * Calls claimRewards.
+         * Calls ClaimRewards.
          * @param request Empty message or plain object
          * @param callback Node-style callback called with the error, if any, and DailyRewardsClaimRewardsOutput
          */
-        public claimRewards(request: IEmpty, callback: GameScripts.Daily_Rewards.claimRewardsCallback): void;
+        public claimRewards(request: IEmpty, callback: GameScripts.DailyRewards.ClaimRewardsCallback): void;
 
         /**
-         * Calls claimRewards.
+         * Calls ClaimRewards.
          * @param request Empty message or plain object
          * @returns Promise
          */
         public claimRewards(request: IEmpty): Promise<DailyRewardsClaimRewardsOutput>;
     }
 
-    namespace Daily_Rewards {
+    namespace DailyRewards {
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Rewards#canClaimRewards}.
+         * Callback as used by {@link GameScripts.DailyRewards#canClaimRewards}.
          * @param error Error, if any
          * @param [response] DailyRewardsCanClaimRewardOutput
          */
-        type canClaimRewardsCallback = (error: (Error|null), response?: DailyRewardsCanClaimRewardOutput) => void;
+        type CanClaimRewardsCallback = (error: (Error|null), response?: DailyRewardsCanClaimRewardOutput) => void;
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Rewards#claimRewards}.
+         * Callback as used by {@link GameScripts.DailyRewards#claimRewards}.
          * @param error Error, if any
          * @param [response] DailyRewardsClaimRewardsOutput
          */
-        type claimRewardsCallback = (error: (Error|null), response?: DailyRewardsClaimRewardsOutput) => void;
+        type ClaimRewardsCallback = (error: (Error|null), response?: DailyRewardsClaimRewardsOutput) => void;
     }
 
-    /** Represents a Daily_Quest */
-    class Daily_Quest extends $protobuf.rpc.Service {
+    /** Represents a DailyQuests */
+    class DailyQuests extends $protobuf.rpc.Service {
 
         /**
-         * Constructs a new Daily_Quest service.
+         * Constructs a new DailyQuests service.
          * @param rpcImpl RPC implementation
          * @param [requestDelimited=false] Whether requests are length-delimited
          * @param [responseDelimited=false] Whether responses are length-delimited
@@ -2329,79 +1846,79 @@ export namespace GameScripts {
         constructor(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean);
 
         /**
-         * Creates new Daily_Quest service using the specified rpc implementation.
+         * Creates new DailyQuests service using the specified rpc implementation.
          * @param rpcImpl RPC implementation
          * @param [requestDelimited=false] Whether requests are length-delimited
          * @param [responseDelimited=false] Whether responses are length-delimited
          * @returns RPC service. Useful where requests and/or responses are streamed.
          */
-        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Daily_Quest;
+        public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): DailyQuests;
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @param request Empty message or plain object
-         * @param callback Node-style callback called with the error, if any, and DailyQuestOutput
+         * @param callback Node-style callback called with the error, if any, and DailyQuestsOutput
          */
-        public getList(request: IEmpty, callback: GameScripts.Daily_Quest.getListCallback): void;
+        public getList(request: IEmpty, callback: GameScripts.DailyQuests.GetListCallback): void;
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @param request Empty message or plain object
          * @returns Promise
          */
-        public getList(request: IEmpty): Promise<DailyQuestOutput>;
+        public getList(request: IEmpty): Promise<DailyQuestsOutput>;
 
         /**
-         * Calls updateQuest.
-         * @param request DailyQuestUpdateQuestInput message or plain object
-         * @param callback Node-style callback called with the error, if any, and DailyQuestUpdateQuestOutput
+         * Calls UpdateQuest.
+         * @param request DailyQuestsUpdateQuestInput message or plain object
+         * @param callback Node-style callback called with the error, if any, and DailyQuestsUpdateQuestOutput
          */
-        public updateQuest(request: IDailyQuestUpdateQuestInput, callback: GameScripts.Daily_Quest.updateQuestCallback): void;
+        public updateQuest(request: IDailyQuestsUpdateQuestInput, callback: GameScripts.DailyQuests.UpdateQuestCallback): void;
 
         /**
-         * Calls updateQuest.
-         * @param request DailyQuestUpdateQuestInput message or plain object
+         * Calls UpdateQuest.
+         * @param request DailyQuestsUpdateQuestInput message or plain object
          * @returns Promise
          */
-        public updateQuest(request: IDailyQuestUpdateQuestInput): Promise<DailyQuestUpdateQuestOutput>;
+        public updateQuest(request: IDailyQuestsUpdateQuestInput): Promise<DailyQuestsUpdateQuestOutput>;
 
         /**
-         * Calls claimQuest.
-         * @param request DailyQuestClaimQuestInput message or plain object
-         * @param callback Node-style callback called with the error, if any, and DailyQuestClaimQuestOutput
+         * Calls ClaimQuest.
+         * @param request DailyQuestsClaimQuestInput message or plain object
+         * @param callback Node-style callback called with the error, if any, and DailyQuestsClaimQuestOutput
          */
-        public claimQuest(request: IDailyQuestClaimQuestInput, callback: GameScripts.Daily_Quest.claimQuestCallback): void;
+        public claimQuest(request: IDailyQuestsClaimQuestInput, callback: GameScripts.DailyQuests.ClaimQuestCallback): void;
 
         /**
-         * Calls claimQuest.
-         * @param request DailyQuestClaimQuestInput message or plain object
+         * Calls ClaimQuest.
+         * @param request DailyQuestsClaimQuestInput message or plain object
          * @returns Promise
          */
-        public claimQuest(request: IDailyQuestClaimQuestInput): Promise<DailyQuestClaimQuestOutput>;
+        public claimQuest(request: IDailyQuestsClaimQuestInput): Promise<DailyQuestsClaimQuestOutput>;
     }
 
-    namespace Daily_Quest {
+    namespace DailyQuests {
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Quest#getList}.
+         * Callback as used by {@link GameScripts.DailyQuests#getList}.
          * @param error Error, if any
-         * @param [response] DailyQuestOutput
+         * @param [response] DailyQuestsOutput
          */
-        type getListCallback = (error: (Error|null), response?: DailyQuestOutput) => void;
+        type GetListCallback = (error: (Error|null), response?: DailyQuestsOutput) => void;
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Quest#updateQuest}.
+         * Callback as used by {@link GameScripts.DailyQuests#updateQuest}.
          * @param error Error, if any
-         * @param [response] DailyQuestUpdateQuestOutput
+         * @param [response] DailyQuestsUpdateQuestOutput
          */
-        type updateQuestCallback = (error: (Error|null), response?: DailyQuestUpdateQuestOutput) => void;
+        type UpdateQuestCallback = (error: (Error|null), response?: DailyQuestsUpdateQuestOutput) => void;
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Quest#claimQuest}.
+         * Callback as used by {@link GameScripts.DailyQuests#claimQuest}.
          * @param error Error, if any
-         * @param [response] DailyQuestClaimQuestOutput
+         * @param [response] DailyQuestsClaimQuestOutput
          */
-        type claimQuestCallback = (error: (Error|null), response?: DailyQuestClaimQuestOutput) => void;
+        type ClaimQuestCallback = (error: (Error|null), response?: DailyQuestsClaimQuestOutput) => void;
     }
 }
 
@@ -2508,238 +2025,341 @@ export class TestHelloWorldRes implements ITestHelloWorldRes {
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-/** Properties of a DailyQuestOutput. */
-export interface IDailyQuestOutput {
+/** Properties of a DailyQuestsOutput. */
+export interface IDailyQuestsOutput {
 
-    /** DailyQuestOutput dailyQuest */
-    dailyQuest?: (DailyQuestOutput.IDailyquest[]|null);
+    /** DailyQuestsOutput dailyQuests */
+    dailyQuests?: (DailyQuestsOutput.IDailyquests[]|null);
 }
 
-/** Represents a DailyQuestOutput. */
-export class DailyQuestOutput implements IDailyQuestOutput {
+/** Represents a DailyQuestsOutput. */
+export class DailyQuestsOutput implements IDailyQuestsOutput {
 
     /**
-     * Constructs a new DailyQuestOutput.
+     * Constructs a new DailyQuestsOutput.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IDailyQuestOutput);
+    constructor(properties?: IDailyQuestsOutput);
 
-    /** DailyQuestOutput dailyQuest. */
-    public dailyQuest: DailyQuestOutput.IDailyquest[];
+    /** DailyQuestsOutput dailyQuests. */
+    public dailyQuests: DailyQuestsOutput.IDailyquests[];
 
     /**
-     * Creates a new DailyQuestOutput instance using the specified properties.
+     * Creates a new DailyQuestsOutput instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns DailyQuestOutput instance
+     * @returns DailyQuestsOutput instance
      */
-    public static create(properties?: IDailyQuestOutput): DailyQuestOutput;
+    public static create(properties?: IDailyQuestsOutput): DailyQuestsOutput;
 
     /**
-     * Encodes the specified DailyQuestOutput message. Does not implicitly {@link DailyQuestOutput.verify|verify} messages.
-     * @param message DailyQuestOutput message or plain object to encode
+     * Encodes the specified DailyQuestsOutput message. Does not implicitly {@link DailyQuestsOutput.verify|verify} messages.
+     * @param message DailyQuestsOutput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IDailyQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyQuestsOutput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified DailyQuestOutput message, length delimited. Does not implicitly {@link DailyQuestOutput.verify|verify} messages.
-     * @param message DailyQuestOutput message or plain object to encode
+     * Encodes the specified DailyQuestsOutput message, length delimited. Does not implicitly {@link DailyQuestsOutput.verify|verify} messages.
+     * @param message DailyQuestsOutput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IDailyQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyQuestsOutput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a DailyQuestOutput message from the specified reader or buffer.
+     * Decodes a DailyQuestsOutput message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns DailyQuestOutput
+     * @returns DailyQuestsOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestOutput;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsOutput;
 
     /**
-     * Decodes a DailyQuestOutput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsOutput message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns DailyQuestOutput
+     * @returns DailyQuestsOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestOutput;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsOutput;
 
     /**
-     * Verifies a DailyQuestOutput message.
+     * Verifies a DailyQuestsOutput message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a DailyQuestOutput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsOutput message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns DailyQuestOutput
+     * @returns DailyQuestsOutput
      */
-    public static fromObject(object: { [k: string]: any }): DailyQuestOutput;
+    public static fromObject(object: { [k: string]: any }): DailyQuestsOutput;
 
     /**
-     * Creates a plain object from a DailyQuestOutput message. Also converts values to other types if specified.
-     * @param message DailyQuestOutput
+     * Creates a plain object from a DailyQuestsOutput message. Also converts values to other types if specified.
+     * @param message DailyQuestsOutput
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: DailyQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyQuestsOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this DailyQuestOutput to JSON.
+     * Converts this DailyQuestsOutput to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for DailyQuestOutput
+     * Gets the default type url for DailyQuestsOutput
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace DailyQuestOutput {
+export namespace DailyQuestsOutput {
 
-    /** Properties of a Dailyquest. */
-    interface IDailyquest {
+    /** Properties of a Reward. */
+    interface IReward {
 
-        /** Dailyquest conditionReach */
-        conditionReach?: (number|null);
-
-        /** Dailyquest rewardQuantity */
-        rewardQuantity?: (number|null);
-
-        /** Dailyquest condition */
-        condition?: (string|null);
-
-        /** Dailyquest rewardId */
-        rewardId?: (string|null);
-
-        /** Dailyquest id */
+        /** Reward id */
         id?: (string|null);
 
-        /** Dailyquest questName */
-        questName?: (string|null);
+        /** Reward quantity */
+        quantity?: (number|null);
+    }
 
-        /** Dailyquest progress */
+    /** Represents a Reward. */
+    class Reward implements IReward {
+
+        /**
+         * Constructs a new Reward.
+         * @param [properties] Properties to set
+         */
+        constructor(properties?: DailyQuestsOutput.IReward);
+
+        /** Reward id. */
+        public id: string;
+
+        /** Reward quantity. */
+        public quantity: number;
+
+        /**
+         * Creates a new Reward instance using the specified properties.
+         * @param [properties] Properties to set
+         * @returns Reward instance
+         */
+        public static create(properties?: DailyQuestsOutput.IReward): DailyQuestsOutput.Reward;
+
+        /**
+         * Encodes the specified Reward message. Does not implicitly {@link DailyQuestsOutput.Reward.verify|verify} messages.
+         * @param message Reward message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encode(message: DailyQuestsOutput.IReward, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Encodes the specified Reward message, length delimited. Does not implicitly {@link DailyQuestsOutput.Reward.verify|verify} messages.
+         * @param message Reward message or plain object to encode
+         * @param [writer] Writer to encode to
+         * @returns Writer
+         */
+        public static encodeDelimited(message: DailyQuestsOutput.IReward, writer?: $protobuf.Writer): $protobuf.Writer;
+
+        /**
+         * Decodes a Reward message from the specified reader or buffer.
+         * @param reader Reader or buffer to decode from
+         * @param [length] Message length if known beforehand
+         * @returns Reward
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsOutput.Reward;
+
+        /**
+         * Decodes a Reward message from the specified reader or buffer, length delimited.
+         * @param reader Reader or buffer to decode from
+         * @returns Reward
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsOutput.Reward;
+
+        /**
+         * Verifies a Reward message.
+         * @param message Plain object to verify
+         * @returns `null` if valid, otherwise the reason why it is not
+         */
+        public static verify(message: { [k: string]: any }): (string|null);
+
+        /**
+         * Creates a Reward message from a plain object. Also converts values to their respective internal types.
+         * @param object Plain object
+         * @returns Reward
+         */
+        public static fromObject(object: { [k: string]: any }): DailyQuestsOutput.Reward;
+
+        /**
+         * Creates a plain object from a Reward message. Also converts values to other types if specified.
+         * @param message Reward
+         * @param [options] Conversion options
+         * @returns Plain object
+         */
+        public static toObject(message: DailyQuestsOutput.Reward, options?: $protobuf.IConversionOptions): { [k: string]: any };
+
+        /**
+         * Converts this Reward to JSON.
+         * @returns JSON object
+         */
+        public toJSON(): { [k: string]: any };
+
+        /**
+         * Gets the default type url for Reward
+         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns The default type url
+         */
+        public static getTypeUrl(typeUrlPrefix?: string): string;
+    }
+
+    /** Properties of a Dailyquests. */
+    interface IDailyquests {
+
+        /** Dailyquests name */
+        name?: (string|null);
+
+        /** Dailyquests reward */
+        reward?: (DailyQuestsOutput.IReward|null);
+
+        /** Dailyquests description */
+        description?: (string|null);
+
+        /** Dailyquests id */
+        id?: (string|null);
+
+        /** Dailyquests type */
+        type?: (string|null);
+
+        /** Dailyquests target */
+        target?: (number|null);
+
+        /** Dailyquests progress */
         progress?: (number|null);
 
-        /** Dailyquest canClaim */
+        /** Dailyquests canClaim */
         canClaim?: (boolean|null);
     }
 
-    /** Represents a Dailyquest. */
-    class Dailyquest implements IDailyquest {
+    /** Represents a Dailyquests. */
+    class Dailyquests implements IDailyquests {
 
         /**
-         * Constructs a new Dailyquest.
+         * Constructs a new Dailyquests.
          * @param [properties] Properties to set
          */
-        constructor(properties?: DailyQuestOutput.IDailyquest);
+        constructor(properties?: DailyQuestsOutput.IDailyquests);
 
-        /** Dailyquest conditionReach. */
-        public conditionReach: number;
+        /** Dailyquests name. */
+        public name: string;
 
-        /** Dailyquest rewardQuantity. */
-        public rewardQuantity: number;
+        /** Dailyquests reward. */
+        public reward?: (DailyQuestsOutput.IReward|null);
 
-        /** Dailyquest condition. */
-        public condition: string;
+        /** Dailyquests description. */
+        public description: string;
 
-        /** Dailyquest rewardId. */
-        public rewardId: string;
-
-        /** Dailyquest id. */
+        /** Dailyquests id. */
         public id: string;
 
-        /** Dailyquest questName. */
-        public questName: string;
+        /** Dailyquests type. */
+        public type: string;
 
-        /** Dailyquest progress. */
+        /** Dailyquests target. */
+        public target: number;
+
+        /** Dailyquests progress. */
         public progress: number;
 
-        /** Dailyquest canClaim. */
+        /** Dailyquests canClaim. */
         public canClaim: boolean;
 
         /**
-         * Creates a new Dailyquest instance using the specified properties.
+         * Creates a new Dailyquests instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns Dailyquest instance
+         * @returns Dailyquests instance
          */
-        public static create(properties?: DailyQuestOutput.IDailyquest): DailyQuestOutput.Dailyquest;
+        public static create(properties?: DailyQuestsOutput.IDailyquests): DailyQuestsOutput.Dailyquests;
 
         /**
-         * Encodes the specified Dailyquest message. Does not implicitly {@link DailyQuestOutput.Dailyquest.verify|verify} messages.
-         * @param message Dailyquest message or plain object to encode
+         * Encodes the specified Dailyquests message. Does not implicitly {@link DailyQuestsOutput.Dailyquests.verify|verify} messages.
+         * @param message Dailyquests message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: DailyQuestOutput.IDailyquest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: DailyQuestsOutput.IDailyquests, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Dailyquest message, length delimited. Does not implicitly {@link DailyQuestOutput.Dailyquest.verify|verify} messages.
-         * @param message Dailyquest message or plain object to encode
+         * Encodes the specified Dailyquests message, length delimited. Does not implicitly {@link DailyQuestsOutput.Dailyquests.verify|verify} messages.
+         * @param message Dailyquests message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: DailyQuestOutput.IDailyquest, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: DailyQuestsOutput.IDailyquests, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes a Dailyquest message from the specified reader or buffer.
+         * Decodes a Dailyquests message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns Dailyquest
+         * @returns Dailyquests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestOutput.Dailyquest;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsOutput.Dailyquests;
 
         /**
-         * Decodes a Dailyquest message from the specified reader or buffer, length delimited.
+         * Decodes a Dailyquests message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns Dailyquest
+         * @returns Dailyquests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestOutput.Dailyquest;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsOutput.Dailyquests;
 
         /**
-         * Verifies a Dailyquest message.
+         * Verifies a Dailyquests message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates a Dailyquest message from a plain object. Also converts values to their respective internal types.
+         * Creates a Dailyquests message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns Dailyquest
+         * @returns Dailyquests
          */
-        public static fromObject(object: { [k: string]: any }): DailyQuestOutput.Dailyquest;
+        public static fromObject(object: { [k: string]: any }): DailyQuestsOutput.Dailyquests;
 
         /**
-         * Creates a plain object from a Dailyquest message. Also converts values to other types if specified.
-         * @param message Dailyquest
+         * Creates a plain object from a Dailyquests message. Also converts values to other types if specified.
+         * @param message Dailyquests
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: DailyQuestOutput.Dailyquest, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: DailyQuestsOutput.Dailyquests, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this Dailyquest to JSON.
+         * Converts this Dailyquests to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for Dailyquest
+         * Gets the default type url for Dailyquests
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
@@ -2747,202 +2367,202 @@ export namespace DailyQuestOutput {
     }
 }
 
-/** Properties of a DailyQuestUpdateQuestInput. */
-export interface IDailyQuestUpdateQuestInput {
+/** Properties of a DailyQuestsUpdateQuestInput. */
+export interface IDailyQuestsUpdateQuestInput {
 
-    /** DailyQuestUpdateQuestInput items */
-    items?: (DailyQuestUpdateQuestInput.IItems[]|null);
+    /** DailyQuestsUpdateQuestInput questProgress */
+    questProgress?: (DailyQuestsUpdateQuestInput.IQuestProgress[]|null);
 }
 
-/** Represents a DailyQuestUpdateQuestInput. */
-export class DailyQuestUpdateQuestInput implements IDailyQuestUpdateQuestInput {
+/** Represents a DailyQuestsUpdateQuestInput. */
+export class DailyQuestsUpdateQuestInput implements IDailyQuestsUpdateQuestInput {
 
     /**
-     * Constructs a new DailyQuestUpdateQuestInput.
+     * Constructs a new DailyQuestsUpdateQuestInput.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IDailyQuestUpdateQuestInput);
+    constructor(properties?: IDailyQuestsUpdateQuestInput);
 
-    /** DailyQuestUpdateQuestInput items. */
-    public items: DailyQuestUpdateQuestInput.IItems[];
+    /** DailyQuestsUpdateQuestInput questProgress. */
+    public questProgress: DailyQuestsUpdateQuestInput.IQuestProgress[];
 
     /**
-     * Creates a new DailyQuestUpdateQuestInput instance using the specified properties.
+     * Creates a new DailyQuestsUpdateQuestInput instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns DailyQuestUpdateQuestInput instance
+     * @returns DailyQuestsUpdateQuestInput instance
      */
-    public static create(properties?: IDailyQuestUpdateQuestInput): DailyQuestUpdateQuestInput;
+    public static create(properties?: IDailyQuestsUpdateQuestInput): DailyQuestsUpdateQuestInput;
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestInput message. Does not implicitly {@link DailyQuestUpdateQuestInput.verify|verify} messages.
-     * @param message DailyQuestUpdateQuestInput message or plain object to encode
+     * Encodes the specified DailyQuestsUpdateQuestInput message. Does not implicitly {@link DailyQuestsUpdateQuestInput.verify|verify} messages.
+     * @param message DailyQuestsUpdateQuestInput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IDailyQuestUpdateQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyQuestsUpdateQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestInput message, length delimited. Does not implicitly {@link DailyQuestUpdateQuestInput.verify|verify} messages.
-     * @param message DailyQuestUpdateQuestInput message or plain object to encode
+     * Encodes the specified DailyQuestsUpdateQuestInput message, length delimited. Does not implicitly {@link DailyQuestsUpdateQuestInput.verify|verify} messages.
+     * @param message DailyQuestsUpdateQuestInput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IDailyQuestUpdateQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyQuestsUpdateQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a DailyQuestUpdateQuestInput message from the specified reader or buffer.
+     * Decodes a DailyQuestsUpdateQuestInput message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns DailyQuestUpdateQuestInput
+     * @returns DailyQuestsUpdateQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestUpdateQuestInput;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsUpdateQuestInput;
 
     /**
-     * Decodes a DailyQuestUpdateQuestInput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsUpdateQuestInput message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns DailyQuestUpdateQuestInput
+     * @returns DailyQuestsUpdateQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestUpdateQuestInput;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsUpdateQuestInput;
 
     /**
-     * Verifies a DailyQuestUpdateQuestInput message.
+     * Verifies a DailyQuestsUpdateQuestInput message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a DailyQuestUpdateQuestInput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsUpdateQuestInput message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns DailyQuestUpdateQuestInput
+     * @returns DailyQuestsUpdateQuestInput
      */
-    public static fromObject(object: { [k: string]: any }): DailyQuestUpdateQuestInput;
+    public static fromObject(object: { [k: string]: any }): DailyQuestsUpdateQuestInput;
 
     /**
-     * Creates a plain object from a DailyQuestUpdateQuestInput message. Also converts values to other types if specified.
-     * @param message DailyQuestUpdateQuestInput
+     * Creates a plain object from a DailyQuestsUpdateQuestInput message. Also converts values to other types if specified.
+     * @param message DailyQuestsUpdateQuestInput
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: DailyQuestUpdateQuestInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyQuestsUpdateQuestInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this DailyQuestUpdateQuestInput to JSON.
+     * Converts this DailyQuestsUpdateQuestInput to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for DailyQuestUpdateQuestInput
+     * Gets the default type url for DailyQuestsUpdateQuestInput
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace DailyQuestUpdateQuestInput {
+export namespace DailyQuestsUpdateQuestInput {
 
-    /** Properties of an Items. */
-    interface IItems {
+    /** Properties of a QuestProgress. */
+    interface IQuestProgress {
 
-        /** Items id */
+        /** QuestProgress id */
         id?: (string|null);
 
-        /** Items amount */
+        /** QuestProgress amount */
         amount?: (number|null);
     }
 
-    /** Represents an Items. */
-    class Items implements IItems {
+    /** Represents a QuestProgress. */
+    class QuestProgress implements IQuestProgress {
 
         /**
-         * Constructs a new Items.
+         * Constructs a new QuestProgress.
          * @param [properties] Properties to set
          */
-        constructor(properties?: DailyQuestUpdateQuestInput.IItems);
+        constructor(properties?: DailyQuestsUpdateQuestInput.IQuestProgress);
 
-        /** Items id. */
+        /** QuestProgress id. */
         public id: string;
 
-        /** Items amount. */
+        /** QuestProgress amount. */
         public amount: number;
 
         /**
-         * Creates a new Items instance using the specified properties.
+         * Creates a new QuestProgress instance using the specified properties.
          * @param [properties] Properties to set
-         * @returns Items instance
+         * @returns QuestProgress instance
          */
-        public static create(properties?: DailyQuestUpdateQuestInput.IItems): DailyQuestUpdateQuestInput.Items;
+        public static create(properties?: DailyQuestsUpdateQuestInput.IQuestProgress): DailyQuestsUpdateQuestInput.QuestProgress;
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link DailyQuestUpdateQuestInput.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
+         * Encodes the specified QuestProgress message. Does not implicitly {@link DailyQuestsUpdateQuestInput.QuestProgress.verify|verify} messages.
+         * @param message QuestProgress message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: DailyQuestUpdateQuestInput.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: DailyQuestsUpdateQuestInput.IQuestProgress, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link DailyQuestUpdateQuestInput.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
+         * Encodes the specified QuestProgress message, length delimited. Does not implicitly {@link DailyQuestsUpdateQuestInput.QuestProgress.verify|verify} messages.
+         * @param message QuestProgress message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: DailyQuestUpdateQuestInput.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: DailyQuestsUpdateQuestInput.IQuestProgress, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Decodes an Items message from the specified reader or buffer.
+         * Decodes a QuestProgress message from the specified reader or buffer.
          * @param reader Reader or buffer to decode from
          * @param [length] Message length if known beforehand
-         * @returns Items
+         * @returns QuestProgress
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestUpdateQuestInput.Items;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsUpdateQuestInput.QuestProgress;
 
         /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * Decodes a QuestProgress message from the specified reader or buffer, length delimited.
          * @param reader Reader or buffer to decode from
-         * @returns Items
+         * @returns QuestProgress
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestUpdateQuestInput.Items;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsUpdateQuestInput.QuestProgress;
 
         /**
-         * Verifies an Items message.
+         * Verifies a QuestProgress message.
          * @param message Plain object to verify
          * @returns `null` if valid, otherwise the reason why it is not
          */
         public static verify(message: { [k: string]: any }): (string|null);
 
         /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * Creates a QuestProgress message from a plain object. Also converts values to their respective internal types.
          * @param object Plain object
-         * @returns Items
+         * @returns QuestProgress
          */
-        public static fromObject(object: { [k: string]: any }): DailyQuestUpdateQuestInput.Items;
+        public static fromObject(object: { [k: string]: any }): DailyQuestsUpdateQuestInput.QuestProgress;
 
         /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @param message Items
+         * Creates a plain object from a QuestProgress message. Also converts values to other types if specified.
+         * @param message QuestProgress
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: DailyQuestUpdateQuestInput.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: DailyQuestsUpdateQuestInput.QuestProgress, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
-         * Converts this Items to JSON.
+         * Converts this QuestProgress to JSON.
          * @returns JSON object
          */
         public toJSON(): { [k: string]: any };
 
         /**
-         * Gets the default type url for Items
+         * Gets the default type url for QuestProgress
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
@@ -2950,298 +2570,298 @@ export namespace DailyQuestUpdateQuestInput {
     }
 }
 
-/** Properties of a DailyQuestUpdateQuestOutput. */
-export interface IDailyQuestUpdateQuestOutput {
+/** Properties of a DailyQuestsUpdateQuestOutput. */
+export interface IDailyQuestsUpdateQuestOutput {
 
-    /** DailyQuestUpdateQuestOutput questsCanClaim */
+    /** DailyQuestsUpdateQuestOutput questsCanClaim */
     questsCanClaim?: (string[]|null);
 }
 
-/** Represents a DailyQuestUpdateQuestOutput. */
-export class DailyQuestUpdateQuestOutput implements IDailyQuestUpdateQuestOutput {
+/** Represents a DailyQuestsUpdateQuestOutput. */
+export class DailyQuestsUpdateQuestOutput implements IDailyQuestsUpdateQuestOutput {
 
     /**
-     * Constructs a new DailyQuestUpdateQuestOutput.
+     * Constructs a new DailyQuestsUpdateQuestOutput.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IDailyQuestUpdateQuestOutput);
+    constructor(properties?: IDailyQuestsUpdateQuestOutput);
 
-    /** DailyQuestUpdateQuestOutput questsCanClaim. */
+    /** DailyQuestsUpdateQuestOutput questsCanClaim. */
     public questsCanClaim: string[];
 
     /**
-     * Creates a new DailyQuestUpdateQuestOutput instance using the specified properties.
+     * Creates a new DailyQuestsUpdateQuestOutput instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns DailyQuestUpdateQuestOutput instance
+     * @returns DailyQuestsUpdateQuestOutput instance
      */
-    public static create(properties?: IDailyQuestUpdateQuestOutput): DailyQuestUpdateQuestOutput;
+    public static create(properties?: IDailyQuestsUpdateQuestOutput): DailyQuestsUpdateQuestOutput;
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestOutput message. Does not implicitly {@link DailyQuestUpdateQuestOutput.verify|verify} messages.
-     * @param message DailyQuestUpdateQuestOutput message or plain object to encode
+     * Encodes the specified DailyQuestsUpdateQuestOutput message. Does not implicitly {@link DailyQuestsUpdateQuestOutput.verify|verify} messages.
+     * @param message DailyQuestsUpdateQuestOutput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IDailyQuestUpdateQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyQuestsUpdateQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestOutput message, length delimited. Does not implicitly {@link DailyQuestUpdateQuestOutput.verify|verify} messages.
-     * @param message DailyQuestUpdateQuestOutput message or plain object to encode
+     * Encodes the specified DailyQuestsUpdateQuestOutput message, length delimited. Does not implicitly {@link DailyQuestsUpdateQuestOutput.verify|verify} messages.
+     * @param message DailyQuestsUpdateQuestOutput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IDailyQuestUpdateQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyQuestsUpdateQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a DailyQuestUpdateQuestOutput message from the specified reader or buffer.
+     * Decodes a DailyQuestsUpdateQuestOutput message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns DailyQuestUpdateQuestOutput
+     * @returns DailyQuestsUpdateQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestUpdateQuestOutput;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsUpdateQuestOutput;
 
     /**
-     * Decodes a DailyQuestUpdateQuestOutput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsUpdateQuestOutput message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns DailyQuestUpdateQuestOutput
+     * @returns DailyQuestsUpdateQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestUpdateQuestOutput;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsUpdateQuestOutput;
 
     /**
-     * Verifies a DailyQuestUpdateQuestOutput message.
+     * Verifies a DailyQuestsUpdateQuestOutput message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a DailyQuestUpdateQuestOutput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsUpdateQuestOutput message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns DailyQuestUpdateQuestOutput
+     * @returns DailyQuestsUpdateQuestOutput
      */
-    public static fromObject(object: { [k: string]: any }): DailyQuestUpdateQuestOutput;
+    public static fromObject(object: { [k: string]: any }): DailyQuestsUpdateQuestOutput;
 
     /**
-     * Creates a plain object from a DailyQuestUpdateQuestOutput message. Also converts values to other types if specified.
-     * @param message DailyQuestUpdateQuestOutput
+     * Creates a plain object from a DailyQuestsUpdateQuestOutput message. Also converts values to other types if specified.
+     * @param message DailyQuestsUpdateQuestOutput
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: DailyQuestUpdateQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyQuestsUpdateQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this DailyQuestUpdateQuestOutput to JSON.
+     * Converts this DailyQuestsUpdateQuestOutput to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for DailyQuestUpdateQuestOutput
+     * Gets the default type url for DailyQuestsUpdateQuestOutput
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-/** Properties of a DailyQuestClaimQuestInput. */
-export interface IDailyQuestClaimQuestInput {
+/** Properties of a DailyQuestsClaimQuestInput. */
+export interface IDailyQuestsClaimQuestInput {
 
-    /** DailyQuestClaimQuestInput items */
+    /** DailyQuestsClaimQuestInput items */
     items?: (string[]|null);
 }
 
-/** Represents a DailyQuestClaimQuestInput. */
-export class DailyQuestClaimQuestInput implements IDailyQuestClaimQuestInput {
+/** Represents a DailyQuestsClaimQuestInput. */
+export class DailyQuestsClaimQuestInput implements IDailyQuestsClaimQuestInput {
 
     /**
-     * Constructs a new DailyQuestClaimQuestInput.
+     * Constructs a new DailyQuestsClaimQuestInput.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IDailyQuestClaimQuestInput);
+    constructor(properties?: IDailyQuestsClaimQuestInput);
 
-    /** DailyQuestClaimQuestInput items. */
+    /** DailyQuestsClaimQuestInput items. */
     public items: string[];
 
     /**
-     * Creates a new DailyQuestClaimQuestInput instance using the specified properties.
+     * Creates a new DailyQuestsClaimQuestInput instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns DailyQuestClaimQuestInput instance
+     * @returns DailyQuestsClaimQuestInput instance
      */
-    public static create(properties?: IDailyQuestClaimQuestInput): DailyQuestClaimQuestInput;
+    public static create(properties?: IDailyQuestsClaimQuestInput): DailyQuestsClaimQuestInput;
 
     /**
-     * Encodes the specified DailyQuestClaimQuestInput message. Does not implicitly {@link DailyQuestClaimQuestInput.verify|verify} messages.
-     * @param message DailyQuestClaimQuestInput message or plain object to encode
+     * Encodes the specified DailyQuestsClaimQuestInput message. Does not implicitly {@link DailyQuestsClaimQuestInput.verify|verify} messages.
+     * @param message DailyQuestsClaimQuestInput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IDailyQuestClaimQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyQuestsClaimQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified DailyQuestClaimQuestInput message, length delimited. Does not implicitly {@link DailyQuestClaimQuestInput.verify|verify} messages.
-     * @param message DailyQuestClaimQuestInput message or plain object to encode
+     * Encodes the specified DailyQuestsClaimQuestInput message, length delimited. Does not implicitly {@link DailyQuestsClaimQuestInput.verify|verify} messages.
+     * @param message DailyQuestsClaimQuestInput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IDailyQuestClaimQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyQuestsClaimQuestInput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a DailyQuestClaimQuestInput message from the specified reader or buffer.
+     * Decodes a DailyQuestsClaimQuestInput message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns DailyQuestClaimQuestInput
+     * @returns DailyQuestsClaimQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestClaimQuestInput;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsClaimQuestInput;
 
     /**
-     * Decodes a DailyQuestClaimQuestInput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsClaimQuestInput message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns DailyQuestClaimQuestInput
+     * @returns DailyQuestsClaimQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestClaimQuestInput;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsClaimQuestInput;
 
     /**
-     * Verifies a DailyQuestClaimQuestInput message.
+     * Verifies a DailyQuestsClaimQuestInput message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a DailyQuestClaimQuestInput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsClaimQuestInput message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns DailyQuestClaimQuestInput
+     * @returns DailyQuestsClaimQuestInput
      */
-    public static fromObject(object: { [k: string]: any }): DailyQuestClaimQuestInput;
+    public static fromObject(object: { [k: string]: any }): DailyQuestsClaimQuestInput;
 
     /**
-     * Creates a plain object from a DailyQuestClaimQuestInput message. Also converts values to other types if specified.
-     * @param message DailyQuestClaimQuestInput
+     * Creates a plain object from a DailyQuestsClaimQuestInput message. Also converts values to other types if specified.
+     * @param message DailyQuestsClaimQuestInput
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: DailyQuestClaimQuestInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyQuestsClaimQuestInput, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this DailyQuestClaimQuestInput to JSON.
+     * Converts this DailyQuestsClaimQuestInput to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for DailyQuestClaimQuestInput
+     * Gets the default type url for DailyQuestsClaimQuestInput
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-/** Properties of a DailyQuestClaimQuestOutput. */
-export interface IDailyQuestClaimQuestOutput {
+/** Properties of a DailyQuestsClaimQuestOutput. */
+export interface IDailyQuestsClaimQuestOutput {
 
-    /** DailyQuestClaimQuestOutput rewards */
-    rewards?: (DailyQuestClaimQuestOutput.IRewards[]|null);
+    /** DailyQuestsClaimQuestOutput rewards */
+    rewards?: (DailyQuestsClaimQuestOutput.IRewards[]|null);
 }
 
-/** Represents a DailyQuestClaimQuestOutput. */
-export class DailyQuestClaimQuestOutput implements IDailyQuestClaimQuestOutput {
+/** Represents a DailyQuestsClaimQuestOutput. */
+export class DailyQuestsClaimQuestOutput implements IDailyQuestsClaimQuestOutput {
 
     /**
-     * Constructs a new DailyQuestClaimQuestOutput.
+     * Constructs a new DailyQuestsClaimQuestOutput.
      * @param [properties] Properties to set
      */
-    constructor(properties?: IDailyQuestClaimQuestOutput);
+    constructor(properties?: IDailyQuestsClaimQuestOutput);
 
-    /** DailyQuestClaimQuestOutput rewards. */
-    public rewards: DailyQuestClaimQuestOutput.IRewards[];
+    /** DailyQuestsClaimQuestOutput rewards. */
+    public rewards: DailyQuestsClaimQuestOutput.IRewards[];
 
     /**
-     * Creates a new DailyQuestClaimQuestOutput instance using the specified properties.
+     * Creates a new DailyQuestsClaimQuestOutput instance using the specified properties.
      * @param [properties] Properties to set
-     * @returns DailyQuestClaimQuestOutput instance
+     * @returns DailyQuestsClaimQuestOutput instance
      */
-    public static create(properties?: IDailyQuestClaimQuestOutput): DailyQuestClaimQuestOutput;
+    public static create(properties?: IDailyQuestsClaimQuestOutput): DailyQuestsClaimQuestOutput;
 
     /**
-     * Encodes the specified DailyQuestClaimQuestOutput message. Does not implicitly {@link DailyQuestClaimQuestOutput.verify|verify} messages.
-     * @param message DailyQuestClaimQuestOutput message or plain object to encode
+     * Encodes the specified DailyQuestsClaimQuestOutput message. Does not implicitly {@link DailyQuestsClaimQuestOutput.verify|verify} messages.
+     * @param message DailyQuestsClaimQuestOutput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encode(message: IDailyQuestClaimQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encode(message: IDailyQuestsClaimQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Encodes the specified DailyQuestClaimQuestOutput message, length delimited. Does not implicitly {@link DailyQuestClaimQuestOutput.verify|verify} messages.
-     * @param message DailyQuestClaimQuestOutput message or plain object to encode
+     * Encodes the specified DailyQuestsClaimQuestOutput message, length delimited. Does not implicitly {@link DailyQuestsClaimQuestOutput.verify|verify} messages.
+     * @param message DailyQuestsClaimQuestOutput message or plain object to encode
      * @param [writer] Writer to encode to
      * @returns Writer
      */
-    public static encodeDelimited(message: IDailyQuestClaimQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
+    public static encodeDelimited(message: IDailyQuestsClaimQuestOutput, writer?: $protobuf.Writer): $protobuf.Writer;
 
     /**
-     * Decodes a DailyQuestClaimQuestOutput message from the specified reader or buffer.
+     * Decodes a DailyQuestsClaimQuestOutput message from the specified reader or buffer.
      * @param reader Reader or buffer to decode from
      * @param [length] Message length if known beforehand
-     * @returns DailyQuestClaimQuestOutput
+     * @returns DailyQuestsClaimQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestClaimQuestOutput;
+    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsClaimQuestOutput;
 
     /**
-     * Decodes a DailyQuestClaimQuestOutput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsClaimQuestOutput message from the specified reader or buffer, length delimited.
      * @param reader Reader or buffer to decode from
-     * @returns DailyQuestClaimQuestOutput
+     * @returns DailyQuestsClaimQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestClaimQuestOutput;
+    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsClaimQuestOutput;
 
     /**
-     * Verifies a DailyQuestClaimQuestOutput message.
+     * Verifies a DailyQuestsClaimQuestOutput message.
      * @param message Plain object to verify
      * @returns `null` if valid, otherwise the reason why it is not
      */
     public static verify(message: { [k: string]: any }): (string|null);
 
     /**
-     * Creates a DailyQuestClaimQuestOutput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsClaimQuestOutput message from a plain object. Also converts values to their respective internal types.
      * @param object Plain object
-     * @returns DailyQuestClaimQuestOutput
+     * @returns DailyQuestsClaimQuestOutput
      */
-    public static fromObject(object: { [k: string]: any }): DailyQuestClaimQuestOutput;
+    public static fromObject(object: { [k: string]: any }): DailyQuestsClaimQuestOutput;
 
     /**
-     * Creates a plain object from a DailyQuestClaimQuestOutput message. Also converts values to other types if specified.
-     * @param message DailyQuestClaimQuestOutput
+     * Creates a plain object from a DailyQuestsClaimQuestOutput message. Also converts values to other types if specified.
+     * @param message DailyQuestsClaimQuestOutput
      * @param [options] Conversion options
      * @returns Plain object
      */
-    public static toObject(message: DailyQuestClaimQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
+    public static toObject(message: DailyQuestsClaimQuestOutput, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
     /**
-     * Converts this DailyQuestClaimQuestOutput to JSON.
+     * Converts this DailyQuestsClaimQuestOutput to JSON.
      * @returns JSON object
      */
     public toJSON(): { [k: string]: any };
 
     /**
-     * Gets the default type url for DailyQuestClaimQuestOutput
+     * Gets the default type url for DailyQuestsClaimQuestOutput
      * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns The default type url
      */
     public static getTypeUrl(typeUrlPrefix?: string): string;
 }
 
-export namespace DailyQuestClaimQuestOutput {
+export namespace DailyQuestsClaimQuestOutput {
 
     /** Properties of a Rewards. */
     interface IRewards {
@@ -3260,7 +2880,7 @@ export namespace DailyQuestClaimQuestOutput {
          * Constructs a new Rewards.
          * @param [properties] Properties to set
          */
-        constructor(properties?: DailyQuestClaimQuestOutput.IRewards);
+        constructor(properties?: DailyQuestsClaimQuestOutput.IRewards);
 
         /** Rewards itemId. */
         public itemId: string;
@@ -3273,23 +2893,23 @@ export namespace DailyQuestClaimQuestOutput {
          * @param [properties] Properties to set
          * @returns Rewards instance
          */
-        public static create(properties?: DailyQuestClaimQuestOutput.IRewards): DailyQuestClaimQuestOutput.Rewards;
+        public static create(properties?: DailyQuestsClaimQuestOutput.IRewards): DailyQuestsClaimQuestOutput.Rewards;
 
         /**
-         * Encodes the specified Rewards message. Does not implicitly {@link DailyQuestClaimQuestOutput.Rewards.verify|verify} messages.
+         * Encodes the specified Rewards message. Does not implicitly {@link DailyQuestsClaimQuestOutput.Rewards.verify|verify} messages.
          * @param message Rewards message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encode(message: DailyQuestClaimQuestOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encode(message: DailyQuestsClaimQuestOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
-         * Encodes the specified Rewards message, length delimited. Does not implicitly {@link DailyQuestClaimQuestOutput.Rewards.verify|verify} messages.
+         * Encodes the specified Rewards message, length delimited. Does not implicitly {@link DailyQuestsClaimQuestOutput.Rewards.verify|verify} messages.
          * @param message Rewards message or plain object to encode
          * @param [writer] Writer to encode to
          * @returns Writer
          */
-        public static encodeDelimited(message: DailyQuestClaimQuestOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
+        public static encodeDelimited(message: DailyQuestsClaimQuestOutput.IRewards, writer?: $protobuf.Writer): $protobuf.Writer;
 
         /**
          * Decodes a Rewards message from the specified reader or buffer.
@@ -3299,7 +2919,7 @@ export namespace DailyQuestClaimQuestOutput {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestClaimQuestOutput.Rewards;
+        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): DailyQuestsClaimQuestOutput.Rewards;
 
         /**
          * Decodes a Rewards message from the specified reader or buffer, length delimited.
@@ -3308,7 +2928,7 @@ export namespace DailyQuestClaimQuestOutput {
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestClaimQuestOutput.Rewards;
+        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): DailyQuestsClaimQuestOutput.Rewards;
 
         /**
          * Verifies a Rewards message.
@@ -3322,7 +2942,7 @@ export namespace DailyQuestClaimQuestOutput {
          * @param object Plain object
          * @returns Rewards
          */
-        public static fromObject(object: { [k: string]: any }): DailyQuestClaimQuestOutput.Rewards;
+        public static fromObject(object: { [k: string]: any }): DailyQuestsClaimQuestOutput.Rewards;
 
         /**
          * Creates a plain object from a Rewards message. Also converts values to other types if specified.
@@ -3330,7 +2950,7 @@ export namespace DailyQuestClaimQuestOutput {
          * @param [options] Conversion options
          * @returns Plain object
          */
-        public static toObject(message: DailyQuestClaimQuestOutput.Rewards, options?: $protobuf.IConversionOptions): { [k: string]: any };
+        public static toObject(message: DailyQuestsClaimQuestOutput.Rewards, options?: $protobuf.IConversionOptions): { [k: string]: any };
 
         /**
          * Converts this Rewards to JSON.
@@ -3758,233 +3378,6 @@ export namespace DailyRewardsClaimRewardsOutput {
 
         /**
          * Gets the default type url for Rewards
-         * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns The default type url
-         */
-        public static getTypeUrl(typeUrlPrefix?: string): string;
-    }
-}
-
-/** Properties of a LuckyWheel. */
-export interface ILuckyWheel {
-
-    /** LuckyWheel maxFullSpins */
-    maxFullSpins?: (number|null);
-
-    /** LuckyWheel minFullSpins */
-    minFullSpins?: (number|null);
-
-    /** LuckyWheel dailyLimit */
-    dailyLimit?: (number|null);
-
-    /** LuckyWheel items */
-    items?: (LuckyWheel.IItems[]|null);
-}
-
-/** Represents a LuckyWheel. */
-export class LuckyWheel implements ILuckyWheel {
-
-    /**
-     * Constructs a new LuckyWheel.
-     * @param [properties] Properties to set
-     */
-    constructor(properties?: ILuckyWheel);
-
-    /** LuckyWheel maxFullSpins. */
-    public maxFullSpins: number;
-
-    /** LuckyWheel minFullSpins. */
-    public minFullSpins: number;
-
-    /** LuckyWheel dailyLimit. */
-    public dailyLimit: number;
-
-    /** LuckyWheel items. */
-    public items: LuckyWheel.IItems[];
-
-    /**
-     * Creates a new LuckyWheel instance using the specified properties.
-     * @param [properties] Properties to set
-     * @returns LuckyWheel instance
-     */
-    public static create(properties?: ILuckyWheel): LuckyWheel;
-
-    /**
-     * Encodes the specified LuckyWheel message. Does not implicitly {@link LuckyWheel.verify|verify} messages.
-     * @param message LuckyWheel message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encode(message: ILuckyWheel, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Encodes the specified LuckyWheel message, length delimited. Does not implicitly {@link LuckyWheel.verify|verify} messages.
-     * @param message LuckyWheel message or plain object to encode
-     * @param [writer] Writer to encode to
-     * @returns Writer
-     */
-    public static encodeDelimited(message: ILuckyWheel, writer?: $protobuf.Writer): $protobuf.Writer;
-
-    /**
-     * Decodes a LuckyWheel message from the specified reader or buffer.
-     * @param reader Reader or buffer to decode from
-     * @param [length] Message length if known beforehand
-     * @returns LuckyWheel
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheel;
-
-    /**
-     * Decodes a LuckyWheel message from the specified reader or buffer, length delimited.
-     * @param reader Reader or buffer to decode from
-     * @returns LuckyWheel
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheel;
-
-    /**
-     * Verifies a LuckyWheel message.
-     * @param message Plain object to verify
-     * @returns `null` if valid, otherwise the reason why it is not
-     */
-    public static verify(message: { [k: string]: any }): (string|null);
-
-    /**
-     * Creates a LuckyWheel message from a plain object. Also converts values to their respective internal types.
-     * @param object Plain object
-     * @returns LuckyWheel
-     */
-    public static fromObject(object: { [k: string]: any }): LuckyWheel;
-
-    /**
-     * Creates a plain object from a LuckyWheel message. Also converts values to other types if specified.
-     * @param message LuckyWheel
-     * @param [options] Conversion options
-     * @returns Plain object
-     */
-    public static toObject(message: LuckyWheel, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-    /**
-     * Converts this LuckyWheel to JSON.
-     * @returns JSON object
-     */
-    public toJSON(): { [k: string]: any };
-
-    /**
-     * Gets the default type url for LuckyWheel
-     * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns The default type url
-     */
-    public static getTypeUrl(typeUrlPrefix?: string): string;
-}
-
-export namespace LuckyWheel {
-
-    /** Properties of an Items. */
-    interface IItems {
-
-        /** Items itemId */
-        itemId?: (string|null);
-
-        /** Items weight */
-        weight?: (number|null);
-
-        /** Items quantity */
-        quantity?: (number|null);
-    }
-
-    /** Represents an Items. */
-    class Items implements IItems {
-
-        /**
-         * Constructs a new Items.
-         * @param [properties] Properties to set
-         */
-        constructor(properties?: LuckyWheel.IItems);
-
-        /** Items itemId. */
-        public itemId: string;
-
-        /** Items weight. */
-        public weight: number;
-
-        /** Items quantity. */
-        public quantity: number;
-
-        /**
-         * Creates a new Items instance using the specified properties.
-         * @param [properties] Properties to set
-         * @returns Items instance
-         */
-        public static create(properties?: LuckyWheel.IItems): LuckyWheel.Items;
-
-        /**
-         * Encodes the specified Items message. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encode(message: LuckyWheel.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
-         * @param message Items message or plain object to encode
-         * @param [writer] Writer to encode to
-         * @returns Writer
-         */
-        public static encodeDelimited(message: LuckyWheel.IItems, writer?: $protobuf.Writer): $protobuf.Writer;
-
-        /**
-         * Decodes an Items message from the specified reader or buffer.
-         * @param reader Reader or buffer to decode from
-         * @param [length] Message length if known beforehand
-         * @returns Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decode(reader: ($protobuf.Reader|Uint8Array), length?: number): LuckyWheel.Items;
-
-        /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
-         * @param reader Reader or buffer to decode from
-         * @returns Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        public static decodeDelimited(reader: ($protobuf.Reader|Uint8Array)): LuckyWheel.Items;
-
-        /**
-         * Verifies an Items message.
-         * @param message Plain object to verify
-         * @returns `null` if valid, otherwise the reason why it is not
-         */
-        public static verify(message: { [k: string]: any }): (string|null);
-
-        /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
-         * @param object Plain object
-         * @returns Items
-         */
-        public static fromObject(object: { [k: string]: any }): LuckyWheel.Items;
-
-        /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @param message Items
-         * @param [options] Conversion options
-         * @returns Plain object
-         */
-        public static toObject(message: LuckyWheel.Items, options?: $protobuf.IConversionOptions): { [k: string]: any };
-
-        /**
-         * Converts this Items to JSON.
-         * @returns JSON object
-         */
-        public toJSON(): { [k: string]: any };
-
-        /**
-         * Gets the default type url for Items
          * @param [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns The default type url
          */
@@ -4537,42 +3930,42 @@ export class Inbox extends $protobuf.rpc.Service {
     public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Inbox;
 
     /**
-     * Calls getInfo.
+     * Calls GetInfo.
      * @param request Empty message or plain object
      * @param callback Node-style callback called with the error, if any, and InboxList
      */
-    public getInfo(request: IEmpty, callback: Inbox.getInfoCallback): void;
+    public getInfo(request: IEmpty, callback: Inbox.GetInfoCallback): void;
 
     /**
-     * Calls getInfo.
+     * Calls GetInfo.
      * @param request Empty message or plain object
      * @returns Promise
      */
     public getInfo(request: IEmpty): Promise<InboxList>;
 
     /**
-     * Calls claimItem.
+     * Calls ClaimItem.
      * @param request InboxClaimInput message or plain object
      * @param callback Node-style callback called with the error, if any, and InboxClaimOutput
      */
-    public claimItem(request: IInboxClaimInput, callback: Inbox.claimItemCallback): void;
+    public claimItem(request: IInboxClaimInput, callback: Inbox.ClaimItemCallback): void;
 
     /**
-     * Calls claimItem.
+     * Calls ClaimItem.
      * @param request InboxClaimInput message or plain object
      * @returns Promise
      */
     public claimItem(request: IInboxClaimInput): Promise<InboxClaimOutput>;
 
     /**
-     * Calls markDeleteItem.
+     * Calls MarkDeleteItem.
      * @param request InboxDeleteInput message or plain object
      * @param callback Node-style callback called with the error, if any, and InboxDeleteOutput
      */
-    public markDeleteItem(request: IInboxDeleteInput, callback: Inbox.markDeleteItemCallback): void;
+    public markDeleteItem(request: IInboxDeleteInput, callback: Inbox.MarkDeleteItemCallback): void;
 
     /**
-     * Calls markDeleteItem.
+     * Calls MarkDeleteItem.
      * @param request InboxDeleteInput message or plain object
      * @returns Promise
      */
@@ -4586,21 +3979,21 @@ export namespace Inbox {
      * @param error Error, if any
      * @param [response] InboxList
      */
-    type getInfoCallback = (error: (Error|null), response?: InboxList) => void;
+    type GetInfoCallback = (error: (Error|null), response?: InboxList) => void;
 
     /**
      * Callback as used by {@link Inbox#claimItem}.
      * @param error Error, if any
      * @param [response] InboxClaimOutput
      */
-    type claimItemCallback = (error: (Error|null), response?: InboxClaimOutput) => void;
+    type ClaimItemCallback = (error: (Error|null), response?: InboxClaimOutput) => void;
 
     /**
      * Callback as used by {@link Inbox#markDeleteItem}.
      * @param error Error, if any
      * @param [response] InboxDeleteOutput
      */
-    type markDeleteItemCallback = (error: (Error|null), response?: InboxDeleteOutput) => void;
+    type MarkDeleteItemCallback = (error: (Error|null), response?: InboxDeleteOutput) => void;
 }
 
 /** Properties of an InboxList. */
@@ -5569,42 +4962,42 @@ export class Leaderboard extends $protobuf.rpc.Service {
     public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Leaderboard;
 
     /**
-     * Calls getTopScore.
+     * Calls GetTopScore.
      * @param request GetTopLeaderboardInput message or plain object
      * @param callback Node-style callback called with the error, if any, and TopLeaderboard
      */
-    public getTopScore(request: IGetTopLeaderboardInput, callback: Leaderboard.getTopScoreCallback): void;
+    public getTopScore(request: IGetTopLeaderboardInput, callback: Leaderboard.GetTopScoreCallback): void;
 
     /**
-     * Calls getTopScore.
+     * Calls GetTopScore.
      * @param request GetTopLeaderboardInput message or plain object
      * @returns Promise
      */
     public getTopScore(request: IGetTopLeaderboardInput): Promise<TopLeaderboard>;
 
     /**
-     * Calls getMyRank.
+     * Calls GetMyRank.
      * @param request GetMyRankLeaderboardInput message or plain object
      * @param callback Node-style callback called with the error, if any, and GetMyRankLeaderboardOutput
      */
-    public getMyRank(request: IGetMyRankLeaderboardInput, callback: Leaderboard.getMyRankCallback): void;
+    public getMyRank(request: IGetMyRankLeaderboardInput, callback: Leaderboard.GetMyRankCallback): void;
 
     /**
-     * Calls getMyRank.
+     * Calls GetMyRank.
      * @param request GetMyRankLeaderboardInput message or plain object
      * @returns Promise
      */
     public getMyRank(request: IGetMyRankLeaderboardInput): Promise<GetMyRankLeaderboardOutput>;
 
     /**
-     * Calls updateScore.
+     * Calls UpdateScore.
      * @param request UpdateScoreLeaderboardInput message or plain object
      * @param callback Node-style callback called with the error, if any, and UpdateScoreLeaderboardOutput
      */
-    public updateScore(request: IUpdateScoreLeaderboardInput, callback: Leaderboard.updateScoreCallback): void;
+    public updateScore(request: IUpdateScoreLeaderboardInput, callback: Leaderboard.UpdateScoreCallback): void;
 
     /**
-     * Calls updateScore.
+     * Calls UpdateScore.
      * @param request UpdateScoreLeaderboardInput message or plain object
      * @returns Promise
      */
@@ -5618,21 +5011,21 @@ export namespace Leaderboard {
      * @param error Error, if any
      * @param [response] TopLeaderboard
      */
-    type getTopScoreCallback = (error: (Error|null), response?: TopLeaderboard) => void;
+    type GetTopScoreCallback = (error: (Error|null), response?: TopLeaderboard) => void;
 
     /**
      * Callback as used by {@link Leaderboard#getMyRank}.
      * @param error Error, if any
      * @param [response] GetMyRankLeaderboardOutput
      */
-    type getMyRankCallback = (error: (Error|null), response?: GetMyRankLeaderboardOutput) => void;
+    type GetMyRankCallback = (error: (Error|null), response?: GetMyRankLeaderboardOutput) => void;
 
     /**
      * Callback as used by {@link Leaderboard#updateScore}.
      * @param error Error, if any
      * @param [response] UpdateScoreLeaderboardOutput
      */
-    type updateScoreCallback = (error: (Error|null), response?: UpdateScoreLeaderboardOutput) => void;
+    type UpdateScoreCallback = (error: (Error|null), response?: UpdateScoreLeaderboardOutput) => void;
 }
 
 /** Properties of a GetTopLeaderboardInput. */
@@ -5664,7 +5057,7 @@ export class GetTopLeaderboardInput implements IGetTopLeaderboardInput {
     constructor(properties?: IGetTopLeaderboardInput);
 
     /** GetTopLeaderboardInput name. */
-    public name?: (string|null);
+    public name: string;
 
     /** GetTopLeaderboardInput offset. */
     public offset: number;
@@ -5673,16 +5066,10 @@ export class GetTopLeaderboardInput implements IGetTopLeaderboardInput {
     public country: string;
 
     /** GetTopLeaderboardInput count. */
-    public count?: (number|null);
+    public count: number;
 
     /** GetTopLeaderboardInput reverseOrder. */
     public reverseOrder: boolean;
-
-    /** GetTopLeaderboardInput _name. */
-    public _name?: "name";
-
-    /** GetTopLeaderboardInput _count. */
-    public _count?: "count";
 
     /**
      * Creates a new GetTopLeaderboardInput instance using the specified properties.
@@ -6552,42 +5939,42 @@ export class Player extends $protobuf.rpc.Service {
     public static create(rpcImpl: $protobuf.RPCImpl, requestDelimited?: boolean, responseDelimited?: boolean): Player;
 
     /**
-     * Calls getProfile.
+     * Calls GetProfile.
      * @param request Empty message or plain object
      * @param callback Node-style callback called with the error, if any, and PlayerProfileRes
      */
-    public getProfile(request: IEmpty, callback: Player.getProfileCallback): void;
+    public getProfile(request: IEmpty, callback: Player.GetProfileCallback): void;
 
     /**
-     * Calls getProfile.
+     * Calls GetProfile.
      * @param request Empty message or plain object
      * @returns Promise
      */
     public getProfile(request: IEmpty): Promise<PlayerProfileRes>;
 
     /**
-     * Calls updateProfile.
+     * Calls UpdateProfile.
      * @param request PlayerProfileReq message or plain object
      * @param callback Node-style callback called with the error, if any, and PlayerProfileRes
      */
-    public updateProfile(request: IPlayerProfileReq, callback: Player.updateProfileCallback): void;
+    public updateProfile(request: IPlayerProfileReq, callback: Player.UpdateProfileCallback): void;
 
     /**
-     * Calls updateProfile.
+     * Calls UpdateProfile.
      * @param request PlayerProfileReq message or plain object
      * @returns Promise
      */
     public updateProfile(request: IPlayerProfileReq): Promise<PlayerProfileRes>;
 
     /**
-     * Calls getData.
+     * Calls GetData.
      * @param request Empty message or plain object
      * @param callback Node-style callback called with the error, if any, and PlayerDataRes
      */
-    public getData(request: IEmpty, callback: Player.getDataCallback): void;
+    public getData(request: IEmpty, callback: Player.GetDataCallback): void;
 
     /**
-     * Calls getData.
+     * Calls GetData.
      * @param request Empty message or plain object
      * @returns Promise
      */
@@ -6601,21 +5988,21 @@ export namespace Player {
      * @param error Error, if any
      * @param [response] PlayerProfileRes
      */
-    type getProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
+    type GetProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
 
     /**
      * Callback as used by {@link Player#updateProfile}.
      * @param error Error, if any
      * @param [response] PlayerProfileRes
      */
-    type updateProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
+    type UpdateProfileCallback = (error: (Error|null), response?: PlayerProfileRes) => void;
 
     /**
      * Callback as used by {@link Player#getData}.
      * @param error Error, if any
      * @param [response] PlayerDataRes
      */
-    type getDataCallback = (error: (Error|null), response?: PlayerDataRes) => void;
+    type GetDataCallback = (error: (Error|null), response?: PlayerDataRes) => void;
 }
 
 /** Properties of a PlayerProfileRes. */

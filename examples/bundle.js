@@ -42,292 +42,192 @@ $root.Blueprint = (function() {
     };
 
     /**
-     * Callback as used by {@link Blueprint#characters}.
+     * Callback as used by {@link Blueprint#getDailyQuests}.
      * @memberof Blueprint
-     * @typedef charactersCallback
+     * @typedef GetDailyQuestsCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {CHARACTERS} [response] CHARACTERS
+     * @param {DailyQuests} [response] DailyQuests
      */
 
     /**
-     * Calls characters.
-     * @function characters
+     * Calls GetDailyQuests.
+     * @function getDailyQuests
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.charactersCallback} callback Node-style callback called with the error, if any, and CHARACTERS
+     * @param {Blueprint.GetDailyQuestsCallback} callback Node-style callback called with the error, if any, and DailyQuests
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Blueprint.prototype.characters = function characters(request, callback) {
-        return this.rpcCall(characters, $root.Empty, $root.CHARACTERS, request, callback);
-    }, "name", { value: "characters" });
+    Object.defineProperty(Blueprint.prototype.getDailyQuests = function getDailyQuests(request, callback) {
+        return this.rpcCall(getDailyQuests, $root.Empty, $root.DailyQuests, request, callback);
+    }, "name", { value: "GetDailyQuests" });
 
     /**
-     * Calls characters.
-     * @function characters
+     * Calls GetDailyQuests.
+     * @function getDailyQuests
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<CHARACTERS>} Promise
+     * @returns {Promise<DailyQuests>} Promise
      * @variation 2
      */
 
     /**
-     * Callback as used by {@link Blueprint#daily_quest}.
+     * Callback as used by {@link Blueprint#getDailyRewards}.
      * @memberof Blueprint
-     * @typedef daily_questCallback
+     * @typedef GetDailyRewardsCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {DAILY_QUEST} [response] DAILY_QUEST
+     * @param {DailyRewards} [response] DailyRewards
      */
 
     /**
-     * Calls daily_quest.
-     * @function daily_quest
+     * Calls GetDailyRewards.
+     * @function getDailyRewards
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.daily_questCallback} callback Node-style callback called with the error, if any, and DAILY_QUEST
+     * @param {Blueprint.GetDailyRewardsCallback} callback Node-style callback called with the error, if any, and DailyRewards
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Blueprint.prototype.daily_quest = function daily_quest(request, callback) {
-        return this.rpcCall(daily_quest, $root.Empty, $root.DAILY_QUEST, request, callback);
-    }, "name", { value: "daily_quest" });
+    Object.defineProperty(Blueprint.prototype.getDailyRewards = function getDailyRewards(request, callback) {
+        return this.rpcCall(getDailyRewards, $root.Empty, $root.DailyRewards, request, callback);
+    }, "name", { value: "GetDailyRewards" });
 
     /**
-     * Calls daily_quest.
-     * @function daily_quest
+     * Calls GetDailyRewards.
+     * @function getDailyRewards
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<DAILY_QUEST>} Promise
+     * @returns {Promise<DailyRewards>} Promise
      * @variation 2
      */
 
     /**
-     * Callback as used by {@link Blueprint#daily_rewards}.
+     * Callback as used by {@link Blueprint#getItemTable}.
      * @memberof Blueprint
-     * @typedef daily_rewardsCallback
+     * @typedef GetItemTableCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {DAILY_REWARDS} [response] DAILY_REWARDS
+     * @param {ItemTable} [response] ItemTable
      */
 
     /**
-     * Calls daily_rewards.
-     * @function daily_rewards
+     * Calls GetItemTable.
+     * @function getItemTable
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.daily_rewardsCallback} callback Node-style callback called with the error, if any, and DAILY_REWARDS
+     * @param {Blueprint.GetItemTableCallback} callback Node-style callback called with the error, if any, and ItemTable
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Blueprint.prototype.daily_rewards = function daily_rewards(request, callback) {
-        return this.rpcCall(daily_rewards, $root.Empty, $root.DAILY_REWARDS, request, callback);
-    }, "name", { value: "daily_rewards" });
+    Object.defineProperty(Blueprint.prototype.getItemTable = function getItemTable(request, callback) {
+        return this.rpcCall(getItemTable, $root.Empty, $root.ItemTable, request, callback);
+    }, "name", { value: "GetItemTable" });
 
     /**
-     * Calls daily_rewards.
-     * @function daily_rewards
+     * Calls GetItemTable.
+     * @function getItemTable
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<DAILY_REWARDS>} Promise
+     * @returns {Promise<ItemTable>} Promise
      * @variation 2
      */
 
     /**
-     * Callback as used by {@link Blueprint#equipments}.
+     * Callback as used by {@link Blueprint#getLuckyWheel}.
      * @memberof Blueprint
-     * @typedef equipmentsCallback
+     * @typedef GetLuckyWheelCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {EQUIPMENTS} [response] EQUIPMENTS
+     * @param {LuckyWheel} [response] LuckyWheel
      */
 
     /**
-     * Calls equipments.
-     * @function equipments
+     * Calls GetLuckyWheel.
+     * @function getLuckyWheel
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.equipmentsCallback} callback Node-style callback called with the error, if any, and EQUIPMENTS
+     * @param {Blueprint.GetLuckyWheelCallback} callback Node-style callback called with the error, if any, and LuckyWheel
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Blueprint.prototype.equipments = function equipments(request, callback) {
-        return this.rpcCall(equipments, $root.Empty, $root.EQUIPMENTS, request, callback);
-    }, "name", { value: "equipments" });
+    Object.defineProperty(Blueprint.prototype.getLuckyWheel = function getLuckyWheel(request, callback) {
+        return this.rpcCall(getLuckyWheel, $root.Empty, $root.LuckyWheel, request, callback);
+    }, "name", { value: "GetLuckyWheel" });
 
     /**
-     * Calls equipments.
-     * @function equipments
+     * Calls GetLuckyWheel.
+     * @function getLuckyWheel
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<EQUIPMENTS>} Promise
+     * @returns {Promise<LuckyWheel>} Promise
      * @variation 2
      */
 
     /**
-     * Callback as used by {@link Blueprint#item_table}.
+     * Callback as used by {@link Blueprint#getProgressQuests}.
      * @memberof Blueprint
-     * @typedef item_tableCallback
+     * @typedef GetProgressQuestsCallback
      * @type {function}
      * @param {Error|null} error Error, if any
-     * @param {ITEM_TABLE} [response] ITEM_TABLE
+     * @param {ProgressQuests} [response] ProgressQuests
      */
 
     /**
-     * Calls item_table.
-     * @function item_table
+     * Calls GetProgressQuests.
+     * @function getProgressQuests
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.item_tableCallback} callback Node-style callback called with the error, if any, and ITEM_TABLE
+     * @param {Blueprint.GetProgressQuestsCallback} callback Node-style callback called with the error, if any, and ProgressQuests
      * @returns {undefined}
      * @variation 1
      */
-    Object.defineProperty(Blueprint.prototype.item_table = function item_table(request, callback) {
-        return this.rpcCall(item_table, $root.Empty, $root.ITEM_TABLE, request, callback);
-    }, "name", { value: "item_table" });
+    Object.defineProperty(Blueprint.prototype.getProgressQuests = function getProgressQuests(request, callback) {
+        return this.rpcCall(getProgressQuests, $root.Empty, $root.ProgressQuests, request, callback);
+    }, "name", { value: "GetProgressQuests" });
 
     /**
-     * Calls item_table.
-     * @function item_table
+     * Calls GetProgressQuests.
+     * @function getProgressQuests
      * @memberof Blueprint
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<ITEM_TABLE>} Promise
-     * @variation 2
-     */
-
-    /**
-     * Callback as used by {@link Blueprint#lucky_wheel}.
-     * @memberof Blueprint
-     * @typedef lucky_wheelCallback
-     * @type {function}
-     * @param {Error|null} error Error, if any
-     * @param {LUCKY_WHEEL} [response] LUCKY_WHEEL
-     */
-
-    /**
-     * Calls lucky_wheel.
-     * @function lucky_wheel
-     * @memberof Blueprint
-     * @instance
-     * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.lucky_wheelCallback} callback Node-style callback called with the error, if any, and LUCKY_WHEEL
-     * @returns {undefined}
-     * @variation 1
-     */
-    Object.defineProperty(Blueprint.prototype.lucky_wheel = function lucky_wheel(request, callback) {
-        return this.rpcCall(lucky_wheel, $root.Empty, $root.LUCKY_WHEEL, request, callback);
-    }, "name", { value: "lucky_wheel" });
-
-    /**
-     * Calls lucky_wheel.
-     * @function lucky_wheel
-     * @memberof Blueprint
-     * @instance
-     * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<LUCKY_WHEEL>} Promise
-     * @variation 2
-     */
-
-    /**
-     * Callback as used by {@link Blueprint#progress_quest}.
-     * @memberof Blueprint
-     * @typedef progress_questCallback
-     * @type {function}
-     * @param {Error|null} error Error, if any
-     * @param {PROGRESS_QUEST} [response] PROGRESS_QUEST
-     */
-
-    /**
-     * Calls progress_quest.
-     * @function progress_quest
-     * @memberof Blueprint
-     * @instance
-     * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.progress_questCallback} callback Node-style callback called with the error, if any, and PROGRESS_QUEST
-     * @returns {undefined}
-     * @variation 1
-     */
-    Object.defineProperty(Blueprint.prototype.progress_quest = function progress_quest(request, callback) {
-        return this.rpcCall(progress_quest, $root.Empty, $root.PROGRESS_QUEST, request, callback);
-    }, "name", { value: "progress_quest" });
-
-    /**
-     * Calls progress_quest.
-     * @function progress_quest
-     * @memberof Blueprint
-     * @instance
-     * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<PROGRESS_QUEST>} Promise
-     * @variation 2
-     */
-
-    /**
-     * Callback as used by {@link Blueprint#test}.
-     * @memberof Blueprint
-     * @typedef testCallback
-     * @type {function}
-     * @param {Error|null} error Error, if any
-     * @param {TEST} [response] TEST
-     */
-
-    /**
-     * Calls test.
-     * @function test
-     * @memberof Blueprint
-     * @instance
-     * @param {IEmpty} request Empty message or plain object
-     * @param {Blueprint.testCallback} callback Node-style callback called with the error, if any, and TEST
-     * @returns {undefined}
-     * @variation 1
-     */
-    Object.defineProperty(Blueprint.prototype.test = function test(request, callback) {
-        return this.rpcCall(test, $root.Empty, $root.TEST, request, callback);
-    }, "name", { value: "test" });
-
-    /**
-     * Calls test.
-     * @function test
-     * @memberof Blueprint
-     * @instance
-     * @param {IEmpty} request Empty message or plain object
-     * @returns {Promise<TEST>} Promise
+     * @returns {Promise<ProgressQuests>} Promise
      * @variation 2
      */
 
     return Blueprint;
 })();
 
-$root.CHARACTERS = (function() {
+$root.DailyQuests = (function() {
 
     /**
-     * Properties of a CHARACTERS.
-     * @exports ICHARACTERS
-     * @interface ICHARACTERS
-     * @property {string|null} [name] CHARACTERS name
-     * @property {Array.<CHARACTERS.IItems>|null} [items] CHARACTERS items
+     * Properties of a DailyQuests.
+     * @exports IDailyQuests
+     * @interface IDailyQuests
+     * @property {Array.<DailyQuests.IQuests>|null} [quests] DailyQuests quests
      */
 
     /**
-     * Constructs a new CHARACTERS.
-     * @exports CHARACTERS
-     * @classdesc Represents a CHARACTERS.
-     * @implements ICHARACTERS
+     * Constructs a new DailyQuests.
+     * @exports DailyQuests
+     * @classdesc Represents a DailyQuests.
+     * @implements IDailyQuests
      * @constructor
-     * @param {ICHARACTERS=} [properties] Properties to set
+     * @param {IDailyQuests=} [properties] Properties to set
      */
-    function CHARACTERS(properties) {
-        this.items = [];
+    function DailyQuests(properties) {
+        this.quests = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -335,92 +235,78 @@ $root.CHARACTERS = (function() {
     }
 
     /**
-     * CHARACTERS name.
-     * @member {string} name
-     * @memberof CHARACTERS
+     * DailyQuests quests.
+     * @member {Array.<DailyQuests.IQuests>} quests
+     * @memberof DailyQuests
      * @instance
      */
-    CHARACTERS.prototype.name = "";
+    DailyQuests.prototype.quests = $util.emptyArray;
 
     /**
-     * CHARACTERS items.
-     * @member {Array.<CHARACTERS.IItems>} items
-     * @memberof CHARACTERS
-     * @instance
-     */
-    CHARACTERS.prototype.items = $util.emptyArray;
-
-    /**
-     * Creates a new CHARACTERS instance using the specified properties.
+     * Creates a new DailyQuests instance using the specified properties.
      * @function create
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
-     * @param {ICHARACTERS=} [properties] Properties to set
-     * @returns {CHARACTERS} CHARACTERS instance
+     * @param {IDailyQuests=} [properties] Properties to set
+     * @returns {DailyQuests} DailyQuests instance
      */
-    CHARACTERS.create = function create(properties) {
-        return new CHARACTERS(properties);
+    DailyQuests.create = function create(properties) {
+        return new DailyQuests(properties);
     };
 
     /**
-     * Encodes the specified CHARACTERS message. Does not implicitly {@link CHARACTERS.verify|verify} messages.
+     * Encodes the specified DailyQuests message. Does not implicitly {@link DailyQuests.verify|verify} messages.
      * @function encode
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
-     * @param {ICHARACTERS} message CHARACTERS message or plain object to encode
+     * @param {IDailyQuests} message DailyQuests message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    CHARACTERS.encode = function encode(message, writer) {
+    DailyQuests.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-        if (message.items != null && message.items.length)
-            for (var i = 0; i < message.items.length; ++i)
-                $root.CHARACTERS.Items.encode(message.items[i], writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+        if (message.quests != null && message.quests.length)
+            for (var i = 0; i < message.quests.length; ++i)
+                $root.DailyQuests.Quests.encode(message.quests[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified CHARACTERS message, length delimited. Does not implicitly {@link CHARACTERS.verify|verify} messages.
+     * Encodes the specified DailyQuests message, length delimited. Does not implicitly {@link DailyQuests.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
-     * @param {ICHARACTERS} message CHARACTERS message or plain object to encode
+     * @param {IDailyQuests} message DailyQuests message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    CHARACTERS.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyQuests.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a CHARACTERS message from the specified reader or buffer.
+     * Decodes a DailyQuests message from the specified reader or buffer.
      * @function decode
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {CHARACTERS} CHARACTERS
+     * @returns {DailyQuests} DailyQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    CHARACTERS.decode = function decode(reader, length) {
+    DailyQuests.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CHARACTERS();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuests();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
-                    message.name = reader.string();
-                    break;
-                }
-            case 2: {
-                    if (!(message.items && message.items.length))
-                        message.items = [];
-                    message.items.push($root.CHARACTERS.Items.decode(reader, reader.uint32()));
+                    if (!(message.quests && message.quests.length))
+                        message.quests = [];
+                    message.quests.push($root.DailyQuests.Quests.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -432,153 +318,141 @@ $root.CHARACTERS = (function() {
     };
 
     /**
-     * Decodes a CHARACTERS message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuests message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {CHARACTERS} CHARACTERS
+     * @returns {DailyQuests} DailyQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    CHARACTERS.decodeDelimited = function decodeDelimited(reader) {
+    DailyQuests.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a CHARACTERS message.
+     * Verifies a DailyQuests message.
      * @function verify
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    CHARACTERS.verify = function verify(message) {
+    DailyQuests.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.name != null && message.hasOwnProperty("name"))
-            if (!$util.isString(message.name))
-                return "name: string expected";
-        if (message.items != null && message.hasOwnProperty("items")) {
-            if (!Array.isArray(message.items))
-                return "items: array expected";
-            for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.CHARACTERS.Items.verify(message.items[i]);
+        if (message.quests != null && message.hasOwnProperty("quests")) {
+            if (!Array.isArray(message.quests))
+                return "quests: array expected";
+            for (var i = 0; i < message.quests.length; ++i) {
+                var error = $root.DailyQuests.Quests.verify(message.quests[i]);
                 if (error)
-                    return "items." + error;
+                    return "quests." + error;
             }
         }
         return null;
     };
 
     /**
-     * Creates a CHARACTERS message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuests message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {CHARACTERS} CHARACTERS
+     * @returns {DailyQuests} DailyQuests
      */
-    CHARACTERS.fromObject = function fromObject(object) {
-        if (object instanceof $root.CHARACTERS)
+    DailyQuests.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyQuests)
             return object;
-        var message = new $root.CHARACTERS();
-        if (object.name != null)
-            message.name = String(object.name);
-        if (object.items) {
-            if (!Array.isArray(object.items))
-                throw TypeError(".CHARACTERS.items: array expected");
-            message.items = [];
-            for (var i = 0; i < object.items.length; ++i) {
-                if (typeof object.items[i] !== "object")
-                    throw TypeError(".CHARACTERS.items: object expected");
-                message.items[i] = $root.CHARACTERS.Items.fromObject(object.items[i]);
+        var message = new $root.DailyQuests();
+        if (object.quests) {
+            if (!Array.isArray(object.quests))
+                throw TypeError(".DailyQuests.quests: array expected");
+            message.quests = [];
+            for (var i = 0; i < object.quests.length; ++i) {
+                if (typeof object.quests[i] !== "object")
+                    throw TypeError(".DailyQuests.quests: object expected");
+                message.quests[i] = $root.DailyQuests.Quests.fromObject(object.quests[i]);
             }
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a CHARACTERS message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyQuests message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
-     * @param {CHARACTERS} message CHARACTERS
+     * @param {DailyQuests} message DailyQuests
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    CHARACTERS.toObject = function toObject(message, options) {
+    DailyQuests.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.arrays || options.defaults)
-            object.items = [];
-        if (options.defaults)
-            object.name = "";
-        if (message.name != null && message.hasOwnProperty("name"))
-            object.name = message.name;
-        if (message.items && message.items.length) {
-            object.items = [];
-            for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.CHARACTERS.Items.toObject(message.items[j], options);
+            object.quests = [];
+        if (message.quests && message.quests.length) {
+            object.quests = [];
+            for (var j = 0; j < message.quests.length; ++j)
+                object.quests[j] = $root.DailyQuests.Quests.toObject(message.quests[j], options);
         }
         return object;
     };
 
     /**
-     * Converts this CHARACTERS to JSON.
+     * Converts this DailyQuests to JSON.
      * @function toJSON
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    CHARACTERS.prototype.toJSON = function toJSON() {
+    DailyQuests.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for CHARACTERS
+     * Gets the default type url for DailyQuests
      * @function getTypeUrl
-     * @memberof CHARACTERS
+     * @memberof DailyQuests
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    CHARACTERS.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyQuests.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/CHARACTERS";
+        return typeUrlPrefix + "/DailyQuests";
     };
 
-    CHARACTERS.Items = (function() {
+    DailyQuests.Quests = (function() {
 
         /**
-         * Properties of an Items.
-         * @memberof CHARACTERS
-         * @interface IItems
-         * @property {number|null} [basePointsSpecialAttack] Items basePointsSpecialAttack
-         * @property {number|null} [basePointsCriticalHit] Items basePointsCriticalHit
-         * @property {number|null} [basePointsDefense] Items basePointsDefense
-         * @property {number|null} [basePointsAttack] Items basePointsAttack
-         * @property {number|null} [basePointsLife] Items basePointsLife
-         * @property {string|null} [characterName] Items characterName
-         * @property {string|null} [id] Items id
-         * @property {string|null} [bioTitle] Items bioTitle
-         * @property {number|null} [basePointsAttackSpeed] Items basePointsAttackSpeed
+         * Properties of a Quests.
+         * @memberof DailyQuests
+         * @interface IQuests
+         * @property {string|null} [name] Quests name
+         * @property {DailyQuests.Quests.IReward|null} [reward] Quests reward
+         * @property {string|null} [description] Quests description
+         * @property {string|null} [id] Quests id
+         * @property {string|null} [type] Quests type
+         * @property {number|null} [target] Quests target
          */
 
         /**
-         * Constructs a new Items.
-         * @memberof CHARACTERS
-         * @classdesc Represents an Items.
-         * @implements IItems
+         * Constructs a new Quests.
+         * @memberof DailyQuests
+         * @classdesc Represents a Quests.
+         * @implements IQuests
          * @constructor
-         * @param {CHARACTERS.IItems=} [properties] Properties to set
+         * @param {DailyQuests.IQuests=} [properties] Properties to set
          */
-        function Items(properties) {
+        function Quests(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -586,187 +460,145 @@ $root.CHARACTERS = (function() {
         }
 
         /**
-         * Items basePointsSpecialAttack.
-         * @member {number} basePointsSpecialAttack
-         * @memberof CHARACTERS.Items
+         * Quests name.
+         * @member {string} name
+         * @memberof DailyQuests.Quests
          * @instance
          */
-        Items.prototype.basePointsSpecialAttack = 0;
+        Quests.prototype.name = "";
 
         /**
-         * Items basePointsCriticalHit.
-         * @member {number} basePointsCriticalHit
-         * @memberof CHARACTERS.Items
+         * Quests reward.
+         * @member {DailyQuests.Quests.IReward|null|undefined} reward
+         * @memberof DailyQuests.Quests
          * @instance
          */
-        Items.prototype.basePointsCriticalHit = 0;
+        Quests.prototype.reward = null;
 
         /**
-         * Items basePointsDefense.
-         * @member {number} basePointsDefense
-         * @memberof CHARACTERS.Items
+         * Quests description.
+         * @member {string} description
+         * @memberof DailyQuests.Quests
          * @instance
          */
-        Items.prototype.basePointsDefense = 0;
+        Quests.prototype.description = "";
 
         /**
-         * Items basePointsAttack.
-         * @member {number} basePointsAttack
-         * @memberof CHARACTERS.Items
-         * @instance
-         */
-        Items.prototype.basePointsAttack = 0;
-
-        /**
-         * Items basePointsLife.
-         * @member {number} basePointsLife
-         * @memberof CHARACTERS.Items
-         * @instance
-         */
-        Items.prototype.basePointsLife = 0;
-
-        /**
-         * Items characterName.
-         * @member {string} characterName
-         * @memberof CHARACTERS.Items
-         * @instance
-         */
-        Items.prototype.characterName = "";
-
-        /**
-         * Items id.
+         * Quests id.
          * @member {string} id
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @instance
          */
-        Items.prototype.id = "";
+        Quests.prototype.id = "";
 
         /**
-         * Items bioTitle.
-         * @member {string} bioTitle
-         * @memberof CHARACTERS.Items
+         * Quests type.
+         * @member {string} type
+         * @memberof DailyQuests.Quests
          * @instance
          */
-        Items.prototype.bioTitle = "";
+        Quests.prototype.type = "";
 
         /**
-         * Items basePointsAttackSpeed.
-         * @member {number} basePointsAttackSpeed
-         * @memberof CHARACTERS.Items
+         * Quests target.
+         * @member {number} target
+         * @memberof DailyQuests.Quests
          * @instance
          */
-        Items.prototype.basePointsAttackSpeed = 0;
+        Quests.prototype.target = 0;
 
         /**
-         * Creates a new Items instance using the specified properties.
+         * Creates a new Quests instance using the specified properties.
          * @function create
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @static
-         * @param {CHARACTERS.IItems=} [properties] Properties to set
-         * @returns {CHARACTERS.Items} Items instance
+         * @param {DailyQuests.IQuests=} [properties] Properties to set
+         * @returns {DailyQuests.Quests} Quests instance
          */
-        Items.create = function create(properties) {
-            return new Items(properties);
+        Quests.create = function create(properties) {
+            return new Quests(properties);
         };
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link CHARACTERS.Items.verify|verify} messages.
+         * Encodes the specified Quests message. Does not implicitly {@link DailyQuests.Quests.verify|verify} messages.
          * @function encode
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @static
-         * @param {CHARACTERS.IItems} message Items message or plain object to encode
+         * @param {DailyQuests.IQuests} message Quests message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Items.encode = function encode(message, writer) {
+        Quests.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.basePointsSpecialAttack != null && Object.hasOwnProperty.call(message, "basePointsSpecialAttack"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.basePointsSpecialAttack);
-            if (message.basePointsCriticalHit != null && Object.hasOwnProperty.call(message, "basePointsCriticalHit"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.basePointsCriticalHit);
-            if (message.basePointsDefense != null && Object.hasOwnProperty.call(message, "basePointsDefense"))
-                writer.uint32(/* id 3, wireType 0 =*/24).int32(message.basePointsDefense);
-            if (message.basePointsAttack != null && Object.hasOwnProperty.call(message, "basePointsAttack"))
-                writer.uint32(/* id 4, wireType 0 =*/32).int32(message.basePointsAttack);
-            if (message.basePointsLife != null && Object.hasOwnProperty.call(message, "basePointsLife"))
-                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.basePointsLife);
-            if (message.characterName != null && Object.hasOwnProperty.call(message, "characterName"))
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.characterName);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+            if (message.reward != null && Object.hasOwnProperty.call(message, "reward"))
+                $root.DailyQuests.Quests.Reward.encode(message.reward, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 7, wireType 2 =*/58).string(message.id);
-            if (message.bioTitle != null && Object.hasOwnProperty.call(message, "bioTitle"))
-                writer.uint32(/* id 8, wireType 2 =*/66).string(message.bioTitle);
-            if (message.basePointsAttackSpeed != null && Object.hasOwnProperty.call(message, "basePointsAttackSpeed"))
-                writer.uint32(/* id 9, wireType 0 =*/72).int32(message.basePointsAttackSpeed);
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.id);
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.type);
+            if (message.target != null && Object.hasOwnProperty.call(message, "target"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.target);
             return writer;
         };
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link CHARACTERS.Items.verify|verify} messages.
+         * Encodes the specified Quests message, length delimited. Does not implicitly {@link DailyQuests.Quests.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @static
-         * @param {CHARACTERS.IItems} message Items message or plain object to encode
+         * @param {DailyQuests.IQuests} message Quests message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Items.encodeDelimited = function encodeDelimited(message, writer) {
+        Quests.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes an Items message from the specified reader or buffer.
+         * Decodes a Quests message from the specified reader or buffer.
          * @function decode
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {CHARACTERS.Items} Items
+         * @returns {DailyQuests.Quests} Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Items.decode = function decode(reader, length) {
+        Quests.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.CHARACTERS.Items();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuests.Quests();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1: {
-                        message.basePointsSpecialAttack = reader.int32();
+                        message.name = reader.string();
                         break;
                     }
                 case 2: {
-                        message.basePointsCriticalHit = reader.int32();
+                        message.reward = $root.DailyQuests.Quests.Reward.decode(reader, reader.uint32());
                         break;
                     }
                 case 3: {
-                        message.basePointsDefense = reader.int32();
+                        message.description = reader.string();
                         break;
                     }
                 case 4: {
-                        message.basePointsAttack = reader.int32();
-                        break;
-                    }
-                case 5: {
-                        message.basePointsLife = reader.int32();
-                        break;
-                    }
-                case 6: {
-                        message.characterName = reader.string();
-                        break;
-                    }
-                case 7: {
                         message.id = reader.string();
                         break;
                     }
-                case 8: {
-                        message.bioTitle = reader.string();
+                case 5: {
+                        message.type = reader.string();
                         break;
                     }
-                case 9: {
-                        message.basePointsAttackSpeed = reader.int32();
+                case 6: {
+                        message.target = reader.int32();
                         break;
                     }
                 default:
@@ -778,737 +610,402 @@ $root.CHARACTERS = (function() {
         };
 
         /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * Decodes a Quests message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {CHARACTERS.Items} Items
+         * @returns {DailyQuests.Quests} Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Items.decodeDelimited = function decodeDelimited(reader) {
+        Quests.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies an Items message.
+         * Verifies a Quests message.
          * @function verify
-         * @memberof CHARACTERS.Items
+         * @memberof DailyQuests.Quests
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        Items.verify = function verify(message) {
+        Quests.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.basePointsSpecialAttack != null && message.hasOwnProperty("basePointsSpecialAttack"))
-                if (!$util.isInteger(message.basePointsSpecialAttack))
-                    return "basePointsSpecialAttack: integer expected";
-            if (message.basePointsCriticalHit != null && message.hasOwnProperty("basePointsCriticalHit"))
-                if (!$util.isInteger(message.basePointsCriticalHit))
-                    return "basePointsCriticalHit: integer expected";
-            if (message.basePointsDefense != null && message.hasOwnProperty("basePointsDefense"))
-                if (!$util.isInteger(message.basePointsDefense))
-                    return "basePointsDefense: integer expected";
-            if (message.basePointsAttack != null && message.hasOwnProperty("basePointsAttack"))
-                if (!$util.isInteger(message.basePointsAttack))
-                    return "basePointsAttack: integer expected";
-            if (message.basePointsLife != null && message.hasOwnProperty("basePointsLife"))
-                if (!$util.isInteger(message.basePointsLife))
-                    return "basePointsLife: integer expected";
-            if (message.characterName != null && message.hasOwnProperty("characterName"))
-                if (!$util.isString(message.characterName))
-                    return "characterName: string expected";
-            if (message.id != null && message.hasOwnProperty("id"))
-                if (!$util.isString(message.id))
-                    return "id: string expected";
-            if (message.bioTitle != null && message.hasOwnProperty("bioTitle"))
-                if (!$util.isString(message.bioTitle))
-                    return "bioTitle: string expected";
-            if (message.basePointsAttackSpeed != null && message.hasOwnProperty("basePointsAttackSpeed"))
-                if (!$util.isInteger(message.basePointsAttackSpeed))
-                    return "basePointsAttackSpeed: integer expected";
-            return null;
-        };
-
-        /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof CHARACTERS.Items
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {CHARACTERS.Items} Items
-         */
-        Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.CHARACTERS.Items)
-                return object;
-            var message = new $root.CHARACTERS.Items();
-            if (object.basePointsSpecialAttack != null)
-                message.basePointsSpecialAttack = object.basePointsSpecialAttack | 0;
-            if (object.basePointsCriticalHit != null)
-                message.basePointsCriticalHit = object.basePointsCriticalHit | 0;
-            if (object.basePointsDefense != null)
-                message.basePointsDefense = object.basePointsDefense | 0;
-            if (object.basePointsAttack != null)
-                message.basePointsAttack = object.basePointsAttack | 0;
-            if (object.basePointsLife != null)
-                message.basePointsLife = object.basePointsLife | 0;
-            if (object.characterName != null)
-                message.characterName = String(object.characterName);
-            if (object.id != null)
-                message.id = String(object.id);
-            if (object.bioTitle != null)
-                message.bioTitle = String(object.bioTitle);
-            if (object.basePointsAttackSpeed != null)
-                message.basePointsAttackSpeed = object.basePointsAttackSpeed | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof CHARACTERS.Items
-         * @static
-         * @param {CHARACTERS.Items} message Items
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        Items.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.basePointsSpecialAttack = 0;
-                object.basePointsCriticalHit = 0;
-                object.basePointsDefense = 0;
-                object.basePointsAttack = 0;
-                object.basePointsLife = 0;
-                object.characterName = "";
-                object.id = "";
-                object.bioTitle = "";
-                object.basePointsAttackSpeed = 0;
-            }
-            if (message.basePointsSpecialAttack != null && message.hasOwnProperty("basePointsSpecialAttack"))
-                object.basePointsSpecialAttack = message.basePointsSpecialAttack;
-            if (message.basePointsCriticalHit != null && message.hasOwnProperty("basePointsCriticalHit"))
-                object.basePointsCriticalHit = message.basePointsCriticalHit;
-            if (message.basePointsDefense != null && message.hasOwnProperty("basePointsDefense"))
-                object.basePointsDefense = message.basePointsDefense;
-            if (message.basePointsAttack != null && message.hasOwnProperty("basePointsAttack"))
-                object.basePointsAttack = message.basePointsAttack;
-            if (message.basePointsLife != null && message.hasOwnProperty("basePointsLife"))
-                object.basePointsLife = message.basePointsLife;
-            if (message.characterName != null && message.hasOwnProperty("characterName"))
-                object.characterName = message.characterName;
-            if (message.id != null && message.hasOwnProperty("id"))
-                object.id = message.id;
-            if (message.bioTitle != null && message.hasOwnProperty("bioTitle"))
-                object.bioTitle = message.bioTitle;
-            if (message.basePointsAttackSpeed != null && message.hasOwnProperty("basePointsAttackSpeed"))
-                object.basePointsAttackSpeed = message.basePointsAttackSpeed;
-            return object;
-        };
-
-        /**
-         * Converts this Items to JSON.
-         * @function toJSON
-         * @memberof CHARACTERS.Items
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        Items.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for Items
-         * @function getTypeUrl
-         * @memberof CHARACTERS.Items
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/CHARACTERS.Items";
-        };
-
-        return Items;
-    })();
-
-    return CHARACTERS;
-})();
-
-$root.DAILY_QUEST = (function() {
-
-    /**
-     * Properties of a DAILY_QUEST.
-     * @exports IDAILY_QUEST
-     * @interface IDAILY_QUEST
-     * @property {Array.<DAILY_QUEST.IItems>|null} [items] DAILY_QUEST items
-     */
-
-    /**
-     * Constructs a new DAILY_QUEST.
-     * @exports DAILY_QUEST
-     * @classdesc Represents a DAILY_QUEST.
-     * @implements IDAILY_QUEST
-     * @constructor
-     * @param {IDAILY_QUEST=} [properties] Properties to set
-     */
-    function DAILY_QUEST(properties) {
-        this.items = [];
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * DAILY_QUEST items.
-     * @member {Array.<DAILY_QUEST.IItems>} items
-     * @memberof DAILY_QUEST
-     * @instance
-     */
-    DAILY_QUEST.prototype.items = $util.emptyArray;
-
-    /**
-     * Creates a new DAILY_QUEST instance using the specified properties.
-     * @function create
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {IDAILY_QUEST=} [properties] Properties to set
-     * @returns {DAILY_QUEST} DAILY_QUEST instance
-     */
-    DAILY_QUEST.create = function create(properties) {
-        return new DAILY_QUEST(properties);
-    };
-
-    /**
-     * Encodes the specified DAILY_QUEST message. Does not implicitly {@link DAILY_QUEST.verify|verify} messages.
-     * @function encode
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {IDAILY_QUEST} message DAILY_QUEST message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    DAILY_QUEST.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.items != null && message.items.length)
-            for (var i = 0; i < message.items.length; ++i)
-                $root.DAILY_QUEST.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-        return writer;
-    };
-
-    /**
-     * Encodes the specified DAILY_QUEST message, length delimited. Does not implicitly {@link DAILY_QUEST.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {IDAILY_QUEST} message DAILY_QUEST message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    DAILY_QUEST.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a DAILY_QUEST message from the specified reader or buffer.
-     * @function decode
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {DAILY_QUEST} DAILY_QUEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    DAILY_QUEST.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DAILY_QUEST();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    if (!(message.items && message.items.length))
-                        message.items = [];
-                    message.items.push($root.DAILY_QUEST.Items.decode(reader, reader.uint32()));
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a DAILY_QUEST message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DAILY_QUEST} DAILY_QUEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    DAILY_QUEST.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a DAILY_QUEST message.
-     * @function verify
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    DAILY_QUEST.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.items != null && message.hasOwnProperty("items")) {
-            if (!Array.isArray(message.items))
-                return "items: array expected";
-            for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.DAILY_QUEST.Items.verify(message.items[i]);
+            if (message.name != null && message.hasOwnProperty("name"))
+                if (!$util.isString(message.name))
+                    return "name: string expected";
+            if (message.reward != null && message.hasOwnProperty("reward")) {
+                var error = $root.DailyQuests.Quests.Reward.verify(message.reward);
                 if (error)
-                    return "items." + error;
+                    return "reward." + error;
             }
-        }
-        return null;
-    };
-
-    /**
-     * Creates a DAILY_QUEST message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {DAILY_QUEST} DAILY_QUEST
-     */
-    DAILY_QUEST.fromObject = function fromObject(object) {
-        if (object instanceof $root.DAILY_QUEST)
-            return object;
-        var message = new $root.DAILY_QUEST();
-        if (object.items) {
-            if (!Array.isArray(object.items))
-                throw TypeError(".DAILY_QUEST.items: array expected");
-            message.items = [];
-            for (var i = 0; i < object.items.length; ++i) {
-                if (typeof object.items[i] !== "object")
-                    throw TypeError(".DAILY_QUEST.items: object expected");
-                message.items[i] = $root.DAILY_QUEST.Items.fromObject(object.items[i]);
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a DAILY_QUEST message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {DAILY_QUEST} message DAILY_QUEST
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    DAILY_QUEST.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.arrays || options.defaults)
-            object.items = [];
-        if (message.items && message.items.length) {
-            object.items = [];
-            for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.DAILY_QUEST.Items.toObject(message.items[j], options);
-        }
-        return object;
-    };
-
-    /**
-     * Converts this DAILY_QUEST to JSON.
-     * @function toJSON
-     * @memberof DAILY_QUEST
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    DAILY_QUEST.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    /**
-     * Gets the default type url for DAILY_QUEST
-     * @function getTypeUrl
-     * @memberof DAILY_QUEST
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    DAILY_QUEST.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/DAILY_QUEST";
-    };
-
-    DAILY_QUEST.Items = (function() {
-
-        /**
-         * Properties of an Items.
-         * @memberof DAILY_QUEST
-         * @interface IItems
-         * @property {number|null} [conditionReach] Items conditionReach
-         * @property {number|null} [rewardQuantity] Items rewardQuantity
-         * @property {string|null} [condition] Items condition
-         * @property {string|null} [rewardId] Items rewardId
-         * @property {string|null} [id] Items id
-         * @property {string|null} [questName] Items questName
-         */
-
-        /**
-         * Constructs a new Items.
-         * @memberof DAILY_QUEST
-         * @classdesc Represents an Items.
-         * @implements IItems
-         * @constructor
-         * @param {DAILY_QUEST.IItems=} [properties] Properties to set
-         */
-        function Items(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * Items conditionReach.
-         * @member {number} conditionReach
-         * @memberof DAILY_QUEST.Items
-         * @instance
-         */
-        Items.prototype.conditionReach = 0;
-
-        /**
-         * Items rewardQuantity.
-         * @member {number} rewardQuantity
-         * @memberof DAILY_QUEST.Items
-         * @instance
-         */
-        Items.prototype.rewardQuantity = 0;
-
-        /**
-         * Items condition.
-         * @member {string} condition
-         * @memberof DAILY_QUEST.Items
-         * @instance
-         */
-        Items.prototype.condition = "";
-
-        /**
-         * Items rewardId.
-         * @member {string} rewardId
-         * @memberof DAILY_QUEST.Items
-         * @instance
-         */
-        Items.prototype.rewardId = "";
-
-        /**
-         * Items id.
-         * @member {string} id
-         * @memberof DAILY_QUEST.Items
-         * @instance
-         */
-        Items.prototype.id = "";
-
-        /**
-         * Items questName.
-         * @member {string} questName
-         * @memberof DAILY_QUEST.Items
-         * @instance
-         */
-        Items.prototype.questName = "";
-
-        /**
-         * Creates a new Items instance using the specified properties.
-         * @function create
-         * @memberof DAILY_QUEST.Items
-         * @static
-         * @param {DAILY_QUEST.IItems=} [properties] Properties to set
-         * @returns {DAILY_QUEST.Items} Items instance
-         */
-        Items.create = function create(properties) {
-            return new Items(properties);
-        };
-
-        /**
-         * Encodes the specified Items message. Does not implicitly {@link DAILY_QUEST.Items.verify|verify} messages.
-         * @function encode
-         * @memberof DAILY_QUEST.Items
-         * @static
-         * @param {DAILY_QUEST.IItems} message Items message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Items.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.conditionReach != null && Object.hasOwnProperty.call(message, "conditionReach"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.conditionReach);
-            if (message.rewardQuantity != null && Object.hasOwnProperty.call(message, "rewardQuantity"))
-                writer.uint32(/* id 2, wireType 0 =*/16).int32(message.rewardQuantity);
-            if (message.condition != null && Object.hasOwnProperty.call(message, "condition"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.condition);
-            if (message.rewardId != null && Object.hasOwnProperty.call(message, "rewardId"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.rewardId);
-            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.id);
-            if (message.questName != null && Object.hasOwnProperty.call(message, "questName"))
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.questName);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link DAILY_QUEST.Items.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof DAILY_QUEST.Items
-         * @static
-         * @param {DAILY_QUEST.IItems} message Items message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Items.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes an Items message from the specified reader or buffer.
-         * @function decode
-         * @memberof DAILY_QUEST.Items
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {DAILY_QUEST.Items} Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Items.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DAILY_QUEST.Items();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1: {
-                        message.conditionReach = reader.int32();
-                        break;
-                    }
-                case 2: {
-                        message.rewardQuantity = reader.int32();
-                        break;
-                    }
-                case 3: {
-                        message.condition = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.rewardId = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.id = reader.string();
-                        break;
-                    }
-                case 6: {
-                        message.questName = reader.string();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof DAILY_QUEST.Items
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {DAILY_QUEST.Items} Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Items.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an Items message.
-         * @function verify
-         * @memberof DAILY_QUEST.Items
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Items.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.conditionReach != null && message.hasOwnProperty("conditionReach"))
-                if (!$util.isInteger(message.conditionReach))
-                    return "conditionReach: integer expected";
-            if (message.rewardQuantity != null && message.hasOwnProperty("rewardQuantity"))
-                if (!$util.isInteger(message.rewardQuantity))
-                    return "rewardQuantity: integer expected";
-            if (message.condition != null && message.hasOwnProperty("condition"))
-                if (!$util.isString(message.condition))
-                    return "condition: string expected";
-            if (message.rewardId != null && message.hasOwnProperty("rewardId"))
-                if (!$util.isString(message.rewardId))
-                    return "rewardId: string expected";
+            if (message.description != null && message.hasOwnProperty("description"))
+                if (!$util.isString(message.description))
+                    return "description: string expected";
             if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
-            if (message.questName != null && message.hasOwnProperty("questName"))
-                if (!$util.isString(message.questName))
-                    return "questName: string expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            if (message.target != null && message.hasOwnProperty("target"))
+                if (!$util.isInteger(message.target))
+                    return "target: integer expected";
             return null;
         };
 
         /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * Creates a Quests message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof DAILY_QUEST.Items
+         * @memberof DailyQuests.Quests
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {DAILY_QUEST.Items} Items
+         * @returns {DailyQuests.Quests} Quests
          */
-        Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.DAILY_QUEST.Items)
+        Quests.fromObject = function fromObject(object) {
+            if (object instanceof $root.DailyQuests.Quests)
                 return object;
-            var message = new $root.DAILY_QUEST.Items();
-            if (object.conditionReach != null)
-                message.conditionReach = object.conditionReach | 0;
-            if (object.rewardQuantity != null)
-                message.rewardQuantity = object.rewardQuantity | 0;
-            if (object.condition != null)
-                message.condition = String(object.condition);
-            if (object.rewardId != null)
-                message.rewardId = String(object.rewardId);
+            var message = new $root.DailyQuests.Quests();
+            if (object.name != null)
+                message.name = String(object.name);
+            if (object.reward != null) {
+                if (typeof object.reward !== "object")
+                    throw TypeError(".DailyQuests.Quests.reward: object expected");
+                message.reward = $root.DailyQuests.Quests.Reward.fromObject(object.reward);
+            }
+            if (object.description != null)
+                message.description = String(object.description);
             if (object.id != null)
                 message.id = String(object.id);
-            if (object.questName != null)
-                message.questName = String(object.questName);
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.target != null)
+                message.target = object.target | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * Creates a plain object from a Quests message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof DAILY_QUEST.Items
+         * @memberof DailyQuests.Quests
          * @static
-         * @param {DAILY_QUEST.Items} message Items
+         * @param {DailyQuests.Quests} message Quests
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        Items.toObject = function toObject(message, options) {
+        Quests.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.defaults) {
-                object.conditionReach = 0;
-                object.rewardQuantity = 0;
-                object.condition = "";
-                object.rewardId = "";
+                object.name = "";
+                object.reward = null;
+                object.description = "";
                 object.id = "";
-                object.questName = "";
+                object.type = "";
+                object.target = 0;
             }
-            if (message.conditionReach != null && message.hasOwnProperty("conditionReach"))
-                object.conditionReach = message.conditionReach;
-            if (message.rewardQuantity != null && message.hasOwnProperty("rewardQuantity"))
-                object.rewardQuantity = message.rewardQuantity;
-            if (message.condition != null && message.hasOwnProperty("condition"))
-                object.condition = message.condition;
-            if (message.rewardId != null && message.hasOwnProperty("rewardId"))
-                object.rewardId = message.rewardId;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = message.name;
+            if (message.reward != null && message.hasOwnProperty("reward"))
+                object.reward = $root.DailyQuests.Quests.Reward.toObject(message.reward, options);
+            if (message.description != null && message.hasOwnProperty("description"))
+                object.description = message.description;
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
-            if (message.questName != null && message.hasOwnProperty("questName"))
-                object.questName = message.questName;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.target != null && message.hasOwnProperty("target"))
+                object.target = message.target;
             return object;
         };
 
         /**
-         * Converts this Items to JSON.
+         * Converts this Quests to JSON.
          * @function toJSON
-         * @memberof DAILY_QUEST.Items
+         * @memberof DailyQuests.Quests
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        Items.prototype.toJSON = function toJSON() {
+        Quests.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for Items
+         * Gets the default type url for Quests
          * @function getTypeUrl
-         * @memberof DAILY_QUEST.Items
+         * @memberof DailyQuests.Quests
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        Quests.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/DAILY_QUEST.Items";
+            return typeUrlPrefix + "/DailyQuests.Quests";
         };
 
-        return Items;
+        Quests.Reward = (function() {
+
+            /**
+             * Properties of a Reward.
+             * @memberof DailyQuests.Quests
+             * @interface IReward
+             * @property {string|null} [id] Reward id
+             * @property {number|null} [quantity] Reward quantity
+             */
+
+            /**
+             * Constructs a new Reward.
+             * @memberof DailyQuests.Quests
+             * @classdesc Represents a Reward.
+             * @implements IReward
+             * @constructor
+             * @param {DailyQuests.Quests.IReward=} [properties] Properties to set
+             */
+            function Reward(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Reward id.
+             * @member {string} id
+             * @memberof DailyQuests.Quests.Reward
+             * @instance
+             */
+            Reward.prototype.id = "";
+
+            /**
+             * Reward quantity.
+             * @member {number} quantity
+             * @memberof DailyQuests.Quests.Reward
+             * @instance
+             */
+            Reward.prototype.quantity = 0;
+
+            /**
+             * Creates a new Reward instance using the specified properties.
+             * @function create
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {DailyQuests.Quests.IReward=} [properties] Properties to set
+             * @returns {DailyQuests.Quests.Reward} Reward instance
+             */
+            Reward.create = function create(properties) {
+                return new Reward(properties);
+            };
+
+            /**
+             * Encodes the specified Reward message. Does not implicitly {@link DailyQuests.Quests.Reward.verify|verify} messages.
+             * @function encode
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {DailyQuests.Quests.IReward} message Reward message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Reward.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.quantity != null && Object.hasOwnProperty.call(message, "quantity"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.quantity);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Reward message, length delimited. Does not implicitly {@link DailyQuests.Quests.Reward.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {DailyQuests.Quests.IReward} message Reward message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Reward.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Reward message from the specified reader or buffer.
+             * @function decode
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {DailyQuests.Quests.Reward} Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Reward.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuests.Quests.Reward();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.id = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.quantity = reader.int32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Reward message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {DailyQuests.Quests.Reward} Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Reward.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Reward message.
+             * @function verify
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Reward.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.quantity != null && message.hasOwnProperty("quantity"))
+                    if (!$util.isInteger(message.quantity))
+                        return "quantity: integer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Reward message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {DailyQuests.Quests.Reward} Reward
+             */
+            Reward.fromObject = function fromObject(object) {
+                if (object instanceof $root.DailyQuests.Quests.Reward)
+                    return object;
+                var message = new $root.DailyQuests.Quests.Reward();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.quantity != null)
+                    message.quantity = object.quantity | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Reward message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {DailyQuests.Quests.Reward} message Reward
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Reward.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.quantity = 0;
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.quantity != null && message.hasOwnProperty("quantity"))
+                    object.quantity = message.quantity;
+                return object;
+            };
+
+            /**
+             * Converts this Reward to JSON.
+             * @function toJSON
+             * @memberof DailyQuests.Quests.Reward
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Reward.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for Reward
+             * @function getTypeUrl
+             * @memberof DailyQuests.Quests.Reward
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            Reward.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/DailyQuests.Quests.Reward";
+            };
+
+            return Reward;
+        })();
+
+        return Quests;
     })();
 
-    return DAILY_QUEST;
+    return DailyQuests;
 })();
 
-$root.DAILY_REWARDS = (function() {
+$root.DailyRewards = (function() {
 
     /**
-     * Properties of a DAILY_REWARDS.
-     * @exports IDAILY_REWARDS
-     * @interface IDAILY_REWARDS
-     * @property {number|null} [hoursToReceive] DAILY_REWARDS hoursToReceive
-     * @property {boolean|null} [resetIfFail] DAILY_REWARDS resetIfFail
-     * @property {Array.<DAILY_REWARDS.ISteps>|null} [steps] DAILY_REWARDS steps
-     * @property {boolean|null} [enabled] DAILY_REWARDS enabled
-     * @property {DAILY_REWARDS.IDefaultRewardIfAlreadyOwned|null} [defaultRewardIfAlreadyOwned] DAILY_REWARDS defaultRewardIfAlreadyOwned
+     * Properties of a DailyRewards.
+     * @exports IDailyRewards
+     * @interface IDailyRewards
+     * @property {number|null} [hoursToReceive] DailyRewards hoursToReceive
+     * @property {boolean|null} [resetIfFail] DailyRewards resetIfFail
+     * @property {Array.<DailyRewards.ISteps>|null} [steps] DailyRewards steps
+     * @property {boolean|null} [enabled] DailyRewards enabled
+     * @property {DailyRewards.IDefaultRewardIfAlreadyOwned|null} [defaultRewardIfAlreadyOwned] DailyRewards defaultRewardIfAlreadyOwned
      */
 
     /**
-     * Constructs a new DAILY_REWARDS.
-     * @exports DAILY_REWARDS
-     * @classdesc Represents a DAILY_REWARDS.
-     * @implements IDAILY_REWARDS
+     * Constructs a new DailyRewards.
+     * @exports DailyRewards
+     * @classdesc Represents a DailyRewards.
+     * @implements IDailyRewards
      * @constructor
-     * @param {IDAILY_REWARDS=} [properties] Properties to set
+     * @param {IDailyRewards=} [properties] Properties to set
      */
-    function DAILY_REWARDS(properties) {
+    function DailyRewards(properties) {
         this.steps = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -1517,67 +1014,67 @@ $root.DAILY_REWARDS = (function() {
     }
 
     /**
-     * DAILY_REWARDS hoursToReceive.
+     * DailyRewards hoursToReceive.
      * @member {number} hoursToReceive
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @instance
      */
-    DAILY_REWARDS.prototype.hoursToReceive = 0;
+    DailyRewards.prototype.hoursToReceive = 0;
 
     /**
-     * DAILY_REWARDS resetIfFail.
+     * DailyRewards resetIfFail.
      * @member {boolean} resetIfFail
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @instance
      */
-    DAILY_REWARDS.prototype.resetIfFail = false;
+    DailyRewards.prototype.resetIfFail = false;
 
     /**
-     * DAILY_REWARDS steps.
-     * @member {Array.<DAILY_REWARDS.ISteps>} steps
-     * @memberof DAILY_REWARDS
+     * DailyRewards steps.
+     * @member {Array.<DailyRewards.ISteps>} steps
+     * @memberof DailyRewards
      * @instance
      */
-    DAILY_REWARDS.prototype.steps = $util.emptyArray;
+    DailyRewards.prototype.steps = $util.emptyArray;
 
     /**
-     * DAILY_REWARDS enabled.
+     * DailyRewards enabled.
      * @member {boolean} enabled
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @instance
      */
-    DAILY_REWARDS.prototype.enabled = false;
+    DailyRewards.prototype.enabled = false;
 
     /**
-     * DAILY_REWARDS defaultRewardIfAlreadyOwned.
-     * @member {DAILY_REWARDS.IDefaultRewardIfAlreadyOwned|null|undefined} defaultRewardIfAlreadyOwned
-     * @memberof DAILY_REWARDS
+     * DailyRewards defaultRewardIfAlreadyOwned.
+     * @member {DailyRewards.IDefaultRewardIfAlreadyOwned|null|undefined} defaultRewardIfAlreadyOwned
+     * @memberof DailyRewards
      * @instance
      */
-    DAILY_REWARDS.prototype.defaultRewardIfAlreadyOwned = null;
+    DailyRewards.prototype.defaultRewardIfAlreadyOwned = null;
 
     /**
-     * Creates a new DAILY_REWARDS instance using the specified properties.
+     * Creates a new DailyRewards instance using the specified properties.
      * @function create
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
-     * @param {IDAILY_REWARDS=} [properties] Properties to set
-     * @returns {DAILY_REWARDS} DAILY_REWARDS instance
+     * @param {IDailyRewards=} [properties] Properties to set
+     * @returns {DailyRewards} DailyRewards instance
      */
-    DAILY_REWARDS.create = function create(properties) {
-        return new DAILY_REWARDS(properties);
+    DailyRewards.create = function create(properties) {
+        return new DailyRewards(properties);
     };
 
     /**
-     * Encodes the specified DAILY_REWARDS message. Does not implicitly {@link DAILY_REWARDS.verify|verify} messages.
+     * Encodes the specified DailyRewards message. Does not implicitly {@link DailyRewards.verify|verify} messages.
      * @function encode
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
-     * @param {IDAILY_REWARDS} message DAILY_REWARDS message or plain object to encode
+     * @param {IDailyRewards} message DailyRewards message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DAILY_REWARDS.encode = function encode(message, writer) {
+    DailyRewards.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.hoursToReceive != null && Object.hasOwnProperty.call(message, "hoursToReceive"))
@@ -1586,42 +1083,42 @@ $root.DAILY_REWARDS = (function() {
             writer.uint32(/* id 2, wireType 0 =*/16).bool(message.resetIfFail);
         if (message.steps != null && message.steps.length)
             for (var i = 0; i < message.steps.length; ++i)
-                $root.DAILY_REWARDS.Steps.encode(message.steps[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                $root.DailyRewards.Steps.encode(message.steps[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.enabled != null && Object.hasOwnProperty.call(message, "enabled"))
             writer.uint32(/* id 4, wireType 0 =*/32).bool(message.enabled);
         if (message.defaultRewardIfAlreadyOwned != null && Object.hasOwnProperty.call(message, "defaultRewardIfAlreadyOwned"))
-            $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned.encode(message.defaultRewardIfAlreadyOwned, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
+            $root.DailyRewards.DefaultRewardIfAlreadyOwned.encode(message.defaultRewardIfAlreadyOwned, writer.uint32(/* id 5, wireType 2 =*/42).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified DAILY_REWARDS message, length delimited. Does not implicitly {@link DAILY_REWARDS.verify|verify} messages.
+     * Encodes the specified DailyRewards message, length delimited. Does not implicitly {@link DailyRewards.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
-     * @param {IDAILY_REWARDS} message DAILY_REWARDS message or plain object to encode
+     * @param {IDailyRewards} message DailyRewards message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DAILY_REWARDS.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyRewards.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a DAILY_REWARDS message from the specified reader or buffer.
+     * Decodes a DailyRewards message from the specified reader or buffer.
      * @function decode
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {DAILY_REWARDS} DAILY_REWARDS
+     * @returns {DailyRewards} DailyRewards
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DAILY_REWARDS.decode = function decode(reader, length) {
+    DailyRewards.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DAILY_REWARDS();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyRewards();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -1636,7 +1133,7 @@ $root.DAILY_REWARDS = (function() {
             case 3: {
                     if (!(message.steps && message.steps.length))
                         message.steps = [];
-                    message.steps.push($root.DAILY_REWARDS.Steps.decode(reader, reader.uint32()));
+                    message.steps.push($root.DailyRewards.Steps.decode(reader, reader.uint32()));
                     break;
                 }
             case 4: {
@@ -1644,7 +1141,7 @@ $root.DAILY_REWARDS = (function() {
                     break;
                 }
             case 5: {
-                    message.defaultRewardIfAlreadyOwned = $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned.decode(reader, reader.uint32());
+                    message.defaultRewardIfAlreadyOwned = $root.DailyRewards.DefaultRewardIfAlreadyOwned.decode(reader, reader.uint32());
                     break;
                 }
             default:
@@ -1656,30 +1153,30 @@ $root.DAILY_REWARDS = (function() {
     };
 
     /**
-     * Decodes a DAILY_REWARDS message from the specified reader or buffer, length delimited.
+     * Decodes a DailyRewards message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DAILY_REWARDS} DAILY_REWARDS
+     * @returns {DailyRewards} DailyRewards
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DAILY_REWARDS.decodeDelimited = function decodeDelimited(reader) {
+    DailyRewards.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a DAILY_REWARDS message.
+     * Verifies a DailyRewards message.
      * @function verify
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    DAILY_REWARDS.verify = function verify(message) {
+    DailyRewards.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.hoursToReceive != null && message.hasOwnProperty("hoursToReceive"))
@@ -1692,7 +1189,7 @@ $root.DAILY_REWARDS = (function() {
             if (!Array.isArray(message.steps))
                 return "steps: array expected";
             for (var i = 0; i < message.steps.length; ++i) {
-                var error = $root.DAILY_REWARDS.Steps.verify(message.steps[i]);
+                var error = $root.DailyRewards.Steps.verify(message.steps[i]);
                 if (error)
                     return "steps." + error;
             }
@@ -1701,7 +1198,7 @@ $root.DAILY_REWARDS = (function() {
             if (typeof message.enabled !== "boolean")
                 return "enabled: boolean expected";
         if (message.defaultRewardIfAlreadyOwned != null && message.hasOwnProperty("defaultRewardIfAlreadyOwned")) {
-            var error = $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned.verify(message.defaultRewardIfAlreadyOwned);
+            var error = $root.DailyRewards.DefaultRewardIfAlreadyOwned.verify(message.defaultRewardIfAlreadyOwned);
             if (error)
                 return "defaultRewardIfAlreadyOwned." + error;
         }
@@ -1709,51 +1206,51 @@ $root.DAILY_REWARDS = (function() {
     };
 
     /**
-     * Creates a DAILY_REWARDS message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyRewards message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {DAILY_REWARDS} DAILY_REWARDS
+     * @returns {DailyRewards} DailyRewards
      */
-    DAILY_REWARDS.fromObject = function fromObject(object) {
-        if (object instanceof $root.DAILY_REWARDS)
+    DailyRewards.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyRewards)
             return object;
-        var message = new $root.DAILY_REWARDS();
+        var message = new $root.DailyRewards();
         if (object.hoursToReceive != null)
             message.hoursToReceive = object.hoursToReceive | 0;
         if (object.resetIfFail != null)
             message.resetIfFail = Boolean(object.resetIfFail);
         if (object.steps) {
             if (!Array.isArray(object.steps))
-                throw TypeError(".DAILY_REWARDS.steps: array expected");
+                throw TypeError(".DailyRewards.steps: array expected");
             message.steps = [];
             for (var i = 0; i < object.steps.length; ++i) {
                 if (typeof object.steps[i] !== "object")
-                    throw TypeError(".DAILY_REWARDS.steps: object expected");
-                message.steps[i] = $root.DAILY_REWARDS.Steps.fromObject(object.steps[i]);
+                    throw TypeError(".DailyRewards.steps: object expected");
+                message.steps[i] = $root.DailyRewards.Steps.fromObject(object.steps[i]);
             }
         }
         if (object.enabled != null)
             message.enabled = Boolean(object.enabled);
         if (object.defaultRewardIfAlreadyOwned != null) {
             if (typeof object.defaultRewardIfAlreadyOwned !== "object")
-                throw TypeError(".DAILY_REWARDS.defaultRewardIfAlreadyOwned: object expected");
-            message.defaultRewardIfAlreadyOwned = $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned.fromObject(object.defaultRewardIfAlreadyOwned);
+                throw TypeError(".DailyRewards.defaultRewardIfAlreadyOwned: object expected");
+            message.defaultRewardIfAlreadyOwned = $root.DailyRewards.DefaultRewardIfAlreadyOwned.fromObject(object.defaultRewardIfAlreadyOwned);
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a DAILY_REWARDS message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyRewards message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
-     * @param {DAILY_REWARDS} message DAILY_REWARDS
+     * @param {DailyRewards} message DailyRewards
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    DAILY_REWARDS.toObject = function toObject(message, options) {
+    DailyRewards.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -1772,46 +1269,46 @@ $root.DAILY_REWARDS = (function() {
         if (message.steps && message.steps.length) {
             object.steps = [];
             for (var j = 0; j < message.steps.length; ++j)
-                object.steps[j] = $root.DAILY_REWARDS.Steps.toObject(message.steps[j], options);
+                object.steps[j] = $root.DailyRewards.Steps.toObject(message.steps[j], options);
         }
         if (message.enabled != null && message.hasOwnProperty("enabled"))
             object.enabled = message.enabled;
         if (message.defaultRewardIfAlreadyOwned != null && message.hasOwnProperty("defaultRewardIfAlreadyOwned"))
-            object.defaultRewardIfAlreadyOwned = $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned.toObject(message.defaultRewardIfAlreadyOwned, options);
+            object.defaultRewardIfAlreadyOwned = $root.DailyRewards.DefaultRewardIfAlreadyOwned.toObject(message.defaultRewardIfAlreadyOwned, options);
         return object;
     };
 
     /**
-     * Converts this DAILY_REWARDS to JSON.
+     * Converts this DailyRewards to JSON.
      * @function toJSON
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    DAILY_REWARDS.prototype.toJSON = function toJSON() {
+    DailyRewards.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for DAILY_REWARDS
+     * Gets the default type url for DailyRewards
      * @function getTypeUrl
-     * @memberof DAILY_REWARDS
+     * @memberof DailyRewards
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    DAILY_REWARDS.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyRewards.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/DAILY_REWARDS";
+        return typeUrlPrefix + "/DailyRewards";
     };
 
-    DAILY_REWARDS.Steps = (function() {
+    DailyRewards.Steps = (function() {
 
         /**
          * Properties of a Steps.
-         * @memberof DAILY_REWARDS
+         * @memberof DailyRewards
          * @interface ISteps
          * @property {string|null} [itemId] Steps itemId
          * @property {number|null} [step] Steps step
@@ -1820,11 +1317,11 @@ $root.DAILY_REWARDS = (function() {
 
         /**
          * Constructs a new Steps.
-         * @memberof DAILY_REWARDS
+         * @memberof DailyRewards
          * @classdesc Represents a Steps.
          * @implements ISteps
          * @constructor
-         * @param {DAILY_REWARDS.ISteps=} [properties] Properties to set
+         * @param {DailyRewards.ISteps=} [properties] Properties to set
          */
         function Steps(properties) {
             if (properties)
@@ -1836,7 +1333,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Steps itemId.
          * @member {string} itemId
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @instance
          */
         Steps.prototype.itemId = "";
@@ -1844,7 +1341,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Steps step.
          * @member {number} step
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @instance
          */
         Steps.prototype.step = 0;
@@ -1852,7 +1349,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Steps amount.
          * @member {number} amount
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @instance
          */
         Steps.prototype.amount = 0;
@@ -1860,21 +1357,21 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Creates a new Steps instance using the specified properties.
          * @function create
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
-         * @param {DAILY_REWARDS.ISteps=} [properties] Properties to set
-         * @returns {DAILY_REWARDS.Steps} Steps instance
+         * @param {DailyRewards.ISteps=} [properties] Properties to set
+         * @returns {DailyRewards.Steps} Steps instance
          */
         Steps.create = function create(properties) {
             return new Steps(properties);
         };
 
         /**
-         * Encodes the specified Steps message. Does not implicitly {@link DAILY_REWARDS.Steps.verify|verify} messages.
+         * Encodes the specified Steps message. Does not implicitly {@link DailyRewards.Steps.verify|verify} messages.
          * @function encode
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
-         * @param {DAILY_REWARDS.ISteps} message Steps message or plain object to encode
+         * @param {DailyRewards.ISteps} message Steps message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -1891,11 +1388,11 @@ $root.DAILY_REWARDS = (function() {
         };
 
         /**
-         * Encodes the specified Steps message, length delimited. Does not implicitly {@link DAILY_REWARDS.Steps.verify|verify} messages.
+         * Encodes the specified Steps message, length delimited. Does not implicitly {@link DailyRewards.Steps.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
-         * @param {DAILY_REWARDS.ISteps} message Steps message or plain object to encode
+         * @param {DailyRewards.ISteps} message Steps message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -1906,18 +1403,18 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Decodes a Steps message from the specified reader or buffer.
          * @function decode
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {DAILY_REWARDS.Steps} Steps
+         * @returns {DailyRewards.Steps} Steps
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         Steps.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DAILY_REWARDS.Steps();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyRewards.Steps();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -1944,10 +1441,10 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Decodes a Steps message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {DAILY_REWARDS.Steps} Steps
+         * @returns {DailyRewards.Steps} Steps
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -1960,7 +1457,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Verifies a Steps message.
          * @function verify
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -1983,15 +1480,15 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Creates a Steps message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {DAILY_REWARDS.Steps} Steps
+         * @returns {DailyRewards.Steps} Steps
          */
         Steps.fromObject = function fromObject(object) {
-            if (object instanceof $root.DAILY_REWARDS.Steps)
+            if (object instanceof $root.DailyRewards.Steps)
                 return object;
-            var message = new $root.DAILY_REWARDS.Steps();
+            var message = new $root.DailyRewards.Steps();
             if (object.itemId != null)
                 message.itemId = String(object.itemId);
             if (object.step != null)
@@ -2004,9 +1501,9 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Creates a plain object from a Steps message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
-         * @param {DAILY_REWARDS.Steps} message Steps
+         * @param {DailyRewards.Steps} message Steps
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -2031,7 +1528,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Converts this Steps to JSON.
          * @function toJSON
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -2042,7 +1539,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Gets the default type url for Steps
          * @function getTypeUrl
-         * @memberof DAILY_REWARDS.Steps
+         * @memberof DailyRewards.Steps
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
@@ -2051,17 +1548,17 @@ $root.DAILY_REWARDS = (function() {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/DAILY_REWARDS.Steps";
+            return typeUrlPrefix + "/DailyRewards.Steps";
         };
 
         return Steps;
     })();
 
-    DAILY_REWARDS.DefaultRewardIfAlreadyOwned = (function() {
+    DailyRewards.DefaultRewardIfAlreadyOwned = (function() {
 
         /**
          * Properties of a DefaultRewardIfAlreadyOwned.
-         * @memberof DAILY_REWARDS
+         * @memberof DailyRewards
          * @interface IDefaultRewardIfAlreadyOwned
          * @property {string|null} [itemId] DefaultRewardIfAlreadyOwned itemId
          * @property {number|null} [amount] DefaultRewardIfAlreadyOwned amount
@@ -2069,11 +1566,11 @@ $root.DAILY_REWARDS = (function() {
 
         /**
          * Constructs a new DefaultRewardIfAlreadyOwned.
-         * @memberof DAILY_REWARDS
+         * @memberof DailyRewards
          * @classdesc Represents a DefaultRewardIfAlreadyOwned.
          * @implements IDefaultRewardIfAlreadyOwned
          * @constructor
-         * @param {DAILY_REWARDS.IDefaultRewardIfAlreadyOwned=} [properties] Properties to set
+         * @param {DailyRewards.IDefaultRewardIfAlreadyOwned=} [properties] Properties to set
          */
         function DefaultRewardIfAlreadyOwned(properties) {
             if (properties)
@@ -2085,7 +1582,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * DefaultRewardIfAlreadyOwned itemId.
          * @member {string} itemId
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @instance
          */
         DefaultRewardIfAlreadyOwned.prototype.itemId = "";
@@ -2093,7 +1590,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * DefaultRewardIfAlreadyOwned amount.
          * @member {number} amount
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @instance
          */
         DefaultRewardIfAlreadyOwned.prototype.amount = 0;
@@ -2101,21 +1598,21 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Creates a new DefaultRewardIfAlreadyOwned instance using the specified properties.
          * @function create
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
-         * @param {DAILY_REWARDS.IDefaultRewardIfAlreadyOwned=} [properties] Properties to set
-         * @returns {DAILY_REWARDS.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned instance
+         * @param {DailyRewards.IDefaultRewardIfAlreadyOwned=} [properties] Properties to set
+         * @returns {DailyRewards.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned instance
          */
         DefaultRewardIfAlreadyOwned.create = function create(properties) {
             return new DefaultRewardIfAlreadyOwned(properties);
         };
 
         /**
-         * Encodes the specified DefaultRewardIfAlreadyOwned message. Does not implicitly {@link DAILY_REWARDS.DefaultRewardIfAlreadyOwned.verify|verify} messages.
+         * Encodes the specified DefaultRewardIfAlreadyOwned message. Does not implicitly {@link DailyRewards.DefaultRewardIfAlreadyOwned.verify|verify} messages.
          * @function encode
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
-         * @param {DAILY_REWARDS.IDefaultRewardIfAlreadyOwned} message DefaultRewardIfAlreadyOwned message or plain object to encode
+         * @param {DailyRewards.IDefaultRewardIfAlreadyOwned} message DefaultRewardIfAlreadyOwned message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -2130,11 +1627,11 @@ $root.DAILY_REWARDS = (function() {
         };
 
         /**
-         * Encodes the specified DefaultRewardIfAlreadyOwned message, length delimited. Does not implicitly {@link DAILY_REWARDS.DefaultRewardIfAlreadyOwned.verify|verify} messages.
+         * Encodes the specified DefaultRewardIfAlreadyOwned message, length delimited. Does not implicitly {@link DailyRewards.DefaultRewardIfAlreadyOwned.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
-         * @param {DAILY_REWARDS.IDefaultRewardIfAlreadyOwned} message DefaultRewardIfAlreadyOwned message or plain object to encode
+         * @param {DailyRewards.IDefaultRewardIfAlreadyOwned} message DefaultRewardIfAlreadyOwned message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -2145,18 +1642,18 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Decodes a DefaultRewardIfAlreadyOwned message from the specified reader or buffer.
          * @function decode
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {DAILY_REWARDS.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned
+         * @returns {DailyRewards.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         DefaultRewardIfAlreadyOwned.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyRewards.DefaultRewardIfAlreadyOwned();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -2179,10 +1676,10 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Decodes a DefaultRewardIfAlreadyOwned message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {DAILY_REWARDS.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned
+         * @returns {DailyRewards.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -2195,7 +1692,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Verifies a DefaultRewardIfAlreadyOwned message.
          * @function verify
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -2215,15 +1712,15 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Creates a DefaultRewardIfAlreadyOwned message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {DAILY_REWARDS.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned
+         * @returns {DailyRewards.DefaultRewardIfAlreadyOwned} DefaultRewardIfAlreadyOwned
          */
         DefaultRewardIfAlreadyOwned.fromObject = function fromObject(object) {
-            if (object instanceof $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned)
+            if (object instanceof $root.DailyRewards.DefaultRewardIfAlreadyOwned)
                 return object;
-            var message = new $root.DAILY_REWARDS.DefaultRewardIfAlreadyOwned();
+            var message = new $root.DailyRewards.DefaultRewardIfAlreadyOwned();
             if (object.itemId != null)
                 message.itemId = String(object.itemId);
             if (object.amount != null)
@@ -2234,9 +1731,9 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Creates a plain object from a DefaultRewardIfAlreadyOwned message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
-         * @param {DAILY_REWARDS.DefaultRewardIfAlreadyOwned} message DefaultRewardIfAlreadyOwned
+         * @param {DailyRewards.DefaultRewardIfAlreadyOwned} message DefaultRewardIfAlreadyOwned
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -2258,7 +1755,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Converts this DefaultRewardIfAlreadyOwned to JSON.
          * @function toJSON
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -2269,7 +1766,7 @@ $root.DAILY_REWARDS = (function() {
         /**
          * Gets the default type url for DefaultRewardIfAlreadyOwned
          * @function getTypeUrl
-         * @memberof DAILY_REWARDS.DefaultRewardIfAlreadyOwned
+         * @memberof DailyRewards.DefaultRewardIfAlreadyOwned
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
@@ -2278,33 +1775,33 @@ $root.DAILY_REWARDS = (function() {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/DAILY_REWARDS.DefaultRewardIfAlreadyOwned";
+            return typeUrlPrefix + "/DailyRewards.DefaultRewardIfAlreadyOwned";
         };
 
         return DefaultRewardIfAlreadyOwned;
     })();
 
-    return DAILY_REWARDS;
+    return DailyRewards;
 })();
 
-$root.EQUIPMENTS = (function() {
+$root.ItemTable = (function() {
 
     /**
-     * Properties of a EQUIPMENTS.
-     * @exports IEQUIPMENTS
-     * @interface IEQUIPMENTS
-     * @property {Array.<EQUIPMENTS.IItems>|null} [items] EQUIPMENTS items
+     * Properties of an ItemTable.
+     * @exports IItemTable
+     * @interface IItemTable
+     * @property {Array.<ItemTable.IItems>|null} [items] ItemTable items
      */
 
     /**
-     * Constructs a new EQUIPMENTS.
-     * @exports EQUIPMENTS
-     * @classdesc Represents a EQUIPMENTS.
-     * @implements IEQUIPMENTS
+     * Constructs a new ItemTable.
+     * @exports ItemTable
+     * @classdesc Represents an ItemTable.
+     * @implements IItemTable
      * @constructor
-     * @param {IEQUIPMENTS=} [properties] Properties to set
+     * @param {IItemTable=} [properties] Properties to set
      */
-    function EQUIPMENTS(properties) {
+    function ItemTable(properties) {
         this.items = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -2313,78 +1810,78 @@ $root.EQUIPMENTS = (function() {
     }
 
     /**
-     * EQUIPMENTS items.
-     * @member {Array.<EQUIPMENTS.IItems>} items
-     * @memberof EQUIPMENTS
+     * ItemTable items.
+     * @member {Array.<ItemTable.IItems>} items
+     * @memberof ItemTable
      * @instance
      */
-    EQUIPMENTS.prototype.items = $util.emptyArray;
+    ItemTable.prototype.items = $util.emptyArray;
 
     /**
-     * Creates a new EQUIPMENTS instance using the specified properties.
+     * Creates a new ItemTable instance using the specified properties.
      * @function create
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
-     * @param {IEQUIPMENTS=} [properties] Properties to set
-     * @returns {EQUIPMENTS} EQUIPMENTS instance
+     * @param {IItemTable=} [properties] Properties to set
+     * @returns {ItemTable} ItemTable instance
      */
-    EQUIPMENTS.create = function create(properties) {
-        return new EQUIPMENTS(properties);
+    ItemTable.create = function create(properties) {
+        return new ItemTable(properties);
     };
 
     /**
-     * Encodes the specified EQUIPMENTS message. Does not implicitly {@link EQUIPMENTS.verify|verify} messages.
+     * Encodes the specified ItemTable message. Does not implicitly {@link ItemTable.verify|verify} messages.
      * @function encode
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
-     * @param {IEQUIPMENTS} message EQUIPMENTS message or plain object to encode
+     * @param {IItemTable} message ItemTable message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    EQUIPMENTS.encode = function encode(message, writer) {
+    ItemTable.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.items != null && message.items.length)
             for (var i = 0; i < message.items.length; ++i)
-                $root.EQUIPMENTS.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                $root.ItemTable.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified EQUIPMENTS message, length delimited. Does not implicitly {@link EQUIPMENTS.verify|verify} messages.
+     * Encodes the specified ItemTable message, length delimited. Does not implicitly {@link ItemTable.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
-     * @param {IEQUIPMENTS} message EQUIPMENTS message or plain object to encode
+     * @param {IItemTable} message ItemTable message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    EQUIPMENTS.encodeDelimited = function encodeDelimited(message, writer) {
+    ItemTable.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a EQUIPMENTS message from the specified reader or buffer.
+     * Decodes an ItemTable message from the specified reader or buffer.
      * @function decode
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {EQUIPMENTS} EQUIPMENTS
+     * @returns {ItemTable} ItemTable
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    EQUIPMENTS.decode = function decode(reader, length) {
+    ItemTable.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.EQUIPMENTS();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ItemTable();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
                     if (!(message.items && message.items.length))
                         message.items = [];
-                    message.items.push($root.EQUIPMENTS.Items.decode(reader, reader.uint32()));
+                    message.items.push($root.ItemTable.Items.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -2396,37 +1893,37 @@ $root.EQUIPMENTS = (function() {
     };
 
     /**
-     * Decodes a EQUIPMENTS message from the specified reader or buffer, length delimited.
+     * Decodes an ItemTable message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {EQUIPMENTS} EQUIPMENTS
+     * @returns {ItemTable} ItemTable
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    EQUIPMENTS.decodeDelimited = function decodeDelimited(reader) {
+    ItemTable.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a EQUIPMENTS message.
+     * Verifies an ItemTable message.
      * @function verify
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    EQUIPMENTS.verify = function verify(message) {
+    ItemTable.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.items != null && message.hasOwnProperty("items")) {
             if (!Array.isArray(message.items))
                 return "items: array expected";
             for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.EQUIPMENTS.Items.verify(message.items[i]);
+                var error = $root.ItemTable.Items.verify(message.items[i]);
                 if (error)
                     return "items." + error;
             }
@@ -2435,40 +1932,40 @@ $root.EQUIPMENTS = (function() {
     };
 
     /**
-     * Creates a EQUIPMENTS message from a plain object. Also converts values to their respective internal types.
+     * Creates an ItemTable message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {EQUIPMENTS} EQUIPMENTS
+     * @returns {ItemTable} ItemTable
      */
-    EQUIPMENTS.fromObject = function fromObject(object) {
-        if (object instanceof $root.EQUIPMENTS)
+    ItemTable.fromObject = function fromObject(object) {
+        if (object instanceof $root.ItemTable)
             return object;
-        var message = new $root.EQUIPMENTS();
+        var message = new $root.ItemTable();
         if (object.items) {
             if (!Array.isArray(object.items))
-                throw TypeError(".EQUIPMENTS.items: array expected");
+                throw TypeError(".ItemTable.items: array expected");
             message.items = [];
             for (var i = 0; i < object.items.length; ++i) {
                 if (typeof object.items[i] !== "object")
-                    throw TypeError(".EQUIPMENTS.items: object expected");
-                message.items[i] = $root.EQUIPMENTS.Items.fromObject(object.items[i]);
+                    throw TypeError(".ItemTable.items: object expected");
+                message.items[i] = $root.ItemTable.Items.fromObject(object.items[i]);
             }
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a EQUIPMENTS message. Also converts values to other types if specified.
+     * Creates a plain object from an ItemTable message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
-     * @param {EQUIPMENTS} message EQUIPMENTS
+     * @param {ItemTable} message ItemTable
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    EQUIPMENTS.toObject = function toObject(message, options) {
+    ItemTable.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -2477,585 +1974,42 @@ $root.EQUIPMENTS = (function() {
         if (message.items && message.items.length) {
             object.items = [];
             for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.EQUIPMENTS.Items.toObject(message.items[j], options);
+                object.items[j] = $root.ItemTable.Items.toObject(message.items[j], options);
         }
         return object;
     };
 
     /**
-     * Converts this EQUIPMENTS to JSON.
+     * Converts this ItemTable to JSON.
      * @function toJSON
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    EQUIPMENTS.prototype.toJSON = function toJSON() {
+    ItemTable.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for EQUIPMENTS
+     * Gets the default type url for ItemTable
      * @function getTypeUrl
-     * @memberof EQUIPMENTS
+     * @memberof ItemTable
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    EQUIPMENTS.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    ItemTable.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/EQUIPMENTS";
+        return typeUrlPrefix + "/ItemTable";
     };
 
-    EQUIPMENTS.Items = (function() {
+    ItemTable.Items = (function() {
 
         /**
          * Properties of an Items.
-         * @memberof EQUIPMENTS
-         * @interface IItems
-         * @property {string|null} [image] Items image
-         * @property {string|null} [equipmentName] Items equipmentName
-         * @property {string|null} [id] Items id
-         * @property {string|null} [equipmentType] Items equipmentType
-         * @property {string|null} [rarity] Items rarity
-         * @property {number|null} [points] Items points
-         */
-
-        /**
-         * Constructs a new Items.
-         * @memberof EQUIPMENTS
-         * @classdesc Represents an Items.
-         * @implements IItems
-         * @constructor
-         * @param {EQUIPMENTS.IItems=} [properties] Properties to set
-         */
-        function Items(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * Items image.
-         * @member {string} image
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         */
-        Items.prototype.image = "";
-
-        /**
-         * Items equipmentName.
-         * @member {string} equipmentName
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         */
-        Items.prototype.equipmentName = "";
-
-        /**
-         * Items id.
-         * @member {string} id
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         */
-        Items.prototype.id = "";
-
-        /**
-         * Items equipmentType.
-         * @member {string} equipmentType
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         */
-        Items.prototype.equipmentType = "";
-
-        /**
-         * Items rarity.
-         * @member {string} rarity
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         */
-        Items.prototype.rarity = "";
-
-        /**
-         * Items points.
-         * @member {number} points
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         */
-        Items.prototype.points = 0;
-
-        /**
-         * Creates a new Items instance using the specified properties.
-         * @function create
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {EQUIPMENTS.IItems=} [properties] Properties to set
-         * @returns {EQUIPMENTS.Items} Items instance
-         */
-        Items.create = function create(properties) {
-            return new Items(properties);
-        };
-
-        /**
-         * Encodes the specified Items message. Does not implicitly {@link EQUIPMENTS.Items.verify|verify} messages.
-         * @function encode
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {EQUIPMENTS.IItems} message Items message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Items.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.image != null && Object.hasOwnProperty.call(message, "image"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.image);
-            if (message.equipmentName != null && Object.hasOwnProperty.call(message, "equipmentName"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.equipmentName);
-            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.id);
-            if (message.equipmentType != null && Object.hasOwnProperty.call(message, "equipmentType"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.equipmentType);
-            if (message.rarity != null && Object.hasOwnProperty.call(message, "rarity"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.rarity);
-            if (message.points != null && Object.hasOwnProperty.call(message, "points"))
-                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.points);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link EQUIPMENTS.Items.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {EQUIPMENTS.IItems} message Items message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Items.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes an Items message from the specified reader or buffer.
-         * @function decode
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {EQUIPMENTS.Items} Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Items.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.EQUIPMENTS.Items();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1: {
-                        message.image = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.equipmentName = reader.string();
-                        break;
-                    }
-                case 3: {
-                        message.id = reader.string();
-                        break;
-                    }
-                case 4: {
-                        message.equipmentType = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.rarity = reader.string();
-                        break;
-                    }
-                case 6: {
-                        message.points = reader.int32();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {EQUIPMENTS.Items} Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Items.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an Items message.
-         * @function verify
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Items.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.image != null && message.hasOwnProperty("image"))
-                if (!$util.isString(message.image))
-                    return "image: string expected";
-            if (message.equipmentName != null && message.hasOwnProperty("equipmentName"))
-                if (!$util.isString(message.equipmentName))
-                    return "equipmentName: string expected";
-            if (message.id != null && message.hasOwnProperty("id"))
-                if (!$util.isString(message.id))
-                    return "id: string expected";
-            if (message.equipmentType != null && message.hasOwnProperty("equipmentType"))
-                if (!$util.isString(message.equipmentType))
-                    return "equipmentType: string expected";
-            if (message.rarity != null && message.hasOwnProperty("rarity"))
-                if (!$util.isString(message.rarity))
-                    return "rarity: string expected";
-            if (message.points != null && message.hasOwnProperty("points"))
-                if (!$util.isInteger(message.points))
-                    return "points: integer expected";
-            return null;
-        };
-
-        /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {EQUIPMENTS.Items} Items
-         */
-        Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.EQUIPMENTS.Items)
-                return object;
-            var message = new $root.EQUIPMENTS.Items();
-            if (object.image != null)
-                message.image = String(object.image);
-            if (object.equipmentName != null)
-                message.equipmentName = String(object.equipmentName);
-            if (object.id != null)
-                message.id = String(object.id);
-            if (object.equipmentType != null)
-                message.equipmentType = String(object.equipmentType);
-            if (object.rarity != null)
-                message.rarity = String(object.rarity);
-            if (object.points != null)
-                message.points = object.points | 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {EQUIPMENTS.Items} message Items
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        Items.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.image = "";
-                object.equipmentName = "";
-                object.id = "";
-                object.equipmentType = "";
-                object.rarity = "";
-                object.points = 0;
-            }
-            if (message.image != null && message.hasOwnProperty("image"))
-                object.image = message.image;
-            if (message.equipmentName != null && message.hasOwnProperty("equipmentName"))
-                object.equipmentName = message.equipmentName;
-            if (message.id != null && message.hasOwnProperty("id"))
-                object.id = message.id;
-            if (message.equipmentType != null && message.hasOwnProperty("equipmentType"))
-                object.equipmentType = message.equipmentType;
-            if (message.rarity != null && message.hasOwnProperty("rarity"))
-                object.rarity = message.rarity;
-            if (message.points != null && message.hasOwnProperty("points"))
-                object.points = message.points;
-            return object;
-        };
-
-        /**
-         * Converts this Items to JSON.
-         * @function toJSON
-         * @memberof EQUIPMENTS.Items
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        Items.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for Items
-         * @function getTypeUrl
-         * @memberof EQUIPMENTS.Items
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/EQUIPMENTS.Items";
-        };
-
-        return Items;
-    })();
-
-    return EQUIPMENTS;
-})();
-
-$root.ITEM_TABLE = (function() {
-
-    /**
-     * Properties of a ITEM_TABLE.
-     * @exports IITEM_TABLE
-     * @interface IITEM_TABLE
-     * @property {Array.<ITEM_TABLE.IItems>|null} [items] ITEM_TABLE items
-     */
-
-    /**
-     * Constructs a new ITEM_TABLE.
-     * @exports ITEM_TABLE
-     * @classdesc Represents a ITEM_TABLE.
-     * @implements IITEM_TABLE
-     * @constructor
-     * @param {IITEM_TABLE=} [properties] Properties to set
-     */
-    function ITEM_TABLE(properties) {
-        this.items = [];
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * ITEM_TABLE items.
-     * @member {Array.<ITEM_TABLE.IItems>} items
-     * @memberof ITEM_TABLE
-     * @instance
-     */
-    ITEM_TABLE.prototype.items = $util.emptyArray;
-
-    /**
-     * Creates a new ITEM_TABLE instance using the specified properties.
-     * @function create
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {IITEM_TABLE=} [properties] Properties to set
-     * @returns {ITEM_TABLE} ITEM_TABLE instance
-     */
-    ITEM_TABLE.create = function create(properties) {
-        return new ITEM_TABLE(properties);
-    };
-
-    /**
-     * Encodes the specified ITEM_TABLE message. Does not implicitly {@link ITEM_TABLE.verify|verify} messages.
-     * @function encode
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {IITEM_TABLE} message ITEM_TABLE message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    ITEM_TABLE.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.items != null && message.items.length)
-            for (var i = 0; i < message.items.length; ++i)
-                $root.ITEM_TABLE.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
-        return writer;
-    };
-
-    /**
-     * Encodes the specified ITEM_TABLE message, length delimited. Does not implicitly {@link ITEM_TABLE.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {IITEM_TABLE} message ITEM_TABLE message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    ITEM_TABLE.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a ITEM_TABLE message from the specified reader or buffer.
-     * @function decode
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {ITEM_TABLE} ITEM_TABLE
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    ITEM_TABLE.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ITEM_TABLE();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    if (!(message.items && message.items.length))
-                        message.items = [];
-                    message.items.push($root.ITEM_TABLE.Items.decode(reader, reader.uint32()));
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a ITEM_TABLE message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {ITEM_TABLE} ITEM_TABLE
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    ITEM_TABLE.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a ITEM_TABLE message.
-     * @function verify
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    ITEM_TABLE.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.items != null && message.hasOwnProperty("items")) {
-            if (!Array.isArray(message.items))
-                return "items: array expected";
-            for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.ITEM_TABLE.Items.verify(message.items[i]);
-                if (error)
-                    return "items." + error;
-            }
-        }
-        return null;
-    };
-
-    /**
-     * Creates a ITEM_TABLE message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {ITEM_TABLE} ITEM_TABLE
-     */
-    ITEM_TABLE.fromObject = function fromObject(object) {
-        if (object instanceof $root.ITEM_TABLE)
-            return object;
-        var message = new $root.ITEM_TABLE();
-        if (object.items) {
-            if (!Array.isArray(object.items))
-                throw TypeError(".ITEM_TABLE.items: array expected");
-            message.items = [];
-            for (var i = 0; i < object.items.length; ++i) {
-                if (typeof object.items[i] !== "object")
-                    throw TypeError(".ITEM_TABLE.items: object expected");
-                message.items[i] = $root.ITEM_TABLE.Items.fromObject(object.items[i]);
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a ITEM_TABLE message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {ITEM_TABLE} message ITEM_TABLE
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    ITEM_TABLE.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.arrays || options.defaults)
-            object.items = [];
-        if (message.items && message.items.length) {
-            object.items = [];
-            for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.ITEM_TABLE.Items.toObject(message.items[j], options);
-        }
-        return object;
-    };
-
-    /**
-     * Converts this ITEM_TABLE to JSON.
-     * @function toJSON
-     * @memberof ITEM_TABLE
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    ITEM_TABLE.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    /**
-     * Gets the default type url for ITEM_TABLE
-     * @function getTypeUrl
-     * @memberof ITEM_TABLE
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    ITEM_TABLE.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/ITEM_TABLE";
-    };
-
-    ITEM_TABLE.Items = (function() {
-
-        /**
-         * Properties of an Items.
-         * @memberof ITEM_TABLE
+         * @memberof ItemTable
          * @interface IItems
          * @property {string|null} [name] Items name
          * @property {string|null} [type] Items type
@@ -3064,11 +2018,11 @@ $root.ITEM_TABLE = (function() {
 
         /**
          * Constructs a new Items.
-         * @memberof ITEM_TABLE
+         * @memberof ItemTable
          * @classdesc Represents an Items.
          * @implements IItems
          * @constructor
-         * @param {ITEM_TABLE.IItems=} [properties] Properties to set
+         * @param {ItemTable.IItems=} [properties] Properties to set
          */
         function Items(properties) {
             if (properties)
@@ -3080,7 +2034,7 @@ $root.ITEM_TABLE = (function() {
         /**
          * Items name.
          * @member {string} name
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @instance
          */
         Items.prototype.name = "";
@@ -3088,7 +2042,7 @@ $root.ITEM_TABLE = (function() {
         /**
          * Items type.
          * @member {string} type
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @instance
          */
         Items.prototype.type = "";
@@ -3096,7 +2050,7 @@ $root.ITEM_TABLE = (function() {
         /**
          * Items itemId.
          * @member {string} itemId
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @instance
          */
         Items.prototype.itemId = "";
@@ -3104,21 +2058,21 @@ $root.ITEM_TABLE = (function() {
         /**
          * Creates a new Items instance using the specified properties.
          * @function create
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
-         * @param {ITEM_TABLE.IItems=} [properties] Properties to set
-         * @returns {ITEM_TABLE.Items} Items instance
+         * @param {ItemTable.IItems=} [properties] Properties to set
+         * @returns {ItemTable.Items} Items instance
          */
         Items.create = function create(properties) {
             return new Items(properties);
         };
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link ITEM_TABLE.Items.verify|verify} messages.
+         * Encodes the specified Items message. Does not implicitly {@link ItemTable.Items.verify|verify} messages.
          * @function encode
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
-         * @param {ITEM_TABLE.IItems} message Items message or plain object to encode
+         * @param {ItemTable.IItems} message Items message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -3135,11 +2089,11 @@ $root.ITEM_TABLE = (function() {
         };
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link ITEM_TABLE.Items.verify|verify} messages.
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link ItemTable.Items.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
-         * @param {ITEM_TABLE.IItems} message Items message or plain object to encode
+         * @param {ItemTable.IItems} message Items message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -3150,18 +2104,18 @@ $root.ITEM_TABLE = (function() {
         /**
          * Decodes an Items message from the specified reader or buffer.
          * @function decode
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {ITEM_TABLE.Items} Items
+         * @returns {ItemTable.Items} Items
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         Items.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ITEM_TABLE.Items();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ItemTable.Items();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -3188,10 +2142,10 @@ $root.ITEM_TABLE = (function() {
         /**
          * Decodes an Items message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {ITEM_TABLE.Items} Items
+         * @returns {ItemTable.Items} Items
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -3204,7 +2158,7 @@ $root.ITEM_TABLE = (function() {
         /**
          * Verifies an Items message.
          * @function verify
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3227,15 +2181,15 @@ $root.ITEM_TABLE = (function() {
         /**
          * Creates an Items message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {ITEM_TABLE.Items} Items
+         * @returns {ItemTable.Items} Items
          */
         Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.ITEM_TABLE.Items)
+            if (object instanceof $root.ItemTable.Items)
                 return object;
-            var message = new $root.ITEM_TABLE.Items();
+            var message = new $root.ItemTable.Items();
             if (object.name != null)
                 message.name = String(object.name);
             if (object.type != null)
@@ -3248,9 +2202,9 @@ $root.ITEM_TABLE = (function() {
         /**
          * Creates a plain object from an Items message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
-         * @param {ITEM_TABLE.Items} message Items
+         * @param {ItemTable.Items} message Items
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -3275,7 +2229,7 @@ $root.ITEM_TABLE = (function() {
         /**
          * Converts this Items to JSON.
          * @function toJSON
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -3286,7 +2240,7 @@ $root.ITEM_TABLE = (function() {
         /**
          * Gets the default type url for Items
          * @function getTypeUrl
-         * @memberof ITEM_TABLE.Items
+         * @memberof ItemTable.Items
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
@@ -3295,36 +2249,36 @@ $root.ITEM_TABLE = (function() {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/ITEM_TABLE.Items";
+            return typeUrlPrefix + "/ItemTable.Items";
         };
 
         return Items;
     })();
 
-    return ITEM_TABLE;
+    return ItemTable;
 })();
 
-$root.LUCKY_WHEEL = (function() {
+$root.LuckyWheel = (function() {
 
     /**
-     * Properties of a LUCKY_WHEEL.
-     * @exports ILUCKY_WHEEL
-     * @interface ILUCKY_WHEEL
-     * @property {number|null} [minFullSpins] LUCKY_WHEEL minFullSpins
-     * @property {number|null} [maxFullSpins] LUCKY_WHEEL maxFullSpins
-     * @property {Array.<LUCKY_WHEEL.IItems>|null} [items] LUCKY_WHEEL items
-     * @property {number|null} [dailyLimit] LUCKY_WHEEL dailyLimit
+     * Properties of a LuckyWheel.
+     * @exports ILuckyWheel
+     * @interface ILuckyWheel
+     * @property {number|null} [minFullSpins] LuckyWheel minFullSpins
+     * @property {number|null} [maxFullSpins] LuckyWheel maxFullSpins
+     * @property {Array.<LuckyWheel.IItems>|null} [items] LuckyWheel items
+     * @property {number|null} [dailyLimit] LuckyWheel dailyLimit
      */
 
     /**
-     * Constructs a new LUCKY_WHEEL.
-     * @exports LUCKY_WHEEL
-     * @classdesc Represents a LUCKY_WHEEL.
-     * @implements ILUCKY_WHEEL
+     * Constructs a new LuckyWheel.
+     * @exports LuckyWheel
+     * @classdesc Represents a LuckyWheel.
+     * @implements ILuckyWheel
      * @constructor
-     * @param {ILUCKY_WHEEL=} [properties] Properties to set
+     * @param {ILuckyWheel=} [properties] Properties to set
      */
-    function LUCKY_WHEEL(properties) {
+    function LuckyWheel(properties) {
         this.items = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -3333,59 +2287,59 @@ $root.LUCKY_WHEEL = (function() {
     }
 
     /**
-     * LUCKY_WHEEL minFullSpins.
+     * LuckyWheel minFullSpins.
      * @member {number} minFullSpins
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @instance
      */
-    LUCKY_WHEEL.prototype.minFullSpins = 0;
+    LuckyWheel.prototype.minFullSpins = 0;
 
     /**
-     * LUCKY_WHEEL maxFullSpins.
+     * LuckyWheel maxFullSpins.
      * @member {number} maxFullSpins
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @instance
      */
-    LUCKY_WHEEL.prototype.maxFullSpins = 0;
+    LuckyWheel.prototype.maxFullSpins = 0;
 
     /**
-     * LUCKY_WHEEL items.
-     * @member {Array.<LUCKY_WHEEL.IItems>} items
-     * @memberof LUCKY_WHEEL
+     * LuckyWheel items.
+     * @member {Array.<LuckyWheel.IItems>} items
+     * @memberof LuckyWheel
      * @instance
      */
-    LUCKY_WHEEL.prototype.items = $util.emptyArray;
+    LuckyWheel.prototype.items = $util.emptyArray;
 
     /**
-     * LUCKY_WHEEL dailyLimit.
+     * LuckyWheel dailyLimit.
      * @member {number} dailyLimit
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @instance
      */
-    LUCKY_WHEEL.prototype.dailyLimit = 0;
+    LuckyWheel.prototype.dailyLimit = 0;
 
     /**
-     * Creates a new LUCKY_WHEEL instance using the specified properties.
+     * Creates a new LuckyWheel instance using the specified properties.
      * @function create
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
-     * @param {ILUCKY_WHEEL=} [properties] Properties to set
-     * @returns {LUCKY_WHEEL} LUCKY_WHEEL instance
+     * @param {ILuckyWheel=} [properties] Properties to set
+     * @returns {LuckyWheel} LuckyWheel instance
      */
-    LUCKY_WHEEL.create = function create(properties) {
-        return new LUCKY_WHEEL(properties);
+    LuckyWheel.create = function create(properties) {
+        return new LuckyWheel(properties);
     };
 
     /**
-     * Encodes the specified LUCKY_WHEEL message. Does not implicitly {@link LUCKY_WHEEL.verify|verify} messages.
+     * Encodes the specified LuckyWheel message. Does not implicitly {@link LuckyWheel.verify|verify} messages.
      * @function encode
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
-     * @param {ILUCKY_WHEEL} message LUCKY_WHEEL message or plain object to encode
+     * @param {ILuckyWheel} message LuckyWheel message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    LUCKY_WHEEL.encode = function encode(message, writer) {
+    LuckyWheel.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.minFullSpins != null && Object.hasOwnProperty.call(message, "minFullSpins"))
@@ -3394,40 +2348,40 @@ $root.LUCKY_WHEEL = (function() {
             writer.uint32(/* id 2, wireType 0 =*/16).int32(message.maxFullSpins);
         if (message.items != null && message.items.length)
             for (var i = 0; i < message.items.length; ++i)
-                $root.LUCKY_WHEEL.Items.encode(message.items[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
+                $root.LuckyWheel.Items.encode(message.items[i], writer.uint32(/* id 3, wireType 2 =*/26).fork()).ldelim();
         if (message.dailyLimit != null && Object.hasOwnProperty.call(message, "dailyLimit"))
             writer.uint32(/* id 4, wireType 0 =*/32).int32(message.dailyLimit);
         return writer;
     };
 
     /**
-     * Encodes the specified LUCKY_WHEEL message, length delimited. Does not implicitly {@link LUCKY_WHEEL.verify|verify} messages.
+     * Encodes the specified LuckyWheel message, length delimited. Does not implicitly {@link LuckyWheel.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
-     * @param {ILUCKY_WHEEL} message LUCKY_WHEEL message or plain object to encode
+     * @param {ILuckyWheel} message LuckyWheel message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    LUCKY_WHEEL.encodeDelimited = function encodeDelimited(message, writer) {
+    LuckyWheel.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a LUCKY_WHEEL message from the specified reader or buffer.
+     * Decodes a LuckyWheel message from the specified reader or buffer.
      * @function decode
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {LUCKY_WHEEL} LUCKY_WHEEL
+     * @returns {LuckyWheel} LuckyWheel
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    LUCKY_WHEEL.decode = function decode(reader, length) {
+    LuckyWheel.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LUCKY_WHEEL();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LuckyWheel();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -3442,7 +2396,7 @@ $root.LUCKY_WHEEL = (function() {
             case 3: {
                     if (!(message.items && message.items.length))
                         message.items = [];
-                    message.items.push($root.LUCKY_WHEEL.Items.decode(reader, reader.uint32()));
+                    message.items.push($root.LuckyWheel.Items.decode(reader, reader.uint32()));
                     break;
                 }
             case 4: {
@@ -3458,30 +2412,30 @@ $root.LUCKY_WHEEL = (function() {
     };
 
     /**
-     * Decodes a LUCKY_WHEEL message from the specified reader or buffer, length delimited.
+     * Decodes a LuckyWheel message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {LUCKY_WHEEL} LUCKY_WHEEL
+     * @returns {LuckyWheel} LuckyWheel
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    LUCKY_WHEEL.decodeDelimited = function decodeDelimited(reader) {
+    LuckyWheel.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a LUCKY_WHEEL message.
+     * Verifies a LuckyWheel message.
      * @function verify
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    LUCKY_WHEEL.verify = function verify(message) {
+    LuckyWheel.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.minFullSpins != null && message.hasOwnProperty("minFullSpins"))
@@ -3494,7 +2448,7 @@ $root.LUCKY_WHEEL = (function() {
             if (!Array.isArray(message.items))
                 return "items: array expected";
             for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.LUCKY_WHEEL.Items.verify(message.items[i]);
+                var error = $root.LuckyWheel.Items.verify(message.items[i]);
                 if (error)
                     return "items." + error;
             }
@@ -3506,29 +2460,29 @@ $root.LUCKY_WHEEL = (function() {
     };
 
     /**
-     * Creates a LUCKY_WHEEL message from a plain object. Also converts values to their respective internal types.
+     * Creates a LuckyWheel message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {LUCKY_WHEEL} LUCKY_WHEEL
+     * @returns {LuckyWheel} LuckyWheel
      */
-    LUCKY_WHEEL.fromObject = function fromObject(object) {
-        if (object instanceof $root.LUCKY_WHEEL)
+    LuckyWheel.fromObject = function fromObject(object) {
+        if (object instanceof $root.LuckyWheel)
             return object;
-        var message = new $root.LUCKY_WHEEL();
+        var message = new $root.LuckyWheel();
         if (object.minFullSpins != null)
             message.minFullSpins = object.minFullSpins | 0;
         if (object.maxFullSpins != null)
             message.maxFullSpins = object.maxFullSpins | 0;
         if (object.items) {
             if (!Array.isArray(object.items))
-                throw TypeError(".LUCKY_WHEEL.items: array expected");
+                throw TypeError(".LuckyWheel.items: array expected");
             message.items = [];
             for (var i = 0; i < object.items.length; ++i) {
                 if (typeof object.items[i] !== "object")
-                    throw TypeError(".LUCKY_WHEEL.items: object expected");
-                message.items[i] = $root.LUCKY_WHEEL.Items.fromObject(object.items[i]);
+                    throw TypeError(".LuckyWheel.items: object expected");
+                message.items[i] = $root.LuckyWheel.Items.fromObject(object.items[i]);
             }
         }
         if (object.dailyLimit != null)
@@ -3537,15 +2491,15 @@ $root.LUCKY_WHEEL = (function() {
     };
 
     /**
-     * Creates a plain object from a LUCKY_WHEEL message. Also converts values to other types if specified.
+     * Creates a plain object from a LuckyWheel message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
-     * @param {LUCKY_WHEEL} message LUCKY_WHEEL
+     * @param {LuckyWheel} message LuckyWheel
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    LUCKY_WHEEL.toObject = function toObject(message, options) {
+    LuckyWheel.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -3563,7 +2517,7 @@ $root.LUCKY_WHEEL = (function() {
         if (message.items && message.items.length) {
             object.items = [];
             for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.LUCKY_WHEEL.Items.toObject(message.items[j], options);
+                object.items[j] = $root.LuckyWheel.Items.toObject(message.items[j], options);
         }
         if (message.dailyLimit != null && message.hasOwnProperty("dailyLimit"))
             object.dailyLimit = message.dailyLimit;
@@ -3571,36 +2525,36 @@ $root.LUCKY_WHEEL = (function() {
     };
 
     /**
-     * Converts this LUCKY_WHEEL to JSON.
+     * Converts this LuckyWheel to JSON.
      * @function toJSON
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    LUCKY_WHEEL.prototype.toJSON = function toJSON() {
+    LuckyWheel.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for LUCKY_WHEEL
+     * Gets the default type url for LuckyWheel
      * @function getTypeUrl
-     * @memberof LUCKY_WHEEL
+     * @memberof LuckyWheel
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    LUCKY_WHEEL.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    LuckyWheel.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/LUCKY_WHEEL";
+        return typeUrlPrefix + "/LuckyWheel";
     };
 
-    LUCKY_WHEEL.Items = (function() {
+    LuckyWheel.Items = (function() {
 
         /**
          * Properties of an Items.
-         * @memberof LUCKY_WHEEL
+         * @memberof LuckyWheel
          * @interface IItems
          * @property {string|null} [itemId] Items itemId
          * @property {number|null} [weight] Items weight
@@ -3609,11 +2563,11 @@ $root.LUCKY_WHEEL = (function() {
 
         /**
          * Constructs a new Items.
-         * @memberof LUCKY_WHEEL
+         * @memberof LuckyWheel
          * @classdesc Represents an Items.
          * @implements IItems
          * @constructor
-         * @param {LUCKY_WHEEL.IItems=} [properties] Properties to set
+         * @param {LuckyWheel.IItems=} [properties] Properties to set
          */
         function Items(properties) {
             if (properties)
@@ -3625,7 +2579,7 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Items itemId.
          * @member {string} itemId
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @instance
          */
         Items.prototype.itemId = "";
@@ -3633,7 +2587,7 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Items weight.
          * @member {number} weight
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @instance
          */
         Items.prototype.weight = 0;
@@ -3641,7 +2595,7 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Items quantity.
          * @member {number} quantity
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @instance
          */
         Items.prototype.quantity = 0;
@@ -3649,21 +2603,21 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Creates a new Items instance using the specified properties.
          * @function create
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
-         * @param {LUCKY_WHEEL.IItems=} [properties] Properties to set
-         * @returns {LUCKY_WHEEL.Items} Items instance
+         * @param {LuckyWheel.IItems=} [properties] Properties to set
+         * @returns {LuckyWheel.Items} Items instance
          */
         Items.create = function create(properties) {
             return new Items(properties);
         };
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link LUCKY_WHEEL.Items.verify|verify} messages.
+         * Encodes the specified Items message. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
          * @function encode
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
-         * @param {LUCKY_WHEEL.IItems} message Items message or plain object to encode
+         * @param {LuckyWheel.IItems} message Items message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -3680,11 +2634,11 @@ $root.LUCKY_WHEEL = (function() {
         };
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link LUCKY_WHEEL.Items.verify|verify} messages.
+         * Encodes the specified Items message, length delimited. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
-         * @param {LUCKY_WHEEL.IItems} message Items message or plain object to encode
+         * @param {LuckyWheel.IItems} message Items message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -3695,18 +2649,18 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Decodes an Items message from the specified reader or buffer.
          * @function decode
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {LUCKY_WHEEL.Items} Items
+         * @returns {LuckyWheel.Items} Items
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         Items.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LUCKY_WHEEL.Items();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LuckyWheel.Items();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -3733,10 +2687,10 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Decodes an Items message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {LUCKY_WHEEL.Items} Items
+         * @returns {LuckyWheel.Items} Items
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -3749,7 +2703,7 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Verifies an Items message.
          * @function verify
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -3772,15 +2726,15 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Creates an Items message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {LUCKY_WHEEL.Items} Items
+         * @returns {LuckyWheel.Items} Items
          */
         Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.LUCKY_WHEEL.Items)
+            if (object instanceof $root.LuckyWheel.Items)
                 return object;
-            var message = new $root.LUCKY_WHEEL.Items();
+            var message = new $root.LuckyWheel.Items();
             if (object.itemId != null)
                 message.itemId = String(object.itemId);
             if (object.weight != null)
@@ -3793,9 +2747,9 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Creates a plain object from an Items message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
-         * @param {LUCKY_WHEEL.Items} message Items
+         * @param {LuckyWheel.Items} message Items
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -3820,7 +2774,7 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Converts this Items to JSON.
          * @function toJSON
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -3831,7 +2785,7 @@ $root.LUCKY_WHEEL = (function() {
         /**
          * Gets the default type url for Items
          * @function getTypeUrl
-         * @memberof LUCKY_WHEEL.Items
+         * @memberof LuckyWheel.Items
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
@@ -3840,34 +2794,34 @@ $root.LUCKY_WHEEL = (function() {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/LUCKY_WHEEL.Items";
+            return typeUrlPrefix + "/LuckyWheel.Items";
         };
 
         return Items;
     })();
 
-    return LUCKY_WHEEL;
+    return LuckyWheel;
 })();
 
-$root.PROGRESS_QUEST = (function() {
+$root.ProgressQuests = (function() {
 
     /**
-     * Properties of a PROGRESS_QUEST.
-     * @exports IPROGRESS_QUEST
-     * @interface IPROGRESS_QUEST
-     * @property {Array.<PROGRESS_QUEST.IItems>|null} [items] PROGRESS_QUEST items
+     * Properties of a ProgressQuests.
+     * @exports IProgressQuests
+     * @interface IProgressQuests
+     * @property {Array.<ProgressQuests.IQuests>|null} [quests] ProgressQuests quests
      */
 
     /**
-     * Constructs a new PROGRESS_QUEST.
-     * @exports PROGRESS_QUEST
-     * @classdesc Represents a PROGRESS_QUEST.
-     * @implements IPROGRESS_QUEST
+     * Constructs a new ProgressQuests.
+     * @exports ProgressQuests
+     * @classdesc Represents a ProgressQuests.
+     * @implements IProgressQuests
      * @constructor
-     * @param {IPROGRESS_QUEST=} [properties] Properties to set
+     * @param {IProgressQuests=} [properties] Properties to set
      */
-    function PROGRESS_QUEST(properties) {
-        this.items = [];
+    function ProgressQuests(properties) {
+        this.quests = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -3875,78 +2829,78 @@ $root.PROGRESS_QUEST = (function() {
     }
 
     /**
-     * PROGRESS_QUEST items.
-     * @member {Array.<PROGRESS_QUEST.IItems>} items
-     * @memberof PROGRESS_QUEST
+     * ProgressQuests quests.
+     * @member {Array.<ProgressQuests.IQuests>} quests
+     * @memberof ProgressQuests
      * @instance
      */
-    PROGRESS_QUEST.prototype.items = $util.emptyArray;
+    ProgressQuests.prototype.quests = $util.emptyArray;
 
     /**
-     * Creates a new PROGRESS_QUEST instance using the specified properties.
+     * Creates a new ProgressQuests instance using the specified properties.
      * @function create
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
-     * @param {IPROGRESS_QUEST=} [properties] Properties to set
-     * @returns {PROGRESS_QUEST} PROGRESS_QUEST instance
+     * @param {IProgressQuests=} [properties] Properties to set
+     * @returns {ProgressQuests} ProgressQuests instance
      */
-    PROGRESS_QUEST.create = function create(properties) {
-        return new PROGRESS_QUEST(properties);
+    ProgressQuests.create = function create(properties) {
+        return new ProgressQuests(properties);
     };
 
     /**
-     * Encodes the specified PROGRESS_QUEST message. Does not implicitly {@link PROGRESS_QUEST.verify|verify} messages.
+     * Encodes the specified ProgressQuests message. Does not implicitly {@link ProgressQuests.verify|verify} messages.
      * @function encode
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
-     * @param {IPROGRESS_QUEST} message PROGRESS_QUEST message or plain object to encode
+     * @param {IProgressQuests} message ProgressQuests message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    PROGRESS_QUEST.encode = function encode(message, writer) {
+    ProgressQuests.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.items != null && message.items.length)
-            for (var i = 0; i < message.items.length; ++i)
-                $root.PROGRESS_QUEST.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.quests != null && message.quests.length)
+            for (var i = 0; i < message.quests.length; ++i)
+                $root.ProgressQuests.Quests.encode(message.quests[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified PROGRESS_QUEST message, length delimited. Does not implicitly {@link PROGRESS_QUEST.verify|verify} messages.
+     * Encodes the specified ProgressQuests message, length delimited. Does not implicitly {@link ProgressQuests.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
-     * @param {IPROGRESS_QUEST} message PROGRESS_QUEST message or plain object to encode
+     * @param {IProgressQuests} message ProgressQuests message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    PROGRESS_QUEST.encodeDelimited = function encodeDelimited(message, writer) {
+    ProgressQuests.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a PROGRESS_QUEST message from the specified reader or buffer.
+     * Decodes a ProgressQuests message from the specified reader or buffer.
      * @function decode
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {PROGRESS_QUEST} PROGRESS_QUEST
+     * @returns {ProgressQuests} ProgressQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    PROGRESS_QUEST.decode = function decode(reader, length) {
+    ProgressQuests.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROGRESS_QUEST();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProgressQuests();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
-                    if (!(message.items && message.items.length))
-                        message.items = [];
-                    message.items.push($root.PROGRESS_QUEST.Items.decode(reader, reader.uint32()));
+                    if (!(message.quests && message.quests.length))
+                        message.quests = [];
+                    message.quests.push($root.ProgressQuests.Quests.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -3958,142 +2912,141 @@ $root.PROGRESS_QUEST = (function() {
     };
 
     /**
-     * Decodes a PROGRESS_QUEST message from the specified reader or buffer, length delimited.
+     * Decodes a ProgressQuests message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {PROGRESS_QUEST} PROGRESS_QUEST
+     * @returns {ProgressQuests} ProgressQuests
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    PROGRESS_QUEST.decodeDelimited = function decodeDelimited(reader) {
+    ProgressQuests.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a PROGRESS_QUEST message.
+     * Verifies a ProgressQuests message.
      * @function verify
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    PROGRESS_QUEST.verify = function verify(message) {
+    ProgressQuests.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.items != null && message.hasOwnProperty("items")) {
-            if (!Array.isArray(message.items))
-                return "items: array expected";
-            for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.PROGRESS_QUEST.Items.verify(message.items[i]);
+        if (message.quests != null && message.hasOwnProperty("quests")) {
+            if (!Array.isArray(message.quests))
+                return "quests: array expected";
+            for (var i = 0; i < message.quests.length; ++i) {
+                var error = $root.ProgressQuests.Quests.verify(message.quests[i]);
                 if (error)
-                    return "items." + error;
+                    return "quests." + error;
             }
         }
         return null;
     };
 
     /**
-     * Creates a PROGRESS_QUEST message from a plain object. Also converts values to their respective internal types.
+     * Creates a ProgressQuests message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {PROGRESS_QUEST} PROGRESS_QUEST
+     * @returns {ProgressQuests} ProgressQuests
      */
-    PROGRESS_QUEST.fromObject = function fromObject(object) {
-        if (object instanceof $root.PROGRESS_QUEST)
+    ProgressQuests.fromObject = function fromObject(object) {
+        if (object instanceof $root.ProgressQuests)
             return object;
-        var message = new $root.PROGRESS_QUEST();
-        if (object.items) {
-            if (!Array.isArray(object.items))
-                throw TypeError(".PROGRESS_QUEST.items: array expected");
-            message.items = [];
-            for (var i = 0; i < object.items.length; ++i) {
-                if (typeof object.items[i] !== "object")
-                    throw TypeError(".PROGRESS_QUEST.items: object expected");
-                message.items[i] = $root.PROGRESS_QUEST.Items.fromObject(object.items[i]);
+        var message = new $root.ProgressQuests();
+        if (object.quests) {
+            if (!Array.isArray(object.quests))
+                throw TypeError(".ProgressQuests.quests: array expected");
+            message.quests = [];
+            for (var i = 0; i < object.quests.length; ++i) {
+                if (typeof object.quests[i] !== "object")
+                    throw TypeError(".ProgressQuests.quests: object expected");
+                message.quests[i] = $root.ProgressQuests.Quests.fromObject(object.quests[i]);
             }
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a PROGRESS_QUEST message. Also converts values to other types if specified.
+     * Creates a plain object from a ProgressQuests message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
-     * @param {PROGRESS_QUEST} message PROGRESS_QUEST
+     * @param {ProgressQuests} message ProgressQuests
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    PROGRESS_QUEST.toObject = function toObject(message, options) {
+    ProgressQuests.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.arrays || options.defaults)
-            object.items = [];
-        if (message.items && message.items.length) {
-            object.items = [];
-            for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.PROGRESS_QUEST.Items.toObject(message.items[j], options);
+            object.quests = [];
+        if (message.quests && message.quests.length) {
+            object.quests = [];
+            for (var j = 0; j < message.quests.length; ++j)
+                object.quests[j] = $root.ProgressQuests.Quests.toObject(message.quests[j], options);
         }
         return object;
     };
 
     /**
-     * Converts this PROGRESS_QUEST to JSON.
+     * Converts this ProgressQuests to JSON.
      * @function toJSON
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    PROGRESS_QUEST.prototype.toJSON = function toJSON() {
+    ProgressQuests.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for PROGRESS_QUEST
+     * Gets the default type url for ProgressQuests
      * @function getTypeUrl
-     * @memberof PROGRESS_QUEST
+     * @memberof ProgressQuests
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    PROGRESS_QUEST.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    ProgressQuests.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/PROGRESS_QUEST";
+        return typeUrlPrefix + "/ProgressQuests";
     };
 
-    PROGRESS_QUEST.Items = (function() {
+    ProgressQuests.Quests = (function() {
 
         /**
-         * Properties of an Items.
-         * @memberof PROGRESS_QUEST
-         * @interface IItems
-         * @property {number|null} [conditionReach] Items conditionReach
-         * @property {string|null} [condition] Items condition
-         * @property {string|null} [rewardId] Items rewardId
-         * @property {string|null} [questName] Items questName
-         * @property {number|null} [rewardQuantity] Items rewardQuantity
-         * @property {string|null} [id] Items id
-         * @property {number|null} [levelUnlock] Items levelUnlock
+         * Properties of a Quests.
+         * @memberof ProgressQuests
+         * @interface IQuests
+         * @property {string|null} [name] Quests name
+         * @property {ProgressQuests.Quests.IReward|null} [reward] Quests reward
+         * @property {string|null} [description] Quests description
+         * @property {string|null} [id] Quests id
+         * @property {string|null} [type] Quests type
+         * @property {number|null} [target] Quests target
          */
 
         /**
-         * Constructs a new Items.
-         * @memberof PROGRESS_QUEST
-         * @classdesc Represents an Items.
-         * @implements IItems
+         * Constructs a new Quests.
+         * @memberof ProgressQuests
+         * @classdesc Represents a Quests.
+         * @implements IQuests
          * @constructor
-         * @param {PROGRESS_QUEST.IItems=} [properties] Properties to set
+         * @param {ProgressQuests.IQuests=} [properties] Properties to set
          */
-        function Items(properties) {
+        function Quests(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -4101,159 +3054,145 @@ $root.PROGRESS_QUEST = (function() {
         }
 
         /**
-         * Items conditionReach.
-         * @member {number} conditionReach
-         * @memberof PROGRESS_QUEST.Items
+         * Quests name.
+         * @member {string} name
+         * @memberof ProgressQuests.Quests
          * @instance
          */
-        Items.prototype.conditionReach = 0;
+        Quests.prototype.name = "";
 
         /**
-         * Items condition.
-         * @member {string} condition
-         * @memberof PROGRESS_QUEST.Items
+         * Quests reward.
+         * @member {ProgressQuests.Quests.IReward|null|undefined} reward
+         * @memberof ProgressQuests.Quests
          * @instance
          */
-        Items.prototype.condition = "";
+        Quests.prototype.reward = null;
 
         /**
-         * Items rewardId.
-         * @member {string} rewardId
-         * @memberof PROGRESS_QUEST.Items
+         * Quests description.
+         * @member {string} description
+         * @memberof ProgressQuests.Quests
          * @instance
          */
-        Items.prototype.rewardId = "";
+        Quests.prototype.description = "";
 
         /**
-         * Items questName.
-         * @member {string} questName
-         * @memberof PROGRESS_QUEST.Items
-         * @instance
-         */
-        Items.prototype.questName = "";
-
-        /**
-         * Items rewardQuantity.
-         * @member {number} rewardQuantity
-         * @memberof PROGRESS_QUEST.Items
-         * @instance
-         */
-        Items.prototype.rewardQuantity = 0;
-
-        /**
-         * Items id.
+         * Quests id.
          * @member {string} id
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @instance
          */
-        Items.prototype.id = "";
+        Quests.prototype.id = "";
 
         /**
-         * Items levelUnlock.
-         * @member {number} levelUnlock
-         * @memberof PROGRESS_QUEST.Items
+         * Quests type.
+         * @member {string} type
+         * @memberof ProgressQuests.Quests
          * @instance
          */
-        Items.prototype.levelUnlock = 0;
+        Quests.prototype.type = "";
 
         /**
-         * Creates a new Items instance using the specified properties.
+         * Quests target.
+         * @member {number} target
+         * @memberof ProgressQuests.Quests
+         * @instance
+         */
+        Quests.prototype.target = 0;
+
+        /**
+         * Creates a new Quests instance using the specified properties.
          * @function create
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
-         * @param {PROGRESS_QUEST.IItems=} [properties] Properties to set
-         * @returns {PROGRESS_QUEST.Items} Items instance
+         * @param {ProgressQuests.IQuests=} [properties] Properties to set
+         * @returns {ProgressQuests.Quests} Quests instance
          */
-        Items.create = function create(properties) {
-            return new Items(properties);
+        Quests.create = function create(properties) {
+            return new Quests(properties);
         };
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link PROGRESS_QUEST.Items.verify|verify} messages.
+         * Encodes the specified Quests message. Does not implicitly {@link ProgressQuests.Quests.verify|verify} messages.
          * @function encode
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
-         * @param {PROGRESS_QUEST.IItems} message Items message or plain object to encode
+         * @param {ProgressQuests.IQuests} message Quests message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Items.encode = function encode(message, writer) {
+        Quests.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.conditionReach != null && Object.hasOwnProperty.call(message, "conditionReach"))
-                writer.uint32(/* id 1, wireType 0 =*/8).int32(message.conditionReach);
-            if (message.condition != null && Object.hasOwnProperty.call(message, "condition"))
-                writer.uint32(/* id 2, wireType 2 =*/18).string(message.condition);
-            if (message.rewardId != null && Object.hasOwnProperty.call(message, "rewardId"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.rewardId);
-            if (message.questName != null && Object.hasOwnProperty.call(message, "questName"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.questName);
-            if (message.rewardQuantity != null && Object.hasOwnProperty.call(message, "rewardQuantity"))
-                writer.uint32(/* id 5, wireType 0 =*/40).int32(message.rewardQuantity);
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+            if (message.reward != null && Object.hasOwnProperty.call(message, "reward"))
+                $root.ProgressQuests.Quests.Reward.encode(message.reward, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.id);
-            if (message.levelUnlock != null && Object.hasOwnProperty.call(message, "levelUnlock"))
-                writer.uint32(/* id 7, wireType 0 =*/56).int32(message.levelUnlock);
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.id);
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.type);
+            if (message.target != null && Object.hasOwnProperty.call(message, "target"))
+                writer.uint32(/* id 6, wireType 0 =*/48).int32(message.target);
             return writer;
         };
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link PROGRESS_QUEST.Items.verify|verify} messages.
+         * Encodes the specified Quests message, length delimited. Does not implicitly {@link ProgressQuests.Quests.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
-         * @param {PROGRESS_QUEST.IItems} message Items message or plain object to encode
+         * @param {ProgressQuests.IQuests} message Quests message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Items.encodeDelimited = function encodeDelimited(message, writer) {
+        Quests.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes an Items message from the specified reader or buffer.
+         * Decodes a Quests message from the specified reader or buffer.
          * @function decode
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {PROGRESS_QUEST.Items} Items
+         * @returns {ProgressQuests.Quests} Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Items.decode = function decode(reader, length) {
+        Quests.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.PROGRESS_QUEST.Items();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProgressQuests.Quests();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1: {
-                        message.conditionReach = reader.int32();
+                        message.name = reader.string();
                         break;
                     }
                 case 2: {
-                        message.condition = reader.string();
+                        message.reward = $root.ProgressQuests.Quests.Reward.decode(reader, reader.uint32());
                         break;
                     }
                 case 3: {
-                        message.rewardId = reader.string();
+                        message.description = reader.string();
                         break;
                     }
                 case 4: {
-                        message.questName = reader.string();
-                        break;
-                    }
-                case 5: {
-                        message.rewardQuantity = reader.int32();
-                        break;
-                    }
-                case 6: {
                         message.id = reader.string();
                         break;
                     }
-                case 7: {
-                        message.levelUnlock = reader.int32();
+                case 5: {
+                        message.type = reader.string();
+                        break;
+                    }
+                case 6: {
+                        message.target = reader.int32();
                         break;
                     }
                 default:
@@ -4265,381 +3204,378 @@ $root.PROGRESS_QUEST = (function() {
         };
 
         /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * Decodes a Quests message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {PROGRESS_QUEST.Items} Items
+         * @returns {ProgressQuests.Quests} Quests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Items.decodeDelimited = function decodeDelimited(reader) {
+        Quests.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies an Items message.
+         * Verifies a Quests message.
          * @function verify
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        Items.verify = function verify(message) {
+        Quests.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.conditionReach != null && message.hasOwnProperty("conditionReach"))
-                if (!$util.isInteger(message.conditionReach))
-                    return "conditionReach: integer expected";
-            if (message.condition != null && message.hasOwnProperty("condition"))
-                if (!$util.isString(message.condition))
-                    return "condition: string expected";
-            if (message.rewardId != null && message.hasOwnProperty("rewardId"))
-                if (!$util.isString(message.rewardId))
-                    return "rewardId: string expected";
-            if (message.questName != null && message.hasOwnProperty("questName"))
-                if (!$util.isString(message.questName))
-                    return "questName: string expected";
-            if (message.rewardQuantity != null && message.hasOwnProperty("rewardQuantity"))
-                if (!$util.isInteger(message.rewardQuantity))
-                    return "rewardQuantity: integer expected";
+            if (message.name != null && message.hasOwnProperty("name"))
+                if (!$util.isString(message.name))
+                    return "name: string expected";
+            if (message.reward != null && message.hasOwnProperty("reward")) {
+                var error = $root.ProgressQuests.Quests.Reward.verify(message.reward);
+                if (error)
+                    return "reward." + error;
+            }
+            if (message.description != null && message.hasOwnProperty("description"))
+                if (!$util.isString(message.description))
+                    return "description: string expected";
             if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
-            if (message.levelUnlock != null && message.hasOwnProperty("levelUnlock"))
-                if (!$util.isInteger(message.levelUnlock))
-                    return "levelUnlock: integer expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            if (message.target != null && message.hasOwnProperty("target"))
+                if (!$util.isInteger(message.target))
+                    return "target: integer expected";
             return null;
         };
 
         /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * Creates a Quests message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {PROGRESS_QUEST.Items} Items
+         * @returns {ProgressQuests.Quests} Quests
          */
-        Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.PROGRESS_QUEST.Items)
+        Quests.fromObject = function fromObject(object) {
+            if (object instanceof $root.ProgressQuests.Quests)
                 return object;
-            var message = new $root.PROGRESS_QUEST.Items();
-            if (object.conditionReach != null)
-                message.conditionReach = object.conditionReach | 0;
-            if (object.condition != null)
-                message.condition = String(object.condition);
-            if (object.rewardId != null)
-                message.rewardId = String(object.rewardId);
-            if (object.questName != null)
-                message.questName = String(object.questName);
-            if (object.rewardQuantity != null)
-                message.rewardQuantity = object.rewardQuantity | 0;
+            var message = new $root.ProgressQuests.Quests();
+            if (object.name != null)
+                message.name = String(object.name);
+            if (object.reward != null) {
+                if (typeof object.reward !== "object")
+                    throw TypeError(".ProgressQuests.Quests.reward: object expected");
+                message.reward = $root.ProgressQuests.Quests.Reward.fromObject(object.reward);
+            }
+            if (object.description != null)
+                message.description = String(object.description);
             if (object.id != null)
                 message.id = String(object.id);
-            if (object.levelUnlock != null)
-                message.levelUnlock = object.levelUnlock | 0;
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.target != null)
+                message.target = object.target | 0;
             return message;
         };
 
         /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * Creates a plain object from a Quests message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
-         * @param {PROGRESS_QUEST.Items} message Items
+         * @param {ProgressQuests.Quests} message Quests
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        Items.toObject = function toObject(message, options) {
+        Quests.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.defaults) {
-                object.conditionReach = 0;
-                object.condition = "";
-                object.rewardId = "";
-                object.questName = "";
-                object.rewardQuantity = 0;
+                object.name = "";
+                object.reward = null;
+                object.description = "";
                 object.id = "";
-                object.levelUnlock = 0;
+                object.type = "";
+                object.target = 0;
             }
-            if (message.conditionReach != null && message.hasOwnProperty("conditionReach"))
-                object.conditionReach = message.conditionReach;
-            if (message.condition != null && message.hasOwnProperty("condition"))
-                object.condition = message.condition;
-            if (message.rewardId != null && message.hasOwnProperty("rewardId"))
-                object.rewardId = message.rewardId;
-            if (message.questName != null && message.hasOwnProperty("questName"))
-                object.questName = message.questName;
-            if (message.rewardQuantity != null && message.hasOwnProperty("rewardQuantity"))
-                object.rewardQuantity = message.rewardQuantity;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = message.name;
+            if (message.reward != null && message.hasOwnProperty("reward"))
+                object.reward = $root.ProgressQuests.Quests.Reward.toObject(message.reward, options);
+            if (message.description != null && message.hasOwnProperty("description"))
+                object.description = message.description;
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
-            if (message.levelUnlock != null && message.hasOwnProperty("levelUnlock"))
-                object.levelUnlock = message.levelUnlock;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.target != null && message.hasOwnProperty("target"))
+                object.target = message.target;
             return object;
         };
 
         /**
-         * Converts this Items to JSON.
+         * Converts this Quests to JSON.
          * @function toJSON
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        Items.prototype.toJSON = function toJSON() {
+        Quests.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for Items
+         * Gets the default type url for Quests
          * @function getTypeUrl
-         * @memberof PROGRESS_QUEST.Items
+         * @memberof ProgressQuests.Quests
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        Quests.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/PROGRESS_QUEST.Items";
+            return typeUrlPrefix + "/ProgressQuests.Quests";
         };
 
-        return Items;
+        Quests.Reward = (function() {
+
+            /**
+             * Properties of a Reward.
+             * @memberof ProgressQuests.Quests
+             * @interface IReward
+             * @property {string|null} [id] Reward id
+             * @property {number|null} [quantity] Reward quantity
+             */
+
+            /**
+             * Constructs a new Reward.
+             * @memberof ProgressQuests.Quests
+             * @classdesc Represents a Reward.
+             * @implements IReward
+             * @constructor
+             * @param {ProgressQuests.Quests.IReward=} [properties] Properties to set
+             */
+            function Reward(properties) {
+                if (properties)
+                    for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                        if (properties[keys[i]] != null)
+                            this[keys[i]] = properties[keys[i]];
+            }
+
+            /**
+             * Reward id.
+             * @member {string} id
+             * @memberof ProgressQuests.Quests.Reward
+             * @instance
+             */
+            Reward.prototype.id = "";
+
+            /**
+             * Reward quantity.
+             * @member {number} quantity
+             * @memberof ProgressQuests.Quests.Reward
+             * @instance
+             */
+            Reward.prototype.quantity = 0;
+
+            /**
+             * Creates a new Reward instance using the specified properties.
+             * @function create
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {ProgressQuests.Quests.IReward=} [properties] Properties to set
+             * @returns {ProgressQuests.Quests.Reward} Reward instance
+             */
+            Reward.create = function create(properties) {
+                return new Reward(properties);
+            };
+
+            /**
+             * Encodes the specified Reward message. Does not implicitly {@link ProgressQuests.Quests.Reward.verify|verify} messages.
+             * @function encode
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {ProgressQuests.Quests.IReward} message Reward message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Reward.encode = function encode(message, writer) {
+                if (!writer)
+                    writer = $Writer.create();
+                if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                    writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+                if (message.quantity != null && Object.hasOwnProperty.call(message, "quantity"))
+                    writer.uint32(/* id 2, wireType 0 =*/16).int32(message.quantity);
+                return writer;
+            };
+
+            /**
+             * Encodes the specified Reward message, length delimited. Does not implicitly {@link ProgressQuests.Quests.Reward.verify|verify} messages.
+             * @function encodeDelimited
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {ProgressQuests.Quests.IReward} message Reward message or plain object to encode
+             * @param {$protobuf.Writer} [writer] Writer to encode to
+             * @returns {$protobuf.Writer} Writer
+             */
+            Reward.encodeDelimited = function encodeDelimited(message, writer) {
+                return this.encode(message, writer).ldelim();
+            };
+
+            /**
+             * Decodes a Reward message from the specified reader or buffer.
+             * @function decode
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @param {number} [length] Message length if known beforehand
+             * @returns {ProgressQuests.Quests.Reward} Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Reward.decode = function decode(reader, length) {
+                if (!(reader instanceof $Reader))
+                    reader = $Reader.create(reader);
+                var end = length === undefined ? reader.len : reader.pos + length, message = new $root.ProgressQuests.Quests.Reward();
+                while (reader.pos < end) {
+                    var tag = reader.uint32();
+                    switch (tag >>> 3) {
+                    case 1: {
+                            message.id = reader.string();
+                            break;
+                        }
+                    case 2: {
+                            message.quantity = reader.int32();
+                            break;
+                        }
+                    default:
+                        reader.skipType(tag & 7);
+                        break;
+                    }
+                }
+                return message;
+            };
+
+            /**
+             * Decodes a Reward message from the specified reader or buffer, length delimited.
+             * @function decodeDelimited
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+             * @returns {ProgressQuests.Quests.Reward} Reward
+             * @throws {Error} If the payload is not a reader or valid buffer
+             * @throws {$protobuf.util.ProtocolError} If required fields are missing
+             */
+            Reward.decodeDelimited = function decodeDelimited(reader) {
+                if (!(reader instanceof $Reader))
+                    reader = new $Reader(reader);
+                return this.decode(reader, reader.uint32());
+            };
+
+            /**
+             * Verifies a Reward message.
+             * @function verify
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {Object.<string,*>} message Plain object to verify
+             * @returns {string|null} `null` if valid, otherwise the reason why it is not
+             */
+            Reward.verify = function verify(message) {
+                if (typeof message !== "object" || message === null)
+                    return "object expected";
+                if (message.id != null && message.hasOwnProperty("id"))
+                    if (!$util.isString(message.id))
+                        return "id: string expected";
+                if (message.quantity != null && message.hasOwnProperty("quantity"))
+                    if (!$util.isInteger(message.quantity))
+                        return "quantity: integer expected";
+                return null;
+            };
+
+            /**
+             * Creates a Reward message from a plain object. Also converts values to their respective internal types.
+             * @function fromObject
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {Object.<string,*>} object Plain object
+             * @returns {ProgressQuests.Quests.Reward} Reward
+             */
+            Reward.fromObject = function fromObject(object) {
+                if (object instanceof $root.ProgressQuests.Quests.Reward)
+                    return object;
+                var message = new $root.ProgressQuests.Quests.Reward();
+                if (object.id != null)
+                    message.id = String(object.id);
+                if (object.quantity != null)
+                    message.quantity = object.quantity | 0;
+                return message;
+            };
+
+            /**
+             * Creates a plain object from a Reward message. Also converts values to other types if specified.
+             * @function toObject
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {ProgressQuests.Quests.Reward} message Reward
+             * @param {$protobuf.IConversionOptions} [options] Conversion options
+             * @returns {Object.<string,*>} Plain object
+             */
+            Reward.toObject = function toObject(message, options) {
+                if (!options)
+                    options = {};
+                var object = {};
+                if (options.defaults) {
+                    object.id = "";
+                    object.quantity = 0;
+                }
+                if (message.id != null && message.hasOwnProperty("id"))
+                    object.id = message.id;
+                if (message.quantity != null && message.hasOwnProperty("quantity"))
+                    object.quantity = message.quantity;
+                return object;
+            };
+
+            /**
+             * Converts this Reward to JSON.
+             * @function toJSON
+             * @memberof ProgressQuests.Quests.Reward
+             * @instance
+             * @returns {Object.<string,*>} JSON object
+             */
+            Reward.prototype.toJSON = function toJSON() {
+                return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+            };
+
+            /**
+             * Gets the default type url for Reward
+             * @function getTypeUrl
+             * @memberof ProgressQuests.Quests.Reward
+             * @static
+             * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+             * @returns {string} The default type url
+             */
+            Reward.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+                if (typeUrlPrefix === undefined) {
+                    typeUrlPrefix = "type.googleapis.com";
+                }
+                return typeUrlPrefix + "/ProgressQuests.Quests.Reward";
+            };
+
+            return Reward;
+        })();
+
+        return Quests;
     })();
 
-    return PROGRESS_QUEST;
-})();
-
-$root.TEST = (function() {
-
-    /**
-     * Properties of a TEST.
-     * @exports ITEST
-     * @interface ITEST
-     * @property {string|null} [name] TEST name
-     * @property {string|null} [image] TEST image
-     */
-
-    /**
-     * Constructs a new TEST.
-     * @exports TEST
-     * @classdesc Represents a TEST.
-     * @implements ITEST
-     * @constructor
-     * @param {ITEST=} [properties] Properties to set
-     */
-    function TEST(properties) {
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * TEST name.
-     * @member {string} name
-     * @memberof TEST
-     * @instance
-     */
-    TEST.prototype.name = "";
-
-    /**
-     * TEST image.
-     * @member {string} image
-     * @memberof TEST
-     * @instance
-     */
-    TEST.prototype.image = "";
-
-    /**
-     * Creates a new TEST instance using the specified properties.
-     * @function create
-     * @memberof TEST
-     * @static
-     * @param {ITEST=} [properties] Properties to set
-     * @returns {TEST} TEST instance
-     */
-    TEST.create = function create(properties) {
-        return new TEST(properties);
-    };
-
-    /**
-     * Encodes the specified TEST message. Does not implicitly {@link TEST.verify|verify} messages.
-     * @function encode
-     * @memberof TEST
-     * @static
-     * @param {ITEST} message TEST message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    TEST.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.name != null && Object.hasOwnProperty.call(message, "name"))
-            writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
-        if (message.image != null && Object.hasOwnProperty.call(message, "image"))
-            writer.uint32(/* id 2, wireType 2 =*/18).string(message.image);
-        return writer;
-    };
-
-    /**
-     * Encodes the specified TEST message, length delimited. Does not implicitly {@link TEST.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof TEST
-     * @static
-     * @param {ITEST} message TEST message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    TEST.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a TEST message from the specified reader or buffer.
-     * @function decode
-     * @memberof TEST
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {TEST} TEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    TEST.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.TEST();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.name = reader.string();
-                    break;
-                }
-            case 2: {
-                    message.image = reader.string();
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a TEST message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof TEST
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {TEST} TEST
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    TEST.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a TEST message.
-     * @function verify
-     * @memberof TEST
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    TEST.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.name != null && message.hasOwnProperty("name"))
-            if (!$util.isString(message.name))
-                return "name: string expected";
-        if (message.image != null && message.hasOwnProperty("image"))
-            if (!$util.isString(message.image))
-                return "image: string expected";
-        return null;
-    };
-
-    /**
-     * Creates a TEST message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof TEST
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {TEST} TEST
-     */
-    TEST.fromObject = function fromObject(object) {
-        if (object instanceof $root.TEST)
-            return object;
-        var message = new $root.TEST();
-        if (object.name != null)
-            message.name = String(object.name);
-        if (object.image != null)
-            message.image = String(object.image);
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a TEST message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof TEST
-     * @static
-     * @param {TEST} message TEST
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    TEST.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.defaults) {
-            object.name = "";
-            object.image = "";
-        }
-        if (message.name != null && message.hasOwnProperty("name"))
-            object.name = message.name;
-        if (message.image != null && message.hasOwnProperty("image"))
-            object.image = message.image;
-        return object;
-    };
-
-    /**
-     * Converts this TEST to JSON.
-     * @function toJSON
-     * @memberof TEST
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    TEST.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    /**
-     * Gets the default type url for TEST
-     * @function getTypeUrl
-     * @memberof TEST
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    TEST.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/TEST";
-    };
-
-    return TEST;
+    return ProgressQuests;
 })();
 
 $root.Empty = (function() {
@@ -4849,133 +3785,65 @@ $root.GameScripts = (function() {
         return new this(rpcImpl, requestDelimited, responseDelimited);
     };
 
-    GameScripts.Test = (function() {
+    GameScripts.LuckyWheel = (function() {
 
         /**
-         * Constructs a new Test service.
+         * Constructs a new LuckyWheel service.
          * @memberof GameScripts
-         * @classdesc Represents a Test
+         * @classdesc Represents a LuckyWheel
          * @extends $protobuf.rpc.Service
          * @constructor
          * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
          * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
          * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
          */
-        function Test(rpcImpl, requestDelimited, responseDelimited) {
+        function LuckyWheel(rpcImpl, requestDelimited, responseDelimited) {
             $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
         }
 
-        (Test.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Test;
+        (LuckyWheel.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = LuckyWheel;
 
         /**
-         * Creates new Test service using the specified rpc implementation.
+         * Creates new LuckyWheel service using the specified rpc implementation.
          * @function create
-         * @memberof GameScripts.Test
+         * @memberof GameScripts.LuckyWheel
          * @static
          * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
          * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
          * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-         * @returns {Test} RPC service. Useful where requests and/or responses are streamed.
+         * @returns {LuckyWheel} RPC service. Useful where requests and/or responses are streamed.
          */
-        Test.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+        LuckyWheel.create = function create(rpcImpl, requestDelimited, responseDelimited) {
             return new this(rpcImpl, requestDelimited, responseDelimited);
         };
 
         /**
-         * Callback as used by {@link GameScripts.Test#helloWorld}.
-         * @memberof GameScripts.Test
-         * @typedef helloWorldCallback
-         * @type {function}
-         * @param {Error|null} error Error, if any
-         * @param {TestHelloWorldRes} [response] TestHelloWorldRes
-         */
-
-        /**
-         * Calls helloWorld.
-         * @function helloWorld
-         * @memberof GameScripts.Test
-         * @instance
-         * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Test.helloWorldCallback} callback Node-style callback called with the error, if any, and TestHelloWorldRes
-         * @returns {undefined}
-         * @variation 1
-         */
-        Object.defineProperty(Test.prototype.helloWorld = function helloWorld(request, callback) {
-            return this.rpcCall(helloWorld, $root.Empty, $root.TestHelloWorldRes, request, callback);
-        }, "name", { value: "helloWorld" });
-
-        /**
-         * Calls helloWorld.
-         * @function helloWorld
-         * @memberof GameScripts.Test
-         * @instance
-         * @param {IEmpty} request Empty message or plain object
-         * @returns {Promise<TestHelloWorldRes>} Promise
-         * @variation 2
-         */
-
-        return Test;
-    })();
-
-    GameScripts.Lucky_Wheel = (function() {
-
-        /**
-         * Constructs a new Lucky_Wheel service.
-         * @memberof GameScripts
-         * @classdesc Represents a Lucky_Wheel
-         * @extends $protobuf.rpc.Service
-         * @constructor
-         * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-         * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-         * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-         */
-        function Lucky_Wheel(rpcImpl, requestDelimited, responseDelimited) {
-            $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
-        }
-
-        (Lucky_Wheel.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Lucky_Wheel;
-
-        /**
-         * Creates new Lucky_Wheel service using the specified rpc implementation.
-         * @function create
-         * @memberof GameScripts.Lucky_Wheel
-         * @static
-         * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
-         * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
-         * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-         * @returns {Lucky_Wheel} RPC service. Useful where requests and/or responses are streamed.
-         */
-        Lucky_Wheel.create = function create(rpcImpl, requestDelimited, responseDelimited) {
-            return new this(rpcImpl, requestDelimited, responseDelimited);
-        };
-
-        /**
-         * Callback as used by {@link GameScripts.Lucky_Wheel#claimItem}.
-         * @memberof GameScripts.Lucky_Wheel
-         * @typedef claimItemCallback
+         * Callback as used by {@link GameScripts.LuckyWheel#claimItem}.
+         * @memberof GameScripts.LuckyWheel
+         * @typedef ClaimItemCallback
          * @type {function}
          * @param {Error|null} error Error, if any
          * @param {LuckyWheelClaimItemOutput} [response] LuckyWheelClaimItemOutput
          */
 
         /**
-         * Calls claimItem.
+         * Calls ClaimItem.
          * @function claimItem
-         * @memberof GameScripts.Lucky_Wheel
+         * @memberof GameScripts.LuckyWheel
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Lucky_Wheel.claimItemCallback} callback Node-style callback called with the error, if any, and LuckyWheelClaimItemOutput
+         * @param {GameScripts.LuckyWheel.ClaimItemCallback} callback Node-style callback called with the error, if any, and LuckyWheelClaimItemOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Lucky_Wheel.prototype.claimItem = function claimItem(request, callback) {
+        Object.defineProperty(LuckyWheel.prototype.claimItem = function claimItem(request, callback) {
             return this.rpcCall(claimItem, $root.Empty, $root.LuckyWheelClaimItemOutput, request, callback);
-        }, "name", { value: "claimItem" });
+        }, "name", { value: "ClaimItem" });
 
         /**
-         * Calls claimItem.
+         * Calls ClaimItem.
          * @function claimItem
-         * @memberof GameScripts.Lucky_Wheel
+         * @memberof GameScripts.LuckyWheel
          * @instance
          * @param {IEmpty} request Empty message or plain object
          * @returns {Promise<LuckyWheelClaimItemOutput>} Promise
@@ -4983,32 +3851,32 @@ $root.GameScripts = (function() {
          */
 
         /**
-         * Callback as used by {@link GameScripts.Lucky_Wheel#canClaimItem}.
-         * @memberof GameScripts.Lucky_Wheel
-         * @typedef canClaimItemCallback
+         * Callback as used by {@link GameScripts.LuckyWheel#canClaimItem}.
+         * @memberof GameScripts.LuckyWheel
+         * @typedef CanClaimItemCallback
          * @type {function}
          * @param {Error|null} error Error, if any
          * @param {LuckyWheelCanClaimOutput} [response] LuckyWheelCanClaimOutput
          */
 
         /**
-         * Calls canClaimItem.
+         * Calls CanClaimItem.
          * @function canClaimItem
-         * @memberof GameScripts.Lucky_Wheel
+         * @memberof GameScripts.LuckyWheel
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Lucky_Wheel.canClaimItemCallback} callback Node-style callback called with the error, if any, and LuckyWheelCanClaimOutput
+         * @param {GameScripts.LuckyWheel.CanClaimItemCallback} callback Node-style callback called with the error, if any, and LuckyWheelCanClaimOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Lucky_Wheel.prototype.canClaimItem = function canClaimItem(request, callback) {
+        Object.defineProperty(LuckyWheel.prototype.canClaimItem = function canClaimItem(request, callback) {
             return this.rpcCall(canClaimItem, $root.Empty, $root.LuckyWheelCanClaimOutput, request, callback);
-        }, "name", { value: "canClaimItem" });
+        }, "name", { value: "CanClaimItem" });
 
         /**
-         * Calls canClaimItem.
+         * Calls CanClaimItem.
          * @function canClaimItem
-         * @memberof GameScripts.Lucky_Wheel
+         * @memberof GameScripts.LuckyWheel
          * @instance
          * @param {IEmpty} request Empty message or plain object
          * @returns {Promise<LuckyWheelCanClaimOutput>} Promise
@@ -5016,100 +3884,100 @@ $root.GameScripts = (function() {
          */
 
         /**
-         * Callback as used by {@link GameScripts.Lucky_Wheel#getList}.
-         * @memberof GameScripts.Lucky_Wheel
-         * @typedef getListCallback
+         * Callback as used by {@link GameScripts.LuckyWheel#getList}.
+         * @memberof GameScripts.LuckyWheel
+         * @typedef GetListCallback
          * @type {function}
          * @param {Error|null} error Error, if any
          * @param {LuckyWheel} [response] LuckyWheel
          */
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @function getList
-         * @memberof GameScripts.Lucky_Wheel
+         * @memberof GameScripts.LuckyWheel
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Lucky_Wheel.getListCallback} callback Node-style callback called with the error, if any, and LuckyWheel
+         * @param {GameScripts.LuckyWheel.GetListCallback} callback Node-style callback called with the error, if any, and LuckyWheel
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Lucky_Wheel.prototype.getList = function getList(request, callback) {
+        Object.defineProperty(LuckyWheel.prototype.getList = function getList(request, callback) {
             return this.rpcCall(getList, $root.Empty, $root.LuckyWheel, request, callback);
-        }, "name", { value: "getList" });
+        }, "name", { value: "GetList" });
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @function getList
-         * @memberof GameScripts.Lucky_Wheel
+         * @memberof GameScripts.LuckyWheel
          * @instance
          * @param {IEmpty} request Empty message or plain object
          * @returns {Promise<LuckyWheel>} Promise
          * @variation 2
          */
 
-        return Lucky_Wheel;
+        return LuckyWheel;
     })();
 
-    GameScripts.Daily_Rewards = (function() {
+    GameScripts.DailyRewards = (function() {
 
         /**
-         * Constructs a new Daily_Rewards service.
+         * Constructs a new DailyRewards service.
          * @memberof GameScripts
-         * @classdesc Represents a Daily_Rewards
+         * @classdesc Represents a DailyRewards
          * @extends $protobuf.rpc.Service
          * @constructor
          * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
          * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
          * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
          */
-        function Daily_Rewards(rpcImpl, requestDelimited, responseDelimited) {
+        function DailyRewards(rpcImpl, requestDelimited, responseDelimited) {
             $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
         }
 
-        (Daily_Rewards.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Daily_Rewards;
+        (DailyRewards.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = DailyRewards;
 
         /**
-         * Creates new Daily_Rewards service using the specified rpc implementation.
+         * Creates new DailyRewards service using the specified rpc implementation.
          * @function create
-         * @memberof GameScripts.Daily_Rewards
+         * @memberof GameScripts.DailyRewards
          * @static
          * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
          * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
          * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-         * @returns {Daily_Rewards} RPC service. Useful where requests and/or responses are streamed.
+         * @returns {DailyRewards} RPC service. Useful where requests and/or responses are streamed.
          */
-        Daily_Rewards.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+        DailyRewards.create = function create(rpcImpl, requestDelimited, responseDelimited) {
             return new this(rpcImpl, requestDelimited, responseDelimited);
         };
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Rewards#canClaimRewards}.
-         * @memberof GameScripts.Daily_Rewards
-         * @typedef canClaimRewardsCallback
+         * Callback as used by {@link GameScripts.DailyRewards#canClaimRewards}.
+         * @memberof GameScripts.DailyRewards
+         * @typedef CanClaimRewardsCallback
          * @type {function}
          * @param {Error|null} error Error, if any
          * @param {DailyRewardsCanClaimRewardOutput} [response] DailyRewardsCanClaimRewardOutput
          */
 
         /**
-         * Calls canClaimRewards.
+         * Calls CanClaimRewards.
          * @function canClaimRewards
-         * @memberof GameScripts.Daily_Rewards
+         * @memberof GameScripts.DailyRewards
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Daily_Rewards.canClaimRewardsCallback} callback Node-style callback called with the error, if any, and DailyRewardsCanClaimRewardOutput
+         * @param {GameScripts.DailyRewards.CanClaimRewardsCallback} callback Node-style callback called with the error, if any, and DailyRewardsCanClaimRewardOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Daily_Rewards.prototype.canClaimRewards = function canClaimRewards(request, callback) {
+        Object.defineProperty(DailyRewards.prototype.canClaimRewards = function canClaimRewards(request, callback) {
             return this.rpcCall(canClaimRewards, $root.Empty, $root.DailyRewardsCanClaimRewardOutput, request, callback);
-        }, "name", { value: "canClaimRewards" });
+        }, "name", { value: "CanClaimRewards" });
 
         /**
-         * Calls canClaimRewards.
+         * Calls CanClaimRewards.
          * @function canClaimRewards
-         * @memberof GameScripts.Daily_Rewards
+         * @memberof GameScripts.DailyRewards
          * @instance
          * @param {IEmpty} request Empty message or plain object
          * @returns {Promise<DailyRewardsCanClaimRewardOutput>} Promise
@@ -5117,173 +3985,173 @@ $root.GameScripts = (function() {
          */
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Rewards#claimRewards}.
-         * @memberof GameScripts.Daily_Rewards
-         * @typedef claimRewardsCallback
+         * Callback as used by {@link GameScripts.DailyRewards#claimRewards}.
+         * @memberof GameScripts.DailyRewards
+         * @typedef ClaimRewardsCallback
          * @type {function}
          * @param {Error|null} error Error, if any
          * @param {DailyRewardsClaimRewardsOutput} [response] DailyRewardsClaimRewardsOutput
          */
 
         /**
-         * Calls claimRewards.
+         * Calls ClaimRewards.
          * @function claimRewards
-         * @memberof GameScripts.Daily_Rewards
+         * @memberof GameScripts.DailyRewards
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Daily_Rewards.claimRewardsCallback} callback Node-style callback called with the error, if any, and DailyRewardsClaimRewardsOutput
+         * @param {GameScripts.DailyRewards.ClaimRewardsCallback} callback Node-style callback called with the error, if any, and DailyRewardsClaimRewardsOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Daily_Rewards.prototype.claimRewards = function claimRewards(request, callback) {
+        Object.defineProperty(DailyRewards.prototype.claimRewards = function claimRewards(request, callback) {
             return this.rpcCall(claimRewards, $root.Empty, $root.DailyRewardsClaimRewardsOutput, request, callback);
-        }, "name", { value: "claimRewards" });
+        }, "name", { value: "ClaimRewards" });
 
         /**
-         * Calls claimRewards.
+         * Calls ClaimRewards.
          * @function claimRewards
-         * @memberof GameScripts.Daily_Rewards
+         * @memberof GameScripts.DailyRewards
          * @instance
          * @param {IEmpty} request Empty message or plain object
          * @returns {Promise<DailyRewardsClaimRewardsOutput>} Promise
          * @variation 2
          */
 
-        return Daily_Rewards;
+        return DailyRewards;
     })();
 
-    GameScripts.Daily_Quest = (function() {
+    GameScripts.DailyQuests = (function() {
 
         /**
-         * Constructs a new Daily_Quest service.
+         * Constructs a new DailyQuests service.
          * @memberof GameScripts
-         * @classdesc Represents a Daily_Quest
+         * @classdesc Represents a DailyQuests
          * @extends $protobuf.rpc.Service
          * @constructor
          * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
          * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
          * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
          */
-        function Daily_Quest(rpcImpl, requestDelimited, responseDelimited) {
+        function DailyQuests(rpcImpl, requestDelimited, responseDelimited) {
             $protobuf.rpc.Service.call(this, rpcImpl, requestDelimited, responseDelimited);
         }
 
-        (Daily_Quest.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = Daily_Quest;
+        (DailyQuests.prototype = Object.create($protobuf.rpc.Service.prototype)).constructor = DailyQuests;
 
         /**
-         * Creates new Daily_Quest service using the specified rpc implementation.
+         * Creates new DailyQuests service using the specified rpc implementation.
          * @function create
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @static
          * @param {$protobuf.RPCImpl} rpcImpl RPC implementation
          * @param {boolean} [requestDelimited=false] Whether requests are length-delimited
          * @param {boolean} [responseDelimited=false] Whether responses are length-delimited
-         * @returns {Daily_Quest} RPC service. Useful where requests and/or responses are streamed.
+         * @returns {DailyQuests} RPC service. Useful where requests and/or responses are streamed.
          */
-        Daily_Quest.create = function create(rpcImpl, requestDelimited, responseDelimited) {
+        DailyQuests.create = function create(rpcImpl, requestDelimited, responseDelimited) {
             return new this(rpcImpl, requestDelimited, responseDelimited);
         };
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Quest#getList}.
-         * @memberof GameScripts.Daily_Quest
-         * @typedef getListCallback
+         * Callback as used by {@link GameScripts.DailyQuests#getList}.
+         * @memberof GameScripts.DailyQuests
+         * @typedef GetListCallback
          * @type {function}
          * @param {Error|null} error Error, if any
-         * @param {DailyQuestOutput} [response] DailyQuestOutput
+         * @param {DailyQuestsOutput} [response] DailyQuestsOutput
          */
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @function getList
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @param {GameScripts.Daily_Quest.getListCallback} callback Node-style callback called with the error, if any, and DailyQuestOutput
+         * @param {GameScripts.DailyQuests.GetListCallback} callback Node-style callback called with the error, if any, and DailyQuestsOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Daily_Quest.prototype.getList = function getList(request, callback) {
-            return this.rpcCall(getList, $root.Empty, $root.DailyQuestOutput, request, callback);
-        }, "name", { value: "getList" });
+        Object.defineProperty(DailyQuests.prototype.getList = function getList(request, callback) {
+            return this.rpcCall(getList, $root.Empty, $root.DailyQuestsOutput, request, callback);
+        }, "name", { value: "GetList" });
 
         /**
-         * Calls getList.
+         * Calls GetList.
          * @function getList
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @instance
          * @param {IEmpty} request Empty message or plain object
-         * @returns {Promise<DailyQuestOutput>} Promise
+         * @returns {Promise<DailyQuestsOutput>} Promise
          * @variation 2
          */
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Quest#updateQuest}.
-         * @memberof GameScripts.Daily_Quest
-         * @typedef updateQuestCallback
+         * Callback as used by {@link GameScripts.DailyQuests#updateQuest}.
+         * @memberof GameScripts.DailyQuests
+         * @typedef UpdateQuestCallback
          * @type {function}
          * @param {Error|null} error Error, if any
-         * @param {DailyQuestUpdateQuestOutput} [response] DailyQuestUpdateQuestOutput
+         * @param {DailyQuestsUpdateQuestOutput} [response] DailyQuestsUpdateQuestOutput
          */
 
         /**
-         * Calls updateQuest.
+         * Calls UpdateQuest.
          * @function updateQuest
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @instance
-         * @param {IDailyQuestUpdateQuestInput} request DailyQuestUpdateQuestInput message or plain object
-         * @param {GameScripts.Daily_Quest.updateQuestCallback} callback Node-style callback called with the error, if any, and DailyQuestUpdateQuestOutput
+         * @param {IDailyQuestsUpdateQuestInput} request DailyQuestsUpdateQuestInput message or plain object
+         * @param {GameScripts.DailyQuests.UpdateQuestCallback} callback Node-style callback called with the error, if any, and DailyQuestsUpdateQuestOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Daily_Quest.prototype.updateQuest = function updateQuest(request, callback) {
-            return this.rpcCall(updateQuest, $root.DailyQuestUpdateQuestInput, $root.DailyQuestUpdateQuestOutput, request, callback);
-        }, "name", { value: "updateQuest" });
+        Object.defineProperty(DailyQuests.prototype.updateQuest = function updateQuest(request, callback) {
+            return this.rpcCall(updateQuest, $root.DailyQuestsUpdateQuestInput, $root.DailyQuestsUpdateQuestOutput, request, callback);
+        }, "name", { value: "UpdateQuest" });
 
         /**
-         * Calls updateQuest.
+         * Calls UpdateQuest.
          * @function updateQuest
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @instance
-         * @param {IDailyQuestUpdateQuestInput} request DailyQuestUpdateQuestInput message or plain object
-         * @returns {Promise<DailyQuestUpdateQuestOutput>} Promise
+         * @param {IDailyQuestsUpdateQuestInput} request DailyQuestsUpdateQuestInput message or plain object
+         * @returns {Promise<DailyQuestsUpdateQuestOutput>} Promise
          * @variation 2
          */
 
         /**
-         * Callback as used by {@link GameScripts.Daily_Quest#claimQuest}.
-         * @memberof GameScripts.Daily_Quest
-         * @typedef claimQuestCallback
+         * Callback as used by {@link GameScripts.DailyQuests#claimQuest}.
+         * @memberof GameScripts.DailyQuests
+         * @typedef ClaimQuestCallback
          * @type {function}
          * @param {Error|null} error Error, if any
-         * @param {DailyQuestClaimQuestOutput} [response] DailyQuestClaimQuestOutput
+         * @param {DailyQuestsClaimQuestOutput} [response] DailyQuestsClaimQuestOutput
          */
 
         /**
-         * Calls claimQuest.
+         * Calls ClaimQuest.
          * @function claimQuest
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @instance
-         * @param {IDailyQuestClaimQuestInput} request DailyQuestClaimQuestInput message or plain object
-         * @param {GameScripts.Daily_Quest.claimQuestCallback} callback Node-style callback called with the error, if any, and DailyQuestClaimQuestOutput
+         * @param {IDailyQuestsClaimQuestInput} request DailyQuestsClaimQuestInput message or plain object
+         * @param {GameScripts.DailyQuests.ClaimQuestCallback} callback Node-style callback called with the error, if any, and DailyQuestsClaimQuestOutput
          * @returns {undefined}
          * @variation 1
          */
-        Object.defineProperty(Daily_Quest.prototype.claimQuest = function claimQuest(request, callback) {
-            return this.rpcCall(claimQuest, $root.DailyQuestClaimQuestInput, $root.DailyQuestClaimQuestOutput, request, callback);
-        }, "name", { value: "claimQuest" });
+        Object.defineProperty(DailyQuests.prototype.claimQuest = function claimQuest(request, callback) {
+            return this.rpcCall(claimQuest, $root.DailyQuestsClaimQuestInput, $root.DailyQuestsClaimQuestOutput, request, callback);
+        }, "name", { value: "ClaimQuest" });
 
         /**
-         * Calls claimQuest.
+         * Calls ClaimQuest.
          * @function claimQuest
-         * @memberof GameScripts.Daily_Quest
+         * @memberof GameScripts.DailyQuests
          * @instance
-         * @param {IDailyQuestClaimQuestInput} request DailyQuestClaimQuestInput message or plain object
-         * @returns {Promise<DailyQuestClaimQuestOutput>} Promise
+         * @param {IDailyQuestsClaimQuestInput} request DailyQuestsClaimQuestInput message or plain object
+         * @returns {Promise<DailyQuestsClaimQuestOutput>} Promise
          * @variation 2
          */
 
-        return Daily_Quest;
+        return DailyQuests;
     })();
 
     return GameScripts;
@@ -5516,25 +4384,25 @@ $root.TestHelloWorldRes = (function() {
     return TestHelloWorldRes;
 })();
 
-$root.DailyQuestOutput = (function() {
+$root.DailyQuestsOutput = (function() {
 
     /**
-     * Properties of a DailyQuestOutput.
-     * @exports IDailyQuestOutput
-     * @interface IDailyQuestOutput
-     * @property {Array.<DailyQuestOutput.IDailyquest>|null} [dailyQuest] DailyQuestOutput dailyQuest
+     * Properties of a DailyQuestsOutput.
+     * @exports IDailyQuestsOutput
+     * @interface IDailyQuestsOutput
+     * @property {Array.<DailyQuestsOutput.IDailyquests>|null} [dailyQuests] DailyQuestsOutput dailyQuests
      */
 
     /**
-     * Constructs a new DailyQuestOutput.
-     * @exports DailyQuestOutput
-     * @classdesc Represents a DailyQuestOutput.
-     * @implements IDailyQuestOutput
+     * Constructs a new DailyQuestsOutput.
+     * @exports DailyQuestsOutput
+     * @classdesc Represents a DailyQuestsOutput.
+     * @implements IDailyQuestsOutput
      * @constructor
-     * @param {IDailyQuestOutput=} [properties] Properties to set
+     * @param {IDailyQuestsOutput=} [properties] Properties to set
      */
-    function DailyQuestOutput(properties) {
-        this.dailyQuest = [];
+    function DailyQuestsOutput(properties) {
+        this.dailyQuests = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -5542,78 +4410,78 @@ $root.DailyQuestOutput = (function() {
     }
 
     /**
-     * DailyQuestOutput dailyQuest.
-     * @member {Array.<DailyQuestOutput.IDailyquest>} dailyQuest
-     * @memberof DailyQuestOutput
+     * DailyQuestsOutput dailyQuests.
+     * @member {Array.<DailyQuestsOutput.IDailyquests>} dailyQuests
+     * @memberof DailyQuestsOutput
      * @instance
      */
-    DailyQuestOutput.prototype.dailyQuest = $util.emptyArray;
+    DailyQuestsOutput.prototype.dailyQuests = $util.emptyArray;
 
     /**
-     * Creates a new DailyQuestOutput instance using the specified properties.
+     * Creates a new DailyQuestsOutput instance using the specified properties.
      * @function create
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
-     * @param {IDailyQuestOutput=} [properties] Properties to set
-     * @returns {DailyQuestOutput} DailyQuestOutput instance
+     * @param {IDailyQuestsOutput=} [properties] Properties to set
+     * @returns {DailyQuestsOutput} DailyQuestsOutput instance
      */
-    DailyQuestOutput.create = function create(properties) {
-        return new DailyQuestOutput(properties);
+    DailyQuestsOutput.create = function create(properties) {
+        return new DailyQuestsOutput(properties);
     };
 
     /**
-     * Encodes the specified DailyQuestOutput message. Does not implicitly {@link DailyQuestOutput.verify|verify} messages.
+     * Encodes the specified DailyQuestsOutput message. Does not implicitly {@link DailyQuestsOutput.verify|verify} messages.
      * @function encode
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
-     * @param {IDailyQuestOutput} message DailyQuestOutput message or plain object to encode
+     * @param {IDailyQuestsOutput} message DailyQuestsOutput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestOutput.encode = function encode(message, writer) {
+    DailyQuestsOutput.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.dailyQuest != null && message.dailyQuest.length)
-            for (var i = 0; i < message.dailyQuest.length; ++i)
-                $root.DailyQuestOutput.Dailyquest.encode(message.dailyQuest[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.dailyQuests != null && message.dailyQuests.length)
+            for (var i = 0; i < message.dailyQuests.length; ++i)
+                $root.DailyQuestsOutput.Dailyquests.encode(message.dailyQuests[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified DailyQuestOutput message, length delimited. Does not implicitly {@link DailyQuestOutput.verify|verify} messages.
+     * Encodes the specified DailyQuestsOutput message, length delimited. Does not implicitly {@link DailyQuestsOutput.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
-     * @param {IDailyQuestOutput} message DailyQuestOutput message or plain object to encode
+     * @param {IDailyQuestsOutput} message DailyQuestsOutput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestOutput.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyQuestsOutput.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a DailyQuestOutput message from the specified reader or buffer.
+     * Decodes a DailyQuestsOutput message from the specified reader or buffer.
      * @function decode
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {DailyQuestOutput} DailyQuestOutput
+     * @returns {DailyQuestsOutput} DailyQuestsOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestOutput.decode = function decode(reader, length) {
+    DailyQuestsOutput.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestOutput();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsOutput();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
-                    if (!(message.dailyQuest && message.dailyQuest.length))
-                        message.dailyQuest = [];
-                    message.dailyQuest.push($root.DailyQuestOutput.Dailyquest.decode(reader, reader.uint32()));
+                    if (!(message.dailyQuests && message.dailyQuests.length))
+                        message.dailyQuests = [];
+                    message.dailyQuests.push($root.DailyQuestsOutput.Dailyquests.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -5625,143 +4493,137 @@ $root.DailyQuestOutput = (function() {
     };
 
     /**
-     * Decodes a DailyQuestOutput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsOutput message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DailyQuestOutput} DailyQuestOutput
+     * @returns {DailyQuestsOutput} DailyQuestsOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestOutput.decodeDelimited = function decodeDelimited(reader) {
+    DailyQuestsOutput.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a DailyQuestOutput message.
+     * Verifies a DailyQuestsOutput message.
      * @function verify
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    DailyQuestOutput.verify = function verify(message) {
+    DailyQuestsOutput.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.dailyQuest != null && message.hasOwnProperty("dailyQuest")) {
-            if (!Array.isArray(message.dailyQuest))
-                return "dailyQuest: array expected";
-            for (var i = 0; i < message.dailyQuest.length; ++i) {
-                var error = $root.DailyQuestOutput.Dailyquest.verify(message.dailyQuest[i]);
+        if (message.dailyQuests != null && message.hasOwnProperty("dailyQuests")) {
+            if (!Array.isArray(message.dailyQuests))
+                return "dailyQuests: array expected";
+            for (var i = 0; i < message.dailyQuests.length; ++i) {
+                var error = $root.DailyQuestsOutput.Dailyquests.verify(message.dailyQuests[i]);
                 if (error)
-                    return "dailyQuest." + error;
+                    return "dailyQuests." + error;
             }
         }
         return null;
     };
 
     /**
-     * Creates a DailyQuestOutput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsOutput message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {DailyQuestOutput} DailyQuestOutput
+     * @returns {DailyQuestsOutput} DailyQuestsOutput
      */
-    DailyQuestOutput.fromObject = function fromObject(object) {
-        if (object instanceof $root.DailyQuestOutput)
+    DailyQuestsOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyQuestsOutput)
             return object;
-        var message = new $root.DailyQuestOutput();
-        if (object.dailyQuest) {
-            if (!Array.isArray(object.dailyQuest))
-                throw TypeError(".DailyQuestOutput.dailyQuest: array expected");
-            message.dailyQuest = [];
-            for (var i = 0; i < object.dailyQuest.length; ++i) {
-                if (typeof object.dailyQuest[i] !== "object")
-                    throw TypeError(".DailyQuestOutput.dailyQuest: object expected");
-                message.dailyQuest[i] = $root.DailyQuestOutput.Dailyquest.fromObject(object.dailyQuest[i]);
+        var message = new $root.DailyQuestsOutput();
+        if (object.dailyQuests) {
+            if (!Array.isArray(object.dailyQuests))
+                throw TypeError(".DailyQuestsOutput.dailyQuests: array expected");
+            message.dailyQuests = [];
+            for (var i = 0; i < object.dailyQuests.length; ++i) {
+                if (typeof object.dailyQuests[i] !== "object")
+                    throw TypeError(".DailyQuestsOutput.dailyQuests: object expected");
+                message.dailyQuests[i] = $root.DailyQuestsOutput.Dailyquests.fromObject(object.dailyQuests[i]);
             }
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a DailyQuestOutput message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyQuestsOutput message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
-     * @param {DailyQuestOutput} message DailyQuestOutput
+     * @param {DailyQuestsOutput} message DailyQuestsOutput
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    DailyQuestOutput.toObject = function toObject(message, options) {
+    DailyQuestsOutput.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.arrays || options.defaults)
-            object.dailyQuest = [];
-        if (message.dailyQuest && message.dailyQuest.length) {
-            object.dailyQuest = [];
-            for (var j = 0; j < message.dailyQuest.length; ++j)
-                object.dailyQuest[j] = $root.DailyQuestOutput.Dailyquest.toObject(message.dailyQuest[j], options);
+            object.dailyQuests = [];
+        if (message.dailyQuests && message.dailyQuests.length) {
+            object.dailyQuests = [];
+            for (var j = 0; j < message.dailyQuests.length; ++j)
+                object.dailyQuests[j] = $root.DailyQuestsOutput.Dailyquests.toObject(message.dailyQuests[j], options);
         }
         return object;
     };
 
     /**
-     * Converts this DailyQuestOutput to JSON.
+     * Converts this DailyQuestsOutput to JSON.
      * @function toJSON
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    DailyQuestOutput.prototype.toJSON = function toJSON() {
+    DailyQuestsOutput.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for DailyQuestOutput
+     * Gets the default type url for DailyQuestsOutput
      * @function getTypeUrl
-     * @memberof DailyQuestOutput
+     * @memberof DailyQuestsOutput
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    DailyQuestOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyQuestsOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/DailyQuestOutput";
+        return typeUrlPrefix + "/DailyQuestsOutput";
     };
 
-    DailyQuestOutput.Dailyquest = (function() {
+    DailyQuestsOutput.Reward = (function() {
 
         /**
-         * Properties of a Dailyquest.
-         * @memberof DailyQuestOutput
-         * @interface IDailyquest
-         * @property {number|null} [conditionReach] Dailyquest conditionReach
-         * @property {number|null} [rewardQuantity] Dailyquest rewardQuantity
-         * @property {string|null} [condition] Dailyquest condition
-         * @property {string|null} [rewardId] Dailyquest rewardId
-         * @property {string|null} [id] Dailyquest id
-         * @property {string|null} [questName] Dailyquest questName
-         * @property {number|null} [progress] Dailyquest progress
-         * @property {boolean|null} [canClaim] Dailyquest canClaim
+         * Properties of a Reward.
+         * @memberof DailyQuestsOutput
+         * @interface IReward
+         * @property {string|null} [id] Reward id
+         * @property {number|null} [quantity] Reward quantity
          */
 
         /**
-         * Constructs a new Dailyquest.
-         * @memberof DailyQuestOutput
-         * @classdesc Represents a Dailyquest.
-         * @implements IDailyquest
+         * Constructs a new Reward.
+         * @memberof DailyQuestsOutput
+         * @classdesc Represents a Reward.
+         * @implements IReward
          * @constructor
-         * @param {DailyQuestOutput.IDailyquest=} [properties] Properties to set
+         * @param {DailyQuestsOutput.IReward=} [properties] Properties to set
          */
-        function Dailyquest(properties) {
+        function Reward(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -5769,105 +4631,338 @@ $root.DailyQuestOutput = (function() {
         }
 
         /**
-         * Dailyquest conditionReach.
-         * @member {number} conditionReach
-         * @memberof DailyQuestOutput.Dailyquest
-         * @instance
-         */
-        Dailyquest.prototype.conditionReach = 0;
-
-        /**
-         * Dailyquest rewardQuantity.
-         * @member {number} rewardQuantity
-         * @memberof DailyQuestOutput.Dailyquest
-         * @instance
-         */
-        Dailyquest.prototype.rewardQuantity = 0;
-
-        /**
-         * Dailyquest condition.
-         * @member {string} condition
-         * @memberof DailyQuestOutput.Dailyquest
-         * @instance
-         */
-        Dailyquest.prototype.condition = "";
-
-        /**
-         * Dailyquest rewardId.
-         * @member {string} rewardId
-         * @memberof DailyQuestOutput.Dailyquest
-         * @instance
-         */
-        Dailyquest.prototype.rewardId = "";
-
-        /**
-         * Dailyquest id.
+         * Reward id.
          * @member {string} id
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Reward
          * @instance
          */
-        Dailyquest.prototype.id = "";
+        Reward.prototype.id = "";
 
         /**
-         * Dailyquest questName.
-         * @member {string} questName
-         * @memberof DailyQuestOutput.Dailyquest
+         * Reward quantity.
+         * @member {number} quantity
+         * @memberof DailyQuestsOutput.Reward
          * @instance
          */
-        Dailyquest.prototype.questName = "";
+        Reward.prototype.quantity = 0;
 
         /**
-         * Dailyquest progress.
-         * @member {number} progress
-         * @memberof DailyQuestOutput.Dailyquest
-         * @instance
-         */
-        Dailyquest.prototype.progress = 0;
-
-        /**
-         * Dailyquest canClaim.
-         * @member {boolean} canClaim
-         * @memberof DailyQuestOutput.Dailyquest
-         * @instance
-         */
-        Dailyquest.prototype.canClaim = false;
-
-        /**
-         * Creates a new Dailyquest instance using the specified properties.
+         * Creates a new Reward instance using the specified properties.
          * @function create
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Reward
          * @static
-         * @param {DailyQuestOutput.IDailyquest=} [properties] Properties to set
-         * @returns {DailyQuestOutput.Dailyquest} Dailyquest instance
+         * @param {DailyQuestsOutput.IReward=} [properties] Properties to set
+         * @returns {DailyQuestsOutput.Reward} Reward instance
          */
-        Dailyquest.create = function create(properties) {
-            return new Dailyquest(properties);
+        Reward.create = function create(properties) {
+            return new Reward(properties);
         };
 
         /**
-         * Encodes the specified Dailyquest message. Does not implicitly {@link DailyQuestOutput.Dailyquest.verify|verify} messages.
+         * Encodes the specified Reward message. Does not implicitly {@link DailyQuestsOutput.Reward.verify|verify} messages.
          * @function encode
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Reward
          * @static
-         * @param {DailyQuestOutput.IDailyquest} message Dailyquest message or plain object to encode
+         * @param {DailyQuestsOutput.IReward} message Reward message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Dailyquest.encode = function encode(message, writer) {
+        Reward.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
-            if (message.conditionReach != null && Object.hasOwnProperty.call(message, "conditionReach"))
-                writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.conditionReach);
-            if (message.rewardQuantity != null && Object.hasOwnProperty.call(message, "rewardQuantity"))
-                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.rewardQuantity);
-            if (message.condition != null && Object.hasOwnProperty.call(message, "condition"))
-                writer.uint32(/* id 3, wireType 2 =*/26).string(message.condition);
-            if (message.rewardId != null && Object.hasOwnProperty.call(message, "rewardId"))
-                writer.uint32(/* id 4, wireType 2 =*/34).string(message.rewardId);
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
-                writer.uint32(/* id 5, wireType 2 =*/42).string(message.id);
-            if (message.questName != null && Object.hasOwnProperty.call(message, "questName"))
-                writer.uint32(/* id 6, wireType 2 =*/50).string(message.questName);
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.id);
+            if (message.quantity != null && Object.hasOwnProperty.call(message, "quantity"))
+                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.quantity);
+            return writer;
+        };
+
+        /**
+         * Encodes the specified Reward message, length delimited. Does not implicitly {@link DailyQuestsOutput.Reward.verify|verify} messages.
+         * @function encodeDelimited
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {DailyQuestsOutput.IReward} message Reward message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Reward.encodeDelimited = function encodeDelimited(message, writer) {
+            return this.encode(message, writer).ldelim();
+        };
+
+        /**
+         * Decodes a Reward message from the specified reader or buffer.
+         * @function decode
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @param {number} [length] Message length if known beforehand
+         * @returns {DailyQuestsOutput.Reward} Reward
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Reward.decode = function decode(reader, length) {
+            if (!(reader instanceof $Reader))
+                reader = $Reader.create(reader);
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsOutput.Reward();
+            while (reader.pos < end) {
+                var tag = reader.uint32();
+                switch (tag >>> 3) {
+                case 1: {
+                        message.id = reader.string();
+                        break;
+                    }
+                case 2: {
+                        message.quantity = reader.uint32();
+                        break;
+                    }
+                default:
+                    reader.skipType(tag & 7);
+                    break;
+                }
+            }
+            return message;
+        };
+
+        /**
+         * Decodes a Reward message from the specified reader or buffer, length delimited.
+         * @function decodeDelimited
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
+         * @returns {DailyQuestsOutput.Reward} Reward
+         * @throws {Error} If the payload is not a reader or valid buffer
+         * @throws {$protobuf.util.ProtocolError} If required fields are missing
+         */
+        Reward.decodeDelimited = function decodeDelimited(reader) {
+            if (!(reader instanceof $Reader))
+                reader = new $Reader(reader);
+            return this.decode(reader, reader.uint32());
+        };
+
+        /**
+         * Verifies a Reward message.
+         * @function verify
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {Object.<string,*>} message Plain object to verify
+         * @returns {string|null} `null` if valid, otherwise the reason why it is not
+         */
+        Reward.verify = function verify(message) {
+            if (typeof message !== "object" || message === null)
+                return "object expected";
+            if (message.id != null && message.hasOwnProperty("id"))
+                if (!$util.isString(message.id))
+                    return "id: string expected";
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                if (!$util.isInteger(message.quantity))
+                    return "quantity: integer expected";
+            return null;
+        };
+
+        /**
+         * Creates a Reward message from a plain object. Also converts values to their respective internal types.
+         * @function fromObject
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {Object.<string,*>} object Plain object
+         * @returns {DailyQuestsOutput.Reward} Reward
+         */
+        Reward.fromObject = function fromObject(object) {
+            if (object instanceof $root.DailyQuestsOutput.Reward)
+                return object;
+            var message = new $root.DailyQuestsOutput.Reward();
+            if (object.id != null)
+                message.id = String(object.id);
+            if (object.quantity != null)
+                message.quantity = object.quantity >>> 0;
+            return message;
+        };
+
+        /**
+         * Creates a plain object from a Reward message. Also converts values to other types if specified.
+         * @function toObject
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {DailyQuestsOutput.Reward} message Reward
+         * @param {$protobuf.IConversionOptions} [options] Conversion options
+         * @returns {Object.<string,*>} Plain object
+         */
+        Reward.toObject = function toObject(message, options) {
+            if (!options)
+                options = {};
+            var object = {};
+            if (options.defaults) {
+                object.id = "";
+                object.quantity = 0;
+            }
+            if (message.id != null && message.hasOwnProperty("id"))
+                object.id = message.id;
+            if (message.quantity != null && message.hasOwnProperty("quantity"))
+                object.quantity = message.quantity;
+            return object;
+        };
+
+        /**
+         * Converts this Reward to JSON.
+         * @function toJSON
+         * @memberof DailyQuestsOutput.Reward
+         * @instance
+         * @returns {Object.<string,*>} JSON object
+         */
+        Reward.prototype.toJSON = function toJSON() {
+            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
+        };
+
+        /**
+         * Gets the default type url for Reward
+         * @function getTypeUrl
+         * @memberof DailyQuestsOutput.Reward
+         * @static
+         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
+         * @returns {string} The default type url
+         */
+        Reward.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+            if (typeUrlPrefix === undefined) {
+                typeUrlPrefix = "type.googleapis.com";
+            }
+            return typeUrlPrefix + "/DailyQuestsOutput.Reward";
+        };
+
+        return Reward;
+    })();
+
+    DailyQuestsOutput.Dailyquests = (function() {
+
+        /**
+         * Properties of a Dailyquests.
+         * @memberof DailyQuestsOutput
+         * @interface IDailyquests
+         * @property {string|null} [name] Dailyquests name
+         * @property {DailyQuestsOutput.IReward|null} [reward] Dailyquests reward
+         * @property {string|null} [description] Dailyquests description
+         * @property {string|null} [id] Dailyquests id
+         * @property {string|null} [type] Dailyquests type
+         * @property {number|null} [target] Dailyquests target
+         * @property {number|null} [progress] Dailyquests progress
+         * @property {boolean|null} [canClaim] Dailyquests canClaim
+         */
+
+        /**
+         * Constructs a new Dailyquests.
+         * @memberof DailyQuestsOutput
+         * @classdesc Represents a Dailyquests.
+         * @implements IDailyquests
+         * @constructor
+         * @param {DailyQuestsOutput.IDailyquests=} [properties] Properties to set
+         */
+        function Dailyquests(properties) {
+            if (properties)
+                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
+                    if (properties[keys[i]] != null)
+                        this[keys[i]] = properties[keys[i]];
+        }
+
+        /**
+         * Dailyquests name.
+         * @member {string} name
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.name = "";
+
+        /**
+         * Dailyquests reward.
+         * @member {DailyQuestsOutput.IReward|null|undefined} reward
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.reward = null;
+
+        /**
+         * Dailyquests description.
+         * @member {string} description
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.description = "";
+
+        /**
+         * Dailyquests id.
+         * @member {string} id
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.id = "";
+
+        /**
+         * Dailyquests type.
+         * @member {string} type
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.type = "";
+
+        /**
+         * Dailyquests target.
+         * @member {number} target
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.target = 0;
+
+        /**
+         * Dailyquests progress.
+         * @member {number} progress
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.progress = 0;
+
+        /**
+         * Dailyquests canClaim.
+         * @member {boolean} canClaim
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @instance
+         */
+        Dailyquests.prototype.canClaim = false;
+
+        /**
+         * Creates a new Dailyquests instance using the specified properties.
+         * @function create
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @static
+         * @param {DailyQuestsOutput.IDailyquests=} [properties] Properties to set
+         * @returns {DailyQuestsOutput.Dailyquests} Dailyquests instance
+         */
+        Dailyquests.create = function create(properties) {
+            return new Dailyquests(properties);
+        };
+
+        /**
+         * Encodes the specified Dailyquests message. Does not implicitly {@link DailyQuestsOutput.Dailyquests.verify|verify} messages.
+         * @function encode
+         * @memberof DailyQuestsOutput.Dailyquests
+         * @static
+         * @param {DailyQuestsOutput.IDailyquests} message Dailyquests message or plain object to encode
+         * @param {$protobuf.Writer} [writer] Writer to encode to
+         * @returns {$protobuf.Writer} Writer
+         */
+        Dailyquests.encode = function encode(message, writer) {
+            if (!writer)
+                writer = $Writer.create();
+            if (message.name != null && Object.hasOwnProperty.call(message, "name"))
+                writer.uint32(/* id 1, wireType 2 =*/10).string(message.name);
+            if (message.reward != null && Object.hasOwnProperty.call(message, "reward"))
+                $root.DailyQuestsOutput.Reward.encode(message.reward, writer.uint32(/* id 2, wireType 2 =*/18).fork()).ldelim();
+            if (message.description != null && Object.hasOwnProperty.call(message, "description"))
+                writer.uint32(/* id 3, wireType 2 =*/26).string(message.description);
+            if (message.id != null && Object.hasOwnProperty.call(message, "id"))
+                writer.uint32(/* id 4, wireType 2 =*/34).string(message.id);
+            if (message.type != null && Object.hasOwnProperty.call(message, "type"))
+                writer.uint32(/* id 5, wireType 2 =*/42).string(message.type);
+            if (message.target != null && Object.hasOwnProperty.call(message, "target"))
+                writer.uint32(/* id 6, wireType 0 =*/48).uint32(message.target);
             if (message.progress != null && Object.hasOwnProperty.call(message, "progress"))
                 writer.uint32(/* id 7, wireType 0 =*/56).uint32(message.progress);
             if (message.canClaim != null && Object.hasOwnProperty.call(message, "canClaim"))
@@ -5876,58 +4971,58 @@ $root.DailyQuestOutput = (function() {
         };
 
         /**
-         * Encodes the specified Dailyquest message, length delimited. Does not implicitly {@link DailyQuestOutput.Dailyquest.verify|verify} messages.
+         * Encodes the specified Dailyquests message, length delimited. Does not implicitly {@link DailyQuestsOutput.Dailyquests.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
-         * @param {DailyQuestOutput.IDailyquest} message Dailyquest message or plain object to encode
+         * @param {DailyQuestsOutput.IDailyquests} message Dailyquests message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Dailyquest.encodeDelimited = function encodeDelimited(message, writer) {
+        Dailyquests.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes a Dailyquest message from the specified reader or buffer.
+         * Decodes a Dailyquests message from the specified reader or buffer.
          * @function decode
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {DailyQuestOutput.Dailyquest} Dailyquest
+         * @returns {DailyQuestsOutput.Dailyquests} Dailyquests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Dailyquest.decode = function decode(reader, length) {
+        Dailyquests.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestOutput.Dailyquest();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsOutput.Dailyquests();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
                 case 1: {
-                        message.conditionReach = reader.uint32();
+                        message.name = reader.string();
                         break;
                     }
                 case 2: {
-                        message.rewardQuantity = reader.uint32();
+                        message.reward = $root.DailyQuestsOutput.Reward.decode(reader, reader.uint32());
                         break;
                     }
                 case 3: {
-                        message.condition = reader.string();
+                        message.description = reader.string();
                         break;
                     }
                 case 4: {
-                        message.rewardId = reader.string();
-                        break;
-                    }
-                case 5: {
                         message.id = reader.string();
                         break;
                     }
+                case 5: {
+                        message.type = reader.string();
+                        break;
+                    }
                 case 6: {
-                        message.questName = reader.string();
+                        message.target = reader.uint32();
                         break;
                     }
                 case 7: {
@@ -5947,50 +5042,52 @@ $root.DailyQuestOutput = (function() {
         };
 
         /**
-         * Decodes a Dailyquest message from the specified reader or buffer, length delimited.
+         * Decodes a Dailyquests message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {DailyQuestOutput.Dailyquest} Dailyquest
+         * @returns {DailyQuestsOutput.Dailyquests} Dailyquests
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Dailyquest.decodeDelimited = function decodeDelimited(reader) {
+        Dailyquests.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies a Dailyquest message.
+         * Verifies a Dailyquests message.
          * @function verify
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        Dailyquest.verify = function verify(message) {
+        Dailyquests.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
-            if (message.conditionReach != null && message.hasOwnProperty("conditionReach"))
-                if (!$util.isInteger(message.conditionReach))
-                    return "conditionReach: integer expected";
-            if (message.rewardQuantity != null && message.hasOwnProperty("rewardQuantity"))
-                if (!$util.isInteger(message.rewardQuantity))
-                    return "rewardQuantity: integer expected";
-            if (message.condition != null && message.hasOwnProperty("condition"))
-                if (!$util.isString(message.condition))
-                    return "condition: string expected";
-            if (message.rewardId != null && message.hasOwnProperty("rewardId"))
-                if (!$util.isString(message.rewardId))
-                    return "rewardId: string expected";
+            if (message.name != null && message.hasOwnProperty("name"))
+                if (!$util.isString(message.name))
+                    return "name: string expected";
+            if (message.reward != null && message.hasOwnProperty("reward")) {
+                var error = $root.DailyQuestsOutput.Reward.verify(message.reward);
+                if (error)
+                    return "reward." + error;
+            }
+            if (message.description != null && message.hasOwnProperty("description"))
+                if (!$util.isString(message.description))
+                    return "description: string expected";
             if (message.id != null && message.hasOwnProperty("id"))
                 if (!$util.isString(message.id))
                     return "id: string expected";
-            if (message.questName != null && message.hasOwnProperty("questName"))
-                if (!$util.isString(message.questName))
-                    return "questName: string expected";
+            if (message.type != null && message.hasOwnProperty("type"))
+                if (!$util.isString(message.type))
+                    return "type: string expected";
+            if (message.target != null && message.hasOwnProperty("target"))
+                if (!$util.isInteger(message.target))
+                    return "target: integer expected";
             if (message.progress != null && message.hasOwnProperty("progress"))
                 if (!$util.isInteger(message.progress))
                     return "progress: integer expected";
@@ -6001,29 +5098,32 @@ $root.DailyQuestOutput = (function() {
         };
 
         /**
-         * Creates a Dailyquest message from a plain object. Also converts values to their respective internal types.
+         * Creates a Dailyquests message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {DailyQuestOutput.Dailyquest} Dailyquest
+         * @returns {DailyQuestsOutput.Dailyquests} Dailyquests
          */
-        Dailyquest.fromObject = function fromObject(object) {
-            if (object instanceof $root.DailyQuestOutput.Dailyquest)
+        Dailyquests.fromObject = function fromObject(object) {
+            if (object instanceof $root.DailyQuestsOutput.Dailyquests)
                 return object;
-            var message = new $root.DailyQuestOutput.Dailyquest();
-            if (object.conditionReach != null)
-                message.conditionReach = object.conditionReach >>> 0;
-            if (object.rewardQuantity != null)
-                message.rewardQuantity = object.rewardQuantity >>> 0;
-            if (object.condition != null)
-                message.condition = String(object.condition);
-            if (object.rewardId != null)
-                message.rewardId = String(object.rewardId);
+            var message = new $root.DailyQuestsOutput.Dailyquests();
+            if (object.name != null)
+                message.name = String(object.name);
+            if (object.reward != null) {
+                if (typeof object.reward !== "object")
+                    throw TypeError(".DailyQuestsOutput.Dailyquests.reward: object expected");
+                message.reward = $root.DailyQuestsOutput.Reward.fromObject(object.reward);
+            }
+            if (object.description != null)
+                message.description = String(object.description);
             if (object.id != null)
                 message.id = String(object.id);
-            if (object.questName != null)
-                message.questName = String(object.questName);
+            if (object.type != null)
+                message.type = String(object.type);
+            if (object.target != null)
+                message.target = object.target >>> 0;
             if (object.progress != null)
                 message.progress = object.progress >>> 0;
             if (object.canClaim != null)
@@ -6032,40 +5132,40 @@ $root.DailyQuestOutput = (function() {
         };
 
         /**
-         * Creates a plain object from a Dailyquest message. Also converts values to other types if specified.
+         * Creates a plain object from a Dailyquests message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
-         * @param {DailyQuestOutput.Dailyquest} message Dailyquest
+         * @param {DailyQuestsOutput.Dailyquests} message Dailyquests
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        Dailyquest.toObject = function toObject(message, options) {
+        Dailyquests.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
             if (options.defaults) {
-                object.conditionReach = 0;
-                object.rewardQuantity = 0;
-                object.condition = "";
-                object.rewardId = "";
+                object.name = "";
+                object.reward = null;
+                object.description = "";
                 object.id = "";
-                object.questName = "";
+                object.type = "";
+                object.target = 0;
                 object.progress = 0;
                 object.canClaim = false;
             }
-            if (message.conditionReach != null && message.hasOwnProperty("conditionReach"))
-                object.conditionReach = message.conditionReach;
-            if (message.rewardQuantity != null && message.hasOwnProperty("rewardQuantity"))
-                object.rewardQuantity = message.rewardQuantity;
-            if (message.condition != null && message.hasOwnProperty("condition"))
-                object.condition = message.condition;
-            if (message.rewardId != null && message.hasOwnProperty("rewardId"))
-                object.rewardId = message.rewardId;
+            if (message.name != null && message.hasOwnProperty("name"))
+                object.name = message.name;
+            if (message.reward != null && message.hasOwnProperty("reward"))
+                object.reward = $root.DailyQuestsOutput.Reward.toObject(message.reward, options);
+            if (message.description != null && message.hasOwnProperty("description"))
+                object.description = message.description;
             if (message.id != null && message.hasOwnProperty("id"))
                 object.id = message.id;
-            if (message.questName != null && message.hasOwnProperty("questName"))
-                object.questName = message.questName;
+            if (message.type != null && message.hasOwnProperty("type"))
+                object.type = message.type;
+            if (message.target != null && message.hasOwnProperty("target"))
+                object.target = message.target;
             if (message.progress != null && message.hasOwnProperty("progress"))
                 object.progress = message.progress;
             if (message.canClaim != null && message.hasOwnProperty("canClaim"))
@@ -6074,56 +5174,56 @@ $root.DailyQuestOutput = (function() {
         };
 
         /**
-         * Converts this Dailyquest to JSON.
+         * Converts this Dailyquests to JSON.
          * @function toJSON
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        Dailyquest.prototype.toJSON = function toJSON() {
+        Dailyquests.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for Dailyquest
+         * Gets the default type url for Dailyquests
          * @function getTypeUrl
-         * @memberof DailyQuestOutput.Dailyquest
+         * @memberof DailyQuestsOutput.Dailyquests
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        Dailyquest.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        Dailyquests.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/DailyQuestOutput.Dailyquest";
+            return typeUrlPrefix + "/DailyQuestsOutput.Dailyquests";
         };
 
-        return Dailyquest;
+        return Dailyquests;
     })();
 
-    return DailyQuestOutput;
+    return DailyQuestsOutput;
 })();
 
-$root.DailyQuestUpdateQuestInput = (function() {
+$root.DailyQuestsUpdateQuestInput = (function() {
 
     /**
-     * Properties of a DailyQuestUpdateQuestInput.
-     * @exports IDailyQuestUpdateQuestInput
-     * @interface IDailyQuestUpdateQuestInput
-     * @property {Array.<DailyQuestUpdateQuestInput.IItems>|null} [items] DailyQuestUpdateQuestInput items
+     * Properties of a DailyQuestsUpdateQuestInput.
+     * @exports IDailyQuestsUpdateQuestInput
+     * @interface IDailyQuestsUpdateQuestInput
+     * @property {Array.<DailyQuestsUpdateQuestInput.IQuestProgress>|null} [questProgress] DailyQuestsUpdateQuestInput questProgress
      */
 
     /**
-     * Constructs a new DailyQuestUpdateQuestInput.
-     * @exports DailyQuestUpdateQuestInput
-     * @classdesc Represents a DailyQuestUpdateQuestInput.
-     * @implements IDailyQuestUpdateQuestInput
+     * Constructs a new DailyQuestsUpdateQuestInput.
+     * @exports DailyQuestsUpdateQuestInput
+     * @classdesc Represents a DailyQuestsUpdateQuestInput.
+     * @implements IDailyQuestsUpdateQuestInput
      * @constructor
-     * @param {IDailyQuestUpdateQuestInput=} [properties] Properties to set
+     * @param {IDailyQuestsUpdateQuestInput=} [properties] Properties to set
      */
-    function DailyQuestUpdateQuestInput(properties) {
-        this.items = [];
+    function DailyQuestsUpdateQuestInput(properties) {
+        this.questProgress = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                 if (properties[keys[i]] != null)
@@ -6131,78 +5231,78 @@ $root.DailyQuestUpdateQuestInput = (function() {
     }
 
     /**
-     * DailyQuestUpdateQuestInput items.
-     * @member {Array.<DailyQuestUpdateQuestInput.IItems>} items
-     * @memberof DailyQuestUpdateQuestInput
+     * DailyQuestsUpdateQuestInput questProgress.
+     * @member {Array.<DailyQuestsUpdateQuestInput.IQuestProgress>} questProgress
+     * @memberof DailyQuestsUpdateQuestInput
      * @instance
      */
-    DailyQuestUpdateQuestInput.prototype.items = $util.emptyArray;
+    DailyQuestsUpdateQuestInput.prototype.questProgress = $util.emptyArray;
 
     /**
-     * Creates a new DailyQuestUpdateQuestInput instance using the specified properties.
+     * Creates a new DailyQuestsUpdateQuestInput instance using the specified properties.
      * @function create
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
-     * @param {IDailyQuestUpdateQuestInput=} [properties] Properties to set
-     * @returns {DailyQuestUpdateQuestInput} DailyQuestUpdateQuestInput instance
+     * @param {IDailyQuestsUpdateQuestInput=} [properties] Properties to set
+     * @returns {DailyQuestsUpdateQuestInput} DailyQuestsUpdateQuestInput instance
      */
-    DailyQuestUpdateQuestInput.create = function create(properties) {
-        return new DailyQuestUpdateQuestInput(properties);
+    DailyQuestsUpdateQuestInput.create = function create(properties) {
+        return new DailyQuestsUpdateQuestInput(properties);
     };
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestInput message. Does not implicitly {@link DailyQuestUpdateQuestInput.verify|verify} messages.
+     * Encodes the specified DailyQuestsUpdateQuestInput message. Does not implicitly {@link DailyQuestsUpdateQuestInput.verify|verify} messages.
      * @function encode
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
-     * @param {IDailyQuestUpdateQuestInput} message DailyQuestUpdateQuestInput message or plain object to encode
+     * @param {IDailyQuestsUpdateQuestInput} message DailyQuestsUpdateQuestInput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestUpdateQuestInput.encode = function encode(message, writer) {
+    DailyQuestsUpdateQuestInput.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
-        if (message.items != null && message.items.length)
-            for (var i = 0; i < message.items.length; ++i)
-                $root.DailyQuestUpdateQuestInput.Items.encode(message.items[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+        if (message.questProgress != null && message.questProgress.length)
+            for (var i = 0; i < message.questProgress.length; ++i)
+                $root.DailyQuestsUpdateQuestInput.QuestProgress.encode(message.questProgress[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestInput message, length delimited. Does not implicitly {@link DailyQuestUpdateQuestInput.verify|verify} messages.
+     * Encodes the specified DailyQuestsUpdateQuestInput message, length delimited. Does not implicitly {@link DailyQuestsUpdateQuestInput.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
-     * @param {IDailyQuestUpdateQuestInput} message DailyQuestUpdateQuestInput message or plain object to encode
+     * @param {IDailyQuestsUpdateQuestInput} message DailyQuestsUpdateQuestInput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestUpdateQuestInput.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyQuestsUpdateQuestInput.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a DailyQuestUpdateQuestInput message from the specified reader or buffer.
+     * Decodes a DailyQuestsUpdateQuestInput message from the specified reader or buffer.
      * @function decode
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {DailyQuestUpdateQuestInput} DailyQuestUpdateQuestInput
+     * @returns {DailyQuestsUpdateQuestInput} DailyQuestsUpdateQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestUpdateQuestInput.decode = function decode(reader, length) {
+    DailyQuestsUpdateQuestInput.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestUpdateQuestInput();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsUpdateQuestInput();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
-                    if (!(message.items && message.items.length))
-                        message.items = [];
-                    message.items.push($root.DailyQuestUpdateQuestInput.Items.decode(reader, reader.uint32()));
+                    if (!(message.questProgress && message.questProgress.length))
+                        message.questProgress = [];
+                    message.questProgress.push($root.DailyQuestsUpdateQuestInput.QuestProgress.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -6214,137 +5314,137 @@ $root.DailyQuestUpdateQuestInput = (function() {
     };
 
     /**
-     * Decodes a DailyQuestUpdateQuestInput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsUpdateQuestInput message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DailyQuestUpdateQuestInput} DailyQuestUpdateQuestInput
+     * @returns {DailyQuestsUpdateQuestInput} DailyQuestsUpdateQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestUpdateQuestInput.decodeDelimited = function decodeDelimited(reader) {
+    DailyQuestsUpdateQuestInput.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a DailyQuestUpdateQuestInput message.
+     * Verifies a DailyQuestsUpdateQuestInput message.
      * @function verify
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    DailyQuestUpdateQuestInput.verify = function verify(message) {
+    DailyQuestsUpdateQuestInput.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        if (message.items != null && message.hasOwnProperty("items")) {
-            if (!Array.isArray(message.items))
-                return "items: array expected";
-            for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.DailyQuestUpdateQuestInput.Items.verify(message.items[i]);
+        if (message.questProgress != null && message.hasOwnProperty("questProgress")) {
+            if (!Array.isArray(message.questProgress))
+                return "questProgress: array expected";
+            for (var i = 0; i < message.questProgress.length; ++i) {
+                var error = $root.DailyQuestsUpdateQuestInput.QuestProgress.verify(message.questProgress[i]);
                 if (error)
-                    return "items." + error;
+                    return "questProgress." + error;
             }
         }
         return null;
     };
 
     /**
-     * Creates a DailyQuestUpdateQuestInput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsUpdateQuestInput message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {DailyQuestUpdateQuestInput} DailyQuestUpdateQuestInput
+     * @returns {DailyQuestsUpdateQuestInput} DailyQuestsUpdateQuestInput
      */
-    DailyQuestUpdateQuestInput.fromObject = function fromObject(object) {
-        if (object instanceof $root.DailyQuestUpdateQuestInput)
+    DailyQuestsUpdateQuestInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyQuestsUpdateQuestInput)
             return object;
-        var message = new $root.DailyQuestUpdateQuestInput();
-        if (object.items) {
-            if (!Array.isArray(object.items))
-                throw TypeError(".DailyQuestUpdateQuestInput.items: array expected");
-            message.items = [];
-            for (var i = 0; i < object.items.length; ++i) {
-                if (typeof object.items[i] !== "object")
-                    throw TypeError(".DailyQuestUpdateQuestInput.items: object expected");
-                message.items[i] = $root.DailyQuestUpdateQuestInput.Items.fromObject(object.items[i]);
+        var message = new $root.DailyQuestsUpdateQuestInput();
+        if (object.questProgress) {
+            if (!Array.isArray(object.questProgress))
+                throw TypeError(".DailyQuestsUpdateQuestInput.questProgress: array expected");
+            message.questProgress = [];
+            for (var i = 0; i < object.questProgress.length; ++i) {
+                if (typeof object.questProgress[i] !== "object")
+                    throw TypeError(".DailyQuestsUpdateQuestInput.questProgress: object expected");
+                message.questProgress[i] = $root.DailyQuestsUpdateQuestInput.QuestProgress.fromObject(object.questProgress[i]);
             }
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a DailyQuestUpdateQuestInput message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyQuestsUpdateQuestInput message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
-     * @param {DailyQuestUpdateQuestInput} message DailyQuestUpdateQuestInput
+     * @param {DailyQuestsUpdateQuestInput} message DailyQuestsUpdateQuestInput
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    DailyQuestUpdateQuestInput.toObject = function toObject(message, options) {
+    DailyQuestsUpdateQuestInput.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
         if (options.arrays || options.defaults)
-            object.items = [];
-        if (message.items && message.items.length) {
-            object.items = [];
-            for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.DailyQuestUpdateQuestInput.Items.toObject(message.items[j], options);
+            object.questProgress = [];
+        if (message.questProgress && message.questProgress.length) {
+            object.questProgress = [];
+            for (var j = 0; j < message.questProgress.length; ++j)
+                object.questProgress[j] = $root.DailyQuestsUpdateQuestInput.QuestProgress.toObject(message.questProgress[j], options);
         }
         return object;
     };
 
     /**
-     * Converts this DailyQuestUpdateQuestInput to JSON.
+     * Converts this DailyQuestsUpdateQuestInput to JSON.
      * @function toJSON
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    DailyQuestUpdateQuestInput.prototype.toJSON = function toJSON() {
+    DailyQuestsUpdateQuestInput.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for DailyQuestUpdateQuestInput
+     * Gets the default type url for DailyQuestsUpdateQuestInput
      * @function getTypeUrl
-     * @memberof DailyQuestUpdateQuestInput
+     * @memberof DailyQuestsUpdateQuestInput
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    DailyQuestUpdateQuestInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyQuestsUpdateQuestInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/DailyQuestUpdateQuestInput";
+        return typeUrlPrefix + "/DailyQuestsUpdateQuestInput";
     };
 
-    DailyQuestUpdateQuestInput.Items = (function() {
+    DailyQuestsUpdateQuestInput.QuestProgress = (function() {
 
         /**
-         * Properties of an Items.
-         * @memberof DailyQuestUpdateQuestInput
-         * @interface IItems
-         * @property {string|null} [id] Items id
-         * @property {number|null} [amount] Items amount
+         * Properties of a QuestProgress.
+         * @memberof DailyQuestsUpdateQuestInput
+         * @interface IQuestProgress
+         * @property {string|null} [id] QuestProgress id
+         * @property {number|null} [amount] QuestProgress amount
          */
 
         /**
-         * Constructs a new Items.
-         * @memberof DailyQuestUpdateQuestInput
-         * @classdesc Represents an Items.
-         * @implements IItems
+         * Constructs a new QuestProgress.
+         * @memberof DailyQuestsUpdateQuestInput
+         * @classdesc Represents a QuestProgress.
+         * @implements IQuestProgress
          * @constructor
-         * @param {DailyQuestUpdateQuestInput.IItems=} [properties] Properties to set
+         * @param {DailyQuestsUpdateQuestInput.IQuestProgress=} [properties] Properties to set
          */
-        function Items(properties) {
+        function QuestProgress(properties) {
             if (properties)
                 for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
                     if (properties[keys[i]] != null)
@@ -6352,43 +5452,43 @@ $root.DailyQuestUpdateQuestInput = (function() {
         }
 
         /**
-         * Items id.
+         * QuestProgress id.
          * @member {string} id
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @instance
          */
-        Items.prototype.id = "";
+        QuestProgress.prototype.id = "";
 
         /**
-         * Items amount.
+         * QuestProgress amount.
          * @member {number} amount
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @instance
          */
-        Items.prototype.amount = 0;
+        QuestProgress.prototype.amount = 0;
 
         /**
-         * Creates a new Items instance using the specified properties.
+         * Creates a new QuestProgress instance using the specified properties.
          * @function create
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
-         * @param {DailyQuestUpdateQuestInput.IItems=} [properties] Properties to set
-         * @returns {DailyQuestUpdateQuestInput.Items} Items instance
+         * @param {DailyQuestsUpdateQuestInput.IQuestProgress=} [properties] Properties to set
+         * @returns {DailyQuestsUpdateQuestInput.QuestProgress} QuestProgress instance
          */
-        Items.create = function create(properties) {
-            return new Items(properties);
+        QuestProgress.create = function create(properties) {
+            return new QuestProgress(properties);
         };
 
         /**
-         * Encodes the specified Items message. Does not implicitly {@link DailyQuestUpdateQuestInput.Items.verify|verify} messages.
+         * Encodes the specified QuestProgress message. Does not implicitly {@link DailyQuestsUpdateQuestInput.QuestProgress.verify|verify} messages.
          * @function encode
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
-         * @param {DailyQuestUpdateQuestInput.IItems} message Items message or plain object to encode
+         * @param {DailyQuestsUpdateQuestInput.IQuestProgress} message QuestProgress message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Items.encode = function encode(message, writer) {
+        QuestProgress.encode = function encode(message, writer) {
             if (!writer)
                 writer = $Writer.create();
             if (message.id != null && Object.hasOwnProperty.call(message, "id"))
@@ -6399,33 +5499,33 @@ $root.DailyQuestUpdateQuestInput = (function() {
         };
 
         /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link DailyQuestUpdateQuestInput.Items.verify|verify} messages.
+         * Encodes the specified QuestProgress message, length delimited. Does not implicitly {@link DailyQuestsUpdateQuestInput.QuestProgress.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
-         * @param {DailyQuestUpdateQuestInput.IItems} message Items message or plain object to encode
+         * @param {DailyQuestsUpdateQuestInput.IQuestProgress} message QuestProgress message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
-        Items.encodeDelimited = function encodeDelimited(message, writer) {
+        QuestProgress.encodeDelimited = function encodeDelimited(message, writer) {
             return this.encode(message, writer).ldelim();
         };
 
         /**
-         * Decodes an Items message from the specified reader or buffer.
+         * Decodes a QuestProgress message from the specified reader or buffer.
          * @function decode
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {DailyQuestUpdateQuestInput.Items} Items
+         * @returns {DailyQuestsUpdateQuestInput.QuestProgress} QuestProgress
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Items.decode = function decode(reader, length) {
+        QuestProgress.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestUpdateQuestInput.Items();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsUpdateQuestInput.QuestProgress();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -6446,30 +5546,30 @@ $root.DailyQuestUpdateQuestInput = (function() {
         };
 
         /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
+         * Decodes a QuestProgress message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {DailyQuestUpdateQuestInput.Items} Items
+         * @returns {DailyQuestsUpdateQuestInput.QuestProgress} QuestProgress
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
-        Items.decodeDelimited = function decodeDelimited(reader) {
+        QuestProgress.decodeDelimited = function decodeDelimited(reader) {
             if (!(reader instanceof $Reader))
                 reader = new $Reader(reader);
             return this.decode(reader, reader.uint32());
         };
 
         /**
-         * Verifies an Items message.
+         * Verifies a QuestProgress message.
          * @function verify
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
          */
-        Items.verify = function verify(message) {
+        QuestProgress.verify = function verify(message) {
             if (typeof message !== "object" || message === null)
                 return "object expected";
             if (message.id != null && message.hasOwnProperty("id"))
@@ -6482,17 +5582,17 @@ $root.DailyQuestUpdateQuestInput = (function() {
         };
 
         /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
+         * Creates a QuestProgress message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {DailyQuestUpdateQuestInput.Items} Items
+         * @returns {DailyQuestsUpdateQuestInput.QuestProgress} QuestProgress
          */
-        Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.DailyQuestUpdateQuestInput.Items)
+        QuestProgress.fromObject = function fromObject(object) {
+            if (object instanceof $root.DailyQuestsUpdateQuestInput.QuestProgress)
                 return object;
-            var message = new $root.DailyQuestUpdateQuestInput.Items();
+            var message = new $root.DailyQuestsUpdateQuestInput.QuestProgress();
             if (object.id != null)
                 message.id = String(object.id);
             if (object.amount != null)
@@ -6501,15 +5601,15 @@ $root.DailyQuestUpdateQuestInput = (function() {
         };
 
         /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
+         * Creates a plain object from a QuestProgress message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
-         * @param {DailyQuestUpdateQuestInput.Items} message Items
+         * @param {DailyQuestsUpdateQuestInput.QuestProgress} message QuestProgress
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
-        Items.toObject = function toObject(message, options) {
+        QuestProgress.toObject = function toObject(message, options) {
             if (!options)
                 options = {};
             var object = {};
@@ -6525,55 +5625,55 @@ $root.DailyQuestUpdateQuestInput = (function() {
         };
 
         /**
-         * Converts this Items to JSON.
+         * Converts this QuestProgress to JSON.
          * @function toJSON
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
-        Items.prototype.toJSON = function toJSON() {
+        QuestProgress.prototype.toJSON = function toJSON() {
             return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
         };
 
         /**
-         * Gets the default type url for Items
+         * Gets the default type url for QuestProgress
          * @function getTypeUrl
-         * @memberof DailyQuestUpdateQuestInput.Items
+         * @memberof DailyQuestsUpdateQuestInput.QuestProgress
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
          */
-        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+        QuestProgress.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/DailyQuestUpdateQuestInput.Items";
+            return typeUrlPrefix + "/DailyQuestsUpdateQuestInput.QuestProgress";
         };
 
-        return Items;
+        return QuestProgress;
     })();
 
-    return DailyQuestUpdateQuestInput;
+    return DailyQuestsUpdateQuestInput;
 })();
 
-$root.DailyQuestUpdateQuestOutput = (function() {
+$root.DailyQuestsUpdateQuestOutput = (function() {
 
     /**
-     * Properties of a DailyQuestUpdateQuestOutput.
-     * @exports IDailyQuestUpdateQuestOutput
-     * @interface IDailyQuestUpdateQuestOutput
-     * @property {Array.<string>|null} [questsCanClaim] DailyQuestUpdateQuestOutput questsCanClaim
+     * Properties of a DailyQuestsUpdateQuestOutput.
+     * @exports IDailyQuestsUpdateQuestOutput
+     * @interface IDailyQuestsUpdateQuestOutput
+     * @property {Array.<string>|null} [questsCanClaim] DailyQuestsUpdateQuestOutput questsCanClaim
      */
 
     /**
-     * Constructs a new DailyQuestUpdateQuestOutput.
-     * @exports DailyQuestUpdateQuestOutput
-     * @classdesc Represents a DailyQuestUpdateQuestOutput.
-     * @implements IDailyQuestUpdateQuestOutput
+     * Constructs a new DailyQuestsUpdateQuestOutput.
+     * @exports DailyQuestsUpdateQuestOutput
+     * @classdesc Represents a DailyQuestsUpdateQuestOutput.
+     * @implements IDailyQuestsUpdateQuestOutput
      * @constructor
-     * @param {IDailyQuestUpdateQuestOutput=} [properties] Properties to set
+     * @param {IDailyQuestsUpdateQuestOutput=} [properties] Properties to set
      */
-    function DailyQuestUpdateQuestOutput(properties) {
+    function DailyQuestsUpdateQuestOutput(properties) {
         this.questsCanClaim = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -6582,35 +5682,35 @@ $root.DailyQuestUpdateQuestOutput = (function() {
     }
 
     /**
-     * DailyQuestUpdateQuestOutput questsCanClaim.
+     * DailyQuestsUpdateQuestOutput questsCanClaim.
      * @member {Array.<string>} questsCanClaim
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @instance
      */
-    DailyQuestUpdateQuestOutput.prototype.questsCanClaim = $util.emptyArray;
+    DailyQuestsUpdateQuestOutput.prototype.questsCanClaim = $util.emptyArray;
 
     /**
-     * Creates a new DailyQuestUpdateQuestOutput instance using the specified properties.
+     * Creates a new DailyQuestsUpdateQuestOutput instance using the specified properties.
      * @function create
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
-     * @param {IDailyQuestUpdateQuestOutput=} [properties] Properties to set
-     * @returns {DailyQuestUpdateQuestOutput} DailyQuestUpdateQuestOutput instance
+     * @param {IDailyQuestsUpdateQuestOutput=} [properties] Properties to set
+     * @returns {DailyQuestsUpdateQuestOutput} DailyQuestsUpdateQuestOutput instance
      */
-    DailyQuestUpdateQuestOutput.create = function create(properties) {
-        return new DailyQuestUpdateQuestOutput(properties);
+    DailyQuestsUpdateQuestOutput.create = function create(properties) {
+        return new DailyQuestsUpdateQuestOutput(properties);
     };
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestOutput message. Does not implicitly {@link DailyQuestUpdateQuestOutput.verify|verify} messages.
+     * Encodes the specified DailyQuestsUpdateQuestOutput message. Does not implicitly {@link DailyQuestsUpdateQuestOutput.verify|verify} messages.
      * @function encode
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
-     * @param {IDailyQuestUpdateQuestOutput} message DailyQuestUpdateQuestOutput message or plain object to encode
+     * @param {IDailyQuestsUpdateQuestOutput} message DailyQuestsUpdateQuestOutput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestUpdateQuestOutput.encode = function encode(message, writer) {
+    DailyQuestsUpdateQuestOutput.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.questsCanClaim != null && message.questsCanClaim.length)
@@ -6620,33 +5720,33 @@ $root.DailyQuestUpdateQuestOutput = (function() {
     };
 
     /**
-     * Encodes the specified DailyQuestUpdateQuestOutput message, length delimited. Does not implicitly {@link DailyQuestUpdateQuestOutput.verify|verify} messages.
+     * Encodes the specified DailyQuestsUpdateQuestOutput message, length delimited. Does not implicitly {@link DailyQuestsUpdateQuestOutput.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
-     * @param {IDailyQuestUpdateQuestOutput} message DailyQuestUpdateQuestOutput message or plain object to encode
+     * @param {IDailyQuestsUpdateQuestOutput} message DailyQuestsUpdateQuestOutput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestUpdateQuestOutput.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyQuestsUpdateQuestOutput.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a DailyQuestUpdateQuestOutput message from the specified reader or buffer.
+     * Decodes a DailyQuestsUpdateQuestOutput message from the specified reader or buffer.
      * @function decode
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {DailyQuestUpdateQuestOutput} DailyQuestUpdateQuestOutput
+     * @returns {DailyQuestsUpdateQuestOutput} DailyQuestsUpdateQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestUpdateQuestOutput.decode = function decode(reader, length) {
+    DailyQuestsUpdateQuestOutput.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestUpdateQuestOutput();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsUpdateQuestOutput();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6665,30 +5765,30 @@ $root.DailyQuestUpdateQuestOutput = (function() {
     };
 
     /**
-     * Decodes a DailyQuestUpdateQuestOutput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsUpdateQuestOutput message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DailyQuestUpdateQuestOutput} DailyQuestUpdateQuestOutput
+     * @returns {DailyQuestsUpdateQuestOutput} DailyQuestsUpdateQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestUpdateQuestOutput.decodeDelimited = function decodeDelimited(reader) {
+    DailyQuestsUpdateQuestOutput.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a DailyQuestUpdateQuestOutput message.
+     * Verifies a DailyQuestsUpdateQuestOutput message.
      * @function verify
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    DailyQuestUpdateQuestOutput.verify = function verify(message) {
+    DailyQuestsUpdateQuestOutput.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.questsCanClaim != null && message.hasOwnProperty("questsCanClaim")) {
@@ -6702,20 +5802,20 @@ $root.DailyQuestUpdateQuestOutput = (function() {
     };
 
     /**
-     * Creates a DailyQuestUpdateQuestOutput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsUpdateQuestOutput message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {DailyQuestUpdateQuestOutput} DailyQuestUpdateQuestOutput
+     * @returns {DailyQuestsUpdateQuestOutput} DailyQuestsUpdateQuestOutput
      */
-    DailyQuestUpdateQuestOutput.fromObject = function fromObject(object) {
-        if (object instanceof $root.DailyQuestUpdateQuestOutput)
+    DailyQuestsUpdateQuestOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyQuestsUpdateQuestOutput)
             return object;
-        var message = new $root.DailyQuestUpdateQuestOutput();
+        var message = new $root.DailyQuestsUpdateQuestOutput();
         if (object.questsCanClaim) {
             if (!Array.isArray(object.questsCanClaim))
-                throw TypeError(".DailyQuestUpdateQuestOutput.questsCanClaim: array expected");
+                throw TypeError(".DailyQuestsUpdateQuestOutput.questsCanClaim: array expected");
             message.questsCanClaim = [];
             for (var i = 0; i < object.questsCanClaim.length; ++i)
                 message.questsCanClaim[i] = String(object.questsCanClaim[i]);
@@ -6724,15 +5824,15 @@ $root.DailyQuestUpdateQuestOutput = (function() {
     };
 
     /**
-     * Creates a plain object from a DailyQuestUpdateQuestOutput message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyQuestsUpdateQuestOutput message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
-     * @param {DailyQuestUpdateQuestOutput} message DailyQuestUpdateQuestOutput
+     * @param {DailyQuestsUpdateQuestOutput} message DailyQuestsUpdateQuestOutput
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    DailyQuestUpdateQuestOutput.toObject = function toObject(message, options) {
+    DailyQuestsUpdateQuestOutput.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -6747,52 +5847,52 @@ $root.DailyQuestUpdateQuestOutput = (function() {
     };
 
     /**
-     * Converts this DailyQuestUpdateQuestOutput to JSON.
+     * Converts this DailyQuestsUpdateQuestOutput to JSON.
      * @function toJSON
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    DailyQuestUpdateQuestOutput.prototype.toJSON = function toJSON() {
+    DailyQuestsUpdateQuestOutput.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for DailyQuestUpdateQuestOutput
+     * Gets the default type url for DailyQuestsUpdateQuestOutput
      * @function getTypeUrl
-     * @memberof DailyQuestUpdateQuestOutput
+     * @memberof DailyQuestsUpdateQuestOutput
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    DailyQuestUpdateQuestOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyQuestsUpdateQuestOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/DailyQuestUpdateQuestOutput";
+        return typeUrlPrefix + "/DailyQuestsUpdateQuestOutput";
     };
 
-    return DailyQuestUpdateQuestOutput;
+    return DailyQuestsUpdateQuestOutput;
 })();
 
-$root.DailyQuestClaimQuestInput = (function() {
+$root.DailyQuestsClaimQuestInput = (function() {
 
     /**
-     * Properties of a DailyQuestClaimQuestInput.
-     * @exports IDailyQuestClaimQuestInput
-     * @interface IDailyQuestClaimQuestInput
-     * @property {Array.<string>|null} [items] DailyQuestClaimQuestInput items
+     * Properties of a DailyQuestsClaimQuestInput.
+     * @exports IDailyQuestsClaimQuestInput
+     * @interface IDailyQuestsClaimQuestInput
+     * @property {Array.<string>|null} [items] DailyQuestsClaimQuestInput items
      */
 
     /**
-     * Constructs a new DailyQuestClaimQuestInput.
-     * @exports DailyQuestClaimQuestInput
-     * @classdesc Represents a DailyQuestClaimQuestInput.
-     * @implements IDailyQuestClaimQuestInput
+     * Constructs a new DailyQuestsClaimQuestInput.
+     * @exports DailyQuestsClaimQuestInput
+     * @classdesc Represents a DailyQuestsClaimQuestInput.
+     * @implements IDailyQuestsClaimQuestInput
      * @constructor
-     * @param {IDailyQuestClaimQuestInput=} [properties] Properties to set
+     * @param {IDailyQuestsClaimQuestInput=} [properties] Properties to set
      */
-    function DailyQuestClaimQuestInput(properties) {
+    function DailyQuestsClaimQuestInput(properties) {
         this.items = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -6801,35 +5901,35 @@ $root.DailyQuestClaimQuestInput = (function() {
     }
 
     /**
-     * DailyQuestClaimQuestInput items.
+     * DailyQuestsClaimQuestInput items.
      * @member {Array.<string>} items
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @instance
      */
-    DailyQuestClaimQuestInput.prototype.items = $util.emptyArray;
+    DailyQuestsClaimQuestInput.prototype.items = $util.emptyArray;
 
     /**
-     * Creates a new DailyQuestClaimQuestInput instance using the specified properties.
+     * Creates a new DailyQuestsClaimQuestInput instance using the specified properties.
      * @function create
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
-     * @param {IDailyQuestClaimQuestInput=} [properties] Properties to set
-     * @returns {DailyQuestClaimQuestInput} DailyQuestClaimQuestInput instance
+     * @param {IDailyQuestsClaimQuestInput=} [properties] Properties to set
+     * @returns {DailyQuestsClaimQuestInput} DailyQuestsClaimQuestInput instance
      */
-    DailyQuestClaimQuestInput.create = function create(properties) {
-        return new DailyQuestClaimQuestInput(properties);
+    DailyQuestsClaimQuestInput.create = function create(properties) {
+        return new DailyQuestsClaimQuestInput(properties);
     };
 
     /**
-     * Encodes the specified DailyQuestClaimQuestInput message. Does not implicitly {@link DailyQuestClaimQuestInput.verify|verify} messages.
+     * Encodes the specified DailyQuestsClaimQuestInput message. Does not implicitly {@link DailyQuestsClaimQuestInput.verify|verify} messages.
      * @function encode
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
-     * @param {IDailyQuestClaimQuestInput} message DailyQuestClaimQuestInput message or plain object to encode
+     * @param {IDailyQuestsClaimQuestInput} message DailyQuestsClaimQuestInput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestClaimQuestInput.encode = function encode(message, writer) {
+    DailyQuestsClaimQuestInput.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.items != null && message.items.length)
@@ -6839,33 +5939,33 @@ $root.DailyQuestClaimQuestInput = (function() {
     };
 
     /**
-     * Encodes the specified DailyQuestClaimQuestInput message, length delimited. Does not implicitly {@link DailyQuestClaimQuestInput.verify|verify} messages.
+     * Encodes the specified DailyQuestsClaimQuestInput message, length delimited. Does not implicitly {@link DailyQuestsClaimQuestInput.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
-     * @param {IDailyQuestClaimQuestInput} message DailyQuestClaimQuestInput message or plain object to encode
+     * @param {IDailyQuestsClaimQuestInput} message DailyQuestsClaimQuestInput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestClaimQuestInput.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyQuestsClaimQuestInput.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a DailyQuestClaimQuestInput message from the specified reader or buffer.
+     * Decodes a DailyQuestsClaimQuestInput message from the specified reader or buffer.
      * @function decode
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {DailyQuestClaimQuestInput} DailyQuestClaimQuestInput
+     * @returns {DailyQuestsClaimQuestInput} DailyQuestsClaimQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestClaimQuestInput.decode = function decode(reader, length) {
+    DailyQuestsClaimQuestInput.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestClaimQuestInput();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsClaimQuestInput();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
@@ -6884,30 +5984,30 @@ $root.DailyQuestClaimQuestInput = (function() {
     };
 
     /**
-     * Decodes a DailyQuestClaimQuestInput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsClaimQuestInput message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DailyQuestClaimQuestInput} DailyQuestClaimQuestInput
+     * @returns {DailyQuestsClaimQuestInput} DailyQuestsClaimQuestInput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestClaimQuestInput.decodeDelimited = function decodeDelimited(reader) {
+    DailyQuestsClaimQuestInput.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a DailyQuestClaimQuestInput message.
+     * Verifies a DailyQuestsClaimQuestInput message.
      * @function verify
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    DailyQuestClaimQuestInput.verify = function verify(message) {
+    DailyQuestsClaimQuestInput.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.items != null && message.hasOwnProperty("items")) {
@@ -6921,20 +6021,20 @@ $root.DailyQuestClaimQuestInput = (function() {
     };
 
     /**
-     * Creates a DailyQuestClaimQuestInput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsClaimQuestInput message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {DailyQuestClaimQuestInput} DailyQuestClaimQuestInput
+     * @returns {DailyQuestsClaimQuestInput} DailyQuestsClaimQuestInput
      */
-    DailyQuestClaimQuestInput.fromObject = function fromObject(object) {
-        if (object instanceof $root.DailyQuestClaimQuestInput)
+    DailyQuestsClaimQuestInput.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyQuestsClaimQuestInput)
             return object;
-        var message = new $root.DailyQuestClaimQuestInput();
+        var message = new $root.DailyQuestsClaimQuestInput();
         if (object.items) {
             if (!Array.isArray(object.items))
-                throw TypeError(".DailyQuestClaimQuestInput.items: array expected");
+                throw TypeError(".DailyQuestsClaimQuestInput.items: array expected");
             message.items = [];
             for (var i = 0; i < object.items.length; ++i)
                 message.items[i] = String(object.items[i]);
@@ -6943,15 +6043,15 @@ $root.DailyQuestClaimQuestInput = (function() {
     };
 
     /**
-     * Creates a plain object from a DailyQuestClaimQuestInput message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyQuestsClaimQuestInput message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
-     * @param {DailyQuestClaimQuestInput} message DailyQuestClaimQuestInput
+     * @param {DailyQuestsClaimQuestInput} message DailyQuestsClaimQuestInput
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    DailyQuestClaimQuestInput.toObject = function toObject(message, options) {
+    DailyQuestsClaimQuestInput.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -6966,52 +6066,52 @@ $root.DailyQuestClaimQuestInput = (function() {
     };
 
     /**
-     * Converts this DailyQuestClaimQuestInput to JSON.
+     * Converts this DailyQuestsClaimQuestInput to JSON.
      * @function toJSON
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    DailyQuestClaimQuestInput.prototype.toJSON = function toJSON() {
+    DailyQuestsClaimQuestInput.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for DailyQuestClaimQuestInput
+     * Gets the default type url for DailyQuestsClaimQuestInput
      * @function getTypeUrl
-     * @memberof DailyQuestClaimQuestInput
+     * @memberof DailyQuestsClaimQuestInput
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    DailyQuestClaimQuestInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyQuestsClaimQuestInput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/DailyQuestClaimQuestInput";
+        return typeUrlPrefix + "/DailyQuestsClaimQuestInput";
     };
 
-    return DailyQuestClaimQuestInput;
+    return DailyQuestsClaimQuestInput;
 })();
 
-$root.DailyQuestClaimQuestOutput = (function() {
+$root.DailyQuestsClaimQuestOutput = (function() {
 
     /**
-     * Properties of a DailyQuestClaimQuestOutput.
-     * @exports IDailyQuestClaimQuestOutput
-     * @interface IDailyQuestClaimQuestOutput
-     * @property {Array.<DailyQuestClaimQuestOutput.IRewards>|null} [rewards] DailyQuestClaimQuestOutput rewards
+     * Properties of a DailyQuestsClaimQuestOutput.
+     * @exports IDailyQuestsClaimQuestOutput
+     * @interface IDailyQuestsClaimQuestOutput
+     * @property {Array.<DailyQuestsClaimQuestOutput.IRewards>|null} [rewards] DailyQuestsClaimQuestOutput rewards
      */
 
     /**
-     * Constructs a new DailyQuestClaimQuestOutput.
-     * @exports DailyQuestClaimQuestOutput
-     * @classdesc Represents a DailyQuestClaimQuestOutput.
-     * @implements IDailyQuestClaimQuestOutput
+     * Constructs a new DailyQuestsClaimQuestOutput.
+     * @exports DailyQuestsClaimQuestOutput
+     * @classdesc Represents a DailyQuestsClaimQuestOutput.
+     * @implements IDailyQuestsClaimQuestOutput
      * @constructor
-     * @param {IDailyQuestClaimQuestOutput=} [properties] Properties to set
+     * @param {IDailyQuestsClaimQuestOutput=} [properties] Properties to set
      */
-    function DailyQuestClaimQuestOutput(properties) {
+    function DailyQuestsClaimQuestOutput(properties) {
         this.rewards = [];
         if (properties)
             for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
@@ -7020,78 +6120,78 @@ $root.DailyQuestClaimQuestOutput = (function() {
     }
 
     /**
-     * DailyQuestClaimQuestOutput rewards.
-     * @member {Array.<DailyQuestClaimQuestOutput.IRewards>} rewards
-     * @memberof DailyQuestClaimQuestOutput
+     * DailyQuestsClaimQuestOutput rewards.
+     * @member {Array.<DailyQuestsClaimQuestOutput.IRewards>} rewards
+     * @memberof DailyQuestsClaimQuestOutput
      * @instance
      */
-    DailyQuestClaimQuestOutput.prototype.rewards = $util.emptyArray;
+    DailyQuestsClaimQuestOutput.prototype.rewards = $util.emptyArray;
 
     /**
-     * Creates a new DailyQuestClaimQuestOutput instance using the specified properties.
+     * Creates a new DailyQuestsClaimQuestOutput instance using the specified properties.
      * @function create
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
-     * @param {IDailyQuestClaimQuestOutput=} [properties] Properties to set
-     * @returns {DailyQuestClaimQuestOutput} DailyQuestClaimQuestOutput instance
+     * @param {IDailyQuestsClaimQuestOutput=} [properties] Properties to set
+     * @returns {DailyQuestsClaimQuestOutput} DailyQuestsClaimQuestOutput instance
      */
-    DailyQuestClaimQuestOutput.create = function create(properties) {
-        return new DailyQuestClaimQuestOutput(properties);
+    DailyQuestsClaimQuestOutput.create = function create(properties) {
+        return new DailyQuestsClaimQuestOutput(properties);
     };
 
     /**
-     * Encodes the specified DailyQuestClaimQuestOutput message. Does not implicitly {@link DailyQuestClaimQuestOutput.verify|verify} messages.
+     * Encodes the specified DailyQuestsClaimQuestOutput message. Does not implicitly {@link DailyQuestsClaimQuestOutput.verify|verify} messages.
      * @function encode
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
-     * @param {IDailyQuestClaimQuestOutput} message DailyQuestClaimQuestOutput message or plain object to encode
+     * @param {IDailyQuestsClaimQuestOutput} message DailyQuestsClaimQuestOutput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestClaimQuestOutput.encode = function encode(message, writer) {
+    DailyQuestsClaimQuestOutput.encode = function encode(message, writer) {
         if (!writer)
             writer = $Writer.create();
         if (message.rewards != null && message.rewards.length)
             for (var i = 0; i < message.rewards.length; ++i)
-                $root.DailyQuestClaimQuestOutput.Rewards.encode(message.rewards[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
+                $root.DailyQuestsClaimQuestOutput.Rewards.encode(message.rewards[i], writer.uint32(/* id 1, wireType 2 =*/10).fork()).ldelim();
         return writer;
     };
 
     /**
-     * Encodes the specified DailyQuestClaimQuestOutput message, length delimited. Does not implicitly {@link DailyQuestClaimQuestOutput.verify|verify} messages.
+     * Encodes the specified DailyQuestsClaimQuestOutput message, length delimited. Does not implicitly {@link DailyQuestsClaimQuestOutput.verify|verify} messages.
      * @function encodeDelimited
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
-     * @param {IDailyQuestClaimQuestOutput} message DailyQuestClaimQuestOutput message or plain object to encode
+     * @param {IDailyQuestsClaimQuestOutput} message DailyQuestsClaimQuestOutput message or plain object to encode
      * @param {$protobuf.Writer} [writer] Writer to encode to
      * @returns {$protobuf.Writer} Writer
      */
-    DailyQuestClaimQuestOutput.encodeDelimited = function encodeDelimited(message, writer) {
+    DailyQuestsClaimQuestOutput.encodeDelimited = function encodeDelimited(message, writer) {
         return this.encode(message, writer).ldelim();
     };
 
     /**
-     * Decodes a DailyQuestClaimQuestOutput message from the specified reader or buffer.
+     * Decodes a DailyQuestsClaimQuestOutput message from the specified reader or buffer.
      * @function decode
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
      * @param {number} [length] Message length if known beforehand
-     * @returns {DailyQuestClaimQuestOutput} DailyQuestClaimQuestOutput
+     * @returns {DailyQuestsClaimQuestOutput} DailyQuestsClaimQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestClaimQuestOutput.decode = function decode(reader, length) {
+    DailyQuestsClaimQuestOutput.decode = function decode(reader, length) {
         if (!(reader instanceof $Reader))
             reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestClaimQuestOutput();
+        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsClaimQuestOutput();
         while (reader.pos < end) {
             var tag = reader.uint32();
             switch (tag >>> 3) {
             case 1: {
                     if (!(message.rewards && message.rewards.length))
                         message.rewards = [];
-                    message.rewards.push($root.DailyQuestClaimQuestOutput.Rewards.decode(reader, reader.uint32()));
+                    message.rewards.push($root.DailyQuestsClaimQuestOutput.Rewards.decode(reader, reader.uint32()));
                     break;
                 }
             default:
@@ -7103,37 +6203,37 @@ $root.DailyQuestClaimQuestOutput = (function() {
     };
 
     /**
-     * Decodes a DailyQuestClaimQuestOutput message from the specified reader or buffer, length delimited.
+     * Decodes a DailyQuestsClaimQuestOutput message from the specified reader or buffer, length delimited.
      * @function decodeDelimited
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
      * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {DailyQuestClaimQuestOutput} DailyQuestClaimQuestOutput
+     * @returns {DailyQuestsClaimQuestOutput} DailyQuestsClaimQuestOutput
      * @throws {Error} If the payload is not a reader or valid buffer
      * @throws {$protobuf.util.ProtocolError} If required fields are missing
      */
-    DailyQuestClaimQuestOutput.decodeDelimited = function decodeDelimited(reader) {
+    DailyQuestsClaimQuestOutput.decodeDelimited = function decodeDelimited(reader) {
         if (!(reader instanceof $Reader))
             reader = new $Reader(reader);
         return this.decode(reader, reader.uint32());
     };
 
     /**
-     * Verifies a DailyQuestClaimQuestOutput message.
+     * Verifies a DailyQuestsClaimQuestOutput message.
      * @function verify
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
      * @param {Object.<string,*>} message Plain object to verify
      * @returns {string|null} `null` if valid, otherwise the reason why it is not
      */
-    DailyQuestClaimQuestOutput.verify = function verify(message) {
+    DailyQuestsClaimQuestOutput.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
         if (message.rewards != null && message.hasOwnProperty("rewards")) {
             if (!Array.isArray(message.rewards))
                 return "rewards: array expected";
             for (var i = 0; i < message.rewards.length; ++i) {
-                var error = $root.DailyQuestClaimQuestOutput.Rewards.verify(message.rewards[i]);
+                var error = $root.DailyQuestsClaimQuestOutput.Rewards.verify(message.rewards[i]);
                 if (error)
                     return "rewards." + error;
             }
@@ -7142,40 +6242,40 @@ $root.DailyQuestClaimQuestOutput = (function() {
     };
 
     /**
-     * Creates a DailyQuestClaimQuestOutput message from a plain object. Also converts values to their respective internal types.
+     * Creates a DailyQuestsClaimQuestOutput message from a plain object. Also converts values to their respective internal types.
      * @function fromObject
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
      * @param {Object.<string,*>} object Plain object
-     * @returns {DailyQuestClaimQuestOutput} DailyQuestClaimQuestOutput
+     * @returns {DailyQuestsClaimQuestOutput} DailyQuestsClaimQuestOutput
      */
-    DailyQuestClaimQuestOutput.fromObject = function fromObject(object) {
-        if (object instanceof $root.DailyQuestClaimQuestOutput)
+    DailyQuestsClaimQuestOutput.fromObject = function fromObject(object) {
+        if (object instanceof $root.DailyQuestsClaimQuestOutput)
             return object;
-        var message = new $root.DailyQuestClaimQuestOutput();
+        var message = new $root.DailyQuestsClaimQuestOutput();
         if (object.rewards) {
             if (!Array.isArray(object.rewards))
-                throw TypeError(".DailyQuestClaimQuestOutput.rewards: array expected");
+                throw TypeError(".DailyQuestsClaimQuestOutput.rewards: array expected");
             message.rewards = [];
             for (var i = 0; i < object.rewards.length; ++i) {
                 if (typeof object.rewards[i] !== "object")
-                    throw TypeError(".DailyQuestClaimQuestOutput.rewards: object expected");
-                message.rewards[i] = $root.DailyQuestClaimQuestOutput.Rewards.fromObject(object.rewards[i]);
+                    throw TypeError(".DailyQuestsClaimQuestOutput.rewards: object expected");
+                message.rewards[i] = $root.DailyQuestsClaimQuestOutput.Rewards.fromObject(object.rewards[i]);
             }
         }
         return message;
     };
 
     /**
-     * Creates a plain object from a DailyQuestClaimQuestOutput message. Also converts values to other types if specified.
+     * Creates a plain object from a DailyQuestsClaimQuestOutput message. Also converts values to other types if specified.
      * @function toObject
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
-     * @param {DailyQuestClaimQuestOutput} message DailyQuestClaimQuestOutput
+     * @param {DailyQuestsClaimQuestOutput} message DailyQuestsClaimQuestOutput
      * @param {$protobuf.IConversionOptions} [options] Conversion options
      * @returns {Object.<string,*>} Plain object
      */
-    DailyQuestClaimQuestOutput.toObject = function toObject(message, options) {
+    DailyQuestsClaimQuestOutput.toObject = function toObject(message, options) {
         if (!options)
             options = {};
         var object = {};
@@ -7184,42 +6284,42 @@ $root.DailyQuestClaimQuestOutput = (function() {
         if (message.rewards && message.rewards.length) {
             object.rewards = [];
             for (var j = 0; j < message.rewards.length; ++j)
-                object.rewards[j] = $root.DailyQuestClaimQuestOutput.Rewards.toObject(message.rewards[j], options);
+                object.rewards[j] = $root.DailyQuestsClaimQuestOutput.Rewards.toObject(message.rewards[j], options);
         }
         return object;
     };
 
     /**
-     * Converts this DailyQuestClaimQuestOutput to JSON.
+     * Converts this DailyQuestsClaimQuestOutput to JSON.
      * @function toJSON
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @instance
      * @returns {Object.<string,*>} JSON object
      */
-    DailyQuestClaimQuestOutput.prototype.toJSON = function toJSON() {
+    DailyQuestsClaimQuestOutput.prototype.toJSON = function toJSON() {
         return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
     };
 
     /**
-     * Gets the default type url for DailyQuestClaimQuestOutput
+     * Gets the default type url for DailyQuestsClaimQuestOutput
      * @function getTypeUrl
-     * @memberof DailyQuestClaimQuestOutput
+     * @memberof DailyQuestsClaimQuestOutput
      * @static
      * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
      * @returns {string} The default type url
      */
-    DailyQuestClaimQuestOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
+    DailyQuestsClaimQuestOutput.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
         if (typeUrlPrefix === undefined) {
             typeUrlPrefix = "type.googleapis.com";
         }
-        return typeUrlPrefix + "/DailyQuestClaimQuestOutput";
+        return typeUrlPrefix + "/DailyQuestsClaimQuestOutput";
     };
 
-    DailyQuestClaimQuestOutput.Rewards = (function() {
+    DailyQuestsClaimQuestOutput.Rewards = (function() {
 
         /**
          * Properties of a Rewards.
-         * @memberof DailyQuestClaimQuestOutput
+         * @memberof DailyQuestsClaimQuestOutput
          * @interface IRewards
          * @property {string|null} [itemId] Rewards itemId
          * @property {number|null} [amount] Rewards amount
@@ -7227,11 +6327,11 @@ $root.DailyQuestClaimQuestOutput = (function() {
 
         /**
          * Constructs a new Rewards.
-         * @memberof DailyQuestClaimQuestOutput
+         * @memberof DailyQuestsClaimQuestOutput
          * @classdesc Represents a Rewards.
          * @implements IRewards
          * @constructor
-         * @param {DailyQuestClaimQuestOutput.IRewards=} [properties] Properties to set
+         * @param {DailyQuestsClaimQuestOutput.IRewards=} [properties] Properties to set
          */
         function Rewards(properties) {
             if (properties)
@@ -7243,7 +6343,7 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Rewards itemId.
          * @member {string} itemId
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @instance
          */
         Rewards.prototype.itemId = "";
@@ -7251,7 +6351,7 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Rewards amount.
          * @member {number} amount
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @instance
          */
         Rewards.prototype.amount = 0;
@@ -7259,21 +6359,21 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Creates a new Rewards instance using the specified properties.
          * @function create
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
-         * @param {DailyQuestClaimQuestOutput.IRewards=} [properties] Properties to set
-         * @returns {DailyQuestClaimQuestOutput.Rewards} Rewards instance
+         * @param {DailyQuestsClaimQuestOutput.IRewards=} [properties] Properties to set
+         * @returns {DailyQuestsClaimQuestOutput.Rewards} Rewards instance
          */
         Rewards.create = function create(properties) {
             return new Rewards(properties);
         };
 
         /**
-         * Encodes the specified Rewards message. Does not implicitly {@link DailyQuestClaimQuestOutput.Rewards.verify|verify} messages.
+         * Encodes the specified Rewards message. Does not implicitly {@link DailyQuestsClaimQuestOutput.Rewards.verify|verify} messages.
          * @function encode
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
-         * @param {DailyQuestClaimQuestOutput.IRewards} message Rewards message or plain object to encode
+         * @param {DailyQuestsClaimQuestOutput.IRewards} message Rewards message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -7288,11 +6388,11 @@ $root.DailyQuestClaimQuestOutput = (function() {
         };
 
         /**
-         * Encodes the specified Rewards message, length delimited. Does not implicitly {@link DailyQuestClaimQuestOutput.Rewards.verify|verify} messages.
+         * Encodes the specified Rewards message, length delimited. Does not implicitly {@link DailyQuestsClaimQuestOutput.Rewards.verify|verify} messages.
          * @function encodeDelimited
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
-         * @param {DailyQuestClaimQuestOutput.IRewards} message Rewards message or plain object to encode
+         * @param {DailyQuestsClaimQuestOutput.IRewards} message Rewards message or plain object to encode
          * @param {$protobuf.Writer} [writer] Writer to encode to
          * @returns {$protobuf.Writer} Writer
          */
@@ -7303,18 +6403,18 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Decodes a Rewards message from the specified reader or buffer.
          * @function decode
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
          * @param {number} [length] Message length if known beforehand
-         * @returns {DailyQuestClaimQuestOutput.Rewards} Rewards
+         * @returns {DailyQuestsClaimQuestOutput.Rewards} Rewards
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
         Rewards.decode = function decode(reader, length) {
             if (!(reader instanceof $Reader))
                 reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestClaimQuestOutput.Rewards();
+            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.DailyQuestsClaimQuestOutput.Rewards();
             while (reader.pos < end) {
                 var tag = reader.uint32();
                 switch (tag >>> 3) {
@@ -7337,10 +6437,10 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Decodes a Rewards message from the specified reader or buffer, length delimited.
          * @function decodeDelimited
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
          * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {DailyQuestClaimQuestOutput.Rewards} Rewards
+         * @returns {DailyQuestsClaimQuestOutput.Rewards} Rewards
          * @throws {Error} If the payload is not a reader or valid buffer
          * @throws {$protobuf.util.ProtocolError} If required fields are missing
          */
@@ -7353,7 +6453,7 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Verifies a Rewards message.
          * @function verify
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
          * @param {Object.<string,*>} message Plain object to verify
          * @returns {string|null} `null` if valid, otherwise the reason why it is not
@@ -7373,15 +6473,15 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Creates a Rewards message from a plain object. Also converts values to their respective internal types.
          * @function fromObject
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
          * @param {Object.<string,*>} object Plain object
-         * @returns {DailyQuestClaimQuestOutput.Rewards} Rewards
+         * @returns {DailyQuestsClaimQuestOutput.Rewards} Rewards
          */
         Rewards.fromObject = function fromObject(object) {
-            if (object instanceof $root.DailyQuestClaimQuestOutput.Rewards)
+            if (object instanceof $root.DailyQuestsClaimQuestOutput.Rewards)
                 return object;
-            var message = new $root.DailyQuestClaimQuestOutput.Rewards();
+            var message = new $root.DailyQuestsClaimQuestOutput.Rewards();
             if (object.itemId != null)
                 message.itemId = String(object.itemId);
             if (object.amount != null)
@@ -7392,9 +6492,9 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Creates a plain object from a Rewards message. Also converts values to other types if specified.
          * @function toObject
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
-         * @param {DailyQuestClaimQuestOutput.Rewards} message Rewards
+         * @param {DailyQuestsClaimQuestOutput.Rewards} message Rewards
          * @param {$protobuf.IConversionOptions} [options] Conversion options
          * @returns {Object.<string,*>} Plain object
          */
@@ -7416,7 +6516,7 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Converts this Rewards to JSON.
          * @function toJSON
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @instance
          * @returns {Object.<string,*>} JSON object
          */
@@ -7427,7 +6527,7 @@ $root.DailyQuestClaimQuestOutput = (function() {
         /**
          * Gets the default type url for Rewards
          * @function getTypeUrl
-         * @memberof DailyQuestClaimQuestOutput.Rewards
+         * @memberof DailyQuestsClaimQuestOutput.Rewards
          * @static
          * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
          * @returns {string} The default type url
@@ -7436,13 +6536,13 @@ $root.DailyQuestClaimQuestOutput = (function() {
             if (typeUrlPrefix === undefined) {
                 typeUrlPrefix = "type.googleapis.com";
             }
-            return typeUrlPrefix + "/DailyQuestClaimQuestOutput.Rewards";
+            return typeUrlPrefix + "/DailyQuestsClaimQuestOutput.Rewards";
         };
 
         return Rewards;
     })();
 
-    return DailyQuestClaimQuestOutput;
+    return DailyQuestsClaimQuestOutput;
 })();
 
 $root.DailyRewardsCanClaimRewardOutput = (function() {
@@ -8392,551 +7492,6 @@ $root.DailyRewardsClaimRewardsOutput = (function() {
     })();
 
     return DailyRewardsClaimRewardsOutput;
-})();
-
-$root.LuckyWheel = (function() {
-
-    /**
-     * Properties of a LuckyWheel.
-     * @exports ILuckyWheel
-     * @interface ILuckyWheel
-     * @property {number|null} [maxFullSpins] LuckyWheel maxFullSpins
-     * @property {number|null} [minFullSpins] LuckyWheel minFullSpins
-     * @property {number|null} [dailyLimit] LuckyWheel dailyLimit
-     * @property {Array.<LuckyWheel.IItems>|null} [items] LuckyWheel items
-     */
-
-    /**
-     * Constructs a new LuckyWheel.
-     * @exports LuckyWheel
-     * @classdesc Represents a LuckyWheel.
-     * @implements ILuckyWheel
-     * @constructor
-     * @param {ILuckyWheel=} [properties] Properties to set
-     */
-    function LuckyWheel(properties) {
-        this.items = [];
-        if (properties)
-            for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                if (properties[keys[i]] != null)
-                    this[keys[i]] = properties[keys[i]];
-    }
-
-    /**
-     * LuckyWheel maxFullSpins.
-     * @member {number} maxFullSpins
-     * @memberof LuckyWheel
-     * @instance
-     */
-    LuckyWheel.prototype.maxFullSpins = 0;
-
-    /**
-     * LuckyWheel minFullSpins.
-     * @member {number} minFullSpins
-     * @memberof LuckyWheel
-     * @instance
-     */
-    LuckyWheel.prototype.minFullSpins = 0;
-
-    /**
-     * LuckyWheel dailyLimit.
-     * @member {number} dailyLimit
-     * @memberof LuckyWheel
-     * @instance
-     */
-    LuckyWheel.prototype.dailyLimit = 0;
-
-    /**
-     * LuckyWheel items.
-     * @member {Array.<LuckyWheel.IItems>} items
-     * @memberof LuckyWheel
-     * @instance
-     */
-    LuckyWheel.prototype.items = $util.emptyArray;
-
-    /**
-     * Creates a new LuckyWheel instance using the specified properties.
-     * @function create
-     * @memberof LuckyWheel
-     * @static
-     * @param {ILuckyWheel=} [properties] Properties to set
-     * @returns {LuckyWheel} LuckyWheel instance
-     */
-    LuckyWheel.create = function create(properties) {
-        return new LuckyWheel(properties);
-    };
-
-    /**
-     * Encodes the specified LuckyWheel message. Does not implicitly {@link LuckyWheel.verify|verify} messages.
-     * @function encode
-     * @memberof LuckyWheel
-     * @static
-     * @param {ILuckyWheel} message LuckyWheel message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    LuckyWheel.encode = function encode(message, writer) {
-        if (!writer)
-            writer = $Writer.create();
-        if (message.maxFullSpins != null && Object.hasOwnProperty.call(message, "maxFullSpins"))
-            writer.uint32(/* id 1, wireType 0 =*/8).uint32(message.maxFullSpins);
-        if (message.minFullSpins != null && Object.hasOwnProperty.call(message, "minFullSpins"))
-            writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.minFullSpins);
-        if (message.dailyLimit != null && Object.hasOwnProperty.call(message, "dailyLimit"))
-            writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.dailyLimit);
-        if (message.items != null && message.items.length)
-            for (var i = 0; i < message.items.length; ++i)
-                $root.LuckyWheel.Items.encode(message.items[i], writer.uint32(/* id 4, wireType 2 =*/34).fork()).ldelim();
-        return writer;
-    };
-
-    /**
-     * Encodes the specified LuckyWheel message, length delimited. Does not implicitly {@link LuckyWheel.verify|verify} messages.
-     * @function encodeDelimited
-     * @memberof LuckyWheel
-     * @static
-     * @param {ILuckyWheel} message LuckyWheel message or plain object to encode
-     * @param {$protobuf.Writer} [writer] Writer to encode to
-     * @returns {$protobuf.Writer} Writer
-     */
-    LuckyWheel.encodeDelimited = function encodeDelimited(message, writer) {
-        return this.encode(message, writer).ldelim();
-    };
-
-    /**
-     * Decodes a LuckyWheel message from the specified reader or buffer.
-     * @function decode
-     * @memberof LuckyWheel
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @param {number} [length] Message length if known beforehand
-     * @returns {LuckyWheel} LuckyWheel
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    LuckyWheel.decode = function decode(reader, length) {
-        if (!(reader instanceof $Reader))
-            reader = $Reader.create(reader);
-        var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LuckyWheel();
-        while (reader.pos < end) {
-            var tag = reader.uint32();
-            switch (tag >>> 3) {
-            case 1: {
-                    message.maxFullSpins = reader.uint32();
-                    break;
-                }
-            case 2: {
-                    message.minFullSpins = reader.uint32();
-                    break;
-                }
-            case 3: {
-                    message.dailyLimit = reader.uint32();
-                    break;
-                }
-            case 4: {
-                    if (!(message.items && message.items.length))
-                        message.items = [];
-                    message.items.push($root.LuckyWheel.Items.decode(reader, reader.uint32()));
-                    break;
-                }
-            default:
-                reader.skipType(tag & 7);
-                break;
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Decodes a LuckyWheel message from the specified reader or buffer, length delimited.
-     * @function decodeDelimited
-     * @memberof LuckyWheel
-     * @static
-     * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-     * @returns {LuckyWheel} LuckyWheel
-     * @throws {Error} If the payload is not a reader or valid buffer
-     * @throws {$protobuf.util.ProtocolError} If required fields are missing
-     */
-    LuckyWheel.decodeDelimited = function decodeDelimited(reader) {
-        if (!(reader instanceof $Reader))
-            reader = new $Reader(reader);
-        return this.decode(reader, reader.uint32());
-    };
-
-    /**
-     * Verifies a LuckyWheel message.
-     * @function verify
-     * @memberof LuckyWheel
-     * @static
-     * @param {Object.<string,*>} message Plain object to verify
-     * @returns {string|null} `null` if valid, otherwise the reason why it is not
-     */
-    LuckyWheel.verify = function verify(message) {
-        if (typeof message !== "object" || message === null)
-            return "object expected";
-        if (message.maxFullSpins != null && message.hasOwnProperty("maxFullSpins"))
-            if (!$util.isInteger(message.maxFullSpins))
-                return "maxFullSpins: integer expected";
-        if (message.minFullSpins != null && message.hasOwnProperty("minFullSpins"))
-            if (!$util.isInteger(message.minFullSpins))
-                return "minFullSpins: integer expected";
-        if (message.dailyLimit != null && message.hasOwnProperty("dailyLimit"))
-            if (!$util.isInteger(message.dailyLimit))
-                return "dailyLimit: integer expected";
-        if (message.items != null && message.hasOwnProperty("items")) {
-            if (!Array.isArray(message.items))
-                return "items: array expected";
-            for (var i = 0; i < message.items.length; ++i) {
-                var error = $root.LuckyWheel.Items.verify(message.items[i]);
-                if (error)
-                    return "items." + error;
-            }
-        }
-        return null;
-    };
-
-    /**
-     * Creates a LuckyWheel message from a plain object. Also converts values to their respective internal types.
-     * @function fromObject
-     * @memberof LuckyWheel
-     * @static
-     * @param {Object.<string,*>} object Plain object
-     * @returns {LuckyWheel} LuckyWheel
-     */
-    LuckyWheel.fromObject = function fromObject(object) {
-        if (object instanceof $root.LuckyWheel)
-            return object;
-        var message = new $root.LuckyWheel();
-        if (object.maxFullSpins != null)
-            message.maxFullSpins = object.maxFullSpins >>> 0;
-        if (object.minFullSpins != null)
-            message.minFullSpins = object.minFullSpins >>> 0;
-        if (object.dailyLimit != null)
-            message.dailyLimit = object.dailyLimit >>> 0;
-        if (object.items) {
-            if (!Array.isArray(object.items))
-                throw TypeError(".LuckyWheel.items: array expected");
-            message.items = [];
-            for (var i = 0; i < object.items.length; ++i) {
-                if (typeof object.items[i] !== "object")
-                    throw TypeError(".LuckyWheel.items: object expected");
-                message.items[i] = $root.LuckyWheel.Items.fromObject(object.items[i]);
-            }
-        }
-        return message;
-    };
-
-    /**
-     * Creates a plain object from a LuckyWheel message. Also converts values to other types if specified.
-     * @function toObject
-     * @memberof LuckyWheel
-     * @static
-     * @param {LuckyWheel} message LuckyWheel
-     * @param {$protobuf.IConversionOptions} [options] Conversion options
-     * @returns {Object.<string,*>} Plain object
-     */
-    LuckyWheel.toObject = function toObject(message, options) {
-        if (!options)
-            options = {};
-        var object = {};
-        if (options.arrays || options.defaults)
-            object.items = [];
-        if (options.defaults) {
-            object.maxFullSpins = 0;
-            object.minFullSpins = 0;
-            object.dailyLimit = 0;
-        }
-        if (message.maxFullSpins != null && message.hasOwnProperty("maxFullSpins"))
-            object.maxFullSpins = message.maxFullSpins;
-        if (message.minFullSpins != null && message.hasOwnProperty("minFullSpins"))
-            object.minFullSpins = message.minFullSpins;
-        if (message.dailyLimit != null && message.hasOwnProperty("dailyLimit"))
-            object.dailyLimit = message.dailyLimit;
-        if (message.items && message.items.length) {
-            object.items = [];
-            for (var j = 0; j < message.items.length; ++j)
-                object.items[j] = $root.LuckyWheel.Items.toObject(message.items[j], options);
-        }
-        return object;
-    };
-
-    /**
-     * Converts this LuckyWheel to JSON.
-     * @function toJSON
-     * @memberof LuckyWheel
-     * @instance
-     * @returns {Object.<string,*>} JSON object
-     */
-    LuckyWheel.prototype.toJSON = function toJSON() {
-        return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-    };
-
-    /**
-     * Gets the default type url for LuckyWheel
-     * @function getTypeUrl
-     * @memberof LuckyWheel
-     * @static
-     * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-     * @returns {string} The default type url
-     */
-    LuckyWheel.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-        if (typeUrlPrefix === undefined) {
-            typeUrlPrefix = "type.googleapis.com";
-        }
-        return typeUrlPrefix + "/LuckyWheel";
-    };
-
-    LuckyWheel.Items = (function() {
-
-        /**
-         * Properties of an Items.
-         * @memberof LuckyWheel
-         * @interface IItems
-         * @property {string|null} [itemId] Items itemId
-         * @property {number|null} [weight] Items weight
-         * @property {number|null} [quantity] Items quantity
-         */
-
-        /**
-         * Constructs a new Items.
-         * @memberof LuckyWheel
-         * @classdesc Represents an Items.
-         * @implements IItems
-         * @constructor
-         * @param {LuckyWheel.IItems=} [properties] Properties to set
-         */
-        function Items(properties) {
-            if (properties)
-                for (var keys = Object.keys(properties), i = 0; i < keys.length; ++i)
-                    if (properties[keys[i]] != null)
-                        this[keys[i]] = properties[keys[i]];
-        }
-
-        /**
-         * Items itemId.
-         * @member {string} itemId
-         * @memberof LuckyWheel.Items
-         * @instance
-         */
-        Items.prototype.itemId = "";
-
-        /**
-         * Items weight.
-         * @member {number} weight
-         * @memberof LuckyWheel.Items
-         * @instance
-         */
-        Items.prototype.weight = 0;
-
-        /**
-         * Items quantity.
-         * @member {number} quantity
-         * @memberof LuckyWheel.Items
-         * @instance
-         */
-        Items.prototype.quantity = 0;
-
-        /**
-         * Creates a new Items instance using the specified properties.
-         * @function create
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {LuckyWheel.IItems=} [properties] Properties to set
-         * @returns {LuckyWheel.Items} Items instance
-         */
-        Items.create = function create(properties) {
-            return new Items(properties);
-        };
-
-        /**
-         * Encodes the specified Items message. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
-         * @function encode
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {LuckyWheel.IItems} message Items message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Items.encode = function encode(message, writer) {
-            if (!writer)
-                writer = $Writer.create();
-            if (message.itemId != null && Object.hasOwnProperty.call(message, "itemId"))
-                writer.uint32(/* id 1, wireType 2 =*/10).string(message.itemId);
-            if (message.weight != null && Object.hasOwnProperty.call(message, "weight"))
-                writer.uint32(/* id 2, wireType 0 =*/16).uint32(message.weight);
-            if (message.quantity != null && Object.hasOwnProperty.call(message, "quantity"))
-                writer.uint32(/* id 3, wireType 0 =*/24).uint32(message.quantity);
-            return writer;
-        };
-
-        /**
-         * Encodes the specified Items message, length delimited. Does not implicitly {@link LuckyWheel.Items.verify|verify} messages.
-         * @function encodeDelimited
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {LuckyWheel.IItems} message Items message or plain object to encode
-         * @param {$protobuf.Writer} [writer] Writer to encode to
-         * @returns {$protobuf.Writer} Writer
-         */
-        Items.encodeDelimited = function encodeDelimited(message, writer) {
-            return this.encode(message, writer).ldelim();
-        };
-
-        /**
-         * Decodes an Items message from the specified reader or buffer.
-         * @function decode
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @param {number} [length] Message length if known beforehand
-         * @returns {LuckyWheel.Items} Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Items.decode = function decode(reader, length) {
-            if (!(reader instanceof $Reader))
-                reader = $Reader.create(reader);
-            var end = length === undefined ? reader.len : reader.pos + length, message = new $root.LuckyWheel.Items();
-            while (reader.pos < end) {
-                var tag = reader.uint32();
-                switch (tag >>> 3) {
-                case 1: {
-                        message.itemId = reader.string();
-                        break;
-                    }
-                case 2: {
-                        message.weight = reader.uint32();
-                        break;
-                    }
-                case 3: {
-                        message.quantity = reader.uint32();
-                        break;
-                    }
-                default:
-                    reader.skipType(tag & 7);
-                    break;
-                }
-            }
-            return message;
-        };
-
-        /**
-         * Decodes an Items message from the specified reader or buffer, length delimited.
-         * @function decodeDelimited
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {$protobuf.Reader|Uint8Array} reader Reader or buffer to decode from
-         * @returns {LuckyWheel.Items} Items
-         * @throws {Error} If the payload is not a reader or valid buffer
-         * @throws {$protobuf.util.ProtocolError} If required fields are missing
-         */
-        Items.decodeDelimited = function decodeDelimited(reader) {
-            if (!(reader instanceof $Reader))
-                reader = new $Reader(reader);
-            return this.decode(reader, reader.uint32());
-        };
-
-        /**
-         * Verifies an Items message.
-         * @function verify
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {Object.<string,*>} message Plain object to verify
-         * @returns {string|null} `null` if valid, otherwise the reason why it is not
-         */
-        Items.verify = function verify(message) {
-            if (typeof message !== "object" || message === null)
-                return "object expected";
-            if (message.itemId != null && message.hasOwnProperty("itemId"))
-                if (!$util.isString(message.itemId))
-                    return "itemId: string expected";
-            if (message.weight != null && message.hasOwnProperty("weight"))
-                if (!$util.isInteger(message.weight))
-                    return "weight: integer expected";
-            if (message.quantity != null && message.hasOwnProperty("quantity"))
-                if (!$util.isInteger(message.quantity))
-                    return "quantity: integer expected";
-            return null;
-        };
-
-        /**
-         * Creates an Items message from a plain object. Also converts values to their respective internal types.
-         * @function fromObject
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {Object.<string,*>} object Plain object
-         * @returns {LuckyWheel.Items} Items
-         */
-        Items.fromObject = function fromObject(object) {
-            if (object instanceof $root.LuckyWheel.Items)
-                return object;
-            var message = new $root.LuckyWheel.Items();
-            if (object.itemId != null)
-                message.itemId = String(object.itemId);
-            if (object.weight != null)
-                message.weight = object.weight >>> 0;
-            if (object.quantity != null)
-                message.quantity = object.quantity >>> 0;
-            return message;
-        };
-
-        /**
-         * Creates a plain object from an Items message. Also converts values to other types if specified.
-         * @function toObject
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {LuckyWheel.Items} message Items
-         * @param {$protobuf.IConversionOptions} [options] Conversion options
-         * @returns {Object.<string,*>} Plain object
-         */
-        Items.toObject = function toObject(message, options) {
-            if (!options)
-                options = {};
-            var object = {};
-            if (options.defaults) {
-                object.itemId = "";
-                object.weight = 0;
-                object.quantity = 0;
-            }
-            if (message.itemId != null && message.hasOwnProperty("itemId"))
-                object.itemId = message.itemId;
-            if (message.weight != null && message.hasOwnProperty("weight"))
-                object.weight = message.weight;
-            if (message.quantity != null && message.hasOwnProperty("quantity"))
-                object.quantity = message.quantity;
-            return object;
-        };
-
-        /**
-         * Converts this Items to JSON.
-         * @function toJSON
-         * @memberof LuckyWheel.Items
-         * @instance
-         * @returns {Object.<string,*>} JSON object
-         */
-        Items.prototype.toJSON = function toJSON() {
-            return this.constructor.toObject(this, $protobuf.util.toJSONOptions);
-        };
-
-        /**
-         * Gets the default type url for Items
-         * @function getTypeUrl
-         * @memberof LuckyWheel.Items
-         * @static
-         * @param {string} [typeUrlPrefix] your custom typeUrlPrefix(default "type.googleapis.com")
-         * @returns {string} The default type url
-         */
-        Items.getTypeUrl = function getTypeUrl(typeUrlPrefix) {
-            if (typeUrlPrefix === undefined) {
-                typeUrlPrefix = "type.googleapis.com";
-            }
-            return typeUrlPrefix + "/LuckyWheel.Items";
-        };
-
-        return Items;
-    })();
-
-    return LuckyWheel;
 })();
 
 $root.LuckyWheelCanClaimOutput = (function() {
@@ -10163,28 +8718,28 @@ $root.Inbox = (function() {
     /**
      * Callback as used by {@link Inbox#getInfo}.
      * @memberof Inbox
-     * @typedef getInfoCallback
+     * @typedef GetInfoCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {InboxList} [response] InboxList
      */
 
     /**
-     * Calls getInfo.
+     * Calls GetInfo.
      * @function getInfo
      * @memberof Inbox
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Inbox.getInfoCallback} callback Node-style callback called with the error, if any, and InboxList
+     * @param {Inbox.GetInfoCallback} callback Node-style callback called with the error, if any, and InboxList
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Inbox.prototype.getInfo = function getInfo(request, callback) {
         return this.rpcCall(getInfo, $root.Empty, $root.InboxList, request, callback);
-    }, "name", { value: "getInfo" });
+    }, "name", { value: "GetInfo" });
 
     /**
-     * Calls getInfo.
+     * Calls GetInfo.
      * @function getInfo
      * @memberof Inbox
      * @instance
@@ -10196,28 +8751,28 @@ $root.Inbox = (function() {
     /**
      * Callback as used by {@link Inbox#claimItem}.
      * @memberof Inbox
-     * @typedef claimItemCallback
+     * @typedef ClaimItemCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {InboxClaimOutput} [response] InboxClaimOutput
      */
 
     /**
-     * Calls claimItem.
+     * Calls ClaimItem.
      * @function claimItem
      * @memberof Inbox
      * @instance
      * @param {IInboxClaimInput} request InboxClaimInput message or plain object
-     * @param {Inbox.claimItemCallback} callback Node-style callback called with the error, if any, and InboxClaimOutput
+     * @param {Inbox.ClaimItemCallback} callback Node-style callback called with the error, if any, and InboxClaimOutput
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Inbox.prototype.claimItem = function claimItem(request, callback) {
         return this.rpcCall(claimItem, $root.InboxClaimInput, $root.InboxClaimOutput, request, callback);
-    }, "name", { value: "claimItem" });
+    }, "name", { value: "ClaimItem" });
 
     /**
-     * Calls claimItem.
+     * Calls ClaimItem.
      * @function claimItem
      * @memberof Inbox
      * @instance
@@ -10229,28 +8784,28 @@ $root.Inbox = (function() {
     /**
      * Callback as used by {@link Inbox#markDeleteItem}.
      * @memberof Inbox
-     * @typedef markDeleteItemCallback
+     * @typedef MarkDeleteItemCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {InboxDeleteOutput} [response] InboxDeleteOutput
      */
 
     /**
-     * Calls markDeleteItem.
+     * Calls MarkDeleteItem.
      * @function markDeleteItem
      * @memberof Inbox
      * @instance
      * @param {IInboxDeleteInput} request InboxDeleteInput message or plain object
-     * @param {Inbox.markDeleteItemCallback} callback Node-style callback called with the error, if any, and InboxDeleteOutput
+     * @param {Inbox.MarkDeleteItemCallback} callback Node-style callback called with the error, if any, and InboxDeleteOutput
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Inbox.prototype.markDeleteItem = function markDeleteItem(request, callback) {
         return this.rpcCall(markDeleteItem, $root.InboxDeleteInput, $root.InboxDeleteOutput, request, callback);
-    }, "name", { value: "markDeleteItem" });
+    }, "name", { value: "MarkDeleteItem" });
 
     /**
-     * Calls markDeleteItem.
+     * Calls MarkDeleteItem.
      * @function markDeleteItem
      * @memberof Inbox
      * @instance
@@ -12532,28 +11087,28 @@ $root.Leaderboard = (function() {
     /**
      * Callback as used by {@link Leaderboard#getTopScore}.
      * @memberof Leaderboard
-     * @typedef getTopScoreCallback
+     * @typedef GetTopScoreCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {TopLeaderboard} [response] TopLeaderboard
      */
 
     /**
-     * Calls getTopScore.
+     * Calls GetTopScore.
      * @function getTopScore
      * @memberof Leaderboard
      * @instance
      * @param {IGetTopLeaderboardInput} request GetTopLeaderboardInput message or plain object
-     * @param {Leaderboard.getTopScoreCallback} callback Node-style callback called with the error, if any, and TopLeaderboard
+     * @param {Leaderboard.GetTopScoreCallback} callback Node-style callback called with the error, if any, and TopLeaderboard
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Leaderboard.prototype.getTopScore = function getTopScore(request, callback) {
         return this.rpcCall(getTopScore, $root.GetTopLeaderboardInput, $root.TopLeaderboard, request, callback);
-    }, "name", { value: "getTopScore" });
+    }, "name", { value: "GetTopScore" });
 
     /**
-     * Calls getTopScore.
+     * Calls GetTopScore.
      * @function getTopScore
      * @memberof Leaderboard
      * @instance
@@ -12565,28 +11120,28 @@ $root.Leaderboard = (function() {
     /**
      * Callback as used by {@link Leaderboard#getMyRank}.
      * @memberof Leaderboard
-     * @typedef getMyRankCallback
+     * @typedef GetMyRankCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {GetMyRankLeaderboardOutput} [response] GetMyRankLeaderboardOutput
      */
 
     /**
-     * Calls getMyRank.
+     * Calls GetMyRank.
      * @function getMyRank
      * @memberof Leaderboard
      * @instance
      * @param {IGetMyRankLeaderboardInput} request GetMyRankLeaderboardInput message or plain object
-     * @param {Leaderboard.getMyRankCallback} callback Node-style callback called with the error, if any, and GetMyRankLeaderboardOutput
+     * @param {Leaderboard.GetMyRankCallback} callback Node-style callback called with the error, if any, and GetMyRankLeaderboardOutput
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Leaderboard.prototype.getMyRank = function getMyRank(request, callback) {
         return this.rpcCall(getMyRank, $root.GetMyRankLeaderboardInput, $root.GetMyRankLeaderboardOutput, request, callback);
-    }, "name", { value: "getMyRank" });
+    }, "name", { value: "GetMyRank" });
 
     /**
-     * Calls getMyRank.
+     * Calls GetMyRank.
      * @function getMyRank
      * @memberof Leaderboard
      * @instance
@@ -12598,28 +11153,28 @@ $root.Leaderboard = (function() {
     /**
      * Callback as used by {@link Leaderboard#updateScore}.
      * @memberof Leaderboard
-     * @typedef updateScoreCallback
+     * @typedef UpdateScoreCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {UpdateScoreLeaderboardOutput} [response] UpdateScoreLeaderboardOutput
      */
 
     /**
-     * Calls updateScore.
+     * Calls UpdateScore.
      * @function updateScore
      * @memberof Leaderboard
      * @instance
      * @param {IUpdateScoreLeaderboardInput} request UpdateScoreLeaderboardInput message or plain object
-     * @param {Leaderboard.updateScoreCallback} callback Node-style callback called with the error, if any, and UpdateScoreLeaderboardOutput
+     * @param {Leaderboard.UpdateScoreCallback} callback Node-style callback called with the error, if any, and UpdateScoreLeaderboardOutput
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Leaderboard.prototype.updateScore = function updateScore(request, callback) {
         return this.rpcCall(updateScore, $root.UpdateScoreLeaderboardInput, $root.UpdateScoreLeaderboardOutput, request, callback);
-    }, "name", { value: "updateScore" });
+    }, "name", { value: "UpdateScore" });
 
     /**
-     * Calls updateScore.
+     * Calls UpdateScore.
      * @function updateScore
      * @memberof Leaderboard
      * @instance
@@ -12661,11 +11216,11 @@ $root.GetTopLeaderboardInput = (function() {
 
     /**
      * GetTopLeaderboardInput name.
-     * @member {string|null|undefined} name
+     * @member {string} name
      * @memberof GetTopLeaderboardInput
      * @instance
      */
-    GetTopLeaderboardInput.prototype.name = null;
+    GetTopLeaderboardInput.prototype.name = "";
 
     /**
      * GetTopLeaderboardInput offset.
@@ -12685,11 +11240,11 @@ $root.GetTopLeaderboardInput = (function() {
 
     /**
      * GetTopLeaderboardInput count.
-     * @member {number|null|undefined} count
+     * @member {number} count
      * @memberof GetTopLeaderboardInput
      * @instance
      */
-    GetTopLeaderboardInput.prototype.count = null;
+    GetTopLeaderboardInput.prototype.count = 0;
 
     /**
      * GetTopLeaderboardInput reverseOrder.
@@ -12698,31 +11253,6 @@ $root.GetTopLeaderboardInput = (function() {
      * @instance
      */
     GetTopLeaderboardInput.prototype.reverseOrder = false;
-
-    // OneOf field names bound to virtual getters and setters
-    var $oneOfFields;
-
-    /**
-     * GetTopLeaderboardInput _name.
-     * @member {"name"|undefined} _name
-     * @memberof GetTopLeaderboardInput
-     * @instance
-     */
-    Object.defineProperty(GetTopLeaderboardInput.prototype, "_name", {
-        get: $util.oneOfGetter($oneOfFields = ["name"]),
-        set: $util.oneOfSetter($oneOfFields)
-    });
-
-    /**
-     * GetTopLeaderboardInput _count.
-     * @member {"count"|undefined} _count
-     * @memberof GetTopLeaderboardInput
-     * @instance
-     */
-    Object.defineProperty(GetTopLeaderboardInput.prototype, "_count", {
-        get: $util.oneOfGetter($oneOfFields = ["count"]),
-        set: $util.oneOfSetter($oneOfFields)
-    });
 
     /**
      * Creates a new GetTopLeaderboardInput instance using the specified properties.
@@ -12847,23 +11377,18 @@ $root.GetTopLeaderboardInput = (function() {
     GetTopLeaderboardInput.verify = function verify(message) {
         if (typeof message !== "object" || message === null)
             return "object expected";
-        var properties = {};
-        if (message.name != null && message.hasOwnProperty("name")) {
-            properties._name = 1;
+        if (message.name != null && message.hasOwnProperty("name"))
             if (!$util.isString(message.name))
                 return "name: string expected";
-        }
         if (message.offset != null && message.hasOwnProperty("offset"))
             if (!$util.isInteger(message.offset))
                 return "offset: integer expected";
         if (message.country != null && message.hasOwnProperty("country"))
             if (!$util.isString(message.country))
                 return "country: string expected";
-        if (message.count != null && message.hasOwnProperty("count")) {
-            properties._count = 1;
+        if (message.count != null && message.hasOwnProperty("count"))
             if (!$util.isInteger(message.count))
                 return "count: integer expected";
-        }
         if (message.reverseOrder != null && message.hasOwnProperty("reverseOrder"))
             if (typeof message.reverseOrder !== "boolean")
                 return "reverseOrder: boolean expected";
@@ -12909,24 +11434,20 @@ $root.GetTopLeaderboardInput = (function() {
             options = {};
         var object = {};
         if (options.defaults) {
+            object.name = "";
             object.offset = 0;
             object.country = "";
+            object.count = 0;
             object.reverseOrder = false;
         }
-        if (message.name != null && message.hasOwnProperty("name")) {
+        if (message.name != null && message.hasOwnProperty("name"))
             object.name = message.name;
-            if (options.oneofs)
-                object._name = "name";
-        }
         if (message.offset != null && message.hasOwnProperty("offset"))
             object.offset = message.offset;
         if (message.country != null && message.hasOwnProperty("country"))
             object.country = message.country;
-        if (message.count != null && message.hasOwnProperty("count")) {
+        if (message.count != null && message.hasOwnProperty("count"))
             object.count = message.count;
-            if (options.oneofs)
-                object._count = "count";
-        }
         if (message.reverseOrder != null && message.hasOwnProperty("reverseOrder"))
             object.reverseOrder = message.reverseOrder;
         return object;
@@ -14785,28 +13306,28 @@ $root.Player = (function() {
     /**
      * Callback as used by {@link Player#getProfile}.
      * @memberof Player
-     * @typedef getProfileCallback
+     * @typedef GetProfileCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {PlayerProfileRes} [response] PlayerProfileRes
      */
 
     /**
-     * Calls getProfile.
+     * Calls GetProfile.
      * @function getProfile
      * @memberof Player
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Player.getProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
+     * @param {Player.GetProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Player.prototype.getProfile = function getProfile(request, callback) {
         return this.rpcCall(getProfile, $root.Empty, $root.PlayerProfileRes, request, callback);
-    }, "name", { value: "getProfile" });
+    }, "name", { value: "GetProfile" });
 
     /**
-     * Calls getProfile.
+     * Calls GetProfile.
      * @function getProfile
      * @memberof Player
      * @instance
@@ -14818,28 +13339,28 @@ $root.Player = (function() {
     /**
      * Callback as used by {@link Player#updateProfile}.
      * @memberof Player
-     * @typedef updateProfileCallback
+     * @typedef UpdateProfileCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {PlayerProfileRes} [response] PlayerProfileRes
      */
 
     /**
-     * Calls updateProfile.
+     * Calls UpdateProfile.
      * @function updateProfile
      * @memberof Player
      * @instance
      * @param {IPlayerProfileReq} request PlayerProfileReq message or plain object
-     * @param {Player.updateProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
+     * @param {Player.UpdateProfileCallback} callback Node-style callback called with the error, if any, and PlayerProfileRes
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Player.prototype.updateProfile = function updateProfile(request, callback) {
         return this.rpcCall(updateProfile, $root.PlayerProfileReq, $root.PlayerProfileRes, request, callback);
-    }, "name", { value: "updateProfile" });
+    }, "name", { value: "UpdateProfile" });
 
     /**
-     * Calls updateProfile.
+     * Calls UpdateProfile.
      * @function updateProfile
      * @memberof Player
      * @instance
@@ -14851,28 +13372,28 @@ $root.Player = (function() {
     /**
      * Callback as used by {@link Player#getData}.
      * @memberof Player
-     * @typedef getDataCallback
+     * @typedef GetDataCallback
      * @type {function}
      * @param {Error|null} error Error, if any
      * @param {PlayerDataRes} [response] PlayerDataRes
      */
 
     /**
-     * Calls getData.
+     * Calls GetData.
      * @function getData
      * @memberof Player
      * @instance
      * @param {IEmpty} request Empty message or plain object
-     * @param {Player.getDataCallback} callback Node-style callback called with the error, if any, and PlayerDataRes
+     * @param {Player.GetDataCallback} callback Node-style callback called with the error, if any, and PlayerDataRes
      * @returns {undefined}
      * @variation 1
      */
     Object.defineProperty(Player.prototype.getData = function getData(request, callback) {
         return this.rpcCall(getData, $root.Empty, $root.PlayerDataRes, request, callback);
-    }, "name", { value: "getData" });
+    }, "name", { value: "GetData" });
 
     /**
-     * Calls getData.
+     * Calls GetData.
      * @function getData
      * @memberof Player
      * @instance

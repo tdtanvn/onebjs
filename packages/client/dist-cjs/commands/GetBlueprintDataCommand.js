@@ -7,6 +7,7 @@ class GetBlueprintDataCommand extends BaseCommand_1.BaseCommand {
         super();
         this.serviceName = BaseCommand_1.ServiceName.BLUEPRINT;
         this.name = dataName;
+        this.prefix = BaseCommand_1.Prefix.GET;
     }
 }
 exports.GetBlueprintDataCommand = GetBlueprintDataCommand;

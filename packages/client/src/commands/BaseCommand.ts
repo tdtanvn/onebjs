@@ -11,8 +11,8 @@ export enum ServiceName {
   "LEADERBOARD" = "leaderboard",
 }
 export enum Prefix {
-  "GET" = "get",
-  "UPDATE" = "update",
+  "GET" = "Get",
+  "UPDATE" = "Update",
 }
 export abstract class BaseCommand<T> implements ICommand {
   protected serviceName!: ServiceName;

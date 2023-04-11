@@ -17,8 +17,9 @@ export class OneBServicesClient {
     constructor(config) {
         this.baseURL = new Map([
             ["LOCAL", "http://localhost:3000"],
-            ["DEVELOPMENT", "https://dev.api.1bservices.com"],
-            ["PRODUCTION", "https://api.1bservices.com"],
+            ["DEVELOPMENT", "https://dev.api.oneb.tech"],
+            ["UAT", "https://uat.api.oneb.tech"],
+            ["PRODUCTION", "https://prod.api.oneb.tech"],
         ]);
         this.gameId = config.gameId;
         this.gameVersion = config.gameVersion ?? "";

@@ -1,50 +1,35 @@
 syntax = "proto3";
 //
 // The content is generated automatically from blueprint schema
-// modified date: 2023-3-29 10:33:3
+// modified date: 2023-4-11 13:12:51
 //
 
 service Blueprint{
-  rpc characters (Empty) returns (CHARACTERS) {}
-  rpc daily_quest (Empty) returns (DAILY_QUEST) {}
-  rpc daily_rewards (Empty) returns (DAILY_REWARDS) {}
-  rpc equipments (Empty) returns (EQUIPMENTS) {}
-  rpc item_table (Empty) returns (ITEM_TABLE) {}
-  rpc lucky_wheel (Empty) returns (LUCKY_WHEEL) {}
-  rpc progress_quest (Empty) returns (PROGRESS_QUEST) {}
-  rpc test (Empty) returns (TEST) {}
+  rpc GetDailyQuests (Empty) returns (DailyQuests) {}
+  rpc GetDailyRewards (Empty) returns (DailyRewards) {}
+  rpc GetItemTable (Empty) returns (ItemTable) {}
+  rpc GetLuckyWheel (Empty) returns (LuckyWheel) {}
+  rpc GetProgressQuests (Empty) returns (ProgressQuests) {}
 }
-message CHARACTERS {
-  message Items {
-    int32 basePointsSpecialAttack = 1;
-    int32 basePointsCriticalHit = 2;
-    int32 basePointsDefense = 3;
-    int32 basePointsAttack = 4;
-    int32 basePointsLife = 5;
-    string characterName = 6;
-    string id = 7;
-    string bioTitle = 8;
-    int32 basePointsAttackSpeed = 9;
+message DailyQuests {
+  message Quests {
+    message Reward {
+      string id = 1;
+      int32 quantity = 2;
+    }
+    
+    string name = 1;
+    Reward reward = 2;
+    string description = 3;
+    string id = 4;
+    string type = 5;
+    int32 target = 6;
   }
   
-  string name = 1;
-  repeated Items items = 2;
+  repeated Quests quests = 1;
 }
 
-message DAILY_QUEST {
-  message Items {
-    int32 conditionReach = 1;
-    int32 rewardQuantity = 2;
-    string condition = 3;
-    string rewardId = 4;
-    string id = 5;
-    string questName = 6;
-  }
-  
-  repeated Items items = 1;
-}
-
-message DAILY_REWARDS {
+message DailyRewards {
   message Steps {
     string itemId = 1;
     int32 step = 2;
@@ -63,20 +48,7 @@ message DAILY_REWARDS {
   DefaultRewardIfAlreadyOwned defaultRewardIfAlreadyOwned = 5;
 }
 
-message EQUIPMENTS {
-  message Items {
-    string image = 1;
-    string equipmentName = 2;
-    string id = 3;
-    string equipmentType = 4;
-    string rarity = 5;
-    int32 points = 6;
-  }
-  
-  repeated Items items = 1;
-}
-
-message ITEM_TABLE {
+message ItemTable {
   message Items {
     string name = 1;
     string type = 2;
@@ -86,7 +58,7 @@ message ITEM_TABLE {
   repeated Items items = 1;
 }
 
-message LUCKY_WHEEL {
+message LuckyWheel {
   message Items {
     string itemId = 1;
     int32 weight = 2;
@@ -99,45 +71,41 @@ message LUCKY_WHEEL {
   int32 dailyLimit = 4;
 }
 
-message PROGRESS_QUEST {
-  message Items {
-    int32 conditionReach = 1;
-    string condition = 2;
-    string rewardId = 3;
-    string questName = 4;
-    int32 rewardQuantity = 5;
-    string id = 6;
-    int32 levelUnlock = 7;
+message ProgressQuests {
+  message Quests {
+    message Reward {
+      string id = 1;
+      int32 quantity = 2;
+    }
+    
+    string name = 1;
+    Reward reward = 2;
+    string description = 3;
+    string id = 4;
+    string type = 5;
+    int32 target = 6;
   }
   
-  repeated Items items = 1;
-}
-
-message TEST {
-  string name = 1;
-  string image = 2;
+  repeated Quests quests = 1;
 }
 
 message Empty {}
 
 
 service GameScripts {
-  service Test{
-    rpc helloWorld(Empty) returns (TestHelloWorldRes){}
+  service LuckyWheel {
+    rpc ClaimItem(Empty) returns(LuckyWheelClaimItemOutput){}
+    rpc CanClaimItem(Empty) returns(LuckyWheelCanClaimOutput){}
+    rpc GetList(Empty) returns(LuckyWheel){}
   }
-  service Lucky_Wheel {
-    rpc claimItem(Empty) returns(LuckyWheelClaimItemOutput){}
-    rpc canClaimItem(Empty) returns(LuckyWheelCanClaimOutput){}
-    rpc getList(Empty) returns(LuckyWheel){}
+  service DailyRewards {
+    rpc CanClaimRewards(Empty) returns(DailyRewardsCanClaimRewardOutput){}
+    rpc ClaimRewards(Empty) returns(DailyRewardsClaimRewardsOutput){}
   }
-  service Daily_Rewards {
-    rpc canClaimRewards(Empty) returns(DailyRewardsCanClaimRewardOutput){}
-    rpc claimRewards(Empty) returns(DailyRewardsClaimRewardsOutput){}
-  }
-  service Daily_Quest {
-    rpc getList(Empty) returns(DailyQuestOutput){}
-    rpc updateQuest(DailyQuestUpdateQuestInput) returns(DailyQuestUpdateQuestOutput){}
-    rpc claimQuest(DailyQuestClaimQuestInput) returns(DailyQuestClaimQuestOutput){}
+  service DailyQuests {
+    rpc GetList(Empty) returns(DailyQuestsOutput){}
+    rpc UpdateQuest(DailyQuestsUpdateQuestInput) returns(DailyQuestsUpdateQuestOutput){}
+    rpc ClaimQuest(DailyQuestsClaimQuestInput) returns(DailyQuestsClaimQuestOutput){}
   }
   
 }
@@ -145,35 +113,40 @@ message TestHelloWorldRes {
     uint32 counter = 1;
     string name= 2;
 }
-message DailyQuestOutput {
- message Dailyquest {
-      uint32 conditionReach = 1;
-      uint32 rewardQuantity = 2;
-      string condition = 3;
-      string rewardId = 4;
-      string id = 5;
-      string questName = 6;
-      uint32 progress = 7;
-      bool canClaim = 8;
-  }
+message DailyQuestsOutput {
+    message Reward {
+        string id = 1;
+        uint32 quantity = 2;
+    }
 
-  repeated Dailyquest dailyQuest = 1;
+    message Dailyquests {
+        string name = 1;
+        Reward reward = 2;
+        string description = 3;
+        string id = 4;
+        string type = 5;
+        uint32 target = 6;
+        uint32 progress = 7;
+        bool canClaim = 8;
+    }
+
+    repeated Dailyquests dailyQuests = 1;
 }
 
-message DailyQuestUpdateQuestInput {
-  message Items {
+message DailyQuestsUpdateQuestInput {
+  message QuestProgress {
       string id = 1;
       uint32 amount = 2;
   }
-  repeated Items items = 1;
+  repeated QuestProgress questProgress = 1;
 }
-message DailyQuestUpdateQuestOutput {
+message DailyQuestsUpdateQuestOutput {
   repeated string questsCanClaim = 2;
 }
-message DailyQuestClaimQuestInput {
+message DailyQuestsClaimQuestInput {
   repeated string items = 1;
 }
-message DailyQuestClaimQuestOutput {
+message DailyQuestsClaimQuestOutput {
  message Rewards {
       string itemId = 1;
       uint32 amount = 2;
@@ -199,18 +172,7 @@ message DailyRewardsClaimRewardsOutput {
 
   repeated Rewards rewards = 1;
 }
-message LuckyWheel {
-  message Items {
-        string itemId = 1;
-        uint32 weight = 2;
-        uint32 quantity = 3;
-    }
 
-    uint32 maxFullSpins = 1;
-    uint32 minFullSpins = 2;
-    uint32 dailyLimit = 3;
-    repeated Items items = 4;
-}
 message LuckyWheelCanClaimOutput {
   bool canClaim = 1;
 }
@@ -237,9 +199,9 @@ message LuckyWheelClaimItemOutput {
 }
 
 service Inbox {
-  rpc getInfo (Empty) returns (InboxList) {}
-  rpc claimItem (InboxClaimInput) returns (InboxClaimOutput) {}
-  rpc markDeleteItem (InboxDeleteInput) returns (InboxDeleteOutput) {}
+  rpc GetInfo (Empty) returns (InboxList) {}
+  rpc ClaimItem (InboxClaimInput) returns (InboxClaimOutput) {}
+  rpc MarkDeleteItem (InboxDeleteInput) returns (InboxDeleteOutput) {}
 }
 message InboxList {
     message Conditions {
@@ -285,16 +247,16 @@ message InboxDeleteOutput {
 
 
 service Leaderboard {
-  rpc getTopScore (GetTopLeaderboardInput) returns (TopLeaderboard) {}
-  rpc getMyRank (GetMyRankLeaderboardInput) returns (GetMyRankLeaderboardOutput) {}
-  rpc updateScore (UpdateScoreLeaderboardInput) returns (UpdateScoreLeaderboardOutput) {}
+  rpc GetTopScore (GetTopLeaderboardInput) returns (TopLeaderboard) {}
+  rpc GetMyRank (GetMyRankLeaderboardInput) returns (GetMyRankLeaderboardOutput) {}
+  rpc UpdateScore (UpdateScoreLeaderboardInput) returns (UpdateScoreLeaderboardOutput) {}
 }
 
 message GetTopLeaderboardInput {
-  optional string name = 1;
+  string name = 1;
   uint32 offset = 2;
   string country = 3;
-  optional uint32 count = 4;
+  uint32 count = 4;
   bool reverseOrder = 5;
 }
 
@@ -341,9 +303,9 @@ message UpdateScoreLeaderboardOutput {
 
 
 service Player {
-  rpc getProfile(Empty) returns (PlayerProfileRes){}
-  rpc updateProfile(PlayerProfileReq) returns (PlayerProfileRes){}
-  rpc getData(Empty) returns (PlayerDataRes){}
+  rpc GetProfile(Empty) returns (PlayerProfileRes){}
+  rpc UpdateProfile(PlayerProfileReq) returns (PlayerProfileRes){}
+  rpc GetData(Empty) returns (PlayerDataRes){}
 }
 
 message PlayerProfileRes {

@@ -22,8 +22,9 @@ class OneBServicesClient {
         var _a, _b, _c, _d;
         this.baseURL = new Map([
             ["LOCAL", "http://localhost:3000"],
-            ["DEVELOPMENT", "https://dev.api.1bservices.com"],
-            ["PRODUCTION", "https://api.1bservices.com"],
+            ["DEVELOPMENT", "https://dev.api.oneb.tech"],
+            ["UAT", "https://uat.api.oneb.tech"],
+            ["PRODUCTION", "https://prod.api.oneb.tech"],
         ]);
         this.gameId = config.gameId;
         this.gameVersion = (_a = config.gameVersion) !== null && _a !== void 0 ? _a : "";

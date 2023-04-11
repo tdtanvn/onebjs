@@ -1,6 +1,6 @@
 import { OneBServicesClient, APIType, Environment, CallGameScriptCommand, GetBlueprintDataCommand } from "@oneb-sdk/client";
 
-import { DailyRewardsCanClaimRewardOutput, DailyRewardsClaimRewardsOutput, DAILY_REWARDS } from "./bundle";
+import { DailyRewardsCanClaimRewardOutput, DailyRewardsClaimRewardsOutput, DailyRewards } from "./bundle";
 
 async function main() {
   const client = new OneBServicesClient({
@@ -15,18 +15,18 @@ async function main() {
   });
 
   if (accessToken) {
-    const dailyRewardsInfo = await client.send<DAILY_REWARDS>(new GetBlueprintDataCommand("DAILY_REWARDS"), DAILY_REWARDS);
+    const dailyRewardsInfo = await client.send<DailyRewards>(new GetBlueprintDataCommand("DailyRewards"), DailyRewards);
     console.log(dailyRewardsInfo);
 
     const canClaimRewards = await client.send<DailyRewardsCanClaimRewardOutput>(
-      new CallGameScriptCommand("DAILY_REWARDS", "canClaimRewards"),
+      new CallGameScriptCommand("DailyRewards", "canClaimRewards"),
       DailyRewardsCanClaimRewardOutput
     );
     console.log(canClaimRewards);
 
     if (canClaimRewards?.rewards?.length) {
       const rewardsInfo = await client.send<DailyRewardsClaimRewardsOutput>(
-        new CallGameScriptCommand("Daily_Rewards", "claimRewards"),
+        new CallGameScriptCommand("DailyRewards", "claimRewards"),
         DailyRewardsClaimRewardsOutput
       );
       console.log(rewardsInfo);

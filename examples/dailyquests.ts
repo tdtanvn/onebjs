@@ -1,6 +1,6 @@
-import { OneBServicesClient, APIType, Environment, CallGameScriptCommand, GetBlueprintDataCommand } from "@oneb-sdk/client";
+import { OneBServicesClient, APIType, Environment, CallGameScriptCommand } from "@oneb-sdk/client";
 
-import { DailyQuestClaimQuestInput, DailyQuestClaimQuestOutput, DailyQuestOutput, DailyQuestUpdateQuestInput, DailyQuestUpdateQuestOutput, IDailyQuestClaimQuestInput, IDailyQuestUpdateQuestInput } from "./bundle";
+import { DailyQuestsClaimQuestInput, DailyQuestsClaimQuestOutput, DailyQuestsOutput, DailyQuestsUpdateQuestInput, DailyQuestsUpdateQuestOutput, IDailyQuestsClaimQuestInput, IDailyQuestsUpdateQuestInput } from "./bundle";
 
 async function main() {
   const client = new OneBServicesClient({
@@ -16,15 +16,15 @@ async function main() {
   });
 
   if (accessToken) {
-    const dailyQuestsInfo = await client.send<DailyQuestOutput>(new CallGameScriptCommand("Daily_Quest", "getList"), DailyQuestOutput);
+    const dailyQuestsInfo = await client.send<DailyQuestsOutput>(new CallGameScriptCommand("DailyQuests", "getList"), DailyQuestsOutput);
     console.log(dailyQuestsInfo);
 
-    await client.send<DailyQuestUpdateQuestOutput>(
-      new CallGameScriptCommand<IDailyQuestUpdateQuestInput>(
-        "Daily_Quest",
+    await client.send<DailyQuestsUpdateQuestOutput>(
+      new CallGameScriptCommand<IDailyQuestsUpdateQuestInput>(
+        "DailyQuests",
         "updateQuest",
         {
-          items: [
+          questProgress: [
             {
               id: "coin",
               amount: 12,
@@ -35,16 +35,16 @@ async function main() {
             },
           ],
         },
-        DailyQuestUpdateQuestInput
+        DailyQuestsUpdateQuestInput
       ),
-      DailyQuestUpdateQuestOutput
+      DailyQuestsUpdateQuestOutput
     );
-    const itemIds = dailyQuestsInfo.dailyQuest.filter((item) => item.canClaim).map((item) => item.id);
+    const itemIds = dailyQuestsInfo.dailyQuests.filter((item) => item.canClaim).map((item) => item.id);
     console.log(itemIds);
     if (itemIds.length) {
-      const rewardsInfo = await client.send<DailyQuestClaimQuestOutput>(
-        new CallGameScriptCommand<IDailyQuestClaimQuestInput>("Daily_Quest", "claimQuest", { items: itemIds }, DailyQuestClaimQuestInput),
-        DailyQuestClaimQuestOutput
+      const rewardsInfo = await client.send<DailyQuestsClaimQuestOutput>(
+        new CallGameScriptCommand<IDailyQuestsClaimQuestInput>("DailyQuests", "claimQuest", { items: itemIds }, DailyQuestsClaimQuestInput),
+        DailyQuestsClaimQuestOutput
       );
       console.log(rewardsInfo);
     }
