@@ -2,7 +2,7 @@
 
 ## Description
 
-OneB SDK for JavaScript, OneBServices Client for JS Game engines such as Cocos creator, Three.js, Pixi.js, Phaser...
+OneB SDK for JavaScript, OneBServices Client for JS Game engines such as Cocos Creator, Three.js, Pixi.js, Phaser...
 
 [OneB Services](https://oneb.tech) is a Game backend as a service (GBaaS)
 
